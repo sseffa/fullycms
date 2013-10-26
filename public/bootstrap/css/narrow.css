@@ -1,0 +1,62 @@
+
+body {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.header, .newsletter, .footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.header {
+    border-bottom: 1px solid #E5E5E5;
+}
+.header h3 {
+    line-height: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 19px;
+}
+.footer {
+    border-top: 1px solid #E5E5E5;
+    color: #777777;
+    padding-top: 19px;
+}
+.container-narrow {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+.newsletter {
+    margin: 0;
+    padding: 25px !important;
+    border-bottom: 1px solid #E5E5E5;
+}
+.newsletter p + h4 {
+    margin-top: 28px;
+}
+.header, .newsletter, .footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+.header, .newsletter {
+    margin-bottom: 30px;
+}
+.jumbotron {
+    border-bottom: 0 none;
+}
+
+.row.newsletter
+{
+    background: #EEE;
+    /*color: #FFF;*/
+    border-radius: 5px;
+}
+
+.form-horizontal.login
+{
+    width: 75%;
+    margin: 0 auto;
+}
