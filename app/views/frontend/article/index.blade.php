@@ -19,27 +19,21 @@
         <div class="col-md-1">
             <p><i class="icon-file-text icon-4x"></i></p>
 
-            <p>{{ $article->created_at }}</p>
+            <p>{{  date("d M Y a\t H:i a",strtotime($article->created_at)) }}</p>
         </div>
-        <div class="col-md-5">
-            <a href="#"><img src="http://placehold.it/600x300" class="img-responsive"></a>
-        </div>
-        <div class="col-md-6">
-            <h3><a href="blog-post.html">{{ $article->title }}</a></h3>
+        <div class="col-md-11">
+            <h3><a href="#">{{ $article->title }}</a></h3>
 
             <p>by <a href="#">Sefa</a></p>
 
-            <p>{{{ mb_substr(strip_tags($article->content),0,250) }}}</p>
+            <p>{{{ mb_substr(strip_tags($article->content),0,600) }}}</p>
             {{ link_to_route( 'dashboard.article.show', 'Read More', $article->id, array( 'class' => 'btn btn-primary' )) }}
         </div>
     </div>
     <hr>
     @endforeach
     <div class="row">
-        <ul class="pager">
-            <li class="previous"><a href="#">&larr; Older</a></li>
-            <li class="next"><a href="#">Newer &rarr;</a></li>
-        </ul>
+
     </div>
 </div>
 @stop

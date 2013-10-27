@@ -1,23 +1,20 @@
 @extends('frontend/layout')
 @section('content')
+{{ HTML::style('/ckeditor/contents.css') }}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">{{ $article->title }}</small></h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li class="active">Blog Post</li>
             </ol>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-8">
-            <hr>
             <p><i class="icon-time"></i> Posted on {{ $article->created_at }} by <a href="www.sefakaragoz.com">Sefa</a>
             </p>
-            <hr>
-            <img src="http://placehold.it/900x300" class="img-responsive">
-            <hr>
             <p class="lead">{{ $article->content }}</p>
         </div>
         <div class="col-lg-4">

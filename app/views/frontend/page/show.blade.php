@@ -1,5 +1,6 @@
 @extends('frontend/layout')
 @section('content')
+{{ HTML::style('/ckeditor/contents.css') }}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -12,9 +13,6 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <hr>
-            <img src="http://placehold.it/900x300" class="img-responsive">
-            <hr>
             <p class="lead">{{ $page->content }}</p>
         </div>
     </div>

@@ -13,7 +13,7 @@ class UserController extends BaseController {
      */
     public function index() {
 
-        $users = DB::table('users')->paginate(1);
+        $users = DB::table('users')->paginate(10);
         return View::make('backend.user.index', compact('users'))->with('active', 'user');
     }
 

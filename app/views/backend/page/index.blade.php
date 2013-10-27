@@ -7,6 +7,7 @@
     <br>
     <br>
     <br>
+    @if($pages->count())
     <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
@@ -31,6 +32,9 @@
         @endforeach
         </tbody>
     </table>
+    @else
+    <div class="alert alert-danger">No results found</div>
+    @endif
     <div class="pull-left">
         <ul class="pagination">
             {{ $pages->links() }}

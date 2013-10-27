@@ -24,7 +24,7 @@
         </div>
     </div>
     <br>
-     <!-- Content -->
+    <!-- Content -->
     <div class="control-group {{ $errors->has('content') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Content</label>
 
@@ -40,7 +40,7 @@
     <div class="control-group {{ $errors->has('is_published') ? 'has-error' : '' }}">
 
         <div class="controls">
-           <label class="checkbox">{{ Form::checkbox('is_published', 'is_published') }} Is Published</label>
+            <label class="checkbox">{{ Form::checkbox('is_published', 'is_published') }} Is Published</label>
             @if ($errors->first('is_published'))
             <span class="help-block">{{ $errors->first('is_published') }}</span>
             @endif
