@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, Article;
+use BaseController, Redirect, Sentry, View, DB, Input, Validator, Article, Response;
 
 class ArticleController extends BaseController {
 
@@ -101,7 +101,7 @@ class ArticleController extends BaseController {
         $article = Article::find($id);
         $article->title = $formData['title'];
         $article->content = $formData['content'];
-        $article->is_published =  ($formData['is_published']) ? true : false;
+        $article->is_published = ($formData['is_published']) ? true : false;
 
         $article->save();
         return Redirect::action('App\Controllers\Admin\ArticleController@index');
@@ -125,5 +125,15 @@ class ArticleController extends BaseController {
 
         $article = Article::find($id);
         return View::make('backend.article.confirm-destroy', compact('article'))->with('active', 'article');
+    }
+
+    public function togglePublish($id) {
+
+        $page = Article::find($id);
+
+        $page->is_published = ($page->is_published) ? false : true;
+        $page->save();
+
+        return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
     }
 }

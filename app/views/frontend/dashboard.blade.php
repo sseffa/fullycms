@@ -167,4 +167,3 @@
     </div>
 </div>
 @stop
-{{ HTML::script('assets/js/modern-business.js') }}

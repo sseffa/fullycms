@@ -55,9 +55,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::resource('page', 'App\Controllers\Admin\PageController');
     Route::get('page/{id}/delete', array('as' => 'page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'));
 
-    // ajax
+    // ajax - page
     Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'));
     Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'));
+
+    // ajax - article
+    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'));
 });
 
 // File manager

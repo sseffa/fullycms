@@ -144,8 +144,6 @@ class PageController extends BaseController {
 
     public function toggleMenu($id) {
 
-        //throw new Exception("ex");
-
         $page = Page::find($id);
 
         $page->is_in_menu = ($page->is_in_menu) ? false : true;

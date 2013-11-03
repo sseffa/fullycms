@@ -7,7 +7,6 @@
         $(".in-menu").bind("click", function (e) {
 
             var id = $(this).attr('id');
-            var btn = $(this);
 
             e.preventDefault();
             $.ajax({
@@ -34,7 +33,6 @@
         $(".publish").bind("click", function (e) {
 
             var id = $(this).attr('id');
-            var btn = $(this);
 
             e.preventDefault();
             $.ajax({

@@ -39,7 +39,7 @@
     <div class="control-group {{ $errors->has('is_published') ? 'has-error' : '' }}">
 
         <div class="controls">
-            <label class="checkbox">{{ Form::checkbox('is_published', 'is_published') }} Is Publish</label>
+            <label class="checkbox">{{ Form::checkbox('is_published', 'is_published') }} Publish ?</label>
             @if ($errors->first('is_published'))
             <span class="help-block">{{ $errors->first('is_published') }}</span>
             @endif
@@ -52,7 +52,7 @@
     <div class="control-group {{ $errors->has('is_in_menu') ? 'has-error' : '' }}">
 
         <div class="controls">
-            <label class="checkbox">{{ Form::checkbox('is_in_menu', 'is_in_menu') }} Is Menu</label>
+            <label class="checkbox">{{ Form::checkbox('is_in_menu', 'is_in_menu') }} Show on the menu ?</label>
             @if ($errors->first('is_in_menu'))
             <span class="help-block">{{ $errors->first('is_in_menu') }}</span>
             @endif
