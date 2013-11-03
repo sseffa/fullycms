@@ -6,10 +6,7 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"way/generators": "dev-master",
-		"cartalyst/sentry": "2.0.*",
-		"dflydev/markdown": "v1.0.2",
-		"imagine/Imagine": "v0.4.1",
-		"edvinaskrucas/notification": "1.*"
+		"cartalyst/sentry": "2.0.*"
 	},
 	"autoload": {
 		"classmap": [

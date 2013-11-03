@@ -1,9 +1,0 @@
-{
-    "name": "bootstrap-glyphicons"
-  , "description": "Icon font for use with Bootstrap, based on Glyphicons."
-  , "keywords": ["bootstrap", "css", "icons"]
-  , "homepage": "http://glyphicons.getbootstrap.com/"
-  , "author": "Mark Otto"
-  , "license": "MIT"
-
-}

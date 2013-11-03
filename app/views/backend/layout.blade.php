@@ -6,7 +6,7 @@
     <!-- CSS are placed here -->
     {{ HTML::style('bootstrap/css/backend_bootstrap.css') }}
     {{ HTML::style('bootstrap/css/theme.css') }}
-    {{ HTML::script('assets/js/jquery.js') }}
+    {{ HTML::script('bootstrap/js/jquery.2.0.3.js') }}
     {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script('bootstrap/js/holder.js') }}
     <style>
