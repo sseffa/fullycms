@@ -9,7 +9,7 @@ class PageController extends BaseController {
      */
     public function index() {
 
-        $pages = DB::table('pages')->paginate(15);
+        $pages = DB::table('pages')->where('is_in_menu', "=", 1)->paginate(15);
         return View::make('frontend.page.index', compact('pages'));
     }
 

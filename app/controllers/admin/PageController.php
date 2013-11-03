@@ -2,7 +2,8 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, Page;
+use BaseController, Redirect, Sentry, View, DB, Input, Validator, Page, Response;
+use Whoops\Example\Exception;
 
 class PageController extends BaseController {
 
@@ -35,9 +36,10 @@ class PageController extends BaseController {
     public function store() {
 
         $formData = array(
-            'title'   => Input::get('title'),
-            'content' => Input::get('content'),
-            'is_menu' => Input::get('is_menu')
+            'title'        => Input::get('title'),
+            'content'      => Input::get('content'),
+            'is_published' => Input::get('is_published'),
+            'is_in_menu'   => Input::get('is_in_menu')
         );
 
         $rules = array(
@@ -54,7 +56,8 @@ class PageController extends BaseController {
         $page = new Page();
         $page->title = $formData['title'];
         $page->content = $formData['content'];
-        $page->is_menu = ($formData['is_menu']) ? true : false;
+        $page->is_published = ($formData['is_published']) ? true : false;
+        $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
         $page->save();
 
         return Redirect::action('App\Controllers\Admin\PageController@index');
@@ -93,15 +96,17 @@ class PageController extends BaseController {
     public function update($id) {
 
         $formData = array(
-            'title'   => Input::get('title'),
-            'content' => Input::get('content'),
-            'is_menu' => Input::get('is_menu')
+            'title'        => Input::get('title'),
+            'content'      => Input::get('content'),
+            'is_published' => Input::get('is_published'),
+            'is_in_menu'   => Input::get('is_in_menu')
         );
 
         $page = Page::find($id);
         $page->title = $formData['title'];
         $page->content = $formData['content'];
-        $page->is_menu = $formData['is_menu'];
+        $page->is_published = $formData['is_published'];
+        $page->is_in_menu = $formData['is_in_menu'];
 
         $page->save();
         return Redirect::action('App\Controllers\Admin\PageController@index');
@@ -125,5 +130,27 @@ class PageController extends BaseController {
 
         $page = Page::find($id);
         return View::make('backend.page.confirm-destroy', compact('page'))->with('active', 'page');
+    }
+
+    public function togglePublish($id) {
+
+        $page = Page::find($id);
+
+        $page->is_published = ($page->is_published) ? false : true;
+        $page->save();
+
+        return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
+    }
+
+    public function toggleMenu($id) {
+
+        //throw new Exception("ex");
+
+        $page = Page::find($id);
+
+        $page->is_in_menu = ($page->is_in_menu) ? false : true;
+        $page->save();
+
+        return Response::json(array('result' => 'success', 'changed' => ($page->is_in_menu) ? 1 : 0));
     }
 }

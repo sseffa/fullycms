@@ -1,5 +1,6 @@
 @extends('backend/layout')
 @section('content')
+{{ HTML::style('/ckeditor/contents.css') }}
 <div class="container">
     <div class="page-header">
         <h3>

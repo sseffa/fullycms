@@ -13,7 +13,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li> {{ HTML::link('/','Home') }}</li>
                 <li> {{ HTML::link('/article','Blog') }}</li>
-                @foreach(Page::all() as $page)
+                @foreach(Page::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $page)
                 <li>{{ link_to_route( 'dashboard.page.show', $page->title, $page->id) }}</li>
                 @endforeach
                 <li>{{ HTML::link('/admin/login', ((Sentry::check()) ? ( Sentry::getUser()->email) : 'Login')) }}</li>

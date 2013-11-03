@@ -17,7 +17,8 @@ class CreatePagesTable extends Migration {
             $table->string('title', 255);
             $table->text('content');
             $table->timestamps();
-            $table->boolean('is_menu')->default(false);
+            $table->boolean('is_published')->default(true);
+            $table->boolean('is_in_menu')->default(true);
         });
     }
 
