@@ -29,61 +29,65 @@
         {{ Form::close() }}
     </div>
     <script type="text/javascript">
-        // myDropzone is the configuration for the element that has an id attribute
-        // with the value my-dropzone (or myDropzone)
-        Dropzone.options.myDropzone = {
-            init: function () {
-                this.on("addedfile", function (file) {
-
-                    var removeButton = Dropzone.createElement('<a class="dz-remove">Remove file</a>');
-                    var _this = this;
-
-                    removeButton.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        var fileInfo = new Array();
-                        fileInfo['name'] = file.name;
-
-                        $.ajax({
-                            type: "POST",
-                            url: "{{ url('admin/delete-image') }}",
-                            data: {file: file.name},
-                            beforeSend: function () {
-                                // before send
-                            },
-                            success: function (response) {
-
-                                if (response == 'success') {
-
-                                    //alert('deleted');
-                                }
-                            },
-                            error: function () {
-                                alert("error");
-                            }
-                        });
-
-                        _this.removeFile(file);
-
-                        // If you want to the delete the file on the server as well,
-                        // you can do the AJAX request here.
-                    });
-
-                    // Add the button to the file preview element.
-                    file.previewElement.appendChild(removeButton);
-                });
-            }
-        };
 
         $( document ).ready(function() {
 
-            @foreach($photos as $photo)
+            // myDropzone is the configuration for the element that has an id attribute
+            // with the value my-dropzone (or myDropzone)
+            Dropzone.options.myDropzone = {
+                init: function () {
+                    this.on("addedfile", function (file) {
 
-            var myDropzone = new Dropzone("#dropzone .dropzone");
+                        var removeButton = Dropzone.createElement('<a class="dz-remove">Remove file</a>');
+                        var _this = this;
+
+                        removeButton.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            var fileInfo = new Array();
+                            fileInfo['name'] = file.name;
+
+                            $.ajax({
+                                type: "POST",
+                                url: "{{ url('admin/delete-image') }}",
+                                data: {file: file.name},
+                                beforeSend: function () {
+                                    // before send
+                                },
+                                success: function (response) {
+
+                                    if (response == 'success') {
+
+                                        //alert('deleted');
+                                    }
+                                },
+                                error: function () {
+                                    alert("error");
+                                }
+                            });
+
+                            _this.removeFile(file);
+
+                            // If you want to the delete the file on the server as well,
+                            // you can do the AJAX request here.
+                        });
+
+                        // Add the button to the file preview element.
+                        file.previewElement.appendChild(removeButton);
+                    });
+                }
+            };
+
+
+
+           var myDropzone = new Dropzone("#dropzone .dropzone");
+           Dropzone.options.myDropzone = false;
+            @foreach($photos as $photo)
 
             // Create the mock file:
             var mockFile = { name: "{{ $photo->file_name }}", size: 12345 };
+
 
             // Call the default addedfile event handler
             myDropzone.emit("addedfile", mockFile);
