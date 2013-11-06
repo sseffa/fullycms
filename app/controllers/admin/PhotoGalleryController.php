@@ -95,7 +95,8 @@ class PhotoGalleryController extends BaseController {
     public function edit($id) {
 
         $photo_gallery = PhotoGallery::find($id);
-        return View::make('backend.photo_gallery.edit', compact('photo_gallery'));
+        $photos = Photo::where('photo_gallery_id', '=', $id)->get();
+        return View::make('backend.photo_gallery.edit', compact('photo_gallery','photos'));
     }
 
     /**
@@ -196,7 +197,7 @@ class PhotoGalleryController extends BaseController {
             $image = new Photo;
             $image->file_name = $filename;
             $image->title = explode(".", $filename)[0];
-            $image->path = '/upload/' . $filename;
+            $image->path = '/uploads/' . $filename;
             $photo_gallery->photos()->save($image);
 
             return Response::json('success', 200);

@@ -7,12 +7,18 @@ sf CMS
 * Custom Error Pages	
 * 404 for not found pages	
 * Authentication Sentry 2
+* Ckeditor
+* File Manager
+* Dropzone.js
 * Backend	
   * Manage article
+  * Manage page
+  * Manage photo gallery
   * CKE editor for post creation and editing (Filemanager).
 * Frontend
   * Article 
   * Page
+  * Photo Gallery
 
 ## Installation
 

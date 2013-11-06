@@ -76,6 +76,27 @@
             }
         };
 
+        $( document ).ready(function() {
+
+            @foreach($photos as $photo)
+
+            var myDropzone = new Dropzone("#dropzone .dropzone");
+
+            // Create the mock file:
+            var mockFile = { name: "{{ $photo->file_name }}", size: 12345 };
+
+            // Call the default addedfile event handler
+            myDropzone.emit("addedfile", mockFile);
+
+            // And optionally show the thumbnail of the file:
+            myDropzone.emit("thumbnail", mockFile, "{{ url($photo->path) }}");
+
+            @endforeach
+
+        });
+
+
+
         // https://github.com/enyo/dropzone/issues/338
     </script>
     <br>
