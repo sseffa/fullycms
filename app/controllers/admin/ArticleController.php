@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, Article, Response;
+use BaseController, Redirect, View, Input, Validator, Article, Response;
 
 class ArticleController extends BaseController {
 
@@ -13,7 +13,8 @@ class ArticleController extends BaseController {
      */
     public function index() {
 
-        $articles = DB::table('articles')->paginate(15);
+        $articles = Article::orderBy('created_at', 'DESC')
+            ->paginate(15);
         return View::make('backend.article.index', compact('articles'))->with('active', 'article');
     }
 
@@ -57,7 +58,7 @@ class ArticleController extends BaseController {
         $article->is_published = ($formData['is_published']) ? true : false;
         $article->save();
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index');
+        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully added');
     }
 
     /**
@@ -104,7 +105,7 @@ class ArticleController extends BaseController {
         $article->is_published = ($formData['is_published']) ? true : false;
 
         $article->save();
-        return Redirect::action('App\Controllers\Admin\ArticleController@index');
+        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully updated');;
     }
 
     /**
@@ -118,7 +119,7 @@ class ArticleController extends BaseController {
         $article = Article::find($id);
         $article->delete();
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index');
+        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');;
     }
 
     public function confirmDestroy($id) {

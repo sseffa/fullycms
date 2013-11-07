@@ -3,22 +3,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $('#message').show().delay(4000).fadeOut(700);
+
         // publish settings
         $(".publish").bind("click", function (e) {
-
             var id = $(this).attr('id');
-
             e.preventDefault();
             $.ajax({
                 type: "POST",
                 url: "{{ url('/admin/article/" + id + "/toggle-publish/') }}",
-                beforeSend: function () {
-                    // before send
-                },
                 success: function (response) {
-
                     if (response['result'] == 'success') {
-
                         var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/publish.png" : "{{url('/')}}/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
@@ -37,6 +32,11 @@
     <br>
     <br>
     <br>
+    @if(Session::has('message'))
+    <div class="alert alert-success" id="message">
+        {{ Session::get('message') }}
+    </div>
+    @endif
     @if($articles->count())
     <table class="table table-bordered table-striped table-hover">
         <thead>

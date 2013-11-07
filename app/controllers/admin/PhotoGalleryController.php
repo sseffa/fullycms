@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, PhotoGallery, Response, File, Image, Photo;
+use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo;
 
 class PhotoGalleryController extends BaseController {
 
@@ -13,7 +13,9 @@ class PhotoGalleryController extends BaseController {
      */
     public function index() {
 
-        $photo_galleries = DB::table('photo_galleries')->paginate(15);
+        $photo_galleries = PhotoGallery::orderBy('created_at', 'DESC')
+            ->paginate(15);
+
         return View::make('backend.photo_gallery.index', compact('photo_galleries'))->with('active', 'photo_gallery');
     }
 
@@ -24,19 +26,15 @@ class PhotoGalleryController extends BaseController {
      */
     public function create() {
 
-        //return View::make('backend.photo_gallery.create')->with('active', 'photo_gallery');
-
         $photo_gallery = new PhotoGallery();
         $photo_gallery->title = "Photo Gallery Title";
         $photo_gallery->content = "Photo Gallery Content";
         $photo_gallery->is_published = false;
         $photo_gallery->is_in_menu = false;
         $photo_gallery->save();
-
         $id = $photo_gallery->id;
 
-        //return $this->edit($id);
-        return Redirect::to("/admin/photo_gallery/" . $id . "/edit");
+        return Redirect::to("/admin/photo_gallery/" . $id . "/edit")->with('message', 'Photo galler was successfully added');
     }
 
     /**
@@ -61,7 +59,7 @@ class PhotoGalleryController extends BaseController {
         $validation = Validator::make($formData, $rules);
 
         if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\PhotoGalleriesController@create')->withErrors($validation)->withInput();
+            return Redirect::action('App\Controllers\Admin\PhotoGalleryController@create')->withErrors($validation)->withInput();
         }
 
         $photo_gallery = new PhotoGallery();
@@ -71,7 +69,7 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
         $photo_gallery->save();
 
-        return Redirect::action('App\Controllers\Admin\PhotoGalleriesController@index');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
     }
 
     /**
@@ -121,7 +119,7 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
 
         $photo_gallery->save();
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo galler was successfully updated');
     }
 
     /**
@@ -148,7 +146,7 @@ class PhotoGalleryController extends BaseController {
             File::delete($destinationPath . "150x150_" . $photo->file_name);
         }
 
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo galler was successfully deleted');
     }
 
     public function confirmDestroy($id) {
@@ -180,8 +178,6 @@ class PhotoGalleryController extends BaseController {
     public function upload($id) {
 
         $file = Input::file('file');
-
-        //if (!$file) Response::json('error', 400);
 
         $destinationPath = public_path() . '/uploads/';
         $filename = $file->getClientOriginalName();

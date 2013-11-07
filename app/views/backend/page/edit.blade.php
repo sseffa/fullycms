@@ -4,9 +4,9 @@
 <div class="container">
     <div class="page-header">
         <h3>
-            Blog Post Update
+            Page Update
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit">Back</button>
+                 {{ HTML::link('/admin/page','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>

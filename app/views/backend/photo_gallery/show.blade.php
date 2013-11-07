@@ -6,7 +6,7 @@
         <h3>
             Photo Gallery Info
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit">Back</button>
+                {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>

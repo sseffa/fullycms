@@ -75,8 +75,15 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'));
     Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'));
 
+    // file upload
     Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@upload'));
     Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@deleteImage'));
+
+    // settings
+    Route::get('/settings', function () {
+
+        return View::make('backend.settings')->with('active', 'settings');
+    });
 });
 
 // File manager

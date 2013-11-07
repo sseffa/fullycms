@@ -9,13 +9,16 @@ class ArticleController extends BaseController {
      */
     public function index() {
 
-        $articles = DB::table('articles')
-                        ->where('is_published', 1)
-                        ->paginate(15);
+        $articles = Article::orderBy('created_at', 'DESC')->where('is_published', 1)
+            ->paginate(15);
 
         return View::make('frontend.article.index', compact('articles'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\View\View
+     */
     public function show($id) {
 
         $article = Article::find($id);

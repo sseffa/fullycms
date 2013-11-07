@@ -7,9 +7,9 @@
 <div class="container">
     <div class="page-header">
         <h3>
-            Blog Post Update
+            Photo Gallery Update
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit">Back</button>
+                 {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>
@@ -29,9 +29,7 @@
         {{ Form::close() }}
     </div>
     <script type="text/javascript">
-
-        $( document ).ready(function() {
-
+        $(document).ready(function () {
             // myDropzone is the configuration for the element that has an id attribute
             // with the value my-dropzone (or myDropzone)
             Dropzone.options.myDropzone = {
@@ -52,9 +50,6 @@
                                 type: "POST",
                                 url: "{{ url('admin/delete-image') }}",
                                 data: {file: file.name},
-                                beforeSend: function () {
-                                    // before send
-                                },
                                 success: function (response) {
 
                                     if (response == 'success') {
@@ -79,15 +74,12 @@
                 }
             };
 
-
-
-           var myDropzone = new Dropzone("#dropzone .dropzone");
-           Dropzone.options.myDropzone = false;
+            var myDropzone = new Dropzone("#dropzone .dropzone");
+            Dropzone.options.myDropzone = false;
             @foreach($photos as $photo)
 
             // Create the mock file:
-            var mockFile = { name: "{{ $photo->file_name }}", size: 12345 };
-
+            var mockFile = { name: "{{ $photo->file_name }}", size: null };
 
             // Call the default addedfile event handler
             myDropzone.emit("addedfile", mockFile);
@@ -96,12 +88,7 @@
             myDropzone.emit("thumbnail", mockFile, "{{ url($photo->path) }}");
 
             @endforeach
-
         });
-
-
-
-        // https://github.com/enyo/dropzone/issues/338
     </script>
     <br>
     {{ Form::open(array('action' => array('App\Controllers\Admin\PhotoGalleryController@update', $photo_gallery->id), 'method' => 'PATCH')) }}
@@ -151,8 +138,6 @@
         </div>
     </div>
     <br>
-
-
     <!-- Form actions -->
     {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
     {{ Form::close() }}

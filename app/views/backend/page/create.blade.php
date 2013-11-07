@@ -6,7 +6,7 @@
         <h3>
             Page Create
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit">Back</button>
+                {{ HTML::link('/admin/page','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>
@@ -46,8 +46,6 @@
         </div>
     </div>
     <br>
-
-
     <!-- Menu -->
     <div class="control-group {{ $errors->has('is_in_menu') ? 'has-error' : '' }}">
 
@@ -59,7 +57,6 @@
         </div>
     </div>
     <br>
-
     <!-- Form actions -->
     {{ Form::submit('Create', array('class' => 'btn btn-success')) }}
     {{ Form::close() }}

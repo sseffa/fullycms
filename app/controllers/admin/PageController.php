@@ -2,8 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, Page, Response;
-use Whoops\Example\Exception;
+use BaseController, Redirect, View, Input, Validator, Page, Response;
 
 class PageController extends BaseController {
 
@@ -14,7 +13,9 @@ class PageController extends BaseController {
      */
     public function index() {
 
-        $pages = DB::table('pages')->paginate(15);
+        $pages = Page::orderBy('created_at', 'DESC')
+            ->paginate(15);
+
         return View::make('backend.page.index', compact('pages'))->with('active', 'page');
     }
 
@@ -50,7 +51,7 @@ class PageController extends BaseController {
         $validation = Validator::make($formData, $rules);
 
         if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\PagesController@create')->withErrors($validation)->withInput();
+            return Redirect::action('App\Controllers\Admin\PageController@create')->withErrors($validation)->withInput();
         }
 
         $page = new Page();
@@ -60,7 +61,7 @@ class PageController extends BaseController {
         $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
         $page->save();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index');
+        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully added');;
     }
 
     /**
@@ -105,11 +106,11 @@ class PageController extends BaseController {
         $page = Page::find($id);
         $page->title = $formData['title'];
         $page->content = $formData['content'];
-        $page->is_published = $formData['is_published'];
-        $page->is_in_menu = $formData['is_in_menu'];
+        $page->is_published = ($formData['is_published']) ? true : false;
+        $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
 
         $page->save();
-        return Redirect::action('App\Controllers\Admin\PageController@index');
+        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully updated');
     }
 
     /**
@@ -123,7 +124,7 @@ class PageController extends BaseController {
         $page = Page::find($id);
         $page->delete();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index');
+        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully deleted');;
     }
 
     public function confirmDestroy($id) {

@@ -3,16 +3,10 @@
 class PageController extends BaseController {
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * Display page
+     * @param $id
+     * @return \Illuminate\View\View
      */
-    public function index() {
-
-        $pages = DB::table('pages')->where('is_in_menu', "=", 1)->paginate(15);
-        return View::make('frontend.page.index', compact('pages'));
-    }
-
     public function show($id) {
 
         $page = Page::find($id);

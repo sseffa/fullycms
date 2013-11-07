@@ -6,7 +6,7 @@
         <h3>
             Article Info
             <div class="pull-right">
-                <button class="btn btn-primary" type="submit">Back</button>
+               {{ HTML::link('/admin/article','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>
