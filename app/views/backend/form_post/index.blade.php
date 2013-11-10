@@ -13,37 +13,30 @@
     @endif
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Users</h3>
+            <h3 class="panel-title">Form Post</h3>
         </div>
         <div class="panel-body">
-            <div class="pull-left">
-                <div class="btn-toolbar">
-                    <a href="{{ URL::route('admin.user.create') }}" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New User
-                    </a>
-                </div>
-            </div>
             <br>
-            <br>
-            <br>
+
             <div class="table-responsive">
+                @if($formPosts->count())
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Joined</th>
-                        <th>Last Visit</th>
+                        <th>Sender Name</th>
+                        <th>Sender Email</th>
+                        <th>Sender Phone Number</th>
+                        <th>Subject</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach( $users as $user )
+                    @foreach( $formPosts as $formPost )
                     <tr>
-                        <td> {{ link_to_route( 'admin.user.show', $user->first_name . " " . $user->last_name, $user->id, array( 'class' => 'btn btn-link btn-xs' )) }}
-                        <td>{{{ $user->email }}}</td>
-                        <td>{{{ $user->created_at }}}</td>
-                        <td>{{{ $user->last_login }}}</td>
+                        <td>{{{ $formPost->sender_name_surname }}}</td>
+                        <td>{{{ $formPost->sender_email }}}</td>
+                        <td>{{{ $formPost->sender_phone_number }}}</td>
+                        <td>{{{ $formPost->subject }}}</td>
                         <td>
                             </a>
 
@@ -54,19 +47,14 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ URL::route('admin.user.show', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show User
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ URL::route('admin.user.edit', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit User
+                                        <a href="{{ URL::route('admin.form-post.show', array($formPost->id)) }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Post
                                         </a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a href="{{ URL::route('admin.user.delete', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete User
+                                        <a href="{{ URL::route('admin.form-post.delete', array($formPost->id)) }}">
+                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Post
                                         </a>
                                     </li>
                                 </ul>
@@ -76,6 +64,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                @else
+                <div class="alert alert-danger">No results found</div>
+                @endif
             </div>
         </div>
     </div>
@@ -83,7 +74,7 @@
 
     <div class="pull-left">
         <ul class="pagination">
-            {{ $users->links() }}
+
     </div>
 </div>
 @stop

@@ -3,12 +3,12 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">{{ $user->first_name . ' ' . $user->last_name }} Profile</h3>
+            <h3 class="panel-title">Post Info</h3>
         </div>
         <div class="panel-body">
             <div class="pull-left">
                 <div class="btn-toolbar">
-                    <a href="{{ url('admin/user') }}"
+                    <a href="{{ url('admin/form-post') }}"
                        class="btn btn-primary">
                         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
                     </a>
@@ -20,24 +20,24 @@
             <table class="table table-striped">
                 <tbody>
                 <tr>
-                    <td><strong>First Name</strong></td>
-                    <td>{{ $user->first_name }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Last Name</strong></td>
-                    <td>{{ $user->last_name }}</td>
+                    <td><strong>Name and Surname</strong></td>
+                    <td>{{ $formPost->sender_name_surname }}</td>
                 </tr>
                 <tr>
                     <td><strong>Email</strong></td>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $formPost->sender_email }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Date Created</strong></td>
-                    <td>{{ $user->created_at }}</td>
+                    <td><strong>Phone Number</strong></td>
+                    <td>{{ $formPost->sender_phone_number }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Last Login</strong></td>
-                    <td>{{ $user->last_login }}</td>
+                    <td><strong>Subject</strong></td>
+                    <td>{{ $formPost->subject }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Message</strong></td>
+                    <td>{{ $formPost->message }}</td>
                 </tr>
                 </tbody>
             </table>

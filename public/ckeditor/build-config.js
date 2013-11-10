@@ -94,7 +94,8 @@ var CKBUILDER_CONFIG = {
 		'richcombo' : 1,
 		'listblock' : 1,
 		'indent' : 1,
-		'menubutton' : 1
+		'menubutton' : 1,
+		'pbckcode' : 1
 	},
 	languages : {
 		'af' : 1,

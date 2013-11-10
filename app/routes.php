@@ -34,6 +34,10 @@ Route::get('/page/{id}/show', array('as' => 'dashboard.page.show', 'uses' => 'Pa
 Route::get('/photo_gallery', array('as' => 'dashboard.photo_gallery', 'uses' => 'PhotoGalleryController@index'));
 Route::get('/photo_gallery/{id}/show', array('as' => 'dashboard.photo_gallery.show', 'uses' => 'PhotoGalleryController@show'));
 
+// contact
+Route::get('/contact', array('as' => 'dashboard.contact', 'uses' => 'FormPostController@getContact'));
+Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'));
+
 /*
 |--------------------------------------------------------------------------
 | Backend Routes
@@ -84,6 +88,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
         return View::make('backend.settings')->with('active', 'settings');
     });
+
+    // form post
+    Route::resource('form-post', 'App\Controllers\Admin\FormPostController', array('only' => array('index', 'show', 'destroy')));
+    Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'App\Controllers\Admin\FormPostController@confirmDestroy'));
 });
 
 // File manager

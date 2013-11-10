@@ -68,7 +68,7 @@ class UserController extends BaseController {
         $adminGroup = Sentry::findGroupById(1);
         $user->addGroup($adminGroup);
 
-        return Redirect::action('App\Controllers\Admin\UserController@index');
+        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully added');
     }
 
     /**
@@ -114,6 +114,8 @@ class UserController extends BaseController {
         $user->first_name = $formData['first-name'];
         $user->last_name = $formData['last-name'];
         $user->save();
+
+        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully updated');
     }
 
     /**
@@ -127,7 +129,7 @@ class UserController extends BaseController {
         $user = Sentry::findUserById($id);
         $user->delete();
 
-        return Redirect::action('App\Controllers\Admin\UserController@index');
+        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully deleted');
     }
 
     public function confirmDestroy($id) {
