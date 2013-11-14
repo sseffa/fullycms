@@ -268,11 +268,11 @@ class AppCommand extends Command {
 
         // Prepare the user data array.
         $data = array(
-            'first_name' => 'Admin',
-            'last_name'  => 'Admin',
-            'email'      => 'admin@admin.com',
-            'password'   => 'admin',
-            'activated'  => 1,
+            'first_name'  => 'Admin',
+            'last_name'   => 'Admin',
+            'email'       => 'admin@admin.com',
+            'password'    => 'admin',
+            'activated'   => 1,
             'permissions' => array(
                 'admin' => 1,
             ),

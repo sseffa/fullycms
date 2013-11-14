@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormPostTable extends Migration {
+class CreateFormPostsTable extends Migration {
 
     /**
      * Run the migrations.

@@ -12,8 +12,6 @@
          @yield('partial/breadcrumbs', Breadcrumbs::render('contact'))
     </div>
     <div class="row">
-        <br>
-        <br>
         @if(Session::has('message'))
         <div class="alert alert-success" id="message">
             {{ Session::get('message') }}
