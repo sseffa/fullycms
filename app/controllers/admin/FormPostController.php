@@ -27,7 +27,7 @@ class FormPostController extends BaseController {
      */
     public function show($id) {
 
-        $formPost = FormPost::find($id);
+        $formPost = FormPost::findOrFail($id);
         return View::make('backend.form_post.show', compact('formPost'))->with('active', 'form-post');
     }
 
@@ -39,7 +39,7 @@ class FormPostController extends BaseController {
      */
     public function destroy($id) {
 
-        $formPost = FormPost::find($id);
+        $formPost = FormPost::findOrFail($id);
         $formPost->delete();
 
         return Redirect::action('App\Controllers\Admin\FormPostController@index')->with('message', 'Post was successfully deleted');;
@@ -47,7 +47,7 @@ class FormPostController extends BaseController {
 
     public function confirmDestroy($id) {
 
-        $formPost = FormPost::find($id);
+        $formPost = FormPost::findOrFail($id);
         return View::make('backend.form_post.confirm-destroy', compact('formPost'))->with('active', 'form-post');
     }
 }

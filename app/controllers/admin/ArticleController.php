@@ -69,7 +69,7 @@ class ArticleController extends BaseController {
      */
     public function show($id) {
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return View::make('backend.article.show', compact('article'))->with('active', 'article');
     }
 
@@ -81,7 +81,7 @@ class ArticleController extends BaseController {
      */
     public function edit($id) {
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return View::make('backend.article.edit', compact('article'))->with('active', 'article');
     }
 
@@ -99,7 +99,7 @@ class ArticleController extends BaseController {
             'is_published' => Input::get('is_published')
         );
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         $article->title = $formData['title'];
         $article->content = $formData['content'];
         $article->is_published = ($formData['is_published']) ? true : false;
@@ -116,7 +116,7 @@ class ArticleController extends BaseController {
      */
     public function destroy($id) {
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         $article->delete();
 
         return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');;
@@ -124,13 +124,13 @@ class ArticleController extends BaseController {
 
     public function confirmDestroy($id) {
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return View::make('backend.article.confirm-destroy', compact('article'))->with('active', 'article');
     }
 
     public function togglePublish($id) {
 
-        $page = Article::find($id);
+        $page = Article::findOrFail($id);
 
         $page->is_published = ($page->is_published) ? false : true;
         $page->save();

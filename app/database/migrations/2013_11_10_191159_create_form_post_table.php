@@ -19,6 +19,7 @@ class CreateFormPostTable extends Migration {
             $table->string('sender_phone_number', 255);
             $table->string('subject', 255);
             $table->text('message');
+            $table->string('created_ip', 15);
             $table->timestamps();
         });
     }

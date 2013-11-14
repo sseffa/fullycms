@@ -7,7 +7,8 @@
 		"laravel/framework": "4.0.*",
 		"way/generators": "dev-master",
 		"cartalyst/sentry": "2.0.*",
-        "intervention/image": "dev-master"
+        "intervention/image": "dev-master",
+        "davejamesmiller/laravel-breadcrumbs": "dev-master"
     },
 	"autoload": {
 		"classmap": [

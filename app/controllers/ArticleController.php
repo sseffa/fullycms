@@ -21,7 +21,7 @@ class ArticleController extends BaseController {
      */
     public function show($id) {
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return View::make('frontend.article.show', compact('article'));
     }
 }

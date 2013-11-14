@@ -71,13 +71,13 @@
         <br>
 
         <!-- Message -->
-        <div class="control-group {{ $errors->has('message') ? 'has-error' : '' }}">
+        <div class="control-group {{ $errors->has('post') ? 'has-error' : '' }}">
             <label class="control-label" for="title">Message</label>
 
             <div class="controls">
-                {{ Form::textarea('message', null, array('class'=>'form-control', 'id' => 'message', 'placeholder'=>'Message', 'value'=>Input::old('message'))) }}
-                @if ($errors->first('message'))
-                <span class="help-block">{{ $errors->first('message') }}</span>
+                {{ Form::textarea('message', null, array('class'=>'form-control', 'id' => 'message-content', 'placeholder'=>'Message', 'value'=>Input::old('message'))) }}
+                @if ($errors->first('post'))
+                <span class="help-block">{{ $errors->first('post') }}</span>
                 @endif
             </div>
         </div>

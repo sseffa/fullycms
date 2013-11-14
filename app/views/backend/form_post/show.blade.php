@@ -20,6 +20,10 @@
             <table class="table table-striped">
                 <tbody>
                 <tr>
+                    <td><strong>IP</strong></td>
+                    <td>{{ $formPost->created_ip }}</td>
+                </tr>
+                <tr>
                     <td><strong>Name and Surname</strong></td>
                     <td>{{ $formPost->sender_name_surname }}</td>
                 </tr>

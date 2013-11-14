@@ -72,7 +72,7 @@ class PageController extends BaseController {
      */
     public function show($id) {
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         return View::make('backend.page.show', compact('page'))->with('active', 'page');
     }
 
@@ -84,7 +84,7 @@ class PageController extends BaseController {
      */
     public function edit($id) {
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         return View::make('backend.page.edit', compact('page'));
     }
 
@@ -103,7 +103,7 @@ class PageController extends BaseController {
             'is_in_menu'   => Input::get('is_in_menu')
         );
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         $page->title = $formData['title'];
         $page->content = $formData['content'];
         $page->is_published = ($formData['is_published']) ? true : false;
@@ -121,7 +121,7 @@ class PageController extends BaseController {
      */
     public function destroy($id) {
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         $page->delete();
 
         return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully deleted');;
@@ -129,7 +129,7 @@ class PageController extends BaseController {
 
     public function confirmDestroy($id) {
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         return View::make('backend.page.confirm-destroy', compact('page'))->with('active', 'page');
     }
 
@@ -145,7 +145,7 @@ class PageController extends BaseController {
 
     public function toggleMenu($id) {
 
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
 
         $page->is_in_menu = ($page->is_in_menu) ? false : true;
         $page->save();

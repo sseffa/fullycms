@@ -1,5 +1,11 @@
 @extends('frontend/layout')
 @section('content')
+<style>
+    pre code
+    {
+        diplay: none;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -14,11 +20,10 @@
     <div class="row">
         <div class="col-md-1">
             <p><i class="icon-file-text icon-4x"></i></p>
-            <p>{{  date("d M Y a\t H:i a",strtotime($article->created_at)) }}</p>
         </div>
-        <div class="col-md-11">
+        <div class="col-md-12">
             <h3><a href="#">{{ $article->title }}</a></h3>
-            <p>by <a href="#">Sefa</a></p>
+            <p>{{  date("d M Y a\t H:i a",strtotime($article->created_at)) }}</p><p>by <a href="#">Sefa</a></p>
             <p>{{{ mb_substr(strip_tags($article->content),0,600) }}}</p>
             {{ link_to_route( 'dashboard.article.show', 'Read More', $article->id, array( 'class' => 'btn btn-primary' )) }}
         </div>
@@ -27,3 +32,4 @@
     @endforeach
 </div>
 @stop
+

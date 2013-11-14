@@ -80,7 +80,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function show($id) {
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
         return View::make('backend.photo_gallery.show', compact('photo_gallery'))->with('active', 'photo_gallery');
     }
 
@@ -92,7 +92,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function edit($id) {
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
         $photos = Photo::where('photo_gallery_id', '=', $id)->get();
         return View::make('backend.photo_gallery.edit', compact('photo_gallery','photos'));
     }
@@ -112,7 +112,7 @@ class PhotoGalleryController extends BaseController {
             'is_in_menu'   => Input::get('is_in_menu')
         );
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
         $photo_gallery->title = $formData['title'];
         $photo_gallery->content = $formData['content'];
         $photo_gallery->is_published = ($formData['is_published']) ? true : false;
@@ -130,7 +130,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function destroy($id) {
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
         $photo_gallery->delete();
 
         // delete images db
@@ -151,13 +151,13 @@ class PhotoGalleryController extends BaseController {
 
     public function confirmDestroy($id) {
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
         return View::make('backend.photo_gallery.confirm-destroy', compact('photo_gallery'))->with('active', 'photo_gallery');
     }
 
     public function togglePublish($id) {
 
-        $photo_gallery = PhotoGallery::find($id);
+        $photo_gallery = PhotoGallery::findOrFail($id);
 
         $photo_gallery->is_published = ($photo_gallery->is_published) ? false : true;
         $photo_gallery->save();
@@ -189,7 +189,7 @@ class PhotoGalleryController extends BaseController {
             // resizing an uploaded file
             Image::make($destinationPath . $filename)->resize(150, 150)->save($destinationPath . "150x150_" . $filename);
 
-            $photo_gallery = PhotoGallery::find($id);
+            $photo_gallery = PhotoGallery::findOrFail($id);
             $image = new Photo;
             $image->file_name = $filename;
             $image->title = explode(".", $filename)[0];

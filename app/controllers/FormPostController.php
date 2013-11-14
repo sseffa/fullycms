@@ -45,6 +45,7 @@ class FormPostController extends BaseController {
         $formPost->sender_phone_number = $formData['sender_phone_number'];
         $formPost->subject = $formData['subject'];
         $formPost->message = $formData['post'];
+        $formPost->created_ip = Request::getClientIp();
 
         $formPost->save();
 
