@@ -34,4 +34,4 @@ Please check the system requirements before installing sf CMS.
 2. From a command line open in the folder, run `composer install`.  
 3. Enter your database details into `app/config/database.php`.  
 4. Run `php artisan app:install` to setup and seed your database.
-5. Default admin, email: admin@admin, password: admin
+5. Default admin, email: admin@admin.com, password: admin
