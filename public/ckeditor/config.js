@@ -3,13 +3,40 @@
  * For licensing, see LICENSE.html or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
+CKEDITOR.editorConfig = function (config) {
 
-	// Define changes to default configuration here. For example:
-	config.language = 'tr';
-	//config.uiColor = '#2a323a';
-	
-	config.resize_enabled = true;
+    // Define changes to default configuration here. For example:
+    config.language = 'tr';
+    //config.uiColor = '#2a323a';
 
+    config.resize_enabled = true;
 
+    // Toolbar groups configuration.
+    config.toolbarGroups = [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ] },
+        { name: 'forms' },
+        '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+        { name: 'links' },
+        { name: 'insert' },
+        '/',
+        { name: 'styles' },
+        { name: 'colors' },
+        { name: 'tools' },
+        { name: 'others' },
+        { name: 'about' },
+        { name: 'pbckcode' }
+    ];
+
+    config.extraPlugins = 'pbckcode';
+
+    //config.removeButtons = 'Underline,Subscript,Superscript';
+
+    config.pbckcode = {
+
+        highlighter: "PRETTIFY"
+    };
 };

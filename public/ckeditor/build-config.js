@@ -96,6 +96,7 @@ var CKBUILDER_CONFIG = {
 		'indent' : 1,
 		'menubutton' : 1,
 		'pbckcode' : 1
+		
 	},
 	languages : {
 		'af' : 1,

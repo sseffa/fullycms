@@ -1,0 +1,792 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lis",
+				"list-style"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"preg",
+				"preg_replace"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"Index",
+				"Indexblock"
+			],
+			[
+				"index",
+				"indexline"
+			],
+			[
+				"indexb",
+				"indexblock_id"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"inde",
+				"indexblock_id"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"connec",
+				"connected"
+			],
+			[
+				"remov",
+				"removeClass"
+			],
+			[
+				"icon",
+				"icon_path"
+			],
+			[
+				"Confi",
+				"Configure"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"chauff",
+				"chauffages"
+			],
+			[
+				"tempéra",
+				"températures"
+			],
+			[
+				"c",
+				"class	class …"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"flo",
+				"floorId"
+			],
+			[
+				"etag",
+				"etageActuel"
+			],
+			[
+				"do",
+				"données"
+			],
+			[
+				"Constru",
+				"construire"
+			],
+			[
+				"Shutter",
+				"Shutter"
+			],
+			[
+				"sta",
+				"stateUrl"
+			],
+			[
+				"Htt",
+				"HttpSocket"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"prin",
+				"print_r"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"snippet tb",
+				"Snippet: TB :: Exemple :: fluid"
+			],
+			[
+				"snippet tb ",
+				"Snippet: TB :: Dropdown :: submenu"
+			],
+			[
+				"Snippet tb ",
+				"Snippet: TB :: Alert :: block"
+			],
+			[
+				"Snippet TB",
+				"Snippet: TB :: Thumbnail"
+			],
+			[
+				"SNippet : TB",
+				"Snippet: TB :: tabbable"
+			],
+			[
+				"Snippet: TB",
+				"Snippet: TB :: Icon"
+			],
+			[
+				"Snippet : TB",
+				"Snippet: TB :: Button :: toolbar"
+			],
+			[
+				"Snippet",
+				"Snippet: TB :: Breadcrumb"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: tbhero"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"cake",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"packe",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 588.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Pierre/Sites/okimi-app/mockups/sass/foundation/components/modules/_tabs.scss",
+		"/Users/Pierre/Sites/okimi-app/mockups/sass/_settings.scss",
+		"/Users/Pierre/Sites/okimi-app/mockups/sass/app.scss",
+		"/Users/Pierre/Sites/okimi-app/mockups/index.html",
+		"/Users/Pierre/GitHub/pbckcode/dialogs/ace/ace.js",
+		"/Users/Pierre/Dropbox/sql_dump/pierrebaron_11-02-2013_22-30-21.sql",
+		"/Users/Pierre/Dropbox/sql_dump/pierrebanperso_09-02-2013_03-00-03.sql",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Comments/edit.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Users/admin_dashboard.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Comments/admin_show.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Comments/admin_index.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Emails/html/comment.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Posts/show.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/Model/Comment.php",
+		"/Users/Pierre/Sites/pierrebaron/app/Controller/CommentsController.php",
+		"/Users/Pierre/Dropbox/sql_dump/pierrebanperso_11-02-2013_21-51-02.sql",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Settings/admin_index.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/Controller/SettingsController.php",
+		"/Users/Pierre/Sites/pierrebaron/app/Model/Setting.php",
+		"/Users/Pierre/Dropbox/sql_dump/pierrebanperso_07-02-2013_03-00-03.sql",
+		"/Users/Pierre/Sites/pierrebaron/app/Controller/TwitterController.php",
+		"/Users/Pierre/Sites/pierrebaron/app/Model/Twitter.php",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Elements/twitter.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/Lib/PBTwitter.php",
+		"/Users/Pierre/Sites/pierrebaron/app/View/Elements/sidebar.ctp",
+		"/Users/Pierre/Sites/pierrebaron/.htaccess",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Pierre/Sites/pierrebaron/pierrebaron.sublime-project",
+		"/Users/Pierre/Sites/pierrebaron/app/Config/database.php",
+		"/Users/Pierre/Sites/pierrebaron/app/Config/core.php",
+		"/Users/Pierre/Sites/pierrebaron/pierrebaron.sublime-workspace",
+		"/Users/Pierre/Desktop/db389709333_04-02-2013_03-00-03.sql",
+		"/Users/Pierre/Sites/archives/saia/app/View/Lights/index.ctp",
+		"/Users/Pierre/Sites/pierrebaron/app/webroot/css/style.css",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Pierre/Github/CakePHP-Install/README.md",
+		"/Users/Pierre/Desktop/test.md",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbalert.sublime-snippet",
+		"/Users/Pierre/GitHub/Twitter-Bootstrap-snippets/Readme.md",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbcontainer.sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbtypeahead.sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbinput-append-button",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbtypomuted.sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbstarter.sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbfluid.sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbhero.sublime-snippet",
+		"/Users/Pierre/Desktop/untitled.html",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbhero",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/PHP/$_GET[''].sublime-snippet",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/User/PBTwitterBootstrap/tbfluid",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/PHP/require_once(-).sublime-snippet",
+		"/Users/Pierre/Sites/file/upload.php",
+		"/Users/Pierre/Sites/file/index.html",
+		"/Users/Pierre/Sites/saia/app/Config/database.php",
+		"/Users/Pierre/Sites/saia/app/Config/core.php",
+		"/Users/Pierre/Downloads/db389709333.db.1and1.com.sql",
+		"/Users/Pierre/Library/Application Support/Sublime Text 2/Packages/CSScomb/Default (OSX).sublime-keymap",
+		"/Users/Pierre/Sites/saia/app/View/Users/edit.ctp",
+		"/Users/Pierre/GitHub/Install-CakePHP-Plugin/Install/View/Install/connection.ctp",
+		"/Users/Pierre/GitHub/Install-CakePHP-Plugin/Install/View/Install/database.ctp",
+		"/Users/Pierre/Sites/saia/app/Controller/AppController.php",
+		"/Users/Pierre/Sites/saia/app/project.sublime-workspace",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/WeatherData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/UserData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/ShutterData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/PageData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/MenuData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/LightData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/ImageShutterData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/ImageLightData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/HeatData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/FloorData.php",
+		"/Users/Pierre/Sites/saia/app/Plugin/Install/Config/data/CameraData.php",
+		"/Users/Pierre/Sites/saia/app/Config/Schema/Schema.php",
+		"/Users/Pierre/Sites/saia/app/View/Heats/admin_index.ctp",
+		"/Users/Pierre/Sites/saia/app/View/Heats/edit.ctp",
+		"/Users/Pierre/Sites/saia/app/webroot/css/admin.css",
+		"/Users/Pierre/Sites/saia/app/Controller/HeatsController.php",
+		"/Users/Pierre/Sites/saia/app/View/Heats/index.ctp",
+		"/C/wamp/www/saia/app/View/Settings/admin_index.ctp",
+		"/C/wamp/www/saia/app/View/Heats/admin_index.ctp",
+		"/C/wamp/www/saia/app/Config/Schema/Schema.php",
+		"/C/wamp/www/saia/app/webroot/css/themes/TwitterBootstrap/style.css",
+		"/C/wamp/www/saia/app/Plugin/Install/Config/data/HeatData.php",
+		"/D/Mes Documents/Downloads/heats.php",
+		"/C/Documents and Settings/Administrateur/Bureau/Project Wieckert_20111024_1214/CPU1/html/style.css",
+		"/C/Documents and Settings/Administrateur/Bureau/Project Wieckert_20111024_1214/CPU1/html/script.js",
+		"/C/Documents and Settings/Administrateur/Bureau/Project Wieckert_20111024_1214/CPU1/html/mobile.js",
+		"/C/wamp/www/saia/app/webroot/js/user.js",
+		"/C/wamp/www/saia/app/View/Heats/index.ctp",
+		"/C/wamp/www/saia/app/Model/Heat.php",
+		"/C/wamp/www/saia/app/Controller/HeatsController.php",
+		"/C/wamp/www/saia/app/View/Curves/admin_edit.ctp",
+		"/C/wamp/www/saia/app/Controller/IndexController.php",
+		"/C/wamp/www/saia/app/View/Index/admin_index.ctp",
+		"/C/wamp/www/saia/app/Model/AppModel.php",
+		"/C/wamp/www/saia/app/Model/Index.php",
+		"/C/wamp/www/saia/lib/Cake/View/Helper/FormHelper.php",
+		"/C/wamp/www/saia/app/View/Index/index.ctp",
+		"/C/wamp/www/saia/app/View/Lights/index.ctp",
+		"/C/wamp/www/saia/app/View/Layouts/default.ctp",
+		"/C/wamp/www/saia/app/View/Index/admin_edit.ctp",
+		"/C/wamp/www/saia/app/webroot/css/admin.css",
+		"/C/wamp/www/saia/app/Controller/IndexlinesController.php",
+		"/C/wamp/www/saia/app/View/Elements/user_menu.ctp",
+		"/C/wamp/www/saia/app/View/Helper/IndexHelper.php",
+		"/C/wamp/www/saia/app/View/Helper/IseaFormHelper.php",
+		"/D/_GEST_SUIVI_06/CL3246-ARTI/P1012016-CHA/100/100_01/script.js",
+		"/C/wamp/www/saia/app/View/Indexlines/admin_edit.ctp",
+		"/C/wamp/www/saia/app/Model/Indexblock.php",
+		"/C/wamp/www/saia/app/Model/Indexline.php",
+		"/C/wamp/www/saia/app/View/Indexblocks/admin_edit.ctp",
+		"/C/wamp/www/saia/app/Controller/IndexblocksController.php",
+		"/C/wamp/www/saia/app/View/Cameras/admin_edit.ctp",
+		"/C/wamp/www/saia/app/Config/core.php",
+		"/C/wamp/www/saia/app/Model/Camera.php",
+		"/C/wamp/www/saia/app/Controller/AppController.php",
+		"/C/wamp/www/saia/app/Controller/WeathersController.php",
+		"/C/wamp/www/saia/app/Lib/SaiaCommunicator.php",
+		"/C/wamp/www/saia/app/View/Errors/missing_isea_connection.ctp",
+		"/C/wamp/www/saia/app/Lib/exceptions.php",
+		"/C/wamp/www/saia/app/webroot/js/admin.js",
+		"/C/Documents and Settings/Administrateur/Bureau/Project maquette_site2_v01_20120523_1417/CPU1/html/chauffage_rdc.html",
+		"/C/wamp/www/saia/app/Controller/ShuttersController.php",
+		"/C/wamp/www/saia/app/Controller/LightsController.php",
+		"/C/wamp/www/saia/app/Model/Light.php",
+		"/C/wamp/www/saia/app/Model/Shutter.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\wamp\\www\\saia\\app\\webroot\\css\\themes\\img",
+			"C:\\wamp\\www\\saia\\app\\webroot\\img",
+			"C:\\wamp\\www\\saia\\app\\webroot\\css"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"left",
+			"contain",
+			"content",
+			"$e",
+			"$t",
+			"'null' =&gt; false, \\'default\\' =&gt; NULL, \\'length\\' =&gt; '10', \\'key\\' =&gt; '",
+			"value",
+			"inline-label",
+			"label-mode",
+			"label-address",
+			"array(",
+			"\n",
+			"tap",
+			"\"",
+			")) ",
+			"bloc",
+			"index",
+			"postButton",
+			"Indexblock",
+			"Block",
+			"Indexblock",
+			"indexblock_id",
+			"Block",
+			"'blocks'",
+			"Block",
+			"block_id",
+			"_blocks",
+			"Block",
+			"help-inline",
+			"MissingKnxConnectionException",
+			"MissingConnectionException",
+			"MissingSaiaConnectionException",
+			"Light",
+			"nav-collap",
+			"/img/",
+			"img/",
+			"../img/",
+			"timer",
+			"\"\n",
+			"$v",
+			"		\n",
+			"Light",
+			"'Light'",
+			"$this->request->alias",
+			"Light",
+			"Shutter",
+			"/**\n	 * Test si l'adresse entree est bien une adresse SAIA\n	 */\n	public function isValidAddress($light){\n		//on recupere toutes les donnes du formulaires\n		$field = array_values($light);\n		//on ne prend que le champ image_xx (image_on ou image_off)\n        $field = $field[0];\n\n		if(!empty($field)) {\n\n			return preg_match($this->saiaRegex, $field);\n		} else {\n			return true;\n		}\n	}",
+			"UTF",
+			"stat",
+			"command",
+			"commandeChauffage",
+			"			));",
+			"$object[$object]",
+			"Light",
+			"response",
+			"room_id",
+			"Shutter",
+			"volet",
+			"Light",
+			"script",
+			"image_light_id",
+			"é",
+			"IMG_LIGHTS",
+			"<?php\n/**\n *\n * Connection.ctp\n *\n * Copyright 20012-2012, ISEA Ingenierie\n *\n *\n * @copyright     Copyright 20012-2012, ISEA Ingenierie\n * @link          http://www.isea-ingenierie.com\n * @package       Cake.Plugin.Config.View.Install\n * @since         May 2012\n * @version       1.0\n */\n?>\n\n",
+			"Flo",
+			"a",
+			"index",
+			"				",
+			"			//$",
+			"			",
+			"define",
+			"section",
+			"222",
+			"555",
+			"333",
+			"etage",
+			"helpers",
+			"public ",
+			"=>",
+			"INT",
+			"FbDPT_Switch",
+			"ALARME",
+			"xSwitch_OUT",
+			"FbDPT_Switch",
+			"ALARME",
+			"xSwitch_OUT",
+			"ALARME",
+			"ALARM",
+			"AT %MX[0-9]+.0	: BOOL;",
+			"ALARME",
+			"%MX",
+			"DPT1",
+			"	",
+			"AT %MX[0-9]+	: INT;",
+			"TEMPERATURE",
+			"	",
+			"AT %MX[0-9]+	: BYTE;",
+			"REGIME_",
+			"	",
+			"AT %MX[0-9]+	: BYTE;",
+			"REGIME_",
+			"	",
+			"AT %MX[0-9]+	: BYTE;",
+			"	",
+			"DPT1",
+			"DPT[0-9]+",
+			".0",
+			"							",
+			"								",
+			"AT %MX1[0-9]+.0",
+			"ALARME",
+			"AT %MX[0-9]{2}.0",
+			": BOOL;",
+			"AT %MX[1-9]{1,2}.0",
+			"BYTE",
+			"MX3",
+			"REGIME",
+			"BYTE",
+			"MX2",
+			"REGIME",
+			"ALARME",
+			"MX1",
+			".0",
+			"BOOL",
+			".0",
+			"MX",
+			"ALARME",
+			".0"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"message",
+			"$entry",
+			"$table",
+			"temp",
+			"\n\nlabel-inline",
+			"\n\nlabel-heat-mode",
+			"\n\nlabel-heat-address",
+			"\n\n",
+			"\\\"",
+			"ligne",
+			"Indexline",
+			"indexline_id",
+			"Indexblock",
+			"'indexblocks'",
+			"IndexBlock",
+			"indexblock_id",
+			"_indexblocks",
+			"Indexblock",
+			"help-block",
+			"MissingIseaConnectionException",
+			"MissingConnectionException",
+			"Shutter",
+			"img/",
+			"/img/",
+			"img/",
+			"shutterTimer",
+			"$block",
+			"Index",
+			"'Index'",
+			"'User'",
+			"'Shutter'",
+			"'Setting'",
+			"'Page'",
+			"'Menu'",
+			"'Light'",
+			"'ImageShutter'",
+			"'ImageLight'",
+			"'Heat'",
+			"'Camera'",
+			"'Floor'",
+			"Block",
+			"Heat",
+			"$object",
+			"Camera",
+			"Shutter",
+			"e",
+			"555",
+			"666",
+			"555",
+			"",
+			":=",
+			"REAL",
+			"FbDPT_Value_Temp",
+			"TEMPERATURE",
+			"rValue_OUT",
+			"FbDPT_Status_Mode3",
+			"REGIME",
+			"bMode_IN",
+			"REGIME",
+			"ALARME",
+			": FbDPT_Switch;",
+			"FB_ALARM",
+			"%MW",
+			"DPT",
+			"",
+			" );",
+			"FbDPT_Value_Temp( typDPT:= DPT1, typKNX:= typKNX, rValue_OUT=> TEMPERATURE",
+			"",
+			" );",
+			"FbDPT_Status_Mode3( typDPT:= DPT, typKNX:= typKNX, bMode_IN:= REGIME_",
+			"",
+			",	typDPT:= DPT, typKNX:= typKNX );",
+			"FbDPT_Status_Mode3( bMode_IN:= REGIME_",
+			"",
+			"DPT",
+			"DPT[0-9]+",
+			"",
+			" );",
+			"FbDPT_Switch( typDPT:= DPT1, typKNX:= typKNX, xSwitch_OUT=> ALARME",
+			"",
+			"INT",
+			"MX5",
+			"TEMPERATURE",
+			"INT",
+			"MX4",
+			"TEMPERATURE",
+			"REGIME",
+			"MX3",
+			"",
+			"BYTE",
+			"",
+			"MX2",
+			"REGIME",
+			"",
+			"REGIME",
+			": BYTE",
+			""
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dash",
+				"app/View/Users/admin_dashboard.ctp"
+			],
+			[
+				"show",
+				"app/View/Posts/show.ctp"
+			],
+			[
+				"settings/",
+				"app/View/Settings/admin_index.ctp"
+			],
+			[
+				"setting",
+				"app/Controller/SettingsController.php"
+			],
+			[
+				"twitter",
+				"app/Controller/TwitterController.php"
+			],
+			[
+				"tw",
+				"app/Model/Twitter.php"
+			],
+			[
+				"side",
+				"app/View/Elements/sidebar.ctp"
+			],
+			[
+				"pbt",
+				"app/Lib/PBTwitter.php"
+			],
+			[
+				"da",
+				"Config/database.php"
+			],
+			[
+				"post",
+				"View/Posts/show.ctp"
+			],
+			[
+				"floor",
+				"Plugin/Install/Config/data/FloorData.php"
+			],
+			[
+				"lightda",
+				"Plugin/Install/Config/data/LightData.php"
+			],
+			[
+				"admin_edit",
+				"View/Floors/admin_edit.ctp"
+			],
+			[
+				"user",
+				"Model/User.php"
+			],
+			[
+				"light",
+				"Model/Light.php"
+			],
+			[
+				"lights",
+				"Controller/LightsController.php"
+			],
+			[
+				"users",
+				"Controller/UsersController.php"
+			],
+			[
+				"floors",
+				"Controller/FloorsController.php"
+			],
+			[
+				"admin.js",
+				"webroot/js/admin.js"
+			],
+			[
+				"adm",
+				"webroot/js/admin.js"
+			],
+			[
+				"admin.css",
+				"webroot/css/admin.css"
+			],
+			[
+				"index",
+				"View/Lights/index.ctp"
+			],
+			[
+				"index.ctp",
+				"View/Lights/index.ctp"
+			],
+			[
+				"l",
+				"Model/Light.php"
+			],
+			[
+				"admin_place",
+				"View/Lights/admin_place.ctp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/wamp/www/saia/documentation/documentation.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true
+}

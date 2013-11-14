@@ -1,6 +1,9 @@
 @extends('frontend/layout')
 @section('content')
 {{ HTML::style('/ckeditor/contents.css') }}
+
+{{ HTML::style('/bootstrap/css/prettify.css') }}
+{{ HTML::script('/bootstrap/js/prettify.js') }}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -55,4 +58,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    !function ($) {
+        $(function () {
+            window.prettyPrint && prettyPrint()
+        })
+    }(window.jQuery)
+</script>
 @stop
