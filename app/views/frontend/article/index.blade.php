@@ -10,10 +10,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Blog</h1>
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Blog</li>
-            </ol>
+            @yield('partial/breadcrumbs', Breadcrumbs::render('blog', $articles))
         </div>
     </div>
     @foreach( $articles as $article )

@@ -8,10 +8,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header"><small>{{ $article->title }}</small></h1>
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Blog Post</li>
-            </ol>
+            @yield('partial/breadcrumbs', Breadcrumbs::render('blog.post.show', $article))
         </div>
     </div>
     <div class="row">
