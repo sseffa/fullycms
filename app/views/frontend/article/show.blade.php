@@ -15,7 +15,7 @@
         <div class="col-lg-12">
             <p><i class="icon-time"></i> Posted on {{ $article->created_at }} by <a href="www.sefakaragoz.com">Sefa</a>
             </p>
-            <p class="lead">{{ $article->content }}</p>
+            {{ $article->content }}
         </div>
     </div>
 </div>

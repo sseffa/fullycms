@@ -44,9 +44,7 @@
                         <td>{{{ $user->email }}}</td>
                         <td>{{{ $user->created_at }}}</td>
                         <td>{{{ $user->last_login }}}</td>
-                        <td>
-                            </a>
-
+                        <td>                         
                             <div class="btn-group">
                                 <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
                                     Action
@@ -84,6 +82,7 @@
     <div class="pull-left">
         <ul class="pagination">
             {{ $users->links() }}
+        </ul>
     </div>
 </div>
 @stop

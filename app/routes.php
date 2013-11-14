@@ -17,7 +17,7 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/sefa', array('as' => 'dashboard', function () {
+Route::get('/', array('as' => 'dashboard', function () {
 
     return View::make('frontend/dashboard');
 }));

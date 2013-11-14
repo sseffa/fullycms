@@ -19,11 +19,7 @@
                 @foreach(PhotoGallery::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $photo_gallery)
                 <li>{{ link_to_route( 'dashboard.photo_gallery.show', e($photo_gallery->title), $photo_gallery->id) }}</li>
                 @endforeach
-                <li> {{ HTML::link('/contact','Contact') }}</li>
-                <li>{{ HTML::link('/admin/login', ((Sentry::check()) ? ( Sentry::getUser()->email) : 'Login')) }}</li>
-                @if(Sentry::check())
-                <li>{{ HTML::link('admin/logout','Logout') }}</li>
-                @endif
+                <li> {{ HTML::link('/contact','Contact') }}</li>  
             </ul>
         </div>
     </div>

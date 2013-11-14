@@ -19,13 +19,13 @@
                     <ul class="dropdown-menu">
                         <li>{{ HTML::link('/admin/home-slider','Home Slider') }}</li>
                     </ul>
-                </li>
-                <li @if(isset($active) && $active=="user") class="active" @endif>{{ HTML::link('/admin/user','User') }}</li>
+                </li>               
                 <li @if(isset($active) && $active=="form-post") class="active" @endif>{{ HTML::link('/admin/form-post','Form Post') }}</li>
+                 <li @if(isset($active) && $active=="user") class="active" @endif>{{ HTML::link('/admin/user','User') }}</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li @if(isset($active) && $active=="settings") class="active" @endif>{{ HTML::link('/admin/settings','Settings') }}</li>
-                <li>{{ HTML::link('/','View Site') }}</li>
+                <li>{{ HTML::link('/','[View Site]') }}</li>
                 <li>{{ HTML::link('admin/logout','Logout') }}</li>
             </ul>
         </div>
