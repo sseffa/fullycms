@@ -36,7 +36,7 @@ Route::get('/photo_gallery/{id}/show', array('as' => 'dashboard.photo_gallery.sh
 
 // contact
 Route::get('/contact', array('as' => 'dashboard.contact', 'uses' => 'FormPostController@getContact'));
-Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'));
+Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 
 /*
 |--------------------------------------------------------------------------

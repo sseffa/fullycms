@@ -9,7 +9,8 @@ class ArticleController extends BaseController {
      */
     public function index() {
 
-        $articles = Article::orderBy('created_at', 'DESC')->where('is_published', 1)
+        $articles = Article::orderBy('created_at', 'DESC')
+            ->where('is_published', 1)
             ->paginate(15);
 
         return View::make('frontend.article.index', compact('articles'));
