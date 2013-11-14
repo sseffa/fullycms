@@ -17,7 +17,7 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', array('as' => 'dashboard', function () {
+Route::get('/sefa', array('as' => 'dashboard', function () {
 
     return View::make('frontend/dashboard');
 }));
@@ -115,7 +115,12 @@ Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Cont
 |--------------------------------------------------------------------------
 */
 
-//App::abort(404, 'Page not found');
+App::error(function (Exception $exception) {
+
+    Log::error($exception);
+
+    return "error";
+});
 
 App::missing(function () {
 

@@ -17,7 +17,6 @@ Breadcrumbs::register('blog.post.show', function ($breadcrumbs, $article) {
     $breadcrumbs->push($article->title, route('dashboard.article.show', $article->id));
 });
 
-
 Breadcrumbs::register('page.show', function ($breadcrumbs, $page) {
 
     $breadcrumbs->parent('home');

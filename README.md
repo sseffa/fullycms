@@ -4,21 +4,23 @@ sf CMS
 ## Features
 
 * Twitter Bootstrap 3.0.0
-* Custom Error Pages	
 * 404 for not found pages	
 * Authentication Sentry 2
 * Ckeditor
+* Bootstrap Code Prettify
 * File Manager
 * Dropzone.js
 * Backend	
   * Manage article
   * Manage page
   * Manage photo gallery
-  * CKE editor for post creation and editing (Filemanager).
+  * CKE editor for post creation and editing (file manager)
 * Frontend
   * Article 
   * Page
   * Photo Gallery
+  * Contact Form
+  * Breadcrumbs
 
 ## Installation
 
