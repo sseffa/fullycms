@@ -3,6 +3,7 @@
 {{ HTML::script('ckeditor/ckeditor.js') }}
 
 {{ HTML::style('bootstrap/css/bootstrap-tagsinput.css') }}
+{{ HTML::script('bootstrap/js/typeahead.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap-tagsinput.js') }}
 <div class="container">
     <div class="page-header">
@@ -128,16 +129,9 @@
         $(document).ready(function () {
 
             if ($('#tag').length != 0) {
-                var elt = $('#blogtags');
+                var elt = $('#tag');
                 elt.tagsinput();
-                elt.tagsinput('input').typeahead({
-                    prefetch: '/blog/cats.json'
-                }).bind('typeahead:selected', $.proxy(function (obj, datum) {
-                        this.tagsinput('add', datum.value);
-                        this.tagsinput('input').typeahead('setQuery', '');
-                    }, elt));
             }
-
         });
     </script>
 </div>

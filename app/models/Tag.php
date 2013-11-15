@@ -6,6 +6,6 @@ class Tag extends Eloquent {
 
     public function articles() {
 
-        return $this->belongsToMany('Article');
+        return $this->belongsToMany('Article', 'articles_tags');
     }
 }

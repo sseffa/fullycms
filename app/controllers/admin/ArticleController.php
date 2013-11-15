@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Article, Response;
+use BaseController, Redirect, View, Input, Validator, Article, Response, Tag, Str;
 
 class ArticleController extends BaseController {
 
@@ -36,9 +36,14 @@ class ArticleController extends BaseController {
     public function store() {
 
         $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published')
+            'title'            => Input::get('title'),
+            'slug'             => Input::get('slug'),
+            'tag'              => Input::get('tag'),
+            'content'          => Input::get('content'),
+            'meta_title'       => Input::get('meta_title'),
+            'meta_keywords'    => Input::get('meta_keywords'),
+            'meta_description' => Input::get('meta_description'),
+            'is_published'     => Input::get('is_published')
         );
 
         $rules = array(
@@ -54,9 +59,23 @@ class ArticleController extends BaseController {
 
         $article = new Article();
         $article->title = $formData['title'];
+        $article->slug = $formData['slug'];
         $article->content = $formData['content'];
+        $article->meta_title = $formData['meta_title'];
+        $article->meta_keywords = $formData['meta_keywords'];
+        $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;
         $article->save();
+
+        $articleTags = explode(',', $formData['tag']);
+
+        foreach ($articleTags as $articleTag) {
+
+            $tag = new Tag;
+            $tag->name = $articleTag;
+            $tag->slug = Str::slug($articleTag);
+            $article->tags()->save($tag);
+        }
 
         return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully added');
     }
