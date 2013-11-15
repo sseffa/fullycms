@@ -20,7 +20,7 @@ class ArticleController extends BaseController {
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function show($id) {
+    public function show($id, $slug = null) {
 
         $article = Article::findOrFail($id);
         return View::make('frontend.article.show', compact('article'));

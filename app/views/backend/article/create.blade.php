@@ -28,6 +28,7 @@
         </div>
     </div>
     <br>
+
     <!-- Slug -->
     <div class="control-group {{ $errors->has('slug') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Slug</label>

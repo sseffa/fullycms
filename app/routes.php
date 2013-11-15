@@ -24,7 +24,7 @@ Route::get('/', array('as' => 'dashboard', function () {
 
 // article
 Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
-Route::get('/article/{id}/show', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
+Route::get('/article/{id}/{slug}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
 
 // page
 Route::get('/page', array('as' => 'dashboard.page', 'uses' => 'PageController@index'));

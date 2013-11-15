@@ -14,7 +14,7 @@ Breadcrumbs::register('blog', function ($breadcrumbs) {
 Breadcrumbs::register('blog.post.show', function ($breadcrumbs, $article) {
 
     $breadcrumbs->parent('blog');
-    $breadcrumbs->push($article->title, route('dashboard.article.show', $article->id));
+    $breadcrumbs->push($article->title, route('dashboard.article.show', array($article->id, $article->slug)));
 });
 
 Breadcrumbs::register('page.show', function ($breadcrumbs, $page) {

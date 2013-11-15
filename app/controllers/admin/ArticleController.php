@@ -101,7 +101,14 @@ class ArticleController extends BaseController {
     public function edit($id) {
 
         $article = Article::findOrFail($id);
-        return View::make('backend.article.edit', compact('article'))->with('active', 'article');
+
+        $tags = null;
+        foreach ($article->tags as $tag) {
+            $tags .= ',' . $tag->name;
+        }
+        $tags = substr($tags, 1);
+
+        return View::make('backend.article.edit', compact('article', 'tags'))->with('active', 'article');
     }
 
     /**
@@ -113,17 +120,37 @@ class ArticleController extends BaseController {
     public function update($id) {
 
         $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published')
+            'title'            => Input::get('title'),
+            'slug'             => Input::get('slug'),
+            'tag'              => Input::get('tag'),
+            'content'          => Input::get('content'),
+            'meta_title'       => Input::get('meta_title'),
+            'meta_keywords'    => Input::get('meta_keywords'),
+            'meta_description' => Input::get('meta_description'),
+            'is_published'     => Input::get('is_published')
         );
 
         $article = Article::findOrFail($id);
         $article->title = $formData['title'];
+        $article->slug = $formData['slug'];
         $article->content = $formData['content'];
+        $article->meta_title = $formData['meta_title'];
+        $article->meta_keywords = $formData['meta_keywords'];
+        $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;
-
         $article->save();
+
+        $articleTags = explode(',', $formData['tag']);
+
+        $article->tags()->detach();
+        foreach ($articleTags as $articleTag) {
+
+            $tag = new Tag;
+            $tag->name = $articleTag;
+            $tag->slug = Str::slug($articleTag);
+            $article->tags()->save($tag);
+        }
+
         return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully updated');;
     }
 
