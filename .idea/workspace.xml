@@ -82,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="32" selection-start="0" selection-end="1583" vertical-scroll-proportion="0.0">
+            <state line="48" column="0" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.9148191">
               <folding />
             </state>
           </provider>
@@ -100,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="23" selection-start="925" selection-end="925" vertical-scroll-proportion="0.44807467">
+            <state line="22" column="47" selection-start="0" selection-end="1627" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,8 +141,8 @@
         <option value="$PROJECT_DIR$/app/controllers/TagController.php" />
         <option value="$PROJECT_DIR$/app/controllers/ArticleController.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
       </list>
     </option>
   </component>
@@ -590,16 +590,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="32" selection-start="0" selection-end="1583" vertical-scroll-proportion="0.0">
+        <state line="22" column="47" selection-start="0" selection-end="1627" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="925" selection-end="925" vertical-scroll-proportion="0.44807467">
+        <state line="48" column="0" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.9148191">
           <folding />
         </state>
       </provider>
