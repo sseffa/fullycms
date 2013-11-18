@@ -1,7 +1,9 @@
 @extends('frontend/layout')
 @section('content')
 {{ HTML::style('/ckeditor/contents.css') }}
-{{ HTML::style('/boostrap/custom_style.css') }}
+{{ HTML::style('/bootstrap/css/custom_style.css') }}
+{{ HTML::style('/bootstrap/css/prettify.css') }}
+{{ HTML::script('/bootstrap/js/prettify.js') }}
 <div class="container">
     <div class="row">
         <div class="col-lg12">

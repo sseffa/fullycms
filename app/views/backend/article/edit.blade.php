@@ -5,6 +5,12 @@
 {{ HTML::style('bootstrap/css/bootstrap-tagsinput.css') }}
 {{ HTML::script('bootstrap/js/typeahead.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap-tagsinput.js') }}
+{{ HTML::script('bootstrap/js/jquery.slug.js') }}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#title").slug();
+    });
+</script>
 <div class="container">
     <div class="page-header">
         <h3>
@@ -28,7 +34,7 @@
     </div>
     <br>
 
-     <!-- Slug -->
+    <!-- Slug -->
     <div class="control-group {{ $errors->has('slug') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Slug</label>
 
@@ -54,7 +60,7 @@
     </div>
     <br>
 
-     <!-- Content -->
+    <!-- Content -->
     <div class="control-group {{ $errors->has('content') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Content</label>
 
@@ -67,7 +73,7 @@
     </div>
     <br>
 
-      <!-- Meta Title -->
+    <!-- Meta Title -->
     <div class="control-group {{ $errors->has('meta_title') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Meta Title</label>
 

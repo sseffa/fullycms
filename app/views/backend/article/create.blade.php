@@ -7,9 +7,9 @@
 {{ HTML::script('bootstrap/js/bootstrap-tagsinput.js') }}
 {{ HTML::script('bootstrap/js/jquery.slug.js') }}
 <script type="text/javascript">
-$(document).ready(function () {
-    $("#title").slug();
-});
+    $(document).ready(function () {
+        $("#title").slug();
+    });
 </script>
 <div class="container">
     <div class="page-header">
@@ -126,7 +126,7 @@ $(document).ready(function () {
     <br>
     {{ Form::submit('Create', array('class' => 'btn btn-success')) }}
     {{ Form::close() }}
-    <script>
+    <script type="text/javascript">
         window.onload = function () {
             CKEDITOR.replace('content', {
                 "filebrowserBrowseUrl": "{{ url('filemanager/show') }}"
