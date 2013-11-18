@@ -5,6 +5,12 @@
 {{ HTML::style('bootstrap/css/bootstrap-tagsinput.css') }}
 {{ HTML::script('bootstrap/js/typeahead.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap-tagsinput.js') }}
+{{ HTML::script('bootstrap/js/jquery.slug.js') }}
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#title").slug();
+});
+</script>
 <div class="container">
     <div class="page-header">
         <h3>
@@ -34,7 +40,7 @@
         <label class="control-label" for="title">Slug</label>
 
         <div class="controls">
-            {{ Form::text('slug', null, array('class'=>'form-control', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+            {{ Form::text('slug', null, array('class'=>'form-control slug', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
             @if ($errors->first('slug'))
             <span class="help-block">{{ $errors->first('slug') }}</span>
             @endif
