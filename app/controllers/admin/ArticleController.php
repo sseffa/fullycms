@@ -71,7 +71,11 @@ class ArticleController extends BaseController {
 
         foreach ($articleTags as $articleTag) {
 
-            $tag = new Tag;
+            $tag = Tag::where('name', '=', $articleTag)->first();
+
+            if (!$tag)
+                $tag = new Tag;
+
             $tag->name = $articleTag;
             $tag->slug = Str::slug($articleTag);
             $article->tags()->save($tag);
@@ -145,7 +149,14 @@ class ArticleController extends BaseController {
         $article->tags()->detach();
         foreach ($articleTags as $articleTag) {
 
-            $tag = new Tag;
+            if (!$articleTag)
+                continue;
+
+            $tag = Tag::where('name', '=', $articleTag)->first();
+
+            if (!$tag)
+                $tag = new Tag;
+
             $tag->name = $articleTag;
             $tag->slug = Str::slug($articleTag);
             $article->tags()->save($tag);
@@ -163,6 +174,7 @@ class ArticleController extends BaseController {
     public function destroy($id) {
 
         $article = Article::findOrFail($id);
+        $article->tags()->detach();
         $article->delete();
 
         return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');;

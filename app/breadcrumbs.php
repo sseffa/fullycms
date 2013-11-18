@@ -20,7 +20,7 @@ Breadcrumbs::register('blog.post.show', function ($breadcrumbs, $article) {
 Breadcrumbs::register('page.show', function ($breadcrumbs, $page) {
 
     $breadcrumbs->parent('home');
-    $breadcrumbs->push($page->title, route('dashboard.article.show', $page->id));
+    $breadcrumbs->push($page->title, route('dashboard.page.show', $page->id));
 });
 
 Breadcrumbs::register('contact', function ($breadcrumbs) {
