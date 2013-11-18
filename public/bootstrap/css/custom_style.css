@@ -1,3 +1,51 @@
 body {
     padding-top: 100px;
 }
+
+.tagcloud {
+    margin-bottom: -2px;
+    overflow: hidden;
+}
+
+.tagcloud a:before {
+    background: none repeat scroll 0 0 #FFFFFF;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.tagcloud a:after {
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: -2px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+}
+
+.tagcloud a {
+    background: none repeat scroll 0 0 #F7F6EF;
+    border: 1px solid #D6D6D6;
+    border-radius: 2px;
+    color: #525252;
+    display: inline-block;
+    float: left;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px !important;
+    line-height: 26px;
+    margin-bottom: 5px;
+    margin-right: 4px;
+    padding: 0 12px;
+    position: relative;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.tagcloud a:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    text-decoration: none
+}

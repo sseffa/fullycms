@@ -23,6 +23,8 @@ class ArticleController extends BaseController {
     public function show($id, $slug = null) {
 
         $article = Article::findOrFail($id);
-        return View::make('frontend.article.show', compact('article'));
+        $tags = Tag::with('articles')->get();
+
+        return View::make('frontend.article.show', compact('article', 'tags'));
     }
 }

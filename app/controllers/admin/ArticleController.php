@@ -71,10 +71,11 @@ class ArticleController extends BaseController {
 
         foreach ($articleTags as $articleTag) {
 
+            if (!$articleTag) continue;
+
             $tag = Tag::where('name', '=', $articleTag)->first();
 
-            if (!$tag)
-                $tag = new Tag;
+            if (!$tag) $tag = new Tag;
 
             $tag->name = $articleTag;
             $tag->slug = Str::slug($articleTag);
@@ -149,13 +150,11 @@ class ArticleController extends BaseController {
         $article->tags()->detach();
         foreach ($articleTags as $articleTag) {
 
-            if (!$articleTag)
-                continue;
+            if (!$articleTag) continue;
 
             $tag = Tag::where('name', '=', $articleTag)->first();
 
-            if (!$tag)
-                $tag = new Tag;
+            if (!$tag) $tag = new Tag;
 
             $tag->name = $articleTag;
             $tag->slug = Str::slug($articleTag);

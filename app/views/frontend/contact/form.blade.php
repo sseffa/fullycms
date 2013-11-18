@@ -8,8 +8,13 @@
 </script>
 <div class="container">
      <div class="row">
-         <h2>Contact Form</h2>
-         @yield('partial/breadcrumbs', Breadcrumbs::render('contact'))
+
+    </div>
+       <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Contact</h1>
+             @yield('partial/breadcrumbs', Breadcrumbs::render('contact'))
+        </div>
     </div>
     <div class="row">
         @if(Session::has('message'))
