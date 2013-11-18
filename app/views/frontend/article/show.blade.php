@@ -16,12 +16,12 @@
             </p>
             {{ $article->content }}
         </div>
-        <h4>Tags</h4>
+       <h4>Tags</h4>
        <div class="col-lg-4">
           <div class="row">
                 <div class="tagcloud tabbed_tag">
                     @foreach($tags as $tag)
-                      <a href="#">{{ $tag->name }}</a>
+                      <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->name)) }}">{{ $tag->name }}</a>
                     @endforeach
                 </div>
             </div>

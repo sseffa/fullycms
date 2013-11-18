@@ -13,7 +13,9 @@ class ArticleController extends BaseController {
             ->where('is_published', 1)
             ->paginate(10);
 
-        return View::make('frontend.article.index', compact('articles'));
+        $tags = Tag::with('articles')->get();
+
+        return View::make('frontend.article.index', compact('articles', 'tags'));
     }
 
     /**
