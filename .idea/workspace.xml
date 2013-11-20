@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ArticleController.php" afterPath="$PROJECT_DIR$/app/controllers/ArticleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384935323571" ignored="false" />
-    <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384808445544" ignored="false" />
+    <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384962350822" ignored="false" />
     <file path="/config.js" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384804571359" ignored="false" />
     <file path="/index.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384936354131" ignored="false" />
     <file path="/UserController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384420684286" ignored="false" />
@@ -92,50 +88,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
+      <file leaf-file-name="show.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="0" selection-end="3869" vertical-scroll-proportion="0.0">
+            <state line="21" column="7" selection-start="853" selection-end="853" vertical-scroll-proportion="0.39206535">
               <folding>
-                <element signature="tag#style#0" expanded="false" />
-                <element signature="tag#style#1" expanded="false" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="30" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.018669778">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ArticleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="40" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Article.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Article.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/frontend/article/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="92" selection-start="950" selection-end="1021" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -158,8 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/Article.php" />
-        <option value="$PROJECT_DIR$/app/models/Tag.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2013_11_14_222615_create_tags_table.php" />
         <option value="$PROJECT_DIR$/app/breadcrumbs.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/ArticleController.php" />
@@ -174,6 +131,8 @@
         <option value="$PROJECT_DIR$/app/controllers/ArticleController.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/filemanager/scripts/filemanager.js" />
+        <option value="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
       </list>
     </option>
   </component>
@@ -304,51 +263,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tag" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="photo_gallery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -493,66 +408,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="10" selection-start="5153" selection-end="5153" vertical-scroll-proportion="1.5755396" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_10_24_070153_create_articles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="178" selection-end="209" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="51" selection-start="4746" selection-end="4791" vertical-scroll-proportion="-0.24675325" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="58" selection-start="433" selection-end="440" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="74" selection-start="2355" selection-end="2426" vertical-scroll-proportion="0.074679114">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="40" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
@@ -581,20 +436,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="18" selection-start="2701" selection-end="2701" vertical-scroll-proportion="2.3255544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="0" selection-end="3869" vertical-scroll-proportion="0.0">
+        <state line="117" column="0" selection-start="2419" selection-end="2419" vertical-scroll-proportion="0.06651109">
           <folding>
-            <element signature="tag#style#0" expanded="false" />
             <element signature="tag#style#1" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="30" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.018669778">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1017" column="47" selection-start="33623" selection-end="33623" vertical-scroll-proportion="0.016336055">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="26" selection-start="621" selection-end="621" vertical-scroll-proportion="0.037339557">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/ReadMe.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="8" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.46674445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/styles/filemanager.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/connectors/php/filemanager.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/connectors/php/inc/JSON.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.56009334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/connectors/php/inc/filemanager.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/connectors/php/filemanager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="-0.67211205">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="7" selection-start="853" selection-end="853" vertical-scroll-proportion="0.39206535">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

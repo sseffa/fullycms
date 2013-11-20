@@ -9,9 +9,16 @@
 {{ HTML::script('/fancybox/js/jquery.fancybox-buttons.js') }}
 {{ HTML::script('/fancybox/js/jquery.fancybox-media.js') }}
 {{ HTML::script('/fancybox/js/jquery.fancybox-thumbs.js') }}
+{{ HTML::script('/bootstrap/js/jquery.lazyload.min.js') }}
 <script type="text/javascript">
     $(document).ready(function () {
         $(".fancybox").fancybox();
+    });
+
+    $(function() {
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
     });
 </script>
 <div class="container">
@@ -35,7 +42,8 @@
         <div class="col-lg-12">
             <h4>Images</h4>
             @foreach($photos as $photo)
-            <a rel="group" class="fancybox" href="{{ url($photo->path) }}" title="{{ $photo->title }}"><img style="border-radius: 20px;" class="left" src="{{ url('uploads/150x150_' . $photo->file_name) }}"/></a>
+
+            <a rel="group" class="fancybox" href="{{ url($photo->path) }}" title="{{ $photo->title }}"><img style="border-radius: 20px;" class="lazy left" data-original="{{ url('uploads/150x150_' . $photo->file_name) }}"/></a>
             @endforeach
         </div>
     </div>
