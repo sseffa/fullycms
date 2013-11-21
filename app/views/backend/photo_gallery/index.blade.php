@@ -45,51 +45,82 @@
     });
 </script>
 <div class="container">
-    <div class="pull-right">
-        {{ HTML::link('/admin/photo_gallery/create/','Create', array('id'=>'create','class'=>'btn btn-default btn-info')) }}
-    </div>
-    <br>
-    <br>
-    <br>
-     @if(Session::has('message'))
+    @if(Session::has('message'))
     <div class="alert alert-success" id="message">
         {{ Session::get('message') }}
     </div>
     @endif
-    @if($photo_galleries->count())
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-        <tr>
-            <th class="span3">Photo Gallery Title</th>
-            <th class="span3">Create Date</th>
-            <th class="span3">Updated Date</th>
-            <th class="span3">Actions</th>
-            <th class="span3">Settings</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($photo_galleries as $photo_gallery)
-        <tr>
-            <td>{{{ $photo_gallery->title }}}</td>
-            <td> {{{ $photo_gallery->created_at }}}</td>
-            <td> {{{ $photo_gallery->updated_at }}}</td>
-            <td>
-                {{ HTML::link('/admin/photo_gallery/'. $photo_gallery->id .'/edit/','Edit', array('class'=>'btn btn-default btn-xs')) }}
-                {{ link_to_route( 'photo_gallery.delete', 'Delete', $photo_gallery->id, array( 'class' => 'btn btn-danger btn-xs' )) }}
-                {{ link_to_route( 'admin.photo_gallery.show', 'Show', $photo_gallery->id, array( 'class' => 'btn btn-info btn-xs' )) }}
-            </td>
-            <td>
-                <a href="#" id="{{ $photo_gallery->id }}" class="publish"><img id="publish-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
-                <a href="#" id="{{ $photo_gallery->id }}" class="in-menu"><img id="menu-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
-            </td>
-        </tr>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Photo Galleries</h3>
+        </div>
+        <div class="panel-body">
+            <div class="pull-left">
+                <div class="btn-toolbar">
+                    <a href="{{ URL::route('admin.photo_gallery.create') }}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New Photo Gallery
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Created Date</th>
+                        <th>Updated Date</th>
+                        <th>Action</th>
+                        <th>Settings</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach( $photo_galleries as $photo_gallery )
+                    <tr>
+                        <td> {{ link_to_route( 'admin.photo_gallery.show', $photo_gallery->title, $photo_gallery->id, array( 'class' => 'btn btn-link btn-xs' )) }}
+                        <td>{{{ $photo_gallery->title }}}</td>
+                        <td>{{{ $photo_gallery->created_at }}}</td>
+                        <td>{{{ $photo_gallery->updated_at }}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Action
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ URL::route('admin.photo_gallery.show', array($photo_gallery->id)) }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Photo Gallery
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::route('admin.photo_gallery.edit', array($photo_gallery->id)) }}">
+                                            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Photo Gallery
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="{{ URL::route('admin.photo_gallery.delete', array($photo_gallery->id)) }}">
+                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Photo Gallery
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                        <a href="#" id="{{ $photo_gallery->id }}" class="publish"><img id="publish-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
+                        <a href="#" id="{{ $photo_gallery->id }}" class="in-menu"><img id="menu-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-        @endforeach
-        </tbody>
-    </table>
-    @else
-    <div class="alert alert-danger">No results found</div>
-    @endif
     <div class="pull-left">
         <ul class="pagination">
             {{ $photo_galleries->links() }}

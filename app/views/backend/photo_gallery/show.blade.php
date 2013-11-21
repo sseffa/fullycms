@@ -2,17 +2,42 @@
 @section('content')
 {{ HTML::style('/ckeditor/contents.css') }}
 <div class="container">
-    <div class="page-header">
-        <h3>
-            Photo Gallery Info
-            <div class="pull-right">
-                {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ $photo_gallery->title }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="pull-left">
+                <div class="btn-toolbar">
+                    <a href="{{ url('admin/photo_gallery') }}"
+                       class="btn btn-primary">
+                        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
+                    </a>
+                </div>
             </div>
-        </h3>
+            <br>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><strong>Title</strong></td>
+                    <td>{{ $photo_gallery->title }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Content</strong></td>
+                    <td>{{ $photo_gallery->content }}</td>
+                </tr>
+                    <td><strong>Date Created</strong></td>
+                    <td>{{ $photo_gallery->created_at }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Date Updated</strong></td>
+                    <td>{{ $photo_gallery->updated_at }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <h5><b>Title: </b>{{ $photo_gallery->title }}</h5>
-    <h5><b>Content: </b> {{ $photo_gallery->content }}</h5>
-    <h5><b>Created: </b> {{ $photo_gallery->created_at }}</h5>
-    <h5><b>Updated: </b> {{ $photo_gallery->updated_at }}</h5>
 </div>
 @stop

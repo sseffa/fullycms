@@ -64,11 +64,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
     // page
     Route::resource('page', 'App\Controllers\Admin\PageController');
-    Route::get('page/{id}/delete', array('as' => 'page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'));
+    Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'));
 
     // photo gallery
     Route::resource('photo_gallery', 'App\Controllers\Admin\PhotoGalleryController');
-    Route::get('photo_gallery/{id}/delete', array('as' => 'photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'));
+    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'));
 
     // ajax - blog
     Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'));
