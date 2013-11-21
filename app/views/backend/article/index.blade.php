@@ -26,49 +26,83 @@
     });
 </script>
 <div class="container">
-    <div class="pull-right">
-        {{ HTML::link('/admin/article/create/','Create', array('class'=>'btn btn-default btn-info')) }}
-    </div>
-    <br>
-    <br>
-    <br>
     @if(Session::has('message'))
     <div class="alert alert-success" id="message">
         {{ Session::get('message') }}
     </div>
     @endif
-    @if($articles->count())
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-        <tr>
-            <th class="span3">Article Title</th>
-            <th class="span3">Create Date</th>
-            <th class="span3">Updated Date</th>
-            <th class="span3">Actions</th>
-            <th class="span3">Settings</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach( $articles as $article )
-        <tr>
-            <td> {{{ $article->title }}}</td>
-            <td> {{{ $article->created_at }}}</td>
-            <td> {{{ $article->updated_at }}}</td>
-            <td>
-                {{ HTML::link('/admin/article/'. $article->id .'/edit/','Edit', array('class'=>'btn btn-default btn-xs')) }}
-                {{ link_to_route( 'article.delete', 'Delete', $article->id, array( 'class' => 'btn btn-danger btn-xs' )) }}
-                {{ link_to_route( 'admin.article.show', 'Show', $article->id, array( 'class' => 'btn btn-info btn-xs' )) }}
-            </td>
-            <td>
-                <a href="#" id="{{ $article->id }}" class="publish"><img id="publish-image-{{ $article->id }}" src="{{url('/')}}/images/{{ ($article->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
-            </td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
-    @else
-    <div class="alert alert-danger">No results found</div>
-    @endif
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Articles</h3>
+        </div>
+        <div class="panel-body">
+            <div class="pull-left">
+                <div class="btn-toolbar">
+                    <a href="{{ URL::route('admin.article.create') }}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New Article
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Created Date</th>
+                        <th>Updated Date</th>
+                        <th>Action</th>
+                        <th>Settings</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach( $articles as $article )
+                    <tr>
+                        <td> {{ link_to_route( 'admin.article.show', $article->title, $article->id, array( 'class' => 'btn btn-link btn-xs' )) }}
+                        <td>{{{ $article->title }}}</td>
+                        <td>{{{ $article->created_at }}}</td>
+                        <td>{{{ $article->updated_at }}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Action
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ URL::route('admin.article.show', array($article->id)) }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Article
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ URL::route('admin.article.edit', array($article->id)) }}">
+                                            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Article
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="{{ URL::route('admin.article.delete', array($article->id)) }}">
+                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Article
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                        <a href="#" id="{{ $article->id }}" class="publish">
+                            <img id="publish-image-{{ $article->id }}" src="{{url('/')}}/images/{{ ($article->is_published) ? 'publish.png' : 'not_publish.png'  }}"/>
+                        </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <div class="pull-left">
         <ul class="pagination">
             {{ $articles->links() }}

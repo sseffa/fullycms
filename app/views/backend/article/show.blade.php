@@ -2,17 +2,42 @@
 @section('content')
 {{ HTML::style('/ckeditor/contents.css') }}
 <div class="container">
-    <div class="page-header">
-        <h3>
-            Article Info
-            <div class="pull-right">
-               {{ HTML::link('/admin/article','Back', array('class'=>'btn btn-primary')) }}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ $article->title }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="pull-left">
+                <div class="btn-toolbar">
+                    <a href="{{ url('admin/article') }}"
+                       class="btn btn-primary">
+                        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
+                    </a>
+                </div>
             </div>
-        </h3>
+            <br>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td><strong>Title</strong></td>
+                    <td>{{ $article->title }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Content</strong></td>
+                    <td>{{ $article->content }}</td>
+                </tr>
+                    <td><strong>Date Created</strong></td>
+                    <td>{{ $article->created_at }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Date Updated</strong></td>
+                    <td>{{ $article->updated_at }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <h5><b>Title: </b>{{ $article->title }}</h5>
-    <h5><b>Content: </b> {{ $article->content }}</h5>
-    <h5><b>Created: </b> {{ $article->created_at }}</h5>
-    <h5><b>Updated: </b> {{ $article->updated_at }}</h5>
 </div>
 @stop

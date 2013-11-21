@@ -78,7 +78,6 @@
         </div>
     </div>
 
-
     <div class="pull-left">
         <ul class="pagination">
             {{ $users->links() }}

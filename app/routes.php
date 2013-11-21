@@ -60,7 +60,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
     // blog
     Route::resource('article', 'App\Controllers\Admin\ArticleController');
-    Route::get('article/{id}/delete', array('as' => 'article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'));
+    Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'));
 
     // page
     Route::resource('page', 'App\Controllers\Admin\PageController');
@@ -70,9 +70,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::resource('photo_gallery', 'App\Controllers\Admin\PhotoGalleryController');
     Route::get('photo_gallery/{id}/delete', array('as' => 'photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'));
 
-    // ajax - page
-    Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'));
-    Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'));
+    // ajax - blog
+    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'));
 
     // ajax - photo gallery
     Route::post('photo_gallery/{id}/toggle-publish', array('as' => 'admin.photo_gallery.toggle-publish', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@togglePublish'));
