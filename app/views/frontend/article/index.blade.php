@@ -116,7 +116,7 @@
     }
 </style>
 
-<div class="container">
+<div style="margin-bottom: 50px;" class="container">
       <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Blog</h1>
@@ -151,6 +151,11 @@
         <hr>
         @endforeach
 
+    </div>
+        <div class="pull-left">
+        <ul class="pagination">
+            {{ $articles->links() }}
+        </ul>
     </div>
 </div>
 

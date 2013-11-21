@@ -256,7 +256,6 @@ class AppCommand extends Command {
         // Show the success message
         $this->comment('');
         $this->info('Your user was created successfully.');
-        $this->comment('');
     }
 
     /**

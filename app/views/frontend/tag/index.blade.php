@@ -152,6 +152,12 @@
         @endforeach
 
     </div>
+        </div>
+        <div class="pull-left">
+        <ul class="pagination">
+            {{ $articles->links() }}
+        </ul>
+    </div>
 </div>
 
 @stop

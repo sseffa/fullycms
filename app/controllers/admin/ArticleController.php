@@ -14,7 +14,7 @@ class ArticleController extends BaseController {
     public function index() {
 
         $articles = Article::orderBy('created_at', 'DESC')
-            ->paginate(15);
+            ->paginate(10);
         return View::make('backend.article.index', compact('articles'))->with('active', 'article');
     }
 

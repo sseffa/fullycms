@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration {
+class CreatePhotosTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,12 +11,13 @@ class CreateImagesTable extends Migration {
      */
     public function up() {
 
-        Schema::create('images', function ($table) {
+        Schema::create('photos', function ($table) {
 
             $table->increments('id');
             $table->string('file_name', 255);
             $table->string('title', 255);
             $table->string('path', 255);
+            $table->integer('file_size');
             $table->integer('photo_gallery_id')->unsigned();
             $table->timestamps();
         });
@@ -28,7 +29,7 @@ class CreateImagesTable extends Migration {
      * @return void
      */
     public function down() {
-        
-         Schema::drop('images');
+
+        Schema::drop('photos');
     }
 }

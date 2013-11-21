@@ -79,7 +79,7 @@
             @foreach($photos as $photo)
 
             // Create the mock file:
-            var mockFile = { name: "{{ $photo->file_name }}", size: null };
+            var mockFile = { name: "{{ $photo->file_name }}", size: "{{ $photo->file_size }}" };
 
             // Call the default addedfile event handler
             myDropzone.emit("addedfile", mockFile);

@@ -180,20 +180,22 @@ class PhotoGalleryController extends BaseController {
         $file = Input::file('file');
 
         $destinationPath = public_path() . '/uploads/';
-        $filename = $file->getClientOriginalName();
+        $fileName = $file->getClientOriginalName();
+        $fileSize = $file->getClientSize();
 
-        $upload_success = Input::file('file')->move($destinationPath, $filename);
+        $upload_success = Input::file('file')->move($destinationPath, $fileName);
 
         if ($upload_success) {
 
             // resizing an uploaded file
-            Image::make($destinationPath . $filename)->resize(150, 150)->save($destinationPath . "150x150_" . $filename);
+            Image::make($destinationPath . $fileName)->resize(150, 150)->save($destinationPath . "150x150_" . $fileName);
 
             $photo_gallery = PhotoGallery::findOrFail($id);
             $image = new Photo;
-            $image->file_name = $filename;
-            $image->title = explode(".", $filename)[0];
-            $image->path = '/uploads/' . $filename;
+            $image->file_name = $fileName;
+            $image->file_size = $fileSize;
+            $image->title = explode(".", $fileName)[0];
+            $image->path = '/uploads/' . $fileName;
             $photo_gallery->photos()->save($image);
 
             return Response::json('success', 200);
