@@ -88,7 +88,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     // settings
     Route::get('/settings', function () {
 
-        return View::make('backend.settings')->with('active', 'settings');
+        return View::make('backend.setting.setting')->with('active', 'settings');
     });
 
     // form post
