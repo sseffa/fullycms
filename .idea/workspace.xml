@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Setting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/ArticleController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/ArticleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/SettingController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/SettingController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +17,7 @@
     <file path="/form.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384772163977" ignored="false" />
     <file path="/breadcrumbs.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384423579263" ignored="false" />
     <file path="/breadcrumbs.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384528709676" ignored="false" />
-    <file path="/routes.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384803681806" ignored="false" />
+    <file path="/routes.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385112865439" ignored="false" />
     <file path="/---show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384453365012" ignored="false" />
     <file path="$PROJECT_DIR$/../Tyloo-master/app/database/migrations/2013_10_01_145600_create_blog_posts_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384460764487" ignored="false" />
     <file path="/a.dummy" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385111867958" ignored="false" />
@@ -84,8 +82,8 @@
     <file path="/SettingsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385111867954" ignored="false" />
     <file path="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385111867957" ignored="false" />
     <file path="/Setting.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385111867958" ignored="false" />
-    <file path="/SettingController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385111867960" ignored="false" />
-    <file path="/setting.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385112047060" ignored="false" />
+    <file path="/SettingController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385113413978" ignored="false" />
+    <file path="/setting.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385113475196" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,37 +103,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Setting.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Setting.php">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
+            <state line="75" column="21" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setting.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/setting/setting.blade.php">
+      <file leaf-file-name="ArticleController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="16" selection-start="4033" selection-end="4033" vertical-scroll-proportion="0.77596265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/user/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="31" selection-start="639" selection-end="4259" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="22" selection-start="7445" selection-end="9532" vertical-scroll-proportion="0.0">
+            <state line="96" column="68" selection-start="2915" selection-end="2933" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,16 +124,25 @@
       <file leaf-file-name="SettingController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/SettingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+            <state line="10" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/backend/user/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="49" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0">
+            <state line="23" column="22" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setting.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/backend/setting/setting.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="77" selection-start="3745" selection-end="3745" vertical-scroll-proportion="0.8028005">
               <folding />
             </state>
           </provider>
@@ -177,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/user/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/article/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/article/show.blade.php" />
@@ -190,8 +178,9 @@
         <option value="$PROJECT_DIR$/app/database/seeds/SettingsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/models/Setting.php" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/SettingController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/ArticleController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/SettingController.php" />
         <option value="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" />
       </list>
     </option>
@@ -367,15 +356,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -523,13 +504,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -543,13 +517,6 @@
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="949" column="20" selection-start="22805" selection-end="22805" vertical-scroll-proportion="0.3325554" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="255" selection-end="255" vertical-scroll-proportion="0.018669778">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ArticleController.php">
@@ -580,30 +547,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="49" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SettingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="187" column="22" selection-start="7445" selection-end="9532" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -622,9 +568,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Setting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.11201867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="21" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="68" selection-start="2915" selection-end="2933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SettingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/user/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="22" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/setting/setting.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="16" selection-start="4033" selection-end="4033" vertical-scroll-proportion="0.77596265">
+        <state line="84" column="77" selection-start="3745" selection-end="3745" vertical-scroll-proportion="0.8028005">
           <folding />
         </state>
       </provider>

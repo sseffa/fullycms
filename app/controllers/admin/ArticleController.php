@@ -161,7 +161,7 @@ class ArticleController extends BaseController {
             $article->tags()->save($tag);
         }
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully updated');;
+        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully updated');
     }
 
     /**

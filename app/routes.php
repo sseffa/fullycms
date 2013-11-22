@@ -86,10 +86,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@deleteImage'));
 
     // settings
-    Route::get('/settings', function () {
-
-        return View::make('backend.setting.setting')->with('active', 'settings');
-    });
+    Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'App\Controllers\Admin\SettingController@index'));
+    Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'App\Controllers\Admin\SettingController@save'));
 
     // form post
     Route::resource('form-post', 'App\Controllers\Admin\FormPostController', array('only' => array('index', 'show', 'destroy')));

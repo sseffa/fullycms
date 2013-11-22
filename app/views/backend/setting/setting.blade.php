@@ -1,6 +1,16 @@
 @extends('backend/layout')
 @section('content')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#message').show().delay(4000).fadeOut(700);
+    });
+</script>
 <div class="container">
+    @if(Session::has('message'))
+    <div class="alert alert-success" id="message">
+        {{ Session::get('message') }}
+    </div>
+    @endif
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
         <li><a href="#info" data-toggle="tab">Info</a></li>
@@ -20,7 +30,7 @@
                 <label class="control-label" for="title">Title</label>
 
                 <div class="controls">
-                    {{ Form::text('title', null, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
+                    {{ Form::text('title', $setting->site_title, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
                     @if ($errors->first('title'))
                     <span class="help-block">{{ $errors->first('title') }}</span>
                     @endif
@@ -33,7 +43,7 @@
                 <label class="control-label" for="title"> Google Analytics Code</label>
 
                 <div class="controls">
-                    {{ Form::text('title', null, array('class'=>'form-control', 'id' => 'ga_code', 'placeholder'=>' Google Analytics Code', 'value'=>Input::old('ga_code'))) }}
+                    {{ Form::text('ga_code', $setting->ga_code, array('class'=>'form-control', 'id' => 'ga_code', 'placeholder'=>' Google Analytics Code', 'value'=>Input::old('ga_code'))) }}
                     @if ($errors->first('ga_code'))
                     <span class="help-block">{{ $errors->first('ga_code') }}</span>
                     @endif
@@ -46,7 +56,7 @@
                 <label class="control-label" for="title">Meta Title</label>
 
                 <div class="controls">
-                    {{ Form::text('meta_title', null, array('class'=>'form-control', 'id' => 'meta_title', 'placeholder'=>'Meta Title', 'value'=>Input::old('meta_title'))) }}
+                    {{ Form::text('meta_title', $setting->meta_title, array('class'=>'form-control', 'id' => 'meta_title', 'placeholder'=>'Meta Title', 'value'=>Input::old('meta_title'))) }}
                     @if ($errors->first('meta_title'))
                     <span class="help-block">{{ $errors->first('meta_title') }}</span>
                     @endif
@@ -59,7 +69,7 @@
                 <label class="control-label" for="title">Meta Keywords</label>
 
                 <div class="controls">
-                    {{ Form::text('meta_keywords', null, array('class'=>'form-control', 'id' => 'meta_keywords', 'placeholder'=>'Meta Keywords', 'value'=>Input::old('meta_keywords'))) }}
+                    {{ Form::text('meta_keywords', $setting->meta_keywords, array('class'=>'form-control', 'id' => 'meta_keywords', 'placeholder'=>'Meta Keywords', 'value'=>Input::old('meta_keywords'))) }}
                     @if ($errors->first('meta_keywords'))
                     <span class="help-block">{{ $errors->first('meta_keywords') }}</span>
                     @endif
@@ -72,7 +82,7 @@
                 <label class="control-label" for="title">Meta Description</label>
 
                 <div class="controls">
-                    {{ Form::text('meta_description', null, array('class'=>'form-control', 'id' => 'meta_description', 'placeholder'=>'Meta Description', 'value'=>Input::old('meta_description'))) }}
+                    {{ Form::text('meta_description', $setting->meta_description, array('class'=>'form-control', 'id' => 'meta_description', 'placeholder'=>'Meta Description', 'value'=>Input::old('meta_description'))) }}
                     @if ($errors->first('meta_description'))
                     <span class="help-block">{{ $errors->first('meta_description') }}</span>
                     @endif
