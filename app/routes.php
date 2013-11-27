@@ -56,33 +56,42 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
     // user
     Route::resource('user', 'App\Controllers\Admin\UserController');
-    Route::get('user/{id}/delete', array('as' => 'admin.user.delete', 'uses' => 'App\Controllers\Admin\UserController@confirmDestroy'));
+    Route::get('user/{id}/delete', array('as' => 'admin.user.delete', 'uses' => 'App\Controllers\Admin\UserController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 
     // blog
     Route::resource('article', 'App\Controllers\Admin\ArticleController');
-    Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'));
+    Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 
     // page
     Route::resource('page', 'App\Controllers\Admin\PageController');
-    Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'));
+    Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 
     // photo gallery
     Route::resource('photo_gallery', 'App\Controllers\Admin\PhotoGalleryController');
-    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'));
+    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'))->where('id', '[0-9]+');
 
     // ajax - blog
-    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'));
+    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'))
+        ->where('id', '[0-9]+');
 
     // ajax - photo gallery
-    Route::post('photo_gallery/{id}/toggle-publish', array('as' => 'admin.photo_gallery.toggle-publish', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@togglePublish'));
-    Route::post('photo_gallery/{id}/toggle-menu', array('as' => 'admin.photo_gallery.toggle-menu', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@toggleMenu'));
+    Route::post('photo_gallery/{id}/toggle-publish', array('as' => 'admin.photo_gallery.toggle-publish', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@togglePublish'))
+        ->where('id', '[0-9]+');
+    Route::post('photo_gallery/{id}/toggle-menu', array('as' => 'admin.photo_gallery.toggle-menu', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@toggleMenu'))
+        ->where('id', '[0-9]+');
 
     // ajax - page
-    Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'));
-    Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'));
+    Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'))
+        ->where('id', '[0-9]+');
+    Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'))
+        ->where('id', '[0-9]+');
 
     // file upload
-    Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@upload'));
+    Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@upload'))
+        ->where('id', '[0-9]+');
     Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@deleteImage'));
 
     // settings
@@ -91,7 +100,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
     // form post
     Route::resource('form-post', 'App\Controllers\Admin\FormPostController', array('only' => array('index', 'show', 'destroy')));
-    Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'App\Controllers\Admin\FormPostController@confirmDestroy'));
+    Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'App\Controllers\Admin\FormPostController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 });
 
 // File manager
@@ -127,3 +137,4 @@ App::missing(function () {
 
     return Response::view('errors.missing', array(), 404);
 });
+

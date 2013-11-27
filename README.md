@@ -13,14 +13,16 @@ sf CMS
 * Custom Error Pages  
 * Backend	
   * Manage article
+  * Manage tag
   * Manage page
   * Manage photo gallery
-  * CKE editor for post creation and editing (file manager)
+  * Ckeditor for post creation and editing (file manager)
   * Form post manage
+  * Site settings
 * Frontend
-  * Article 
+  * Article (momentjs)
   * Page
-  * Photo Gallery
+  * Photo Gallery (Lazy load image, responsive fancybox)
   * Contact Form
   * Breadcrumbs
 
