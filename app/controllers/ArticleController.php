@@ -24,7 +24,8 @@ class ArticleController extends BaseController {
 
         $article = Article::findOrFail($id);
         $tags = Tag::with('articles')->get();
+        $categories = Category::with('articles')->get();
 
-        return View::make('frontend.article.show', compact('article', 'tags'));
+        return View::make('frontend.article.show', compact('article', 'tags', 'categories'));
     }
 }

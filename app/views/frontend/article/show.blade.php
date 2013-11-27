@@ -18,9 +18,19 @@
             </p>
             {{ $article->content }}
         </div>
-       <h4>Tags</h4>
+
        <div class="col-lg-4">
           <div class="row">
+              <h4>Categories</h4>
+                <div class="tagcloud tabbed_tag">
+                    @foreach($categories as $category)
+                      <a href="{{ URL::route('dashboard.category', array('category'=>$category->title)) }}">{{ $category->title }}</a>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Tags</h4>
                 <div class="tagcloud tabbed_tag">
                     @foreach($tags as $tag)
                       <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->name)) }}">{{ $tag->name }}</a>
@@ -28,7 +38,6 @@
                 </div>
             </div>
         </div>
-      </div>
     </div>
 </div>
 <script type="text/javascript">
