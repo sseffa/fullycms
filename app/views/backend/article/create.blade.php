@@ -40,7 +40,10 @@
         <label class="control-label" for="title">Slug</label>
 
         <div class="controls">
+            <div class="input-group">
+            <span class="input-group-addon">www.sefakaragoz.com/</span>
             {{ Form::text('slug', null, array('class'=>'form-control slug', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+                </div>
             @if ($errors->first('slug'))
             <span class="help-block">{{ $errors->first('slug') }}</span>
             @endif
@@ -74,44 +77,72 @@
     </div>
     <br>
 
-    <!-- Meta Title -->
-    <div class="control-group {{ $errors->has('meta_title') ? 'has-error' : '' }}">
-        <label class="control-label" for="title">Meta Title</label>
+     <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                </span>META DATA</a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Meta Title -->
+                        <div class="control-group {{ $errors->has('meta_title') ? 'has-error' : '' }}">
+                            <label class="control-label" for="title">Meta Title</label>
 
-        <div class="controls">
-            {{ Form::text('meta_title', null, array('class'=>'form-control', 'id' => 'meta_title', 'placeholder'=>'Meta Title', 'value'=>Input::old('meta_title'))) }}
-            @if ($errors->first('meta_title'))
-            <span class="help-block">{{ $errors->first('meta_title') }}</span>
-            @endif
+                            <div class="controls">
+                                {{ Form::text('meta_title', null, array('class'=>'form-control', 'id' => 'meta_title', 'placeholder'=>'Meta Title', 'value'=>Input::old('meta_title'))) }}
+                                @if ($errors->first('meta_title'))
+                                <span class="help-block">{{ $errors->first('meta_title') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <br>
+
+                        <!-- Meta Description -->
+                        <div class="control-group {{ $errors->has('meta_description') ? 'has-error' : '' }}">
+                            <label class="control-label" for="title">Meta Description</label>
+
+                            <div class="controls">
+                                {{ Form::text('meta_description', null, array('class'=>'form-control', 'id' => 'meta_description', 'placeholder'=>'Meta Description', 'value'=>Input::old('meta_description'))) }}
+                                @if ($errors->first('meta_description'))
+                                <span class="help-block">{{ $errors->first('meta_description') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <br>
+
+
+
+                        <!-- Meta Keywords -->
+                        <div class="control-group {{ $errors->has('meta_keywords') ? 'has-error' : '' }}">
+                            <label class="control-label" for="title">Meta Keywords</label>
+
+                            <div class="controls">
+                                {{ Form::textarea('meta_keywords', null, array('class'=>'form-control', 'id' => 'meta_keywords', 'placeholder'=>'Meta Keywords', 'value'=>Input::old('meta_keywords'))) }}
+                                @if ($errors->first('meta_keywords'))
+                                <span class="help-block">{{ $errors->first('meta_keywords') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well well-sm well-primary">
+                            <form class="form form-inline " role="form">
+                            <div class="form-group">
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <br>
-
-    <!-- Meta Keywords -->
-    <div class="control-group {{ $errors->has('meta_keywords') ? 'has-error' : '' }}">
-        <label class="control-label" for="title">Meta Keywords</label>
-
-        <div class="controls">
-            {{ Form::text('meta_keywords', null, array('class'=>'form-control', 'id' => 'meta_keywords', 'placeholder'=>'Meta Keywords', 'value'=>Input::old('meta_keywords'))) }}
-            @if ($errors->first('meta_keywords'))
-            <span class="help-block">{{ $errors->first('meta_keywords') }}</span>
-            @endif
-        </div>
-    </div>
-    <br>
-
-    <!-- Meta Description -->
-    <div class="control-group {{ $errors->has('meta_description') ? 'has-error' : '' }}">
-        <label class="control-label" for="title">Meta Description</label>
-
-        <div class="controls">
-            {{ Form::text('meta_description', null, array('class'=>'form-control', 'id' => 'meta_description', 'placeholder'=>'Meta Description', 'value'=>Input::old('meta_description'))) }}
-            @if ($errors->first('meta_description'))
-            <span class="help-block">{{ $errors->first('meta_description') }}</span>
-            @endif
-        </div>
-    </div>
-    <br>
 
     <!-- Published -->
     <div class="control-group {{ $errors->has('is_published') ? 'has-error' : '' }}">

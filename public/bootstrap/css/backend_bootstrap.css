@@ -4810,6 +4810,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-radius: .25em;
 }
 
+.label, .glyphicon {
+    margin-right: 5px;
+}
+
 .label[href]:hover,
 .label[href]:focus {
   color: #ffffff;
