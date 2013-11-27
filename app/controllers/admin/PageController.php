@@ -61,7 +61,7 @@ class PageController extends BaseController {
         $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
         $page->save();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully added');;
+        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully added');
     }
 
     /**
@@ -124,7 +124,7 @@ class PageController extends BaseController {
         $page = Page::findOrFail($id);
         $page->delete();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully deleted');;
+        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully deleted');
     }
 
     public function confirmDestroy($id) {

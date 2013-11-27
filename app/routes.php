@@ -110,6 +110,12 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::resource('form-post', 'App\Controllers\Admin\FormPostController', array('only' => array('index', 'show', 'destroy')));
     Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'App\Controllers\Admin\FormPostController@confirmDestroy'))
         ->where('id', '[0-9]+');
+
+    // home slider
+    Route::get('/home-slider', array('as' => 'admin.home.slider', function () {
+
+        return View::make('backend/plugins/home-slider/index');
+    }));
 });
 
 // File manager

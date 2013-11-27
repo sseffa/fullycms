@@ -30,6 +30,6 @@ class SettingController extends BaseController {
         $setting->meta_description = $formData['meta_description'];
         $setting->save();
 
-        return Redirect::action('App\Controllers\Admin\SettingController@index')->with('message', 'Settings was successfully updated');;
+        return Redirect::action('App\Controllers\Admin\SettingController@index')->with('message', 'Settings was successfully updated');
     }
 }

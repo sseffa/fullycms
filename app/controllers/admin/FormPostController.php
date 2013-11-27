@@ -42,7 +42,7 @@ class FormPostController extends BaseController {
         $formPost = FormPost::findOrFail($id);
         $formPost->delete();
 
-        return Redirect::action('App\Controllers\Admin\FormPostController@index')->with('message', 'Post was successfully deleted');;
+        return Redirect::action('App\Controllers\Admin\FormPostController@index')->with('message', 'Post was successfully deleted');
     }
 
     public function confirmDestroy($id) {

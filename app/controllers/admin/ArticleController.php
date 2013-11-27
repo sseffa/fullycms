@@ -192,7 +192,7 @@ class ArticleController extends BaseController {
         $article->tags()->detach();
         $article->delete();
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');;
+        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');
     }
 
     public function confirmDestroy($id) {
