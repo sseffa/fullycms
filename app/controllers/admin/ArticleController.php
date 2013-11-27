@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Article, Response, Tag, Str;
+use BaseController, Redirect, View, Input, Validator, Article, Category, Response, Tag, Str;
 
 class ArticleController extends BaseController {
 
@@ -15,6 +15,7 @@ class ArticleController extends BaseController {
 
         $articles = Article::orderBy('created_at', 'DESC')
             ->paginate(10);
+
         return View::make('backend.article.index', compact('articles'))->with('active', 'article');
     }
 
@@ -25,7 +26,8 @@ class ArticleController extends BaseController {
      */
     public function create() {
 
-        return View::make('backend.article.create')->with('active', 'article');
+        $categories = Category::lists('title', 'id');
+        return View::make('backend.article.create', compact('categories'))->with('active', 'article');
     }
 
     /**
@@ -40,6 +42,7 @@ class ArticleController extends BaseController {
             'slug'             => Input::get('slug'),
             'tag'              => Input::get('tag'),
             'content'          => Input::get('content'),
+            'category'         => Input::get('category'),
             'meta_title'       => Input::get('meta_title'),
             'meta_keywords'    => Input::get('meta_keywords'),
             'meta_description' => Input::get('meta_description'),
@@ -65,7 +68,12 @@ class ArticleController extends BaseController {
         $article->meta_keywords = $formData['meta_keywords'];
         $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;
-        $article->save();
+
+        if ($article->save()) {
+
+            $category = Category::find($formData['category']);
+            $category->articles()->save($article);
+        }
 
         $articleTags = explode(',', $formData['tag']);
 
@@ -113,7 +121,9 @@ class ArticleController extends BaseController {
         }
         $tags = substr($tags, 1);
 
-        return View::make('backend.article.edit', compact('article', 'tags'))->with('active', 'article');
+        $categories = Category::lists('title', 'id');
+
+        return View::make('backend.article.edit', compact('article', 'tags', 'categories'))->with('active', 'article');
     }
 
     /**
@@ -129,6 +139,7 @@ class ArticleController extends BaseController {
             'slug'             => Input::get('slug'),
             'tag'              => Input::get('tag'),
             'content'          => Input::get('content'),
+            'category'         => Input::get('category'),
             'meta_title'       => Input::get('meta_title'),
             'meta_keywords'    => Input::get('meta_keywords'),
             'meta_description' => Input::get('meta_description'),
@@ -143,7 +154,12 @@ class ArticleController extends BaseController {
         $article->meta_keywords = $formData['meta_keywords'];
         $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;
-        $article->save();
+
+        if ($article->save()) {
+
+            $category = Category::find($formData['category']);
+            $category->articles()->save($article);
+        }
 
         $articleTags = explode(',', $formData['tag']);
 

@@ -12,17 +12,28 @@
             <ul class="nav navbar-nav">
                 <li @if(isset($active) && $active=="home") class="active" @endif><a href="{{ url('/admin') }}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
 
-                <li @if(isset($active) && $active=="article") class="active" @endif>{{ HTML::link('/admin/article','Blog') }}</li>
-                <li @if(isset($active) && $active=="page") class="active" @endif>{{ HTML::link('/admin/page','Page') }}</li>
-                <li @if(isset($active) && $active=="photo_gallery") class="active" @endif>{{ HTML::link('/admin/photo_gallery','Photo Gallery') }}</li>
+                <li class="dropdown  @if(isset($active) && $active=='article') active @endif">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-info"></span>Blog <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>{{ HTML::link('/admin/article','Blog') }}</li>
+                        <li>{{ HTML::link('/admin/category','Category') }}</li>
+                    </ul>
+                </li>
+
+                <li @if(isset($active) && $active=="page") class="active" @endif><a href="{{ url('/admin/page') }}"><span class="glyphicon glyphicon-book"></span>Page</a></li>
+
+                <li @if(isset($active) && $active=="photo_gallery") class="active" @endif><a href="{{ url('/admin/photo_gallery') }}"><span class="glyphicon glyphicon-picture"></span>Photo Gallery</a></li>
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Plugins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>{{ HTML::link('/admin/home-slider','Home Slider') }}</li>
                     </ul>
                 </li>               
                 <li @if(isset($active) && $active=="form-post") class="active" @endif>{{ HTML::link('/admin/form-post','Form Post') }}</li>
-                 <li @if(isset($active) && $active=="user") class="active" @endif>{{ HTML::link('/admin/user','User') }}</li>
+
+                <li @if(isset($active) && $active=="user") class="active" @endif><a href="{{ url('/admin/user') }}"><span class="glyphicon glyphicon-user"></span>User</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
@@ -37,8 +48,8 @@
                         <li><a href="#" class="text-center">View All</a></li>
                     </ul>
                 </li>
-                <li @if(isset($active) && $active=="settings") class="active" @endif>{{ HTML::link('/admin/settings','Settings') }}</li>
-                <li>{{ HTML::link('/','[View Site]') }}</li>
+
+                 <li @if(isset($active) && $active=="settings") class="active" @endif><a href="{{ url('/admin/settings') }}"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
                 <li>{{ HTML::link('admin/logout','Logout') }}</li>
             </ul>
         </div>

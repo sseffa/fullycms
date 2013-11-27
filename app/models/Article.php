@@ -8,4 +8,9 @@ class Article extends Eloquent {
 
         return $this->belongsToMany('Tag', 'articles_tags');
     }
+
+    public function category() {
+
+        return $this->hasMany('Category');
+    }
 }

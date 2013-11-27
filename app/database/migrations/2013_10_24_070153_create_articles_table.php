@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration {
             $table->string('title', 255);
             $table->text('content');
             $table->string('slug')->nullable();
+            $table->integer('category_id');
             $table->string('meta_title')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();

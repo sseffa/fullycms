@@ -64,6 +64,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
+    // category
+    Route::resource('category', 'App\Controllers\Admin\CategoryController');
+    Route::get('category/{id}/delete', array('as' => 'admin.category.delete', 'uses' => 'App\Controllers\Admin\CategoryController@confirmDestroy'))
+        ->where('id', '[0-9]+');
+
     // page
     Route::resource('page', 'App\Controllers\Admin\PageController');
     Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'))

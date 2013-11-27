@@ -13,13 +13,13 @@
     @endif
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Users</h3>
+            <h3 class="panel-title">Categories</h3>
         </div>
         <div class="panel-body">
             <div class="pull-left">
                 <div class="btn-toolbar">
-                    <a href="{{ URL::route('admin.user.create') }}" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New User
+                    <a href="{{ URL::route('admin.category.create') }}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New Category
                     </a>
                 </div>
             </div>
@@ -30,20 +30,14 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Joined</th>
-                        <th>Last Login</th>
+                        <th>Title</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach( $users as $user )
+                    @foreach( $categories as $category )
                     <tr>
-                        <td> {{ link_to_route( 'admin.user.show', $user->first_name . " " . $user->last_name, $user->id, array( 'class' => 'btn btn-link btn-xs' )) }}
-                        <td>{{{ $user->email }}}</td>
-                        <td>{{{ $user->created_at }}}</td>
-                        <td>{{{ $user->last_login }}}</td>
+                        <td> {{ link_to_route( 'admin.category.show', $category->title, $category->id, array( 'class' => 'btn btn-link btn-xs' )) }}
                         <td>                         
                             <div class="btn-group">
                                 <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
@@ -52,19 +46,19 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ URL::route('admin.user.show', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show User
+                                        <a href="{{ URL::route('admin.category.show', array($category->id)) }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Category
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ URL::route('admin.user.edit', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit User
+                                        <a href="{{ URL::route('admin.category.edit', array($category->id)) }}">
+                                            <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Category
                                         </a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a href="{{ URL::route('admin.user.delete', array($user->id)) }}">
-                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete User
+                                        <a href="{{ URL::route('admin.category.delete', array($category->id)) }}">
+                                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Category
                                         </a>
                                     </li>
                                 </ul>
@@ -80,7 +74,7 @@
 
     <div class="pull-left">
         <ul class="pagination">
-            {{ $users->links() }}
+            {{ $categories->links() }}
         </ul>
     </div>
 </div>

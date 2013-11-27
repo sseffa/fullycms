@@ -64,6 +64,19 @@
     </div>
     <br>
 
+      <!-- Category -->
+        <div class="control-group {{ $errors->has('category') ? 'error' : '' }}">
+        <label class="control-label" for="title">Category</label>
+
+        <div class="controls">
+            {{ Form::select('category', $categories, null, array('class' => 'form-control', 'value'=>Input::old('category'))) }}
+            @if ($errors->first('category'))
+            <span class="help-block">{{ $errors->first('category') }}</span>
+            @endif
+        </div>
+        </div>
+    <br>
+
     <!-- Content -->
     <div class="control-group {{ $errors->has('content') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Content</label>
