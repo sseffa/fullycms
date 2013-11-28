@@ -49,6 +49,7 @@
             <br>
             <br>
             <br>
+            @if($articles->count())
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -63,8 +64,7 @@
                     <tbody>
                     @foreach( $articles as $article )
                     <tr>
-                        <td> {{ link_to_route( 'admin.article.show', $article->title, $article->id, array( 'class' => 'btn btn-link btn-xs' )) }}
-                        <td>{{{ $article->title }}}</td>
+                        <td> {{ link_to_route( 'admin.article.show', $article->title, $article->id, array( 'class' => 'btn btn-link btn-xs' )) }}</td>
                         <td>{{{ $article->created_at }}}</td>
                         <td>{{{ $article->updated_at }}}</td>
                         <td>
@@ -103,6 +103,9 @@
                     </tbody>
                 </table>
             </div>
+            @else
+            <div class="alert alert-danger">No results found</div>
+            @endif
         </div>
     </div>
 

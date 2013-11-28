@@ -65,6 +65,7 @@
             <br>
             <br>
             <br>
+            @if($pages->count())
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -79,8 +80,7 @@
                     <tbody>
                     @foreach( $pages as $page )
                     <tr>
-                        <td> {{ link_to_route( 'admin.page.show', $page->title, $page->id, array( 'class' => 'btn btn-link btn-xs' )) }}
-                        <td>{{{ $page->title }}}</td>
+                        <td> {{ link_to_route( 'admin.page.show', $page->title, $page->id, array( 'class' => 'btn btn-link btn-xs' )) }}</td>
                         <td>{{{ $page->created_at }}}</td>
                         <td>{{{ $page->updated_at }}}</td>
                         <td>
@@ -118,6 +118,9 @@
                     </tbody>
                 </table>
             </div>
+            @else
+            <div class="alert alert-danger">No results found</div>
+            @endif
         </div>
     </div>
 

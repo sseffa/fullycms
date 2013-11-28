@@ -139,13 +139,13 @@ Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Cont
 |--------------------------------------------------------------------------
 */
 
-/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
-    return "error";
+    $error = $exception->getMessage();
+    return Response::view('errors.error', compact('error'));
 });
-*/
+
 
 App::missing(function () {
 
