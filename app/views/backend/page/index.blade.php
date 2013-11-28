@@ -14,7 +14,7 @@
                 url: "{{ url('/admin/page/" + id + "/toggle-menu/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/menu.png" : "{{url('/')}}/images/not_menu.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/menu.png" : "{{url('/')}}/assets/images/not_menu.png";
                         $("#menu-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -33,7 +33,7 @@
                 url: "{{ url('/admin/page/" + id + "/toggle-publish/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/images/not_publish.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/assets/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
                 },

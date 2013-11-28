@@ -9,12 +9,13 @@
         <h3>
             Photo Gallery Update
             <div class="pull-right">
-                 {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
+                {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>
     <!-- Dropzone -->
     <label class="control-label" for="title">Images</label>
+
     <div style="width: 700px; min-height: 300px; height: auto; border:1px solid slategray;" id="dropzone">
         {{ Form::open(array('url' => 'admin/upload/' . $photo_gallery->id, 'class'=>'dropzone', 'id'=>'my-dropzone')) }}
         <!-- Single file upload
@@ -76,7 +77,10 @@
 
             var myDropzone = new Dropzone("#dropzone .dropzone");
             Dropzone.options.myDropzone = false;
-            @foreach($photos as $photo)
+            @foreach($photos
+            as
+            $photo
+            )
 
             // Create the mock file:
             var mockFile = { name: "{{ $photo->file_name }}", size: "{{ $photo->file_size }}" };

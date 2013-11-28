@@ -14,7 +14,7 @@
                 url: "{{ url('/admin/article/" + id + "/toggle-publish/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/publish.png" : "{{url('/')}}/images/not_publish.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/assets/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -40,6 +40,9 @@
                 <div class="btn-toolbar">
                     <a href="{{ URL::route('admin.article.create') }}" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus"></span>&nbsp;New Article
+                    </a>
+                    <a href="{{ URL::route('admin.category.create') }}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New Category
                     </a>
                 </div>
             </div>

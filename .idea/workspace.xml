@@ -5,168 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\backend_bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\backend_bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap-glyphicons.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap-tagsinput.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\custom_style.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\modern-business.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\narrow.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\signin.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\css\theme.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\bootstrap-tagsinput.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\holder.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\jquery.1.10.2.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\jquery.2.0.3.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\jquery.lazyload.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\jquery.slug.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\modern-business.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\moment-with-langs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\bootstrap\js\prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\af.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\bg.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\bn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\bs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\da.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\eu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\fo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\gu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\hi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\is.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ka.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ko.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\lt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\mk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\mn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ms.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ro.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\lang\zh.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\ajax.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\api.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\appendto.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\inlineall\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\outputxhtml\outputxhtml.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\sample.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\sample.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\assets\uilanguages\languages.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\datafiltering.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\divreplace.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\inlineall.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\inlinebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\inlinetextarea.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\jquery.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\dialog\assets\my_dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\dialog\dialog.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\enterkey\enterkey.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\htmlwriter\outputforflash.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\htmlwriter\outputhtml.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\magicline\magicline.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\toolbar\toolbar.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\plugins\wysiwygarea\fullpage.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\readonly.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\replacebyclass.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\replacebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\sample.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\sample.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\sample_posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\tabindex.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\uicolor.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\uilanguages.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\ckeditor\samples\xhtmlstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\edit.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\not_menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\not_publish.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\publish.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\images\spritemap.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/photo_gallery/backup_show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/photo_gallery/backup_show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/edit.blade.php" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\150x150_2013-10-28_00001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\150x150_2013-11-27_00001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\150x150_2013-11-27_00002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\150x150_sefa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\2013-10-28_00001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\2013-11-27_00001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\2013-11-27_00002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Localhost\ApacheDocumentRoot\sf_cms\public\uploads\sefa.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/menu.png" afterPath="$PROJECT_DIR$/public/assets/images/menu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/not_menu.png" afterPath="$PROJECT_DIR$/public/assets/images/not_menu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/not_publish.png" afterPath="$PROJECT_DIR$/public/assets/images/not_publish.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/images/publish.png" afterPath="$PROJECT_DIR$/public/assets/images/publish.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/category/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/category/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/layout.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/layout.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/login.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385661303883" ignored="false" />
-    <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385663650200" ignored="false" />
+    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385665756778" ignored="false" />
+    <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385672264193" ignored="false" />
     <file path="/config.js" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384804571359" ignored="false" />
     <file path="/index.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385664955455" ignored="false" />
     <file path="/UserController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384420684286" ignored="false" />
@@ -178,7 +41,7 @@
     <file path="$PROJECT_DIR$/../Tyloo-master/app/database/migrations/2013_10_01_145600_create_blog_posts_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384460764487" ignored="false" />
     <file path="/a.dummy" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385553153613" ignored="false" />
     <file path="/2013_11_14_222615_blog_tags_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384460847692" ignored="false" />
-    <file path="/create.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385663933869" ignored="false" />
+    <file path="/create.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385672192052" ignored="false" />
     <file path="/ArticleTagsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384461495212" ignored="false" />
     <file path="/2013_11_14_224042_article_tags_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384467919162" ignored="false" />
     <file path="$PROJECT_DIR$/../Tyloo-master/app/database/seeds/BlogTagsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384461933688" ignored="false" />
@@ -299,35 +162,7 @@
     <favorites_list name="sf_cms" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/article/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="89" selection-start="4337" selection-end="4337" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/page/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="134" selection-start="5221" selection-end="5221" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="152" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.7619048">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -345,10 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/category/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/photo_gallery/backup_show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/login.blade.php" />
@@ -358,9 +189,13 @@
         <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/article/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/article/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/article/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/page/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/article/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/category/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -463,133 +298,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photo_gallery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="category" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,8 +312,8 @@
     <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../l4_note" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -673,23 +382,23 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22094691" sideWeight="0.6008345" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991655" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22453372" sideWeight="0.6008345" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991655" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -753,49 +462,105 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/setting/setting.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/config/packages/davejamesmiller/laravel-breadcrumbs/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/user/confirm-destroy.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/config/packages/cartalyst/sentry/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="10" selection-start="1930" selection-end="1930" vertical-scroll-proportion="-2.3015873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="539" selection-end="539" vertical-scroll-proportion="0.34632036">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/page/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="129" selection-start="680" selection-end="680" vertical-scroll-proportion="0.21933623">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/category/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="16" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.6233766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/category/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="16" selection-start="1334" selection-end="1339" vertical-scroll-proportion="0.63059163">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/article/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="24" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.7849928">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/category/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="24" selection-start="627" selection-end="818" vertical-scroll-proportion="0.50793654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/page/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="503" selection-end="503" vertical-scroll-proportion="0.36940837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="163" selection-start="3184" selection-end="3184" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="10" selection-start="6143" selection-end="6143" vertical-scroll-proportion="1.1385281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/breadcrumbs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/user/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8932179">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/user/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/user/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/user/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -804,63 +569,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="424" selection-end="424" vertical-scroll-proportion="0.43867245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="65" selection-start="156" selection-end="156" vertical-scroll-proportion="0.09235209">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.3246753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/plugins/home-slider/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="384" selection-end="384" vertical-scroll-proportion="0.3924964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="8" selection-start="5716" selection-end="5716" vertical-scroll-proportion="0.36940837">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="65" selection-start="156" selection-end="156" vertical-scroll-proportion="0.023088023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="89" selection-start="4337" selection-end="4337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/page/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="134" selection-start="5221" selection-end="5221" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="152" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.7619048">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

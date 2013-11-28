@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <p class="lead">{{ e($page->content) }}</p>
+            <p>{{ e(strip_tags($page->content)) }}</p>
         </div>
     </div>
 </div>

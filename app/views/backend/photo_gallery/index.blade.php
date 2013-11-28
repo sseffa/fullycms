@@ -14,7 +14,7 @@
                 url: "{{ url('/admin/photo_gallery/" + id + "/toggle-menu/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/menu.png" : "{{url('/')}}/images/not_menu.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/menu.png" : "{{url('/')}}/assets/images/not_menu.png";
                         $("#menu-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -33,7 +33,7 @@
                 url: "{{ url('/admin/photo_gallery/" + id + "/toggle-publish/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/images/not_publish.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/assets/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -80,7 +80,6 @@
                     @foreach( $photo_galleries as $photo_gallery )
                     <tr>
                         <td> {{ link_to_route( 'admin.photo_gallery.show', $photo_gallery->title, $photo_gallery->id, array( 'class' => 'btn btn-link btn-xs' )) }}
-                        <td>{{{ $photo_gallery->title }}}</td>
                         <td>{{{ $photo_gallery->created_at }}}</td>
                         <td>{{{ $photo_gallery->updated_at }}}</td>
                         <td>

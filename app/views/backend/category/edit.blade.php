@@ -31,7 +31,6 @@
                 </div>
             </div>
             <br>
-
             <!-- Form actions -->
             {{ Form::submit('Save Changes', array('class' => 'btn btn-success')) }}
             <a href="{{ url('admin/category') }}"
