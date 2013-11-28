@@ -33,7 +33,7 @@
                 url: "{{ url('/admin/photo_gallery/" + id + "/toggle-publish/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/publish.png" : "{{url('/')}}/images/not_publish.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -110,8 +110,8 @@
                             </div>
                         </td>
                         <td>
-                        <a href="#" id="{{ $photo_gallery->id }}" class="publish"><img id="publish-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
-                        <a href="#" id="{{ $photo_gallery->id }}" class="in-menu"><img id="menu-image-{{ $photo_gallery->id }}" src="{{url('/')}}/images/{{ ($photo_gallery->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
+                        <a href="#" id="{{ $photo_gallery->id }}" class="publish"><img id="publish-image-{{ $photo_gallery->id }}" src="{{url('/')}}/assets/images/{{ ($photo_gallery->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
+                        <a href="#" id="{{ $photo_gallery->id }}" class="in-menu"><img id="menu-image-{{ $photo_gallery->id }}" src="{{url('/')}}/assets/images/{{ ($photo_gallery->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
                         </td>
                     </tr>
                     @endforeach

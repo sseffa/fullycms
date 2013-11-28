@@ -1,11 +1,10 @@
 @extends('backend/layout')
 @section('content')
-{{ HTML::script('ckeditor/ckeditor.js') }}
 
-{{ HTML::style('bootstrap/css/bootstrap-tagsinput.css') }}
-{{ HTML::script('bootstrap/js/typeahead.min.js') }}
-{{ HTML::script('bootstrap/js/bootstrap-tagsinput.js') }}
-{{ HTML::script('bootstrap/js/jquery.slug.js') }}
+{{ HTML::script('ckeditor/ckeditor.js') }}
+{{ HTML::style('assets/bootstrap/css/bootstrap-tagsinput.css') }}
+{{ HTML::script('assets/bootstrap/js/bootstrap-tagsinput.js') }}
+{{ HTML::script('assets/js/jquery.slug.js') }}
 <script type="text/javascript">
     $(document).ready(function () {
         $("#title").slug();
@@ -60,7 +59,7 @@
     </div>
     <br>
 
-     <!-- Category -->
+    <!-- Category -->
     <div class="control-group {{ $errors->has('category') ? 'error' : '' }}">
         <label class="control-label" for="title">Category</label>
 
@@ -86,7 +85,7 @@
     </div>
     <br>
 
-  <div class="panel panel-default">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
@@ -137,21 +136,9 @@
                         <br>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="well well-sm well-primary">
-                            <form class="form form-inline " role="form">
-                            <div class="form-group">
-                            </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-
-
     <!-- Published -->
     <div class="control-group {{ $errors->has('is_published') ? 'has-error' : '' }}">
 

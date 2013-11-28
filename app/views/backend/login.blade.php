@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <!-- CSS are placed here -->
-    {{ HTML::style('bootstrap/css/backend_bootstrap.css') }}
-    {{ HTML::style('bootstrap/css/signin.css') }}
+    {{ HTML::style('assets/bootstrap/css/backend_bootstrap.css') }}
+    {{ HTML::style('assets/bootstrap/css/signin.css') }}
     <style>
         body {
             background-color: #1b1b1b;

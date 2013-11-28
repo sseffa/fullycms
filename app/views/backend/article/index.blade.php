@@ -92,7 +92,7 @@
                         </td>
                         <td>
                         <a href="#" id="{{ $article->id }}" class="publish">
-                            <img id="publish-image-{{ $article->id }}" src="{{url('/')}}/images/{{ ($article->is_published) ? 'publish.png' : 'not_publish.png'  }}"/>
+                            <img id="publish-image-{{ $article->id }}" src="{{url('/')}}/assets/images/{{ ($article->is_published) ? 'publish.png' : 'not_publish.png'  }}"/>
                         </a>
                         </td>
                     </tr>

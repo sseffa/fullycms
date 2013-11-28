@@ -1,6 +1,6 @@
 @extends('frontend/layout')
 @section('content')
-{{ HTML::style('/ckeditor/contents.css') }}
+{{ HTML::style('ckeditor/contents.css') }}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">

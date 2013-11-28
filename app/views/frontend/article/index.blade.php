@@ -1,6 +1,6 @@
 @extends('frontend/layout')
 @section('content')
-{{ HTML::script('bootstrap/js/moment-with-langs.min.js') }}
+{{ HTML::script('assets/js/moment-with-langs.min.js') }}
 <script type="text/javascript">
     moment().format();
     moment.lang('en');

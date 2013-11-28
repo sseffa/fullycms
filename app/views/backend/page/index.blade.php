@@ -14,7 +14,7 @@
                 url: "{{ url('/admin/page/" + id + "/toggle-menu/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/menu.png" : "{{url('/')}}/images/not_menu.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/menu.png" : "{{url('/')}}/images/not_menu.png";
                         $("#menu-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -33,7 +33,7 @@
                 url: "{{ url('/admin/page/" + id + "/toggle-publish/') }}",
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/images/publish.png" : "{{url('/')}}/images/not_publish.png";
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/publish.png" : "{{url('/')}}/images/not_publish.png";
                         $("#publish-image-" + id).attr('src', imagePath);
                     }
                 },
@@ -110,8 +110,8 @@
                             </div>
                         </td>
                         <td>
-                        <a href="#" id="{{ $page->id }}" class="publish"><img id="publish-image-{{ $page->id }}" src="{{url('/')}}/images/{{ ($page->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
-                        <a href="#" id="{{ $page->id }}" class="in-menu"><img id="menu-image-{{ $page->id }}" src="{{url('/')}}/images/{{ ($page->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
+                        <a href="#" id="{{ $page->id }}" class="publish"><img id="publish-image-{{ $page->id }}" src="{{url('/')}}/assets/images/{{ ($page->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
+                        <a href="#" id="{{ $page->id }}" class="in-menu"><img id="menu-image-{{ $page->id }}" src="{{url('/')}}/assets/images/{{ ($page->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
                         </td>
                     </tr>
                     @endforeach

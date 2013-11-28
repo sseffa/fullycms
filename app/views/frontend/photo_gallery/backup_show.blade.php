@@ -1,8 +1,8 @@
 @extends('frontend/layout')
 @section('content')
-{{ HTML::style('/ckeditor/contents.css') }}
-{{ HTML::style('/colorbox/colorbox.css') }}
-{{ HTML::script('/colorbox/js/jquery.colorbox.js') }}
+{{ HTML::style('ckeditor/contents.css') }}
+{{ HTML::style('colorbox/colorbox.css') }}
+{{ HTML::script('colorbox/js/jquery.colorbox.js') }}
 <script type="text/javascript">
       $(document).ready(function(){
           //Examples of how to assign the Colorbox event to elements

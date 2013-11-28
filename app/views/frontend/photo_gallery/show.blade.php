@@ -1,23 +1,23 @@
 @extends('frontend/layout')
 @section('content')
-{{ HTML::style('/ckeditor/contents.css') }}
-{{ HTML::style('/fancybox/css/jquery.fancybox.css') }}
-{{ HTML::style('/fancybox/css/jquery.fancybox-buttons.css') }}
-{{ HTML::style('/fancybox/css/jquery.fancybox-thumbs.css') }}
-{{ HTML::script('/fancybox/js/jquery.mousewheel-3.0.6.pack.js') }}
-{{ HTML::script('/fancybox/js/jquery.fancybox.pack.js') }}
-{{ HTML::script('/fancybox/js/jquery.fancybox-buttons.js') }}
-{{ HTML::script('/fancybox/js/jquery.fancybox-media.js') }}
-{{ HTML::script('/fancybox/js/jquery.fancybox-thumbs.js') }}
-{{ HTML::script('/bootstrap/js/jquery.lazyload.min.js') }}
+{{ HTML::style('ckeditor/contents.css') }}
+{{ HTML::style('fancybox/css/jquery.fancybox.css') }}
+{{ HTML::style('fancybox/css/jquery.fancybox-buttons.css') }}
+{{ HTML::style('fancybox/css/jquery.fancybox-thumbs.css') }}
+{{ HTML::script('fancybox/js/jquery.mousewheel-3.0.6.pack.js') }}
+{{ HTML::script('fancybox/js/jquery.fancybox.pack.js') }}
+{{ HTML::script('fancybox/js/jquery.fancybox-buttons.js') }}
+{{ HTML::script('fancybox/js/jquery.fancybox-media.js') }}
+{{ HTML::script('fancybox/js/jquery.fancybox-thumbs.js') }}
+{{ HTML::script('assets/js/jquery.lazyload.min.js') }}
 <script type="text/javascript">
     $(document).ready(function () {
         $(".fancybox").fancybox();
     });
 
-    $(function() {
+    $(function () {
         $("img.lazy").lazyload({
-            effect : "fadeIn"
+            effect: "fadeIn"
         });
     });
 </script>

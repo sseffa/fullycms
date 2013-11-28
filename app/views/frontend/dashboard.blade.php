@@ -1,7 +1,7 @@
 @extends('frontend/layout')
 @section('content')
-{{ HTML::style('bootstrap/css/modern-business.css') }}
-{{ HTML::style('bootstrap/css/font-awesome.min.css') }}
+{{ HTML::style('assets/bootstrap/css/modern-business.css') }}
+{{ HTML::style('assets/bootstrap/css/font-awesome.min.css') }}
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
