@@ -26,6 +26,10 @@ Route::get('/', array('as' => 'dashboard', function () {
 Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
 Route::get('/article/{id}/{slug}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
 
+// news
+Route::get('/news', array('as' => 'dashboard.news', 'uses' => 'NewsController@index'));
+Route::get('/news/{id}/{slug}', array('as' => 'dashboard.news.show', 'uses' => 'NewsController@show'));
+
 // tags
 Route::get('/tag/{tag}', array('as' => 'dashboard.tag', 'uses' => 'TagController@index'));
 
@@ -67,6 +71,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
+    // news
+    Route::resource('news', 'App\Controllers\Admin\NewsController');
+    Route::get('news/{id}/delete', array('as' => 'admin.news.delete', 'uses' => 'App\Controllers\Admin\NewsController@confirmDestroy'))
+        ->where('id', '[0-9]+');
+
     // category
     Route::resource('category', 'App\Controllers\Admin\CategoryController');
     Route::get('category/{id}/delete', array('as' => 'admin.category.delete', 'uses' => 'App\Controllers\Admin\CategoryController@confirmDestroy'))
@@ -83,6 +92,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
     // ajax - blog
     Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'))
+        ->where('id', '[0-9]+');
+
+    // ajax - news
+    Route::post('news/{id}/toggle-publish', array('as' => 'admin.news.toggle-publish', 'uses' => 'App\Controllers\Admin\NewsController@togglePublish'))
         ->where('id', '[0-9]+');
 
     // ajax - photo gallery

@@ -28,3 +28,15 @@ Breadcrumbs::register('contact', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Contact', route('dashboard.contact'));
 });
+
+Breadcrumbs::register('news', function ($breadcrumbs) {
+
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('News', route('dashboard.news'));
+});
+
+Breadcrumbs::register('news.show', function ($breadcrumbs, $news) {
+
+    $breadcrumbs->parent('news');
+    $breadcrumbs->push($news->title, route('dashboard.news.show', array($news->id, $news->slug)));
+});

@@ -12,6 +12,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li> {{ HTML::link('/','Home') }}</li>
+                <li> {{ HTML::link('/news','News') }}</li>
                 <li> {{ HTML::link('/article','Blog') }}</li>
                 @foreach(Page::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $page)
                 <li>{{ link_to_route( 'dashboard.page.show', e($page->title), $page->id) }}</li>
