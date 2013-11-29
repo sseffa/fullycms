@@ -15,7 +15,7 @@
         "chars_only_latin": true,
         "dateFormat": "d M Y H:i",
         "serverRoot": true,
-        "fileRoot": false,
+        "fileRoot": "sf_cms/public/uploads/cke/",
         "relPath": false,
         "logger": false,
         "plugins": []

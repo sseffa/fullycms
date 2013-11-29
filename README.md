@@ -3,7 +3,7 @@ sf CMS
 
 ## Features
 
-* Bootstrap
+* Bootstrap 3
 * Authentication Sentry 2
 * Ckeditor
 * Bootstrap Code Prettify
@@ -12,16 +12,18 @@ sf CMS
 * 404 for not found pages	
 * Custom Error Pages  
 * Backend	
-  * Manage article
+  * Manage article (category, tag)
   * Manage tag
   * Manage page
+  * Manage news
   * Manage photo gallery
-  * Ckeditor for post creation and editing (file manager)
+  * Ckeditor for post creation and editing (filemanager)
   * Form post manage
   * Site settings
 * Frontend
   * Article (momentjs)
   * Page
+  * News
   * Photo Gallery (Lazy load image, responsive fancybox)
   * Contact Form
   * Breadcrumbs

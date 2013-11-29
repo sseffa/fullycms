@@ -41,7 +41,7 @@ class CategoryController extends BaseController {
         );
 
         $rules = array(
-            'title' => 'required'
+            'title' => 'required|min:3|unique:categories'
         );
 
         $validation = Validator::make($formData, $rules);
@@ -115,7 +115,7 @@ class CategoryController extends BaseController {
 
     public function confirmDestroy($id) {
 
-        $category = Page::findOrFail($id);
+        $category = Category::findOrFail($id);
         return View::make('backend.category.confirm-destroy', compact('category'))->with('active', 'category');
     }
 }

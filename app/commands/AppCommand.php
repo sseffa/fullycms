@@ -9,14 +9,14 @@ class AppCommand extends Command {
     /**
      * The console command name.
      *
-     * @var        string
+     * @var string
      */
     protected $name = 'app:install';
 
     /**
      * The console command description.
      *
-     * @var        string
+     * @var string
      */
     protected $description = '';
 

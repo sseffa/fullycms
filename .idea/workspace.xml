@@ -5,76 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\app\views\backend\backup-dashboard.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\app\views\backend\home-slider\index.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\app\views\frontend\photo_gallery\backup_show.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\colorbox.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\images\border.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\images\controls.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\images\loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\images\loading_background.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\images\overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\js\jquery.colorbox-min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\sf_cms\public\colorbox\js\jquery.colorbox.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/_layout/dashboard.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\filemanager.php" afterPath="$PROJECT_DIR$/app/views/backend/plugins/filemanager.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\footer.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/_layout/footer.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\layout.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/_layout/layout.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\login.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/auth/login.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\backend\menu.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\frontend\dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/_layout/dashboard.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\frontend\footer.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/_layout/footer.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\frontend\layout.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/_layout/layout.blade.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\sf_cms\app\views\frontend\menu.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/_layout/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/form_post/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/form_post/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/news/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/news/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/user/confirm-destroy.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/user/confirm-destroy.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/news/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/news/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/user/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/user/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/news/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/news/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/user/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/user/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/contact/form.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/contact/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/form_post/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/form_post/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/news/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/news/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/user/index.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/user/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/category/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/category/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/news/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/news/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/article/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/article/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/form_post/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/form_post/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/news/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/news/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/page/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/page/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/user/show.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/user/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/news/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/news/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" afterPath="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/commands/AppCommand.php" afterPath="$PROJECT_DIR$/app/commands/AppCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/NewsController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/NewsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/filemanager/scripts/filemanager.config.js" afterPath="$PROJECT_DIR$/public/filemanager/scripts/filemanager.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385712601426" ignored="false" />
+    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385733121489" ignored="false" />
     <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385727943911" ignored="false" />
     <file path="/config.js" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384804571359" ignored="false" />
     <file path="/index.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385724779019" ignored="false" />
@@ -185,7 +125,7 @@
     <file path="/login.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385663825981" ignored="false" />
     <file path="/CategoriesTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385550458686" ignored="false" />
     <file path="/Category.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385551947921" ignored="false" />
-    <file path="/CategoryController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385559400520" ignored="false" />
+    <file path="/CategoryController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385730538319" ignored="false" />
     <file path="/confirm-destroy.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385727089369" ignored="false" />
     <file path="/2013_11_27_110650_create_categories_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385553179725" ignored="false" />
     <file path="$PROJECT_DIR$/app/views/backend/plugins/home-slider/dashboard.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385562009116" ignored="false" />
@@ -197,6 +137,7 @@
     <file path="/NewsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385714158060" ignored="false" />
     <file path="/NewsController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385724480922" ignored="false" />
     <file path="/News.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385714950962" ignored="false" />
+    <file path="/filemanager.config.js" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385732859282" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,11 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/_layout/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/_layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/article/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/article/show.blade.php" />
@@ -248,7 +184,12 @@
         <option value="$PROJECT_DIR$/app/views/frontend/page/show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/commands/AppCommand.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/NewsController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" />
         <option value="$PROJECT_DIR$/public/filemanager/scripts/filemanager.js" />
+        <option value="$PROJECT_DIR$/public/filemanager/scripts/filemanager.config.js" />
       </list>
     </option>
   </component>
@@ -310,30 +251,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="sf_cms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -417,16 +334,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1296" height="1040" extended-state="6" />
+    <frame x="1912" y="-8" width="1296" height="1040" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25445706" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26256078" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -435,6 +351,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991655" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -501,118 +418,96 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/footer.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/backend/_layout/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
+        <state line="47" column="144" selection-start="3009" selection-end="3009" vertical-scroll-proportion="0.19719954">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/menu.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/backend/_layout/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="78" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="7" selection-start="927" selection-end="927" vertical-scroll-proportion="0.2905484" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/storage/views/c692be8216179b5f679e451cdc41f8eb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="35" selection-start="928" selection-end="928" vertical-scroll-proportion="-0.67211205" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/storage/sessions/sess_vbjjgh1tsf9umdf03helrj39t4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/ArticlesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="154" selection-end="154" vertical-scroll-proportion="-0.11201867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="386" selection-end="386" vertical-scroll-proportion="0.37339556" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/breadcrumbs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="3" selection-start="851" selection-end="851" vertical-scroll-proportion="0.54142356" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="39" selection-start="6519" selection-end="6519" vertical-scroll-proportion="1.5414236">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/article/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/category/confirm-destroy.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="17" selection-start="2687" selection-end="2687" vertical-scroll-proportion="0.5705951">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/article/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+        <state line="50" column="63" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.70945156">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/category/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/filemanager/ReadMe.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+        <state line="146" column="371" selection-start="7114" selection-end="7114" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/contact/form.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+        <state line="23" column="18" selection-start="761" selection-end="761" vertical-scroll-proportion="0.44807467">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/news/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/news/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/tag/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partial/breadcrumbs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="389" selection-end="389" vertical-scroll-proportion="0.22403733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/page/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/article/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.28004667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/photo_gallery/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="840" selection-end="840" vertical-scroll-proportion="0.37339556">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/filemanager/scripts/filemanager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1036" column="34" selection-start="34167" selection-end="34167" vertical-scroll-proportion="0.390625">
+        <state line="1033" column="128" selection-start="33986" selection-end="34095" vertical-scroll-proportion="0.35239208">
           <folding />
         </state>
       </provider>
