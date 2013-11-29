@@ -77,10 +77,7 @@
 
             var myDropzone = new Dropzone("#dropzone .dropzone");
             Dropzone.options.myDropzone = false;
-            @foreach($photos
-            as
-            $photo
-            )
+            @foreach($photos as $photo)
 
             // Create the mock file:
             var mockFile = { name: "{{ $photo->file_name }}", size: "{{ $photo->file_size }}" };

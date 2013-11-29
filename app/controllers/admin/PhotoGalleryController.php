@@ -94,7 +94,7 @@ class PhotoGalleryController extends BaseController {
 
         $photo_gallery = PhotoGallery::findOrFail($id);
         $photos = Photo::where('photo_gallery_id', '=', $id)->get();
-        return View::make('backend.photo_gallery.edit', compact('photo_gallery','photos'));
+        return View::make('backend.photo_gallery.edit', compact('photo_gallery', 'photos'));
     }
 
     /**
@@ -179,7 +179,7 @@ class PhotoGalleryController extends BaseController {
 
         $file = Input::file('file');
 
-        $destinationPath = public_path() . '/uploads/';
+        $destinationPath = public_path() . '/uploads/dropzone/';
         $fileName = $file->getClientOriginalName();
         $fileSize = $file->getClientSize();
 
@@ -195,7 +195,7 @@ class PhotoGalleryController extends BaseController {
             $image->file_name = $fileName;
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
-            $image->path = '/uploads/' . $fileName;
+            $image->path = '/uploads/dropzone/' . $fileName;
             $photo_gallery->photos()->save($image);
 
             return Response::json('success', 200);
@@ -208,7 +208,7 @@ class PhotoGalleryController extends BaseController {
 
         Photo::where('file_name', '=', $fileName)->delete();
 
-        $destinationPath = public_path() . "/uploads/";
+        $destinationPath = public_path() . "/uploads/dropzone/";
         File::delete($destinationPath . $fileName);
         File::delete($destinationPath . "150x150_" . $fileName);
         return Response::json('success', 200);
