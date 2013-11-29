@@ -11,8 +11,8 @@
 </head>
 
 <body>
-@include('frontend/menu')
+@include('frontend/_layout/menu')
 @yield('content')
-@include('frontend/footer')
+@include('frontend/_layout/footer')
 </body>
 </html>

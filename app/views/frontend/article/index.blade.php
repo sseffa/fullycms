@@ -1,4 +1,4 @@
-@extends('frontend/layout')
+@extends('frontend/_layout/layout')
 @section('content')
 {{ HTML::script('assets/js/moment-with-langs.min.js') }}
 <script type="text/javascript">

@@ -18,9 +18,9 @@
     </style>
 </head>
 <body>
-@include('backend/menu')
+@include('backend/_layout/menu')
 @yield('content')
-@include('backend/footer')
+@include('backend/_layout/footer')
 <div class="modal" id="addWidgetModal">
     <div class="modal-dialog">
         <div class="modal-content">

@@ -1,4 +1,4 @@
-@extends('frontend/layout')
+@extends('frontend/_layout/layout')
 @section('content')
 <script type="text/javascript">
     $(document).ready(function () {

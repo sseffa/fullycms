@@ -23,7 +23,7 @@
                  <li class="dropdown  @if(isset($active) && $active=='article') active @endif">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>Blog <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>{{ HTML::link('/admin/article','Blog') }}</li>
+                        <li>{{ HTML::link('/admin/article','Article') }}</li>
                         <li>{{ HTML::link('/admin/category','Category') }}</li>
                     </ul>
                 </li>

@@ -1,4 +1,4 @@
-@extends('backend/layout')
+@extends('backend/_layout/layout')
 @section('content')
 {{ HTML::script('ckeditor/ckeditor.js') }}
 {{ HTML::style('dropzone/css/basic.css') }}

@@ -12,10 +12,8 @@ class AuthController extends BaseController {
      */
     public function getLogin() {
 
-        if (!Sentry::check())
-            return View::make('backend.login');
-        else
-            return Redirect::route('admin.dashboard');
+        if (!Sentry::check()) return View::make('backend/auth/login');
+        else return Redirect::route('admin.dashboard');
     }
 
     /**

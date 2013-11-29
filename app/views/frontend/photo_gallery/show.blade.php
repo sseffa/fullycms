@@ -1,4 +1,4 @@
-@extends('frontend/layout')
+@extends('frontend/_layout/layout')
 @section('content')
 {{ HTML::style('ckeditor/contents.css') }}
 {{ HTML::style('fancybox/css/jquery.fancybox.css') }}
@@ -35,17 +35,18 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <p class="lead">{{ $photo_gallery->content }}</p>
+            <p>{{ $photo_gallery->content }}</p>
         </div>
     </div>
+    @if($photos->count())
     <div class="row">
         <div class="col-lg-12">
             <h4>Images</h4>
             @foreach($photos as $photo)
-
             <a rel="group" class="fancybox" href="{{ url($photo->path) }}" title="{{ $photo->title }}"><img style="border-radius: 20px;" class="lazy left" data-original="{{ url('uploads/150x150_' . $photo->file_name) }}"/></a>
             @endforeach
         </div>
     </div>
+    @endif
 </div>
 @stop

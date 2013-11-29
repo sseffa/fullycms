@@ -17,9 +17,10 @@
 |--------------------------------------------------------------------------
 */
 
+// frontend dashboard
 Route::get('/', array('as' => 'dashboard', function () {
 
-    return View::make('frontend/dashboard');
+    return View::make('frontend/_layout/dashboard');
 }));
 
 // article
@@ -56,9 +57,10 @@ Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormP
 
 Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
 
+    // admin dashboard
     Route::get('/', array('as' => 'admin.dashboard', function () {
 
-        return View::make('backend/dashboard')->with('active', 'home');
+        return View::make('backend/_layout/dashboard')->with('active', 'home');
     }));
 
     // user
@@ -127,21 +129,23 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     // home slider
     Route::get('/home-slider', array('as' => 'admin.home.slider', function () {
 
-        return View::make('backend/plugins/home-slider/index');
+        return View::make('backend/home_slider/index');
     }));
 });
 
-// File manager
+// filemanager
 Route::get('filemanager/show/{x?}', function () {
 
-    return View::make('backend.filemanager');
+    return View::make('backend/plugins/filemanager');
 })->before('auth.admin');
 
+// login
 Route::get('/admin/login', array('as' => 'admin.login', function () {
 
-    return View::make('backend/singin');
+    return View::make('backend/auth/login');
 }));
 
+// admin auth
 Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
@@ -152,6 +156,7 @@ Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Cont
 |--------------------------------------------------------------------------
 */
 
+// error
 App::error(function (Exception $exception) {
 
     Log::error($exception);
@@ -159,7 +164,7 @@ App::error(function (Exception $exception) {
     return Response::view('errors.error', compact('error'));
 });
 
-
+// 404 page not found
 App::missing(function () {
 
     return Response::view('errors.missing', array(), 404);

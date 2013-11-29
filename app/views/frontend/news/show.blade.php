@@ -1,4 +1,4 @@
-@extends('frontend/layout')
+@extends('frontend/_layout/layout')
 @section('content')
 {{ HTML::style('ckeditor/contents.css') }}
 {{ HTML::style('assets/css/style.css') }}

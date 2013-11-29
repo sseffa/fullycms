@@ -1,4 +1,4 @@
-@extends('frontend/layout')
+@extends('frontend/_layout/layout')
 @section('content')
 {{ HTML::style('assets/bootstrap/css/modern-business.css') }}
 {{ HTML::style('assets/bootstrap/css/font-awesome.min.css') }}

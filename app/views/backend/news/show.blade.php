@@ -1,4 +1,4 @@
-@extends('backend/layout')
+@extends('backend/_layout/layout')
 @section('content')
 {{ HTML::style('ckeditor/contents.css') }}
 <div class="container">
