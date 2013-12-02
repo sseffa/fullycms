@@ -179,6 +179,15 @@ class PhotoGalleryController extends BaseController {
 
         $file = Input::file('file');
 
+        $rules = array('file'  => 'mimes:jpg,jpeg,bmp,png|max:10000');
+        $data = array('file' => Input::file('file'));
+
+        $validation = Validator::make($data, $rules);
+
+        if ($validation->fails()) {
+            return Response::json($validation->errors()->first(), 400);
+        }
+
         $destinationPath = public_path() . '/uploads/dropzone/';
         $fileName = $file->getClientOriginalName();
         $fileSize = $file->getClientSize();
