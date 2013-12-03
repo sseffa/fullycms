@@ -32,7 +32,7 @@
     @endif
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Form Post</h3>
+            <h3 class="panel-title">Form Posts</h3>
         </div>
         <div class="panel-body">
             <br>
@@ -42,9 +42,9 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Sender Name</th>
-                        <th>Sender Email</th>
-                        <th>Sender Phone Number</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
                         <th>Subject</th>
                         <th>Action</th>
                         <th>Settings</th>

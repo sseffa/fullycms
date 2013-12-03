@@ -30,7 +30,6 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Plugins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>{{ HTML::link('/admin/home-slider','Home Slider') }}</li>
-                        <li>{{ HTML::link('/admin/form-post','Form Posts') }}</li>
                     </ul>
                 </li>
                 <li @if(isset($active) && $active=="user") class="active" @endif><a href="{{ url('/admin/user') }}"><span class="glyphicon glyphicon-user"></span>Users</a></li>
