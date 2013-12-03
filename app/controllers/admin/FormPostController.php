@@ -50,4 +50,14 @@ class FormPostController extends BaseController {
         $formPost = FormPost::findOrFail($id);
         return View::make('backend.form_post.confirm-destroy', compact('formPost'))->with('active', 'form-post');
     }
+
+    public function toggleAnswer($id) {
+
+        $formPost = FormPost::findOrFail($id);
+
+        $formPost->is_answered = ($formPost->is_answered) ? false : true;
+        $formPost->save();
+
+        return Response::json(array('result' => 'success', 'changed' => ($formPost->is_answered) ? 1 : 0));
+    }
 }

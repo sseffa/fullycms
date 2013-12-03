@@ -3,6 +3,25 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#message').show().delay(4000).fadeOut(700);
+
+        // answer settings
+        $(".answer").bind("click", function (e) {
+            var id = $(this).attr('id');
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "{{ url('/admin/form-post/" + id + "/toggle-answer/') }}",
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/answered.png" : "{{url('/')}}/assets/images/not_answered.png";
+                        $("#answer-image-" + id).attr('src', imagePath);
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
+            })
+        });
     });
 </script>
 <div class="container">
@@ -28,6 +47,7 @@
                         <th>Sender Phone Number</th>
                         <th>Subject</th>
                         <th>Action</th>
+                        <th>Settings</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -59,6 +79,11 @@
                                     </li>
                                 </ul>
                             </div>
+                        </td>
+                        <td>
+                            <a href="#" id="{{ $formPost->id }}" class="answer">
+                                <img id="answer-image-{{ $formPost->id }}" src="{{url('/')}}/assets/images/{{ ($formPost->is_answered) ? 'answered.png' : 'not_answered.png'  }}"/>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

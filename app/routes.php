@@ -71,7 +71,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     // blog
     Route::resource('article', 'App\Controllers\Admin\ArticleController');
     Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'))
-        ->where('id', '[0-9]+');
+        ->where('id', '\d+');
 
     // news
     Route::resource('news', 'App\Controllers\Admin\NewsController');
@@ -110,6 +110,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'))
         ->where('id', '[0-9]+');
     Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'))
+        ->where('id', '[0-9]+');
+
+    // ajax - form post
+    Route::post('form-post/{id}/toggle-answer', array('as' => 'admin.form-post.toggle-answer', 'uses' => 'App\Controllers\Admin\FormPostController@toggleAnswer'))
         ->where('id', '[0-9]+');
 
     // file upload
