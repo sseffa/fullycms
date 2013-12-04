@@ -11,7 +11,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li @if(isset($active) && $active=="home") class="active" @endif><a href="{{ url('/admin') }}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
-                 <li class="dropdown">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Modules <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        <li>{{ HTML::link('/admin/news','News') }}</li>
@@ -35,7 +35,7 @@
                 <li @if(isset($active) && $active=="user") class="active" @endif><a href="{{ url('/admin/user') }}"><span class="glyphicon glyphicon-user"></span>Users</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/admin/form-post') }}"><span class="glyphicon glyphicon-picture"></span>Inbox <span class="label label-info">{{ getUnansweredMessageCount() }}</span></a></li>
+                <li @if(isset($active) && $active=="form-post") class="active" @endif><a href="{{ url('/admin/form-post') }}"><span class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">{{ FormPost::getUnansweredMessageCount() }}</span></a></li>
                 <li @if(isset($active) && $active=="settings") class="active" @endif><a href="{{ url('/admin/settings') }}"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
                 <li><a href="{{ url('/admin/logout') }}"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
             </ul>

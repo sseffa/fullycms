@@ -38,22 +38,16 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h5 class="text-center"><b>SIGN UP</b></h5>
-                    {{ Form::open(array('class' => 'form-signup', 'id' => 'form-signin')) }}
-
-                    @if ($errors->has('login'))
+                    <h5 class="text-center"><b>Reset Password</b></h5>
+                    {{ Form::open(array('url'=>'admin/reset-password', 'class' => 'form-signup', 'id' => 'form-signin')) }}
+                    @if ($errors->count() > 0)  @foreach( $errors->all() as $message )
                     <div class="alert alert-danger">
-                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{{ $errors->first('login', ':message') }}
+                           <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{{ $message }}
                     </div>
+                      @endforeach
                     @endif
 
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                            </span>
-                            {{ Form::text('email', null,array('class' => 'form-control', 'placeholder'=>'Email', 'autofocus'=>'')) }}
-                        </div>
-                    </div>
+
 
                     <div class="form-group">
                         <div class="input-group">
@@ -62,12 +56,18 @@
                         </div>
                     </div>
 
-                    <label style="text-align: left" class="checkbox">{{ Form::checkbox('rememberMe', 'rememberMe') }} Remember me</label>
+                      <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            {{ Form::password('confirm_password', array('class' => 'form-control','placeholder'=>'Confirm Password')) }}
+                        </div>
+                    </div>
 
-                    {{ Form::submit('Sign in', array('class' => 'btn btn-sm btn-primary btn-block', 'role'=>'button')) }}
+                    {{ Form::hidden('id', $id) }}
+                    {{ Form::hidden('code', $code) }}
+
+                    {{ Form::submit('Save', array('class' => 'btn btn-sm btn-primary btn-block', 'role'=>'button')) }}
                     {{ Form::close() }}
-                    <br>
-                    {{ HTML::link('/admin/forgot-password','Forgot Password', array('class' => 'btn btn-sm btn-default btn-block')) }}
                 </div>
             </div>
         </div>

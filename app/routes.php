@@ -154,6 +154,13 @@ Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controll
 Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
 
+// admin password reminder
+Route::get('admin/forgot-password', array('as' => 'admin.forgot.password', 'uses' => 'App\Controllers\Admin\AuthController@getForgotPassword'));
+Route::post('admin/forgot-password', array('as' => 'admin.forgot.password.post', 'uses' => 'App\Controllers\Admin\AuthController@postForgotPassword'));
+
+Route::get('admin/{id}/reset/{code}', array('as' => 'admin.reset.password', 'uses' => 'App\Controllers\Admin\AuthController@getResetPassword'))->where('id', '[0-9]+');
+Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', 'uses' => 'App\Controllers\Admin\AuthController@postResetPassword'));
+
 /*
 |--------------------------------------------------------------------------
 | General Routes
@@ -161,12 +168,14 @@ Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Cont
 */
 
 // error
+/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
     $error = $exception->getMessage();
     return Response::view('errors.error', compact('error'));
 });
+*/
 
 // 404 page not found
 App::missing(function () {

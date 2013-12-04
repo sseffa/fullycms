@@ -38,12 +38,12 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h5 class="text-center"><b>SIGN UP</b></h5>
+                    <h5 class="text-center"><b>Forgot Password</b></h5>
                     {{ Form::open(array('class' => 'form-signup', 'id' => 'form-signin')) }}
 
-                    @if ($errors->has('login'))
+                    @if ($errors->has('forgot-password'))
                     <div class="alert alert-danger">
-                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{{ $errors->first('login', ':message') }}
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{{ $errors->first('forgot-password', ':message') }}
                     </div>
                     @endif
 
@@ -55,19 +55,8 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                            {{ Form::password('password', array('class' => 'form-control','placeholder'=>'Password')) }}
-                        </div>
-                    </div>
-
-                    <label style="text-align: left" class="checkbox">{{ Form::checkbox('rememberMe', 'rememberMe') }} Remember me</label>
-
-                    {{ Form::submit('Sign in', array('class' => 'btn btn-sm btn-primary btn-block', 'role'=>'button')) }}
+                    {{ Form::submit('Send Password', array('class' => 'btn btn-sm btn-primary btn-block', 'role'=>'button')) }}
                     {{ Form::close() }}
-                    <br>
-                    {{ HTML::link('/admin/forgot-password','Forgot Password', array('class' => 'btn btn-sm btn-default btn-block')) }}
                 </div>
             </div>
         </div>

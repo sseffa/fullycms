@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 </head>
 <body>
-<h2>Form Gönderisi</h2>
+<h2>Form Post</h2>
 
 <div>
     <p><b>Sender Name and Surname: </b>{{ $sender_name_surname }}</p>
