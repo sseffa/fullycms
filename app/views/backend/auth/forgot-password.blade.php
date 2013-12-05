@@ -47,6 +47,12 @@
                     </div>
                     @endif
 
+                    @if ($errors->has('email'))
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>{{ $errors->first('email', ':message') }}
+                    </div>
+                    @endif
+
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>

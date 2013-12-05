@@ -68,6 +68,16 @@ class AuthController extends BaseController {
             'email' => Input::get('email')
         );
 
+        $rules = array(
+            'email' => 'required|email',
+        );
+
+        $validation = Validator::make($credentials, $rules);
+
+        if ($validation->fails()) {
+
+            return Redirect::back()->withErrors($validation)->withInput();
+        }
 
         try {
 
@@ -138,14 +148,13 @@ class AuthController extends BaseController {
                 if ($user->attemptResetPassword($formData['code'], $formData['password'])) {
                     // Password reset passed
                     return Redirect::route('admin.login');
-
                 } else {
                     // Password reset failed
-                    return Redirect::action('App\Controllers\Admin\AuthController@getResetPassword')->withErrors($validation)->withInput();
+                    return Redirect::action('App\Controllers\Admin\AuthController@getResetPassword')->withErrors(array('forgot-password' => 'Password reset failed'));
                 }
             } else {
                 // The provided password reset code is Invalid
-                return Redirect::action('App\Controllers\Admin\AuthController@getResetPassword')->withErrors($validation)->withInput();
+                return Redirect::action('App\Controllers\Admin\AuthController@getResetPassword')->withErrors(array('forgot-password' => 'The provided password reset code is Invalid'));
             }
         } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
 

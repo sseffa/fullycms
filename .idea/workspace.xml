@@ -6,19 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/FormPost.php" afterPath="$PROJECT_DIR$/app/models/FormPost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/contact-form/form.blade.php" afterPath="$PROJECT_DIR$/app/views/emails/contact-form/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers.php" afterPath="$PROJECT_DIR$/app/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/auth/login.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386143250201" ignored="false" />
+    <file path="/Dummy.txt" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386273994666" ignored="false" />
     <file path="/show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385733825780" ignored="false" />
     <file path="/config.js" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384804571359" ignored="false" />
     <file path="/index.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386110006521" ignored="false" />
@@ -146,7 +142,7 @@
     <file path="/helpers.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386108004873" ignored="false" />
     <file path="/composer.json" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386108054870" ignored="false" />
     <file path="/FormPost.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386146071201" ignored="false" />
-    <file path="/forgot-password.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386146071217" ignored="false" />
+    <file path="/forgot-password.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386276121446" ignored="false" />
     <file path="$PROJECT_DIR$/../L4withSentry-master/app/database/seeds/SentryUserSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386146071232" ignored="false" />
     <file path="/AuthController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386151859094" ignored="false" />
     <file path="/reset-password.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386149550118" ignored="false" />
@@ -174,10 +170,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mail.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/mail.php">
+      <file leaf-file-name="filters.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/filters.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="27" selection-start="1442" selection-end="1442" vertical-scroll-proportion="-0.05134189">
+            <state line="78" column="2" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="163" column="2" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.67676765">
               <folding />
             </state>
           </provider>
@@ -201,31 +206,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/admin/FormPostController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/views/backend/form_post/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/config/database.php" />
         <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/app/models/FormPost.php" />
         <option value="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" />
         <option value="$PROJECT_DIR$/../L4withSentry-master/app/database/seeds/SentryUserSeeder.php" />
         <option value="$PROJECT_DIR$/app/views/backend/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php" />
         <option value="$PROJECT_DIR$/app/views/emails/contact-form/form.blade.php" />
         <option value="$PROJECT_DIR$/app/views/emails/auth/reset-password.blade.php" />
-        <option value="$PROJECT_DIR$/app/config/mail.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/backend/auth/reset-password.blade.php" />
+        <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/config/mail.php" />
+        <option value="$PROJECT_DIR$/app/filters.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1040" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -272,7 +277,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -319,12 +323,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -333,8 +338,8 @@
     <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../l4_note" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -403,7 +408,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1296" height="1040" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -411,7 +416,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2350081" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22883788" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -487,114 +492,104 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="55" selection-start="113" selection-end="149" vertical-scroll-proportion="0.07655502">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="22" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/emails/contact-form/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/FormPostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="56" selection-start="1115" selection-end="1124" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="49" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.40191388">
-          <folding />
-        </state>
+        <state line="34" column="56" selection-start="1115" selection-end="1124" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="98" selection-start="464" selection-end="491" vertical-scroll-proportion="0.34449762">
-          <folding />
-        </state>
+        <state line="18" column="98" selection-start="464" selection-end="491" vertical-scroll-proportion="0.34449762" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/user/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="55" selection-start="3588" selection-end="3604" vertical-scroll-proportion="0.6698565">
-          <folding />
-        </state>
+        <state line="76" column="55" selection-start="3588" selection-end="3604" vertical-scroll-proportion="0.6698565" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/emails/auth/reset-password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="535" selection-end="535" vertical-scroll-proportion="0.26794258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="40" selection-start="2407" selection-end="2416" vertical-scroll-proportion="0.96266043">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="26" selection-start="3060" selection-end="3060" vertical-scroll-proportion="2.0861244">
-          <folding />
-        </state>
+        <state line="13" column="7" selection-start="535" selection-end="535" vertical-scroll-proportion="0.26794258" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/auth/reset-password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="118" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.36842105">
+        <state line="44" column="118" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.36842105" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/category/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="10" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.6695527">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/category/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/breadcrumbs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="76" selection-start="7866" selection-end="7870" vertical-scroll-proportion="0.58926487">
+        <state line="29" column="0" selection-start="946" selection-end="946" vertical-scroll-proportion="-0.115440115">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="46" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+        <state line="49" column="70" selection-start="1248" selection-end="1309" vertical-scroll-proportion="0.42568544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="27" selection-start="1442" selection-end="1442" vertical-scroll-proportion="-0.05134189">
+        <state line="30" column="27" selection-start="907" selection-end="914" vertical-scroll-proportion="0.023088023">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/forgot-password.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.43867245">
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="61" selection-start="2621" selection-end="2621" vertical-scroll-proportion="-0.38528138">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="2" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="2" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.67676765">
           <folding />
         </state>
       </provider>
