@@ -55,7 +55,7 @@ Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormP
 |--------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
+Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 'before' => 'auth.admin'), function () {
 
     // admin dashboard
     Route::get('/', array('as' => 'admin.dashboard', function () {
@@ -64,70 +64,70 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function () {
     }));
 
     // user
-    Route::resource('user', 'App\Controllers\Admin\UserController');
-    Route::get('user/{id}/delete', array('as' => 'admin.user.delete', 'uses' => 'App\Controllers\Admin\UserController@confirmDestroy'))
+    Route::resource('user', 'UserController');
+    Route::get('user/{id}/delete', array('as' => 'admin.user.delete', 'uses' => 'UserController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
     // blog
-    Route::resource('article', 'App\Controllers\Admin\ArticleController');
-    Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'App\Controllers\Admin\ArticleController@confirmDestroy'))
+    Route::resource('article', 'ArticleController');
+    Route::get('article/{id}/delete', array('as' => 'admin.article.delete', 'uses' => 'ArticleController@confirmDestroy'))
         ->where('id', '\d+');
 
     // news
-    Route::resource('news', 'App\Controllers\Admin\NewsController');
-    Route::get('news/{id}/delete', array('as' => 'admin.news.delete', 'uses' => 'App\Controllers\Admin\NewsController@confirmDestroy'))
+    Route::resource('news', 'NewsController');
+    Route::get('news/{id}/delete', array('as' => 'admin.news.delete', 'uses' => 'NewsController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
     // category
-    Route::resource('category', 'App\Controllers\Admin\CategoryController');
-    Route::get('category/{id}/delete', array('as' => 'admin.category.delete', 'uses' => 'App\Controllers\Admin\CategoryController@confirmDestroy'))
+    Route::resource('category', 'CategoryController');
+    Route::get('category/{id}/delete', array('as' => 'admin.category.delete', 'uses' => 'CategoryController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
     // page
-    Route::resource('page', 'App\Controllers\Admin\PageController');
-    Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'App\Controllers\Admin\PageController@confirmDestroy'))
+    Route::resource('page', 'PageController');
+    Route::get('page/{id}/delete', array('as' => 'admin.page.delete', 'uses' => 'PageController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
     // photo gallery
-    Route::resource('photo_gallery', 'App\Controllers\Admin\PhotoGalleryController');
-    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@confirmDestroy'))->where('id', '[0-9]+');
+    Route::resource('photo_gallery', 'PhotoGalleryController');
+    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'PhotoGalleryController@confirmDestroy'))->where('id', '[0-9]+');
 
     // ajax - blog
-    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'App\Controllers\Admin\ArticleController@togglePublish'))
+    Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'ArticleController@togglePublish'))
         ->where('id', '[0-9]+');
 
     // ajax - news
-    Route::post('news/{id}/toggle-publish', array('as' => 'admin.news.toggle-publish', 'uses' => 'App\Controllers\Admin\NewsController@togglePublish'))
+    Route::post('news/{id}/toggle-publish', array('as' => 'admin.news.toggle-publish', 'uses' => 'NewsController@togglePublish'))
         ->where('id', '[0-9]+');
 
     // ajax - photo gallery
-    Route::post('photo_gallery/{id}/toggle-publish', array('as' => 'admin.photo_gallery.toggle-publish', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@togglePublish'))
+    Route::post('photo_gallery/{id}/toggle-publish', array('as' => 'admin.photo_gallery.toggle-publish', 'uses' => 'PhotoGalleryController@togglePublish'))
         ->where('id', '[0-9]+');
-    Route::post('photo_gallery/{id}/toggle-menu', array('as' => 'admin.photo_gallery.toggle-menu', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@toggleMenu'))
+    Route::post('photo_gallery/{id}/toggle-menu', array('as' => 'admin.photo_gallery.toggle-menu', 'uses' => 'PhotoGalleryController@toggleMenu'))
         ->where('id', '[0-9]+');
 
     // ajax - page
-    Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'App\Controllers\Admin\PageController@togglePublish'))
+    Route::post('page/{id}/toggle-publish', array('as' => 'admin.page.toggle-publish', 'uses' => 'PageController@togglePublish'))
         ->where('id', '[0-9]+');
-    Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'App\Controllers\Admin\PageController@toggleMenu'))
+    Route::post('page/{id}/toggle-menu', array('as' => 'admin.page.toggle-menu', 'uses' => 'PageController@toggleMenu'))
         ->where('id', '[0-9]+');
 
     // ajax - form post
-    Route::post('form-post/{id}/toggle-answer', array('as' => 'admin.form-post.toggle-answer', 'uses' => 'App\Controllers\Admin\FormPostController@toggleAnswer'))
+    Route::post('form-post/{id}/toggle-answer', array('as' => 'admin.form-post.toggle-answer', 'uses' => 'FormPostController@toggleAnswer'))
         ->where('id', '[0-9]+');
 
     // file upload
-    Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@upload'))
+    Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'PhotoGalleryController@upload'))
         ->where('id', '[0-9]+');
-    Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'App\Controllers\Admin\PhotoGalleryController@deleteImage'));
+    Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'PhotoGalleryController@deleteImage'));
 
     // settings
-    Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'App\Controllers\Admin\SettingController@index'));
-    Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'App\Controllers\Admin\SettingController@save'));
+    Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'SettingController@index'));
+    Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'SettingController@save'));
 
     // form post
-    Route::resource('form-post', 'App\Controllers\Admin\FormPostController', array('only' => array('index', 'show', 'destroy')));
-    Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'App\Controllers\Admin\FormPostController@confirmDestroy'))
+    Route::resource('form-post', 'FormPostController', array('only' => array('index', 'show', 'destroy')));
+    Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'FormPostController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
     // home slider
@@ -149,17 +149,20 @@ Route::get('/admin/login', array('as' => 'admin.login', function () {
     return View::make('backend/auth/login');
 }));
 
-// admin auth
-Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
-Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
+Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
 
-// admin password reminder
-Route::get('admin/forgot-password', array('as' => 'admin.forgot.password', 'uses' => 'App\Controllers\Admin\AuthController@getForgotPassword'));
-Route::post('admin/forgot-password', array('as' => 'admin.forgot.password.post', 'uses' => 'App\Controllers\Admin\AuthController@postForgotPassword'));
+    // admin auth
+    Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'AuthController@getLogout'));
+    Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'AuthController@getLogin'));
+    Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'AuthController@postLogin'));
 
-Route::get('admin/{id}/reset/{code}', array('as' => 'admin.reset.password', 'uses' => 'App\Controllers\Admin\AuthController@getResetPassword'))->where('id', '[0-9]+');
-Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', 'uses' => 'App\Controllers\Admin\AuthController@postResetPassword'));
+    // admin password reminder
+    Route::get('admin/forgot-password', array('as' => 'admin.forgot.password', 'uses' => 'AuthController@getForgotPassword'));
+    Route::post('admin/forgot-password', array('as' => 'admin.forgot.password.post', 'uses' => 'AuthController@postForgotPassword'));
+
+    Route::get('admin/{id}/reset/{code}', array('as' => 'admin.reset.password', 'uses' => 'AuthController@getResetPassword'))->where('id', '[0-9]+');
+    Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', 'uses' => 'AuthController@postResetPassword'));
+});
 
 /*
 |--------------------------------------------------------------------------

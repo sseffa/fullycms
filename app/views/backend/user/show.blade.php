@@ -20,6 +20,10 @@
             <table class="table table-striped">
                 <tbody>
                 <tr>
+                    <td><strong>Avatar</strong></td>
+                    <td><img src="{{ gratavarUrl($user->email) }}" alt="{{ $user->email }}"/></td>
+                </tr>
+                <tr>
                     <td><strong>First Name</strong></td>
                     <td>{{ $user->first_name }}</td>
                 </tr>
