@@ -11,4 +11,3 @@
 |
 */
 
-Artisan::add(new AppCommand);

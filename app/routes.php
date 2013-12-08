@@ -18,10 +18,10 @@
 */
 
 // frontend dashboard
-Route::get('/', array('as' => 'dashboard', function () {
+Route::get('/', ['as' => 'dashboard', function () {
 
     return View::make('frontend/_layout/dashboard');
-}));
+}]);
 
 // article
 Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
@@ -168,12 +168,14 @@ Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', '
 */
 
 // error
+/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
     $error = $exception->getMessage();
     return Response::view('errors.error', compact('error'));
 });
+*/
 
 // 404 page not found
 App::missing(function () {

@@ -48,7 +48,7 @@ class NewsController extends BaseController {
             'title'    => 'required',
             'content'  => 'required',
             'slug'     => 'required',
-            'datetime' => 'required|date|date_format:YYYY-MM-DD',
+            'datetime' => 'required|date',
         );
 
         $validation = Validator::make($formData, $rules);

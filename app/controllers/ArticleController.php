@@ -66,6 +66,8 @@ class ArticleController extends BaseController {
         $categories = Category::with('articles')->get();
         */
 
+        echo DB::getQueryLog();
+
         return View::make('frontend.article.show', compact('article', 'tags', 'categories'));
     }
 }
