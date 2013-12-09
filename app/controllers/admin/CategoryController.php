@@ -2,9 +2,16 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Category, Response;
+use BaseController, Redirect, View, Input, Category, Response;
 
 class CategoryController extends BaseController {
+
+    protected $category;
+
+    public function __construct(Category $category){
+
+        $this->category= $category;
+    }
 
     /**
      * Display a listing of the resource.
@@ -13,7 +20,7 @@ class CategoryController extends BaseController {
      */
     public function index() {
 
-        $categories = Category::orderBy('created_at', 'DESC')
+        $categories = $this->category->orderBy('created_at', 'DESC')
             ->paginate(15);
 
         return View::make('backend.category.index', compact('categories'))->with('active', 'category');
@@ -36,25 +43,15 @@ class CategoryController extends BaseController {
      */
     public function store() {
 
-        $formData = array(
-            'title' => Input::get('title')
-        );
+        $input = Input::all();
 
-        $rules = array(
-            'title' => 'required|min:3|unique:categories'
-        );
-
-        $validation = Validator::make($formData, $rules);
-
-        if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\CategoryController@create')->withErrors($validation)->withInput();
+        if (!$this->category->fill($input)->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->category->errors);
         }
 
-        $category = new Category();
-        $category->title = $formData['title'];
-        $category->save();
+        $this->category->save();
 
-        return Redirect::action('App\Controllers\Admin\CategoryController@index')->with('message', 'Category was successfully added');
+        return Redirect::route('admin.category.index')->with('message', 'Category was successfully added');
     }
 
     /**
@@ -65,7 +62,7 @@ class CategoryController extends BaseController {
      */
     public function show($id) {
 
-        $category = Category::findOrFail($id);
+        $category = $this->category->findOrFail($id);
         return View::make('backend.category.show', compact('category'))->with('active', 'category');
     }
 
@@ -89,14 +86,17 @@ class CategoryController extends BaseController {
      */
     public function update($id) {
 
-        $formData = array(
-            'title' => Input::get('title')
-        );
+        $this->category=Category::find($id);
+        
+        $input = Input::all();
 
-        $category = Category::findOrFail($id);
-        $category->title = $formData['title'];
-        $category->save();
-        return Redirect::action('App\Controllers\Admin\CategoryController@index')->with('message', 'Category was successfully updated');
+        if (!$this->category->fill($input)->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->category->errors);
+        }
+
+        $this->category->save();
+
+        return Redirect::route('admin.category.index')->with('message', 'Category was successfully updated');
     }
 
     /**
@@ -110,7 +110,7 @@ class CategoryController extends BaseController {
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return Redirect::action('App\Controllers\Admin\CategoryController@index')->with('message', 'Category was successfully deleted');
+        return Redirect::route('admin.category.index')->with('message', 'Category was successfully deleted');
     }
 
     public function confirmDestroy($id) {
