@@ -11,6 +11,11 @@
 |
 */
 
+Event::listen('illuminate.query', function ($query) {
+
+    //echo $query;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Frontend Routes

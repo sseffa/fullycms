@@ -3,13 +3,9 @@
 class Category extends Eloquent {
 
     public $table = 'categories';
-
-    protected $fillable=['title'];
-
-    public static $rules = array(
-        'title' => 'required|min:3|unique:categories'
-    );
-
+    public $timestamps = false;
+    protected $fillable = ['title'];
+    public static $rules = ['title' => 'required|min:3|unique:categories'];
     public $errors;
 
     public function articles() {
@@ -21,7 +17,7 @@ class Category extends Eloquent {
 
         $validation = Validator::make($this->attributes, static::$rules);
 
-        if($validation->passes()) return true;
+        if ($validation->passes()) return true;
 
         $this->errors = $validation->messages();
 

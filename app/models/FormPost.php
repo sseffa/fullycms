@@ -10,6 +10,13 @@ class FormPost extends Eloquent {
      */
     public static function getUnansweredMessageCount() {
 
-        return FormPost::where('is_answered', 0)->count();
+        $formPostCount = Cache::get('formPostCount', function () {
+
+            $count = FormPost::where('is_answered', 0)->count();
+            Cache::forever('formPostCount', $count);
+            return $count;
+        });
+
+        return $formPostCount;
     }
 }

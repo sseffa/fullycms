@@ -13,14 +13,10 @@ class CategoriesTableSeeder extends Seeder {
 
         DB::table('categories')->insert(array(
             array(
-                'title'      => 'PHP',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
+                'title' => 'PHP'
             ),
             array(
-                'title'      => 'C#',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
+                'title' => 'C#'
             )
         ));
     }

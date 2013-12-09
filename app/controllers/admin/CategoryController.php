@@ -20,10 +20,10 @@ class CategoryController extends BaseController {
      */
     public function index() {
 
-        $categories = $this->category->orderBy('created_at', 'DESC')
-            ->paginate(15);
+        $categories = $this->category->paginate(15);
 
-        return View::make('backend.category.index', compact('categories'))->with('active', 'category');
+        return View::make('backend.category.index', compact('categories'))
+                        ->with('active', 'category');
     }
 
     /**
@@ -33,7 +33,8 @@ class CategoryController extends BaseController {
      */
     public function create() {
 
-        return View::make('backend.category.create')->with('active', 'category');
+        return View::make('backend.category.create')
+                        ->with('active', 'category');
     }
 
     /**
@@ -46,12 +47,15 @@ class CategoryController extends BaseController {
         $input = Input::all();
 
         if (!$this->category->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->category->errors);
+            return Redirect::back()
+                            ->withInput()
+                            ->withErrors($this->category->errors);
         }
 
         $this->category->save();
 
-        return Redirect::route('admin.category.index')->with('message', 'Category was successfully added');
+        return Redirect::route('admin.category.index')
+                            ->with('message', 'Category was successfully added');
     }
 
     /**
@@ -63,7 +67,8 @@ class CategoryController extends BaseController {
     public function show($id) {
 
         $category = $this->category->findOrFail($id);
-        return View::make('backend.category.show', compact('category'))->with('active', 'category');
+        return View::make('backend.category.show', compact('category'))
+                            ->with('active', 'category');
     }
 
     /**
@@ -87,16 +92,19 @@ class CategoryController extends BaseController {
     public function update($id) {
 
         $this->category=Category::find($id);
-        
+
         $input = Input::all();
 
         if (!$this->category->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->category->errors);
+            return Redirect::back()
+                            ->withInput()
+                            ->withErrors($this->category->errors);
         }
 
         $this->category->save();
 
-        return Redirect::route('admin.category.index')->with('message', 'Category was successfully updated');
+        return Redirect::route('admin.category.index')
+                            ->with('message', 'Category was successfully updated');
     }
 
     /**
@@ -110,12 +118,14 @@ class CategoryController extends BaseController {
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return Redirect::route('admin.category.index')->with('message', 'Category was successfully deleted');
+        return Redirect::route('admin.category.index')
+                            ->with('message', 'Category was successfully deleted');
     }
 
     public function confirmDestroy($id) {
 
         $category = Category::findOrFail($id);
-        return View::make('backend.category.confirm-destroy', compact('category'))->with('active', 'category');
+        return View::make('backend.category.confirm-destroy', compact('category'))
+                            ->with('active', 'category');
     }
 }

@@ -1,7 +1,6 @@
 @extends('backend/_layout/layout')
 @section('content')
 <div class="container">
-
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Edit Category "{{ $category->title }}"</h3>
@@ -17,12 +16,10 @@
             <br>
             <br>
             <br>
-
             {{ Form::open( array( 'route' => array( 'admin.category.update', $category->id), 'method' => 'PATCH')) }}
             <!-- Title -->
             <div class="control-group {{ $errors->has('title') ? 'has-error' : '' }}">
                 <label class="control-label" for="first-name">Title</label>
-
                 <div class="controls">
                     {{ Form::text('title', $category->title, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
                     @if ($errors->first('title'))
@@ -33,10 +30,7 @@
             <br>
             <!-- Form actions -->
             {{ Form::submit('Save Changes', array('class' => 'btn btn-success')) }}
-            <a href="{{ url('admin/category') }}"
-               class="btn btn-default">
-                &nbsp;Cancel
-            </a>
+            <a href="{{ url('admin/category') }}"  class="btn btn-default">&nbsp;Cancel</a>
             {{ Form::close() }}
         </div>
     </div>

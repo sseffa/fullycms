@@ -58,15 +58,13 @@ class ArticleController extends BaseController {
             return Category::with('articles')->get();
         });
 
-        var_dump(DB::getQueryLog());
+        //var_dump(DB::getQueryLog());
 
         /*
         $article = Article::findOrFail($id);
         $tags = Tag::with('articles')->get();
         $categories = Category::with('articles')->get();
         */
-
-        echo DB::getQueryLog();
 
         return View::make('frontend.article.show', compact('article', 'tags', 'categories'));
     }

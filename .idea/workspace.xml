@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_06_143700_create_photos_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_06_143700_create_photos_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_22_085357_create_settings_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_22_085357_create_settings_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2013_11_27_110650_create_categories_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2013_11_27_110650_create_categories_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ArticleController.php" afterPath="$PROJECT_DIR$/app/controllers/ArticleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/CategoriesTableSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/CategoriesTableSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Category.php" afterPath="$PROJECT_DIR$/app/models/Category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/FormPost.php" afterPath="$PROJECT_DIR$/app/models/FormPost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Photo.php" afterPath="$PROJECT_DIR$/app/models/Photo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
     </list>
     <ignored path="sf_cms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,12 +31,12 @@
     <file path="/form.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386148509307" ignored="false" />
     <file path="/breadcrumbs.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384423579263" ignored="false" />
     <file path="/breadcrumbs.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385724763227" ignored="false" />
-    <file path="/routes.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386449201229" ignored="false" />
+    <file path="/routes.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386596841491" ignored="false" />
     <file path="/---show.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384453365012" ignored="false" />
     <file path="$PROJECT_DIR$/../Tyloo-master/app/database/migrations/2013_10_01_145600_create_blog_posts_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384460764487" ignored="false" />
     <file path="/a.dummy" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385553153613" ignored="false" />
     <file path="/2013_11_14_222615_blog_tags_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384460847692" ignored="false" />
-    <file path="/create.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385727630071" ignored="false" />
+    <file path="/create.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386591978957" ignored="false" />
     <file path="/ArticleTagsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384461495212" ignored="false" />
     <file path="/2013_11_14_224042_article_tags_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384467919162" ignored="false" />
     <file path="$PROJECT_DIR$/../Tyloo-master/app/database/seeds/BlogTagsTableSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384461933688" ignored="false" />
@@ -39,7 +51,7 @@
     <file path="/ArticleController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386530863076" ignored="false" />
     <file path="Z:/filweb/v4/Themes/albertgenau/ViewOverride/Layouts/frontMain.phtml" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384527664337" ignored="false" />
     <file path="/2013_11_14_222615_create_tags_table.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384518192700" ignored="false" />
-    <file path="/edit.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1385723200035" ignored="false" />
+    <file path="/edit.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386592209496" ignored="false" />
     <file path="Z:/filweb/v4/Modules/Bayi/Views/display-node-grup.phtml" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384767951828" ignored="false" />
     <file path="Z:/filweb/v4/idare/Modules/Bayi/BayiMapper.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384767951822" ignored="false" />
     <file path="/display-node-grup.phtml" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1384767951823" ignored="false" />
@@ -137,10 +149,10 @@
     <file path="/FormPostController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386107468382" ignored="false" />
     <file path="/helpers.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386542299072" ignored="false" />
     <file path="/composer.json" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386542175942" ignored="false" />
-    <file path="/FormPost.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386146071201" ignored="false" />
+    <file path="/FormPost.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386596841495" ignored="false" />
     <file path="/forgot-password.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386276121446" ignored="false" />
     <file path="$PROJECT_DIR$/../L4withSentry-master/app/database/seeds/SentryUserSeeder.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386146071232" ignored="false" />
-    <file path="/AuthController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386151859094" ignored="false" />
+    <file path="/AuthController.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386596841497" ignored="false" />
     <file path="/reset-password.blade.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386149550118" ignored="false" />
     <file path="Z:/filweb/v4/Views/Partials/Front/turkey.map.phtml" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386151193340" ignored="false" />
     <file path="/turkey.map.phtml" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386149879774" ignored="false" />
@@ -162,8 +174,10 @@
     <file path="Z:/temi/idare/Modules/Piyasalar/ModelImportPmum.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386581678466" ignored="false" />
     <file path="Z:/temi/idare/Modules/Import/ServiceImporter.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386581917691" ignored="false" />
     <file path="Z:/temi/idare/Modules/Import/ModelPmumPtfParse.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386582161863" ignored="false" />
-    <file path="Z:/temi/idare/Modules/ArzTalep/ModelImportExcelEmreAmadelik.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386584974899" ignored="false" />
-    <file path="Z:/temi/idare/Modules/ArzTalep/ModelDownloadYukTevziRapor.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386585099770" ignored="false" />
+    <file path="Z:/temi/idare/Modules/ArzTalep/ModelImportExcelEmreAmadelik.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386588627858" ignored="false" />
+    <file path="Z:/temi/idare/Modules/ArzTalep/ModelDownloadYukTevziRapor.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386588616657" ignored="false" />
+    <file path="/global.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386596841485" ignored="false" />
+    <file path="/Photo.php" changelist="3972bc2a-8bc4-46d7-a09f-493d33cd3f4a" time="1386597548728" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,28 +197,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Category.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Category.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CategoryController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.3092182">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="324" column="38" selection-start="6577" selection-end="6577" vertical-scroll-proportion="0.0">
+            <state line="23" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.4294049">
               <folding />
             </state>
           </provider>
@@ -228,21 +224,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/admin/NewsController.php" />
-        <option value="$PROJECT_DIR$/app/config/cache.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ArticleController.php" />
-        <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/user/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/helpers.php" />
-        <option value="$PROJECT_DIR$/app/config/database.php" />
-        <option value="$PROJECT_DIR$/app/start/artisan.php" />
-        <option value="$PROJECT_DIR$/vendor/greggilbert/recaptcha/src/config/config.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/lang/en/validation.php" />
         <option value="$PROJECT_DIR$/app/views/backend/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/category/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/category/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/start/global.php" />
+        <option value="$PROJECT_DIR$/app/models/FormPost.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ArticleController.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2013_11_06_143700_create_photos_table.php" />
+        <option value="$PROJECT_DIR$/app/models/Photo.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2013_11_27_110650_create_categories_table.php" />
         <option value="$PROJECT_DIR$/app/models/Category.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2013_11_22_085357_create_settings_table.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/CategoriesTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/CategoryController.php" />
       </list>
     </option>
@@ -349,6 +345,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sf_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sf_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -430,7 +448,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1296" height="1040" extended-state="7" />
+    <frame x="1912" y="-8" width="1296" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -438,7 +456,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22042139" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3363047" sideWeight="0.6704417" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -514,114 +532,116 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/view.php">
+    <entry file="file://$PROJECT_DIR$/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="20" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.33605602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="7" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="7" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#41#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/cache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/session.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="-0.2613769">
+        <state line="60" column="10" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/remote.php">
+    <entry file="file://$PROJECT_DIR$/app/models/FormPost.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.06651109">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/queue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.64294046">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.56009334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="38" selection-start="568" selection-end="568" vertical-scroll-proportion="-1.0723454">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="350" selection-end="350" vertical-scroll-proportion="0.18669778">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="54" selection-start="4457" selection-end="4457" vertical-scroll-proportion="0.37806302">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.7156398">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lang/en/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="6" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.047841307">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/packages/cartalyst/sentry/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="21" selection-start="5211" selection-end="5211" vertical-scroll-proportion="0.32788798">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="11" selection-start="431" selection-end="431" vertical-scroll-proportion="0.31738624">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+        <state line="17" column="34" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_10_24_070153_create_articles_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="38" selection-start="6577" selection-end="6577" vertical-scroll-proportion="0.0">
+        <state line="10" column="7" selection-start="170" selection-end="170" vertical-scroll-proportion="0.19138756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_10_24_111453_create_pages_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="80" selection-end="91" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_11_27_110650_create_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="22" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/CategoriesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="14" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_11_22_085357_create_settings_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="38" selection-start="425" selection-end="425" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2013_11_06_143700_create_photos_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="34" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/PhotoGalleriesSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="45" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.5787631">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="5" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.3092182">
+        <state line="23" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.4294049">
           <folding />
         </state>
       </provider>

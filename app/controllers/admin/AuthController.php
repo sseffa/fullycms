@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use BaseController, Redirect, Sentry, View, Input, Mail, Validator;
+use Illuminate\Support\Facades\Cache;
 
 class AuthController extends BaseController {
 
@@ -38,6 +39,9 @@ class AuthController extends BaseController {
             }
 
             if ($user) {
+
+                Cache::flush();
+
                 return Redirect::route('admin.dashboard');
             }
         } catch (\Exception $e) {
