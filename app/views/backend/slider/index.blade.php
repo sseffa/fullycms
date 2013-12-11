@@ -48,11 +48,6 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ URL::route('admin.slider.show', array($slider->id)) }}">
-                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;Show Slider
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="{{ URL::route('admin.slider.edit', array($slider->id)) }}">
                                             <span class="glyphicon glyphicon-edit"></span>&nbsp;Edit Slider
                                         </a>

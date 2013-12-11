@@ -206,51 +206,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/slider/edit.blade.php">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="36" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="149" column="122" selection-start="6759" selection-end="6770" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#7#392#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SliderController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SliderController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/SliderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="32" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+            <state line="90" column="22" selection-start="2150" selection-end="2231" vertical-scroll-proportion="0.60793465">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/user/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="41" selection-start="0" selection-end="3655" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/slider/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="0.30622008">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="37" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -258,7 +229,34 @@
       <file leaf-file-name="PhotoGalleryController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="27" selection-start="323" selection-end="413" vertical-scroll-proportion="0.0">
+            <state line="135" column="24" selection-start="4190" selection-end="4190" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/backend/slider/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="40" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Slider.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Slider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="5" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/backend/slider/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="62" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -282,22 +280,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/backend/setting/setting.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2013_11_06_143700_create_photos_table.php" />
         <option value="$PROJECT_DIR$/app/models/PhotoGallery.php" />
-        <option value="$PROJECT_DIR$/app/models/Slider.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/controllers/PhotoGalleryController.php" />
         <option value="$PROJECT_DIR$/app/controllers/SliderController.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/Slider.php" />
         <option value="$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php" />
         <option value="$PROJECT_DIR$/app/views/backend/photo_gallery/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2013_12_11_124855_create_sliders_table.php" />
         <option value="$PROJECT_DIR$/app/views/backend/slider/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/SliderController.php" />
+        <option value="$PROJECT_DIR$/app/models/Slider.php" />
         <option value="$PROJECT_DIR$/app/views/backend/slider/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/slider/confirm-destroy.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/SliderController.php" />
       </list>
     </option>
   </component>
@@ -425,10 +423,6 @@
               <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -453,46 +447,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="slider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sf_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -700,27 +654,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/Slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="30" selection-start="102" selection-end="102" vertical-scroll-proportion="0.11201867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/_layout/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="137" selection-start="888" selection-end="888" vertical-scroll-proportion="0.28004667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/photo_gallery/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="232" selection-start="5548" selection-end="5548" vertical-scroll-proportion="0.5145858">
@@ -749,57 +682,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="13" selection-start="6272" selection-end="6272" vertical-scroll-proportion="0.7012836">
-          <folding>
-            <element signature="e#7#392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SliderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="184" selection-end="184" vertical-scroll-proportion="0.20536757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/slider/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="36" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/PhotoGallery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.20536757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="27" selection-start="323" selection-end="413" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SliderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="32" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -811,9 +696,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/_layout/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="37" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.44807467">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/slider/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="62" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SliderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="187" selection-end="187" vertical-scroll-proportion="0.24270712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PhotoGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="122" selection-start="6759" selection-end="6770" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#7#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/slider/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="0.30622008">
+        <state line="49" column="40" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/slider/confirm-destroy.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="62" selection-start="556" selection-end="556" vertical-scroll-proportion="0.19138756">
+          <folding>
+            <marker date="1386775065106" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1386775065106" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1386775065106" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1386775065106" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/PhotoGalleryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="24" selection-start="4190" selection-end="4190" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SliderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="22" selection-start="2150" selection-end="2231" vertical-scroll-proportion="0.60793465">
           <folding />
         </state>
       </provider>

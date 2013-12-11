@@ -133,8 +133,7 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery = PhotoGallery::findOrFail($id);
         $photo_gallery->delete();
 
-        // delete images db
-
+        // delete images
         $photos = Photo::where('photo_gallery_id', '=', $id)->get();
 
         foreach ($photos as $photo) {

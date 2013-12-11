@@ -75,7 +75,7 @@
                 }
             };
 
-            /*
+
              var myDropzone = new Dropzone("#dropzone .dropzone");
              Dropzone.options.myDropzone = false;
              @foreach($photos as $photo)
@@ -90,7 +90,7 @@
              myDropzone.emit("thumbnail", mockFile, "{{ url($photo->path) }}");
 
              @endforeach
-             */
+
         });
     </script>
     <br>
