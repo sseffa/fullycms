@@ -34,7 +34,7 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->save();
         $id = $photo_gallery->id;
 
-        return Redirect::to("/admin/photo_gallery/" . $id . "/edit")->with('message', 'Photo galler was successfully added');
+        return Redirect::to("/admin/photo_gallery/" . $id . "/edit")->with('message', 'Photo gallery was successfully added');
     }
 
     /**
@@ -93,7 +93,7 @@ class PhotoGalleryController extends BaseController {
     public function edit($id) {
 
         $photo_gallery = PhotoGallery::findOrFail($id);
-        $photos = Photo::where('photo_gallery_id', '=', $id)->get();
+        $photos = Photo::where('relationship_id', '=', $id)->get();
         return View::make('backend.photo_gallery.edit', compact('photo_gallery', 'photos'));
     }
 
@@ -119,7 +119,7 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
 
         $photo_gallery->save();
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo galler was successfully updated');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo gallery was successfully updated');
     }
 
     /**
@@ -146,7 +146,7 @@ class PhotoGalleryController extends BaseController {
             File::delete($destinationPath . "150x150_" . $photo->file_name);
         }
 
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo galler was successfully deleted');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo gallery was successfully deleted');
     }
 
     public function confirmDestroy($id) {

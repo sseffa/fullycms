@@ -26,13 +26,13 @@
             {{ Form::open() }}
 
             <!-- Title -->
-            <div class="control-group {{ $errors->has('title') ? 'has-error' : '' }}">
+            <div class="control-group {{ $errors->has('site_title') ? 'has-error' : '' }}">
                 <label class="control-label" for="title">Title</label>
 
                 <div class="controls">
-                    {{ Form::text('title', $setting->site_title, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
+                    {{ Form::text('site_title', $setting->site_title, array('class'=>'form-control', 'id' => 'site_title', 'placeholder'=>'Title', 'value'=>Input::old('site_title'))) }}
                     @if ($errors->first('title'))
-                    <span class="help-block">{{ $errors->first('title') }}</span>
+                    <span class="help-block">{{ $errors->first('site_title') }}</span>
                     @endif
                 </div>
             </div>

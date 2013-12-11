@@ -11,11 +11,13 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li @if(isset($active) && $active=="home") class="active" @endif><a href="{{ url('/admin') }}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
+                <li><a href="{{ url('/admin/menu-managment') }}"><span class="glyphicon glyphicon-align-justify"></span>Menu Managment</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Modules <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        <li>{{ HTML::link('/admin/news','News') }}</li>
                        <li>{{ HTML::link('/admin/page','Pages') }}</li>
+                       <li>{{ HTML::link('/admin/photo_gallery','Photo Gallery') }}</li>
                     </ul>
                 </li>
                  <li class="dropdown  @if(isset($active) && $active=='article') active @endif">
@@ -25,11 +27,10 @@
                         <li>{{ HTML::link('/admin/category','Category') }}</li>
                     </ul>
                 </li>
-                <li @if(isset($active) && $active=="photo_gallery") class="active" @endif><a href="{{ url('/admin/photo_gallery') }}"><span class="glyphicon glyphicon-picture"></span>Photo Gallery</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Plugins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>{{ HTML::link('/admin/home-slider','Home Slider') }}</li>
+                        <li>{{ HTML::link('/admin/slider','Slider Managment') }}</li>
                     </ul>
                 </li>
                 <li @if(isset($active) && $active=="user") class="active" @endif><a href="{{ url('/admin/user') }}"><span class="glyphicon glyphicon-user"></span>Users</a></li>

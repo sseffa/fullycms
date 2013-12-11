@@ -10,7 +10,7 @@ class PhotoGalleryController extends BaseController {
     public function show($id) {
 
         $photo_gallery = PhotoGallery::findOrFail($id);
-        $photos = Photo::where('photo_gallery_id', '=', $id)->get();
+        $photos = Photo::where('relationship_id', '=', $id)->get();
         return View::make('frontend.photo_gallery.show', compact('photo_gallery', 'photos'));
     }
 }

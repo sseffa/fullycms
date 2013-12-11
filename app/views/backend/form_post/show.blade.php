@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td><strong>Name and Surname</strong></td>
-                    <td>{{ $formPost->sender_name_surname }}</td>
+                    <td>{{ e($formPost->sender_name_surname) }}</td>
                 </tr>
                 <tr>
                     <td><strong>Email</strong></td>
@@ -33,15 +33,15 @@
                 </tr>
                 <tr>
                     <td><strong>Phone Number</strong></td>
-                    <td>{{ $formPost->sender_phone_number }}</td>
+                    <td>{{ e($formPost->sender_phone_number) }}</td>
                 </tr>
                 <tr>
                     <td><strong>Subject</strong></td>
-                    <td>{{ $formPost->subject }}</td>
+                    <td>{{ e($formPost->subject) }}</td>
                 </tr>
                 <tr>
                     <td><strong>Message</strong></td>
-                    <td>{{ $formPost->message }}</td>
+                    <td>{{ e($formPost->message) }}</td>
                 </tr>
                 </tbody>
             </table>

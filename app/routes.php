@@ -12,7 +12,6 @@
 */
 
 Event::listen('illuminate.query', function ($query) {
-
     //echo $query;
 });
 
@@ -121,10 +120,10 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     Route::post('form-post/{id}/toggle-answer', array('as' => 'admin.form-post.toggle-answer', 'uses' => 'FormPostController@toggleAnswer'))
         ->where('id', '[0-9]+');
 
-    // file upload
-    Route::post('/upload/{id}', array('as' => 'admin.upload.image', 'uses' => 'PhotoGalleryController@upload'))
+    // file upload photo gallery
+    Route::post('/photo-gallery/upload/{id}', array('as' => 'admin.photo.gallery.upload.image', 'uses' => 'PhotoGalleryController@upload'))
         ->where('id', '[0-9]+');
-    Route::post('/delete-image', array('as' => 'admin.delete.image', 'uses' => 'PhotoGalleryController@deleteImage'));
+    Route::post('/photo-gallery-delete-image', array('as' => 'admin.photo.gallery.delete.image', 'uses' => 'PhotoGalleryController@deleteImage'));
 
     // settings
     Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'SettingController@index'));
@@ -135,10 +134,25 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     Route::get('form-post/{id}/delete', array('as' => 'admin.form-post.delete', 'uses' => 'FormPostController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
-    // home slider
-    Route::get('/home-slider', array('as' => 'admin.home.slider', function () {
+    // slider
+    Route::get('/slider', array('as' => 'admin.slider', function () {
 
-        return View::make('backend/home_slider/index');
+        return View::make('backend/slider/index');
+    }));
+
+    // slider
+    Route::resource('slider', 'SliderController');
+    Route::get('slider/{id}/delete', array('as' => 'admin.slider.delete', 'uses' => 'SliderController@confirmDestroy'))->where('id', '[0-9]+');
+
+    // file upload slider
+    Route::post('/slider/upload/{id}', array('as' => 'admin.slider.upload.image', 'uses' => 'SliderController@upload'))
+        ->where('id', '[0-9]+');
+    Route::post('/slider-delete-image', array('as' => 'admin.slider.delete.image', 'uses' => 'SliderController@deleteImage'));
+
+    // menu-managment
+    Route::get('/menu-managment', array('as' => 'admin.menu.managment', function () {
+
+        return View::make('backend/menu-managment/index');
     }));
 });
 

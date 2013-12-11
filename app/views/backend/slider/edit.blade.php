@@ -7,9 +7,9 @@
 <div class="container">
     <div class="page-header">
         <h3>
-            Photo Gallery Update
+            Slider Update
             <div class="pull-right">
-                {{ HTML::link('/admin/photo_gallery','Back', array('class'=>'btn btn-primary')) }}
+                {{ HTML::link('/admin/slider','Back', array('class'=>'btn btn-primary')) }}
             </div>
         </h3>
     </div>
@@ -17,7 +17,7 @@
     <label class="control-label" for="title">Images</label>
 
     <div style="width: 700px; min-height: 300px; height: auto; border:1px solid slategray;" id="dropzone">
-        {{ Form::open(array('url' => 'admin/photo-gallery/upload/' . $photo_gallery->id, 'class'=>'dropzone', 'id'=>'my-dropzone')) }}
+        {{ Form::open(array('url' => 'admin/slider/upload/' . $slider->id, 'class'=>'dropzone', 'id'=>'my-dropzone')) }}
         <!-- Single file upload
         <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
         -->
@@ -49,7 +49,7 @@
 
                             $.ajax({
                                 type: "POST",
-                                url: "{{ url('admin/photo-gallery-delete-image') }}",
+                                url: "{{ url('admin/slider-delete-image') }}",
                                 data: {file: file.name},
                                 success: function (response) {
 
@@ -75,66 +75,47 @@
                 }
             };
 
-            var myDropzone = new Dropzone("#dropzone .dropzone");
-            Dropzone.options.myDropzone = false;
-            @foreach($photos as $photo)
+            /*
+             var myDropzone = new Dropzone("#dropzone .dropzone");
+             Dropzone.options.myDropzone = false;
+             @foreach($photos as $photo)
 
-            // Create the mock file:
-            var mockFile = { name: "{{ $photo->file_name }}", size: "{{ $photo->file_size }}" };
+             // Create the mock file:
+             var mockFile = { name: "{{ $photo->file_name }}", size: "{{ $photo->file_size }}" };
 
-            // Call the default addedfile event handler
-            myDropzone.emit("addedfile", mockFile);
+             // Call the default addedfile event handler
+             myDropzone.emit("addedfile", mockFile);
 
-            // And optionally show the thumbnail of the file:
-            myDropzone.emit("thumbnail", mockFile, "{{ url($photo->path) }}");
+             // And optionally show the thumbnail of the file:
+             myDropzone.emit("thumbnail", mockFile, "{{ url($photo->path) }}");
 
-            @endforeach
+             @endforeach
+             */
         });
     </script>
     <br>
-    {{ Form::open(array('action' => array('App\Controllers\Admin\PhotoGalleryController@update', $photo_gallery->id), 'method' => 'PATCH')) }}
+    {{ Form::open(array('action' => array('App\Controllers\Admin\SliderController@update', $slider->id), 'method' => 'PATCH')) }}
     <!-- Title -->
     <div class="control-group {{ $errors->has('title') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Title</label>
 
         <div class="controls">
-            {{ Form::text('title', $photo_gallery->title, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
+            {{ Form::text('title', $slider->title, array('class'=>'form-control', 'id' => 'title', 'placeholder'=>'Title', 'value'=>Input::old('title'))) }}
             @if ($errors->first('title'))
             <span class="help-block">{{ $errors->first('title') }}</span>
             @endif
         </div>
     </div>
     <br>
-    <!-- Content -->
-    <div class="control-group {{ $errors->has('content') ? 'has-error' : '' }}">
-        <label class="control-label" for="title">Content</label>
+
+    <!-- Type -->
+    <div class="control-group {{ $errors->has('type') ? 'error' : '' }}">
+        <label class="control-label" for="title">Category</label>
 
         <div class="controls">
-            {{ Form::textarea('content', $photo_gallery->content, array('class'=>'form-control', 'id' => 'content', 'placeholder'=>'Content', 'value'=>Input::old('content'))) }}
-            @if ($errors->first('content'))
-            <span class="help-block">{{ $errors->first('content') }}</span>
-            @endif
-        </div>
-    </div>
-    <br>
-    <!-- Published -->
-    <div class="control-group {{ $errors->has('is_published') ? 'has-error' : '' }}">
-
-        <div class="controls">
-            <label class="checkbox">{{ Form::checkbox('is_published', 'is_published',$photo_gallery->is_published) }} Publish ?</label>
-            @if ($errors->first('is_published'))
-            <span class="help-block">{{ $errors->first('is_published') }}</span>
-            @endif
-        </div>
-    </div>
-    <br>
-    <!-- Menu -->
-    <div class="control-group {{ $errors->has('is_in_menu') ? 'has-error' : '' }}">
-
-        <div class="controls">
-            <label class="checkbox">{{ Form::checkbox('is_in_menu', 'is_in_menu', $photo_gallery->is_in_menu) }} Show on the menu ?</label>
-            @if ($errors->first('is_in_menu'))
-            <span class="help-block">{{ $errors->first('is_in_menu') }}</span>
+            {{ Form::select('type', $types, null, array('class' => 'form-control', 'value'=>Input::old('type'))) }}
+            @if ($errors->first('type'))
+            <span class="help-block">{{ $errors->first('type') }}</span>
             @endif
         </div>
     </div>
@@ -142,12 +123,5 @@
     <!-- Form actions -->
     {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
     {{ Form::close() }}
-    <script type="text/javascript">
-        window.onload = function () {
-            CKEDITOR.replace('content', {
-                "filebrowserBrowseUrl": "{{ url('filemanager/show') }}"
-            });
-        };
-    </script>
 </div>
 @stop

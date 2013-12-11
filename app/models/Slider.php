@@ -1,8 +1,8 @@
 <?php
 
-class PhotoGallery extends Eloquent {
+class Slider extends Eloquent {
 
-    public $table = 'photo_galleries';
+    public $table = 'sliders';
 
     public function photos() {
 
