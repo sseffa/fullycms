@@ -22,10 +22,7 @@ Event::listen('illuminate.query', function ($query) {
 */
 
 // frontend dashboard
-Route::get('/', ['as' => 'dashboard', function () {
-
-    return View::make('frontend/_layout/dashboard');
-}]);
+Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
 // article
 Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));

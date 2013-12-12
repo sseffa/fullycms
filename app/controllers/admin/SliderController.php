@@ -82,7 +82,7 @@ class SliderController extends BaseController {
         $slider->type = Input::get('type');
 
         $slider->save();
-        return Redirect::action('App\Controllers\Admin\SliderController@index')->with('message', 'Slider was successfully updated');
+        return Redirect::route('admin.slider.index')->with('message', 'Slider was successfully updated');
     }
 
     /**
@@ -102,13 +102,12 @@ class SliderController extends BaseController {
         foreach ($photos as $photo) {
 
             Photo::where('file_name', '=', $photo->file_name)->delete();
-            $destinationPath = public_path() . "/uploads/";
+            $destinationPath = public_path() . "/uploads/dropzone/";
 
             File::delete($destinationPath . $photo->file_name);
-            File::delete($destinationPath . "slider_" . $photo->file_name);
         }
 
-        return Redirect::action('App\Controllers\Admin\SliderController@index')->with('message', 'Slider was successfully deleted');
+        return Redirect::route('admin.slider.index')->with('message', 'Slider was successfully deleted');
     }
 
     public function confirmDestroy($id) {
@@ -140,13 +139,14 @@ class SliderController extends BaseController {
 
             // resizing an uploaded file
             Image::make($destinationPath . $fileName)->resize(null, 430)->save($destinationPath . "slider_" . $fileName);
+            File::delete($destinationPath . $fileName);
 
             $slider = Slider::findOrFail($id);
             $image = new Photo;
-            $image->file_name = $fileName;
+            $image->file_name = "slider_" . $fileName;
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
-            $image->path = '/uploads/dropzone/' . $fileName;
+            $image->path = '/uploads/dropzone/' . 'slider_' . $fileName;
             $slider->photos()->save($image);
 
             return Response::json('success', 200);
@@ -156,12 +156,9 @@ class SliderController extends BaseController {
     public function deleteImage() {
 
         $fileName = Input::get('file');
-
         Photo::where('file_name', '=', $fileName)->delete();
-
         $destinationPath = public_path() . "/uploads/dropzone/";
         File::delete($destinationPath . $fileName);
-        File::delete($destinationPath . "slider_" . $fileName);
         return Response::json('success', 200);
     }
 }

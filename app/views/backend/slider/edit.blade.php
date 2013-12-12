@@ -110,7 +110,7 @@
 
     <!-- Type -->
     <div class="control-group {{ $errors->has('type') ? 'error' : '' }}">
-        <label class="control-label" for="title">Category</label>
+        <label class="control-label" for="title">Type</label>
 
         <div class="controls">
             {{ Form::select('type', $types, null, array('class' => 'form-control', 'value'=>Input::old('type'))) }}
