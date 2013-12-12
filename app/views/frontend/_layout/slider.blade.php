@@ -1,4 +1,4 @@
-<?php $count = count($photos); ?>
+<?php $count = count($images); ?>
 <!-- slider start -->
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators">
@@ -9,9 +9,9 @@
     <div class="carousel-inner">
         @for($i=0; $i < $count; $i++)
         <div class="item {{ ($i == 0) ? 'active' : '' }}">
-            <div class="fill"><img src="{{ url($photos[$i]['path']) }}" /></div>
+            <div class="fill"><img src="{{ url($images[$i]['path']) }}" /></div>
             <div class="carousel-caption">
-                <h1>sf Content Managment System</h1>
+                <h1></h1>
             </div>
         </div>
         @endfor

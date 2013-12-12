@@ -26,7 +26,7 @@ class SliderController extends BaseController {
     public function create() {
 
         if (Slider::get()->count() >= 1)
-            return Redirect::to("/admin/slider/")->with('message', 'Only one slider can be added');
+            return Redirect::to("/admin/slider/")->with('message', 'Only one home slider can be added');
 
         $slider = new Slider();
         $slider->title = "Slider";

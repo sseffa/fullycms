@@ -26,6 +26,7 @@
             <br>
             <br>
             <br>
+              @if($sliders->count())
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -66,6 +67,9 @@
                     </tbody>
                 </table>
             </div>
+             @else
+            <div class="alert alert-danger">No results found</div>
+            @endif
         </div>
     </div>
 

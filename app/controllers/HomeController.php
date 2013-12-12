@@ -4,15 +4,9 @@ class HomeController extends BaseController {
 
     public function index() {
 
-        // after change
-        $slider = Slider::where('type', '=', 'home')->get()->toArray();
+        $slider = Slider::with('images')->get()->first();
+        $images = $slider->images;
 
-        if(!$slider)
-            return View::make('frontend/_layout/dashboard');
-
-
-        $photos = Photo::where('relationship_id', '=', $slider[0]['id'])->get()->toArray();
-
-        return View::make('frontend/_layout/dashboard', compact('photos'));
+        return View::make('frontend/_layout/dashboard', compact('images'));
     }
 }

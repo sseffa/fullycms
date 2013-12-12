@@ -3,8 +3,8 @@
 {{ HTML::style('assets/bootstrap/css/modern-business.css') }}
 {{ HTML::style('assets/bootstrap/css/font-awesome.min.css') }}
 
-@if(isset($photos))
-    @include('frontend/_layout/slider', $photos)
+@if(isset($images))
+    @include('frontend/_layout/slider', $images)
 @else
     <div id="myCarousel" class="carousel slide">
       <!-- Indicators -->
