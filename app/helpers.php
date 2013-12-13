@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get gravatar by email
+ * Get gravatar url by email
  * @param $email
  * @return string
  */

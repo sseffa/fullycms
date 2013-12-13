@@ -53,7 +53,10 @@ App::error(function(Exception $exception, $code)
 
 App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception){
 
-    return Redirect::route('admin.dashboard');
+    if (Request::is('admin/*'))
+        return Redirect::route('admin.dashboard');
+    else
+        return Redirect::route('dashboard');
 });
 
 /*

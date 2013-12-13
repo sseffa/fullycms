@@ -3,7 +3,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('#message').show().delay(4000).fadeOut(700);
+        $('#notification').show().delay(4000).fadeOut(700);
     });
 </script>
 <div class="container">
@@ -17,9 +17,9 @@
         </div>
     </div>
     <div class="row">
-        @if(Session::has('message'))
-        <div class="alert alert-success" id="message">
-            {{ Session::get('message') }}
+        @if(Session::has('notification'))
+        <div class="alert alert-success" id="notification">
+            {{ Session::get('notification') }}
         </div>
         @endif
         {{ Form::open(array('action' => 'FormPostController@postContact')) }}
@@ -77,13 +77,13 @@
         <br>
 
         <!-- Message -->
-        <div class="control-group {{ $errors->has('post') ? 'has-error' : '' }}">
+        <div class="control-group {{ $errors->has('message') ? 'has-error' : '' }}">
             <label class="control-label" for="title">Message</label>
 
             <div class="controls">
                 {{ Form::textarea('message', null, array('class'=>'form-control', 'id' => 'message-content', 'placeholder'=>'Message', 'value'=>Input::old('message'))) }}
-                @if ($errors->first('post'))
-                <span class="help-block">{{ $errors->first('post') }}</span>
+                @if ($errors->first('message'))
+                <span class="help-block">{{ $errors->first('message') }}</span>
                 @endif
             </div>
         </div>

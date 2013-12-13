@@ -40,11 +40,10 @@ Route::get('/category/{category}', array('as' => 'dashboard.category', 'uses' =>
 
 // page
 Route::get('/page', array('as' => 'dashboard.page', 'uses' => 'PageController@index'));
-Route::get('/page/{id}/show', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
+Route::get('/page/{id}', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
 
 // photo gallery
-Route::get('/photo_gallery', array('as' => 'dashboard.photo_gallery', 'uses' => 'PhotoGalleryController@index'));
-Route::get('/photo_gallery/{id}/show', array('as' => 'dashboard.photo_gallery.show', 'uses' => 'PhotoGalleryController@show'));
+Route::get('/photo_gallery/{id}', array('as' => 'dashboard.photo_gallery.show', 'uses' => 'PhotoGalleryController@show'));
 
 // contact
 Route::get('/contact', array('as' => 'dashboard.contact', 'uses' => 'FormPostController@getContact'));
@@ -124,7 +123,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
 
     // settings
     Route::get('/settings', array('as' => 'admin.settings', 'uses' => 'SettingController@index'));
-    Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'SettingController@save'));
+    Route::post('/settings', array('as' => 'admin.settings.save', 'uses' => 'SettingController@save'), array('before' => 'csrf'));
 
     // form post
     Route::resource('form-post', 'FormPostController', array('only' => array('index', 'show', 'destroy')));

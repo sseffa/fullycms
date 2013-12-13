@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder {
                 'title' => 'PHP'
             ),
             array(
-                'title' => 'C#'
+                'title' => 'SQL'
             )
         ));
     }
