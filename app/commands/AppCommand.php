@@ -3,6 +3,7 @@
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Database\Migrations\Migration;
 
 class AppCommand extends Command {
 
@@ -48,6 +49,23 @@ class AppCommand extends Command {
      * @return void
      */
     public function fire() {
+
+        Schema::dropIfExists('articles');
+        Schema::dropIfExists('articles_tags');
+        Schema::dropIfExists('categories');
+        Schema::dropIfExists('form_posts');
+        Schema::dropIfExists('groups');
+        Schema::dropIfExists('migrations');
+        Schema::dropIfExists('news');
+        Schema::dropIfExists('pages');
+        Schema::dropIfExists('photos');
+        Schema::dropIfExists('photo_galleries');
+        Schema::dropIfExists('settings');
+        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('tags');
+        Schema::dropIfExists('throttle');
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('users_groups');
 
         $this->comment('=====================================');
         $this->comment('');
