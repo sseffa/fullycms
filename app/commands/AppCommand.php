@@ -3,7 +3,6 @@
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Database\Migrations\Migration;
 
 class AppCommand extends Command {
 
@@ -50,6 +49,7 @@ class AppCommand extends Command {
      */
     public function fire() {
 
+        // drop tables
         Schema::dropIfExists('articles');
         Schema::dropIfExists('articles_tags');
         Schema::dropIfExists('categories');

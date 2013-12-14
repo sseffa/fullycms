@@ -147,7 +147,7 @@ class SliderController extends BaseController {
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
             $image->path = '/uploads/dropzone/' . 'slider_' . $fileName;
-            $slider->photos()->save($image);
+            $slider->images()->save($image);
 
             return Response::json('success', 200);
         }
