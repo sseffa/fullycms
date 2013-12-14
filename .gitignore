@@ -6,3 +6,5 @@ composer.lock
 Thumbs.db
 .idea
 /app/_ide_helper.php
+/public/uploads
+/public/uploads/dropzone
