@@ -26,11 +26,11 @@ Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
 // article
 Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
-Route::get('/article/{id}/{slug}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
+Route::get('/article/{id}/{slug?}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
 
 // news
 Route::get('/news', array('as' => 'dashboard.news', 'uses' => 'NewsController@index'));
-Route::get('/news/{id}/{slug}', array('as' => 'dashboard.news.show', 'uses' => 'NewsController@show'));
+Route::get('/news/{id}/{slug?}', array('as' => 'dashboard.news.show', 'uses' => 'NewsController@show'));
 
 // tags
 Route::get('/tag/{tag}', array('as' => 'dashboard.tag', 'uses' => 'TagController@index'));
