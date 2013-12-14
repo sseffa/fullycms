@@ -110,6 +110,7 @@ return array(
         'Cartalyst\Sentry\SentryServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
+        'Krucas\Notification\NotificationServiceProvider',
 
     ),
 
@@ -179,6 +180,7 @@ return array(
         'Sentry'      => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'Image'       => 'Intervention\Image\Facades\Image',
         'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
+        'Notification' => 'Krucas\Notification\Facades\Notification',
 
     ),
 

@@ -8,7 +8,8 @@
         "cartalyst/sentry": "2.1.*",
         "way/generators": "dev-master",
         "intervention/image": "dev-master",
-        "davejamesmiller/laravel-breadcrumbs": "dev-master"
+        "davejamesmiller/laravel-breadcrumbs": "dev-master",
+        "edvinaskrucas/notification": "1.*"
     },
     "autoload": {
         "classmap": [

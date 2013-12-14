@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, News, Response, Str;
+use BaseController, Redirect, View, Input, Validator, News, Response, Str, Notification;
 
 class NewsController extends BaseController {
 
@@ -65,7 +65,9 @@ class NewsController extends BaseController {
         $news->is_published = ($formData['is_published']) ? true : false;
         $news->save();
 
-        return Redirect::action('App\Controllers\Admin\NewsController@index')->with('message', 'News was successfully added');
+        Notification::success('News was successfully added');
+
+        return Redirect::action('App\Controllers\Admin\NewsController@index');
     }
 
     /**
