@@ -16,7 +16,23 @@
              @yield('partial/breadcrumbs', Breadcrumbs::render('contact'))
         </div>
     </div>
+      <div class="row">
+        <div class="box">
+          <div class="col-md-8">
+            <iframe width="100%" style="border: 1px solid" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""></iframe>
+          </div>
+          <div class="col-md-4">
+            <p>Phone: <strong>0-000-000-00-00</strong></p>
+            <p>Email: <strong>example@example.com</strong></p>
+            <p>Address: <strong>Lorem lipsum<br> 111</strong></p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     <div class="row">
+        <br>
+        <h3>Contact Form</h3>
+        <br>
         @if(Session::has('notification'))
         <div class="alert alert-success" id="notification">
             {{ Session::get('notification') }}

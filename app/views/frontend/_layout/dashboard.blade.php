@@ -52,24 +52,20 @@
 
         <div class="row">
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-ok-circle"></i> Bootstrap 3 Built</h3>
+                <h3><i class="icon-ok-circle"></i> Beautifully Simplistic</h3>
 
-                <p>The 'Modern Business' website template by
-                    <a href="#">Start Bootstrap</a> is built with
-                    <a href="http://getbootstrap.com">Bootstrap 3</a>. Make sure you're up to date with latest Bootstrap documentation!
+                <p>Aenean egestas velit vitae nibh elementum, ac faucibus risus varius. Duis pellentesque mollis semper. Etiam semper, neque sed dapibus pharetra, neque orci lacinia enim, quis sodales felis dui eget tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas varius at massa eu fringilla.
                 </p>
             </div>
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-pencil"></i> Ready to Style &amp; Edit</h3>
+                <h3><i class="icon-pencil"></i> Free Support & Updates</h3>
 
-                <p>You're ready to go with this pre-built page structure, now all you need to do is add your own custom stylings! You can see some free themes over at
-                    <a href="http://bootswatch.com">Bootswatch</a>, or come up with your own using
-                    <a href="http://getbootstrap.com/customize/">the Bootstrap customizer</a>!</p>
+                <p>Nunc aliquet rutrum ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris eget enim interdum arcu scelerisque suscipit. Duis porta, lectus nec commodo bibendum, libero massa tempor quam, ac ullamcorper mauris tortor nec quam. Aenean at ante vitae turpis volutpat cursus. Vestibulum sed est in risus rhoncus lacinia.</p>
             </div>
             <div class="col-lg-4 col-md-4">
-                <h3><i class="icon-folder-open-alt"></i> Many Page Options</h3>
+                <h3><i class="icon-folder-open-alt"></i> Blissful Layout Options</h3>
 
-                <p>This template features many common pages that you might see on a business website. Pages include: about, contact, portfolio variations, blog, pricing, FAQ, 404, services, and general multi-purpose pages.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis eu odio a hendrerit. Vivamus urna eros, gravida vitae urna et, sollicitudin interdum est. Suspendisse potenti. Nam aliquet sed turpis quis pharetra. Maecenas sed ultricies justo. Sed sed malesuada est. Donec faucibus elit a elit vestibulum elementum. </p>
             </div>
         </div>
 
@@ -146,32 +142,6 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Modern Business Features Include:</h2>
-                <ul>
-                    <li>Bootstrap 3 Framework</li>
-                    <li>Mobile Responsive Design</li>
-                    <li>Predefined File Paths</li>
-                    <li>Working PHP Contact Page</li>
-                    <li>Minimal Custom CSS Styles</li>
-                    <li>Unstyled: Add Your Own Style and Content!</li>
-                    <li>Font-Awesome fonts come pre-installed!</li>
-                    <li>100% <strong>Free</strong> to Use</li>
-                    <li>Open Source: Use for any project, private or commercial!</li>
-                </ul>
             </div>
         </div>
     </div>
