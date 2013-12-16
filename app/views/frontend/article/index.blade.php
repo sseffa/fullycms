@@ -35,7 +35,7 @@
                     <hr>
                 </div>
                 <div class="col-sm-12">
-                    <p>{{{ mb_substr(strip_tags($article->content),0,600) }}}</p>
+                    <p>{{{ mb_substr(strip_tags($article->content),0,1000) }}}</p>
 
                     <div class="pull-right">
                         @foreach($article->tags as $tag)

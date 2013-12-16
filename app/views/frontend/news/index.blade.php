@@ -16,47 +16,6 @@
 
     });
 </script>
-<style>
-    pre code {
-        diplay: none;
-    }
-</style>
-
-<style type="text/css">
-    .label-arrow {
-        position: relative;
-        padding: .4em .6em .3em;
-    }
-
-    .label-arrow-left {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        margin-left: 10px;
-    }
-
-    .label-arrow-left:before {
-        right: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        border-right-color: #999;
-        border-width: 10px;
-        margin-top: -10px;
-    }
-
-    h4 .label-arrow-left {
-        margin-left: 18px;
-    }
-
-    h4 .label-arrow-left:before {
-        border-width: 13px;
-        margin-top: -13px;
-    }
-</style>
-
 <div style="margin-bottom: 50px;" class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -64,7 +23,7 @@
             @yield('partial/breadcrumbs', Breadcrumbs::render('news', $news))
         </div>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-12">
 
         <div class="row">
 
@@ -76,15 +35,16 @@
                         </h4></a>
                     <hr>
                 </div>
-                <div class="col-sm-2">
-                    <img src="//placehold.it/75x75" class="img-circle center-block">
+                <div class="col-sm-4">
+                    <img src="//placehold.it/350x350" class="img-square center-block">
                 </div>
-                <div class="col-sm-10">
-                    <p>{{{ mb_substr(strip_tags($v->content),0,600) }}}</p>
+                <div class="col-sm-8">
+                    <p>{{{ mb_substr(strip_tags($v->content),0,2000) }}}</p>
+                </div>
+                 <div style="clear: both"></div>
                     <p>
-                        <a href="{{ URL::route('dashboard.news.show', array('id'=>$v->id, 'slug'=>$v->slug)) }}" class="btn btn-xs btn-primary">Read More</a>
+                        <a style="float: right" href="{{ URL::route('dashboard.news.show', array('id'=>$v->id, 'slug'=>$v->slug)) }}" class="btn btn-xs btn-primary">Read More</a>
                     </p>
-                </div>
             </div>
             <hr>
             @endforeach

@@ -11,7 +11,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li @if(isset($active) && $active=="home") class="active" @endif><a href="{{ url('/admin') }}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
-                <li><a href="{{ url('/admin/menu-managment') }}"><span class="glyphicon glyphicon-align-justify"></span>Menu Managment</a></li>
+                <li><a href="{{ url('/admin/menu-managment') }}"><span class="glyphicon glyphicon-list-alt"></span>Menu Managment</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tint"></span>Modules <b class="caret"></b></a>
                     <ul class="dropdown-menu">

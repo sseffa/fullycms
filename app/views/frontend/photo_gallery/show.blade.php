@@ -41,7 +41,6 @@
     @if($photo_gallery->photos->count())
     <div class="row">
         <div class="col-lg-12">
-            <h4>Images</h4>
             @foreach($photo_gallery->photos as $photo)
             <a rel="group" class="fancybox" href="{{ url($photo->path) }}" title="{{ $photo->title }}">
                 <img style="border-radius: 20px;" class="lazy left" data-original="{{ url('uploads/dropzone//150x150_' . $photo->file_name) }}"/>
