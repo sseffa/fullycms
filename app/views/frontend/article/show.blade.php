@@ -37,7 +37,7 @@
 
                 <div class="tagcloud tabbed_tag">
                     @foreach($tags as $tag)
-                    <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->name)) }}">{{ $tag->name }}</a>
+                    <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->slug)) }}">{{ $tag->name }}</a>
                     @endforeach
                 </div>
             </div>

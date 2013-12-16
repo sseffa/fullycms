@@ -15,7 +15,9 @@ class ArticlesTableSeeder extends Seeder {
             array(
                 'title'            => 'Blog Post',
                 'slug'             => Str::slug('Blog Post'),
-                'content'          => 'This is the first blog post.',
+                'content'          => 'This is the first blog post.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet facilisis ipsum. Aenean placerat orci ut ligula hendrerit egestas. Curabitur non porttitor elit. Ut scelerisque est ipsum, non molestie quam consequat accumsan. Suspendisse luctus metus ut mi consectetur, mollis convallis tortor posuere. Duis vestibulum erat at lacus ultrices, ut aliquam turpis pulvinar. Cras lobortis dui nisi, sed varius massa pulvinar sit amet. Cras vitae vulputate ipsum. Ut varius lectus quam, id ultrices nisl tempor mattis. Etiam sit amet imperdiet ipsum.
+
+Sed porta velit vitae quam bibendum, ut convallis neque pharetra. Sed tempus velit tristique iaculis blandit. Phasellus et egestas lorem. Duis elementum turpis sollicitudin est consequat, vel viverra est tristique. Pellentesque lacinia posuere ante. Duis et consequat justo. Sed fermentum velit elit. Nulla suscipit vulputate ipsum, mattis tincidunt orci luctus eget. Nam in volutpat turpis. Cras vitae sapien urna. Pellentesque vestibulum adipiscing malesuada. Donec ornare sollicitudin libero ut hendrerit. ',
                 'meta_title'       => e('Blog Post'),
                 'meta_keywords'    => str_replace(' ', ', ', strtolower('Blog Post')),
                 'meta_description' => strip_tags('Blog Post'),
@@ -150,7 +152,7 @@ class ArticlesTableSeeder extends Seeder {
                 'meta_title'       => e('Blog Post 13'),
                 'meta_keywords'    => str_replace(' ', ', ', strtolower('Blog Post 13')),
                 'meta_description' => strip_tags('Blog Post 13'),
-                'category_id'      => 2,
+                'category_id'      => 3,
                 'created_at'       => new DateTime,
                 'updated_at'       => new DateTime,
             ),
@@ -161,7 +163,7 @@ class ArticlesTableSeeder extends Seeder {
                 'meta_title'       => e('Blog Post 14'),
                 'meta_keywords'    => str_replace(' ', ', ', strtolower('Blog Post 14')),
                 'meta_description' => strip_tags('Blog Post 14'),
-                'category_id'      => 2,
+                'category_id'      => 3,
                 'created_at'       => new DateTime,
                 'updated_at'       => new DateTime,
             ),
@@ -172,7 +174,7 @@ class ArticlesTableSeeder extends Seeder {
                 'meta_title'       => e('Blog Post 14'),
                 'meta_keywords'    => str_replace(' ', ', ', strtolower('Blog Post 14')),
                 'meta_description' => strip_tags('Blog Post 14'),
-                'category_id'      => 2,
+                'category_id'      => 4,
                 'created_at'       => new DateTime,
                 'updated_at'       => new DateTime,
             )

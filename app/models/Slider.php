@@ -6,6 +6,6 @@ class Slider extends Eloquent {
 
     public function images() {
 
-        return $this->hasMany('Photo', 'relationship_id');
+        return $this->morphMany('Photo', 'relationship', 'type');
     }
 }

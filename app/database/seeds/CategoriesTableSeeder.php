@@ -17,6 +17,18 @@ class CategoriesTableSeeder extends Seeder {
             ),
             array(
                 'title' => 'SQL'
+            ),
+            array(
+                'title' => 'HTML'
+            ),
+            array(
+                'title' => 'CSS'
+            ),
+            array(
+                'title' => 'Javascript'
+            ),
+            array(
+                'title' => 'JQuery'
             )
         ));
     }

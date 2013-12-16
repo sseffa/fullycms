@@ -18,6 +18,7 @@ class CreatePhotosTable extends Migration {
             $table->string('title', 255);
             $table->string('path', 255);
             $table->integer('file_size');
+            $table->string('type', 20);
             $table->integer('relationship_id')->unsigned();
         });
     }

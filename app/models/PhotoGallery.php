@@ -6,6 +6,6 @@ class PhotoGallery extends Eloquent {
 
     public function photos() {
 
-        return $this->hasMany('Photo', 'relationship_id');
+        return $this->morphMany('Photo', 'relationship', 'type');
     }
 }

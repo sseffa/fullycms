@@ -92,9 +92,8 @@ class PhotoGalleryController extends BaseController {
      */
     public function edit($id) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
-        $photos = Photo::where('relationship_id', '=', $id)->get();
-        return View::make('backend.photo_gallery.edit', compact('photo_gallery', 'photos'));
+        $photo_gallery = PhotoGallery::with('photos')->findOrFail($id);
+        return View::make('backend.photo_gallery.edit', compact('photo_gallery'));
     }
 
     /**
@@ -178,7 +177,7 @@ class PhotoGalleryController extends BaseController {
 
         $file = Input::file('file');
 
-        $rules = array('file'  => 'mimes:jpg,jpeg,bmp,png|max:10000');
+        $rules = array('file' => 'mimes:jpg,jpeg,bmp,png|max:10000');
         $data = array('file' => Input::file('file'));
 
         $validation = Validator::make($data, $rules);
@@ -204,10 +203,13 @@ class PhotoGalleryController extends BaseController {
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
             $image->path = '/uploads/dropzone/' . $fileName;
+            $image->type = "gallery";
             $photo_gallery->photos()->save($image);
 
             return Response::json('success', 200);
         }
+
+        return Response::json('error', 400);
     }
 
     public function deleteImage() {

@@ -7,11 +7,11 @@ class Photo extends Eloquent {
 
     public function slider() {
 
-        return $this->belongsTo('Slider', 'relationship_id');
+        return $this->morphTo('Slider', 'relationship');
     }
 
     public function photo_gallery() {
 
-        return $this->belongsTo('PhotoGallery', 'relationship_id');
+        return $this->morphTo('PhotoGallery', 'relationship');
     }
 }

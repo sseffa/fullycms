@@ -82,7 +82,7 @@
                 <div class="col-sm-10">
                     <p>{{{ mb_substr(strip_tags($v->content),0,600) }}}</p>
                     <p>
-                        <a href="{{ URL::route('dashboard.news.show', array('id'=>$v->id, 'slug'=>$v->slug)) }}" class="btn btn-default">Read More</a>
+                        <a href="{{ URL::route('dashboard.news.show', array('id'=>$v->id, 'slug'=>$v->slug)) }}" class="btn btn-xs btn-primary">Read More</a>
                     </p>
                 </div>
             </div>

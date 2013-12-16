@@ -15,7 +15,7 @@ class NewsTableSeeder extends Seeder {
             array(
                 'title'      => 'Lorem Lipsum',
                 'slug'       => Str::slug('Lorem Lipsum'),
-                'content'    => 'Lorem lipsum dolar.',
+                'content'    => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla orci sit amet dui laoreet, sit amet iaculis enim pharetra. Nunc at iaculis nibh. Fusce a lacus elit. Fusce et laoreet ante. Sed eget ipsum non odio congue pharetra. Vivamus eu dignissim lacus, eget mattis lorem. Pellentesque et enim dolor. Duis viverra enim et risus ullamcorper, ut rhoncus sem ultrices. Donec aliquam imperdiet mollis. Maecenas sagittis, diam a sodales blandit, justo velit imperdiet eros, non posuere nulla metus ac nisi. Donec ac dui interdum, facilisis urna in, posuere mi. Morbi interdum, est in hendrerit aliquet, odio enim facilisis magna, eget tincidunt leo enim ac libero. ',
                 'datetime'   => new DateTime,
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,

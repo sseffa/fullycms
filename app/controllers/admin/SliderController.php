@@ -61,12 +61,10 @@ class SliderController extends BaseController {
      */
     public function edit($id) {
 
-        $slider = Slider::findOrFail($id);
-        $photos = Photo::where('relationship_id', '=', $id)->get();
+        $slider = Slider::with('images')->findOrFail($id);
 
         $types = ['home' => 'Home'];
-
-        return View::make('backend.slider.edit', compact('slider', 'photos', 'types'));
+        return View::make('backend.slider.edit', compact('slider', 'types'));
     }
 
     /**
@@ -151,6 +149,8 @@ class SliderController extends BaseController {
 
             return Response::json('success', 200);
         }
+
+        return Response::json('error', 400);
     }
 
     public function deleteImage() {

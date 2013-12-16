@@ -16,85 +16,39 @@
 
     });
 </script>
-<style>
-    pre code {
-        diplay: none;
-    }
-</style>
-
-<style type="text/css">
-    .label-arrow {
-        position: relative;
-        padding: .4em .6em .3em;
-    }
-
-    .label-arrow-left {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        margin-left: 10px;
-    }
-
-    .label-arrow-left:before {
-        right: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        border-right-color: #999;
-        border-width: 10px;
-        margin-top: -10px;
-    }
-
-    h4 .label-arrow-left {
-        margin-left: 18px;
-    }
-
-    h4 .label-arrow-left:before {
-        border-width: 13px;
-        margin-top: -13px;
-    }
-</style>
-
-<div style="margin-bottom: 50px;" class="container">
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Blog</h1>
             @yield('partial/breadcrumbs', Breadcrumbs::render('blog', $articles))
         </div>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-12">
 
         <div class="row">
-
             @foreach( $articles as $article )
             <div class="row">
                 <div class="col-sm-12">
                     <a href="{{ URL::route('dashboard.article.show', array('id'=>$article->id, 'slug'=>$article->slug)) }}">
-                        <h4>{{ $article->title }}<span datetime="{{ $article->created_at }}" class="label label-default label-arrow label-arrow-left time">sefa</span>
+                        <h4>{{ $article->title }}<span datetime="{{ $article->created_at }}" class="label label-default label-arrow label-arrow-left time"></span>
                         </h4></a>
                     <hr>
                 </div>
-                <div class="col-sm-2">
-                    <img src="//placehold.it/75x75" class="img-circle center-block">
-                </div>
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <p>{{{ mb_substr(strip_tags($article->content),0,600) }}}</p>
 
                     <div class="pull-right">
                         @foreach($article->tags as $tag)
-                        <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->name)) }}"><span class="label label-warning">{{ $tag->name }}</span></a>
+                        <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->slug)) }}"><span class="label label-warning">{{ $tag->name }}</span></a>
                         @endforeach
                     </div>
                     <p>
-                        <a href="{{ URL::route('dashboard.article.show', array('id'=>$article->id, 'slug'=>$article->slug)) }}" class="btn btn-default">Read More</a>
+                        <a href="{{ URL::route('dashboard.article.show', array('id'=>$article->id, 'slug'=>$article->slug)) }}" class="btn btn-xs btn-primary">Read More</a>
                     </p>
                 </div>
             </div>
             <hr>
             @endforeach
-
         </div>
     </div>
     <div class="pull-left">

@@ -49,3 +49,47 @@ body {
     background: none repeat scroll 0 0 #FFFFFF;
     text-decoration: none
 }
+
+/*blog*/
+pre code {
+    diplay: none;
+}
+
+.label-arrow {
+    position: relative;
+    padding: .4em .6em .3em;
+}
+
+.label-arrow-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 10px;
+}
+
+.label-arrow-left:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-right-color: #999;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+h4 .label-arrow-left {
+    margin-left: 18px;
+}
+
+h4 .label-arrow-left:before {
+    border-width: 13px;
+    margin-top: -13px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/*blog*/

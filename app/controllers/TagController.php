@@ -9,7 +9,7 @@ class TagController extends BaseController {
      */
     public function index($tag) {
 
-        $tag = Tag::where('name', '=', $tag)->first();
+        $tag = Tag::where('slug', '=', $tag)->first();
         $articles = $tag->articles()->paginate(10);
         $tags = Tag::with('articles')->get();
 
