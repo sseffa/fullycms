@@ -14,7 +14,7 @@
                 <li> {{ HTML::link('/','Home') }}</li>
                 <li> {{ HTML::link('/news','News') }}</li>
                 <li> {{ HTML::link('/article','Blog') }}</li>
-                @foreach(Page::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $page)
+                @foreach($pages as $page)
                 <li>{{ link_to_route( 'dashboard.page.show', e($page->title), $page->id) }}</li>
                 @endforeach
                 @foreach(PhotoGallery::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $photo_gallery)

@@ -23,7 +23,11 @@
         ],
         "files": [
             "app/helpers.php"
-        ]
+        ],
+        "psr-0": {
+            "Sefa": "app/"
+        }
+
     },
     "scripts": {
         "post-install-cmd": [
