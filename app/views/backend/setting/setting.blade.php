@@ -51,19 +51,6 @@
             </div>
             <br>
 
-            <!-- Meta Title -->
-            <div class="control-group {{ $errors->has('meta_title') ? 'has-error' : '' }}">
-                <label class="control-label" for="title">Meta Title</label>
-
-                <div class="controls">
-                    {{ Form::text('meta_title', $setting->meta_title, array('class'=>'form-control', 'id' => 'meta_title', 'placeholder'=>'Meta Title', 'value'=>Input::old('meta_title'))) }}
-                    @if ($errors->first('meta_title'))
-                    <span class="help-block">{{ $errors->first('meta_title') }}</span>
-                    @endif
-                </div>
-            </div>
-            <br>
-
             <!-- Meta Keywords -->
             <div class="control-group {{ $errors->has('meta_keywords') ? 'has-error' : '' }}">
                 <label class="control-label" for="title">Meta Keywords</label>

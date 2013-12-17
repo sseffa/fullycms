@@ -17,7 +17,6 @@ class CreateSettingsTable extends Migration {
             $table->increments('id');
             $table->string('site_title');
             $table->string('ga_code');
-            $table->string('meta_title');
             $table->string('meta_keywords');
             $table->string('meta_description');
             $table->timestamps();

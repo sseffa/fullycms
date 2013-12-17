@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>{{ Setting::getMeta()['site_title'] }}</title>
-	<meta name="title" content="{{ Setting::getMeta()['meta_title'] }}">
 	<meta name="description" content="{{ Setting::getMeta()['meta_description'] }}">
 	<meta name="keywords" content="{{ Setting::getMeta()['meta_keywords'] }}">
 	<meta name="author" content="Sefa Karagöz">

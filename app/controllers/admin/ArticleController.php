@@ -43,7 +43,6 @@ class ArticleController extends BaseController {
             'tag'              => Input::get('tag'),
             'content'          => Input::get('content'),
             'category'         => Input::get('category'),
-            'meta_title'       => Input::get('meta_title'),
             'meta_keywords'    => Input::get('meta_keywords'),
             'meta_description' => Input::get('meta_description'),
             'is_published'     => Input::get('is_published')
@@ -64,7 +63,6 @@ class ArticleController extends BaseController {
         $article->title = $formData['title'];
         $article->slug = $formData['slug'];
         $article->content = $formData['content'];
-        $article->meta_title = $formData['meta_title'];
         $article->meta_keywords = $formData['meta_keywords'];
         $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;
@@ -140,7 +138,6 @@ class ArticleController extends BaseController {
             'tag'              => Input::get('tag'),
             'content'          => Input::get('content'),
             'category'         => Input::get('category'),
-            'meta_title'       => Input::get('meta_title'),
             'meta_keywords'    => Input::get('meta_keywords'),
             'meta_description' => Input::get('meta_description'),
             'is_published'     => Input::get('is_published')
@@ -150,7 +147,6 @@ class ArticleController extends BaseController {
         $article->title = $formData['title'];
         $article->slug = $formData['slug'];
         $article->content = $formData['content'];
-        $article->meta_title = $formData['meta_title'];
         $article->meta_keywords = $formData['meta_keywords'];
         $article->meta_description = $formData['meta_description'];
         $article->is_published = ($formData['is_published']) ? true : false;

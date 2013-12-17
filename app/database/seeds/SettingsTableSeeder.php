@@ -14,7 +14,6 @@ class SettingsTableSeeder extends Seeder {
         $article = array(
             'site_title'       => 'sf',
             'ga_code'          => 'ga_code',
-            'meta_title'       => 'meta_title',
             'meta_keywords'    => 'meta_keywords',
             'meta_description' => 'meta_description',
 
