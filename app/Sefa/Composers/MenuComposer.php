@@ -1,19 +1,13 @@
 <?php namespace Sefa\Composers;
 
-use Page;
+use Page, PhotoGallery;
 
 class MenuComposer {
-
-    protected $page;
-
-    public function __consruct(Page $page) {
-
-        $this->page = $page;
-    }
 
     public function compose($view) {
 
         $view->with('pages', Page::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->get());
+        $view->with('photo_galleries', PhotoGallery::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->get());
     }
 }
 

@@ -17,7 +17,7 @@
                 @foreach($pages as $page)
                 <li>{{ link_to_route( 'dashboard.page.show', e($page->title), $page->id) }}</li>
                 @endforeach
-                @foreach(PhotoGallery::where('is_in_menu', "=", 1)->where('is_published', "=", 1)->paginate(5) as $photo_gallery)
+                @foreach($photo_galleries as $photo_gallery)
                 <li>{{ link_to_route( 'dashboard.photo_gallery.show', e($photo_gallery->title), $photo_gallery->id) }}</li>
                 @endforeach
                 <li> {{ HTML::link('/contact','Contact') }}</li>  
