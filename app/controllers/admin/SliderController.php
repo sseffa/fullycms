@@ -6,6 +6,11 @@ use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Im
 
 class SliderController extends BaseController {
 
+    public function __construct() {
+
+        View::share('active', 'plugins');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,7 @@ class SliderController extends BaseController {
 
         $sliders = Slider::orderBy('created_at', 'DESC')
             ->paginate(15);
-        return View::make('backend.slider.index', compact('sliders'))->with('active', 'slider');
+        return View::make('backend.slider.index', compact('sliders'));
     }
 
     /**
@@ -111,7 +116,7 @@ class SliderController extends BaseController {
     public function confirmDestroy($id) {
 
         $slider = Slider::findOrFail($id);
-        return View::make('backend.slider.confirm-destroy', compact('slider'))->with('active', 'slider');
+        return View::make('backend.slider.confirm-destroy', compact('slider'));
     }
 
     public function upload($id) {

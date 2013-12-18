@@ -6,6 +6,11 @@ use BaseController, Redirect, View, Input, Validator, News, Response, Str, Notif
 
 class NewsController extends BaseController {
 
+    public function __construct() {
+
+        View::share('active', 'modules');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,7 @@ class NewsController extends BaseController {
         $news = News::orderBy('created_at', 'DESC')
             ->paginate(10);
 
-        return View::make('backend.news.index', compact('news'))->with('active', 'news');
+        return View::make('backend.news.index', compact('news'));
     }
 
     /**
@@ -26,7 +31,7 @@ class NewsController extends BaseController {
      */
     public function create() {
 
-        return View::make('backend.news.create')->with('active', 'news');
+        return View::make('backend.news.create');
     }
 
     /**
@@ -79,7 +84,7 @@ class NewsController extends BaseController {
     public function show($id) {
 
         $news = News::findOrFail($id);
-        return View::make('backend.news.show', compact('news'))->with('active', 'news');
+        return View::make('backend.news.show', compact('news'));
     }
 
     /**
@@ -91,7 +96,7 @@ class NewsController extends BaseController {
     public function edit($id) {
 
         $news = News::findOrFail($id);
-        return View::make('backend.news.edit', compact('news'))->with('active', 'news');
+        return View::make('backend.news.edit', compact('news'));
     }
 
     /**
@@ -138,7 +143,7 @@ class NewsController extends BaseController {
     public function confirmDestroy($id) {
 
         $news = News::findOrFail($id);
-        return View::make('backend.news.confirm-destroy', compact('news'))->with('active', 'news');
+        return View::make('backend.news.confirm-destroy', compact('news'));
     }
 
     public function togglePublish($id) {

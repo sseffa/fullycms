@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ Setting::getMeta()['site_title'] }}</title>
-	<meta name="description" content="{{ Setting::getMeta()['meta_description'] }}">
-	<meta name="keywords" content="{{ Setting::getMeta()['meta_keywords'] }}">
+    <title>{{ $settings['site_title'] }}</title>
+	<meta name="description" content="{{ $settings['meta_description'] }}">
+	<meta name="keywords" content="{{ $settings['meta_keywords'] }}">
 	<meta name="author" content="Sefa Karagöz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ HTML::style('assets/bootstrap/css/bootstrap.css') }}
@@ -13,7 +13,7 @@
     {{ HTML::script('assets/js/holder.js') }}
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', "{{ Setting::getMeta()['ga_code'] }}"]);
+        _gaq.push(['_setAccount', "{{ $settings['ga_code'] }}"]);
         _gaq.push(['_trackPageview']);
         (function () {
             var ga = document.createElement('script');

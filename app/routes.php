@@ -90,7 +90,8 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
 
     // photo gallery
     Route::resource('photo_gallery', 'PhotoGalleryController');
-    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'PhotoGalleryController@confirmDestroy'))->where('id', '[0-9]+');
+    Route::get('photo_gallery/{id}/delete', array('as' => 'admin.photo_gallery.delete', 'uses' => 'PhotoGalleryController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 
     // ajax - blog
     Route::post('article/{id}/toggle-publish', array('as' => 'admin.article.toggle-publish', 'uses' => 'ArticleController@togglePublish'))
@@ -138,7 +139,8 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
 
     // slider
     Route::resource('slider', 'SliderController');
-    Route::get('slider/{id}/delete', array('as' => 'admin.slider.delete', 'uses' => 'SliderController@confirmDestroy'))->where('id', '[0-9]+');
+    Route::get('slider/{id}/delete', array('as' => 'admin.slider.delete', 'uses' => 'SliderController@confirmDestroy'))
+        ->where('id', '[0-9]+');
 
     // file upload slider
     Route::post('/slider/upload/{id}', array('as' => 'admin.slider.upload.image', 'uses' => 'SliderController@upload'))
@@ -175,7 +177,8 @@ Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
     Route::get('admin/forgot-password', array('as' => 'admin.forgot.password', 'uses' => 'AuthController@getForgotPassword'));
     Route::post('admin/forgot-password', array('as' => 'admin.forgot.password.post', 'uses' => 'AuthController@postForgotPassword'));
 
-    Route::get('admin/{id}/reset/{code}', array('as' => 'admin.reset.password', 'uses' => 'AuthController@getResetPassword'))->where('id', '[0-9]+');
+    Route::get('admin/{id}/reset/{code}', array('as' => 'admin.reset.password', 'uses' => 'AuthController@getResetPassword'))
+        ->where('id', '[0-9]+');
     Route::post('admin/reset-password', array('as' => 'admin.reset.password.post', 'uses' => 'AuthController@postResetPassword'));
 });
 

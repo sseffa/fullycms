@@ -6,6 +6,11 @@ use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, Fi
 
 class PhotoGalleryController extends BaseController {
 
+    public function __construct() {
+
+        View::share('active', 'modules');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,7 @@ class PhotoGalleryController extends BaseController {
         $photo_galleries = PhotoGallery::orderBy('created_at', 'DESC')
             ->paginate(15);
 
-        return View::make('backend.photo_gallery.index', compact('photo_galleries'))->with('active', 'photo_gallery');
+        return View::make('backend.photo_gallery.index', compact('photo_galleries'));
     }
 
     /**
@@ -81,7 +86,7 @@ class PhotoGalleryController extends BaseController {
     public function show($id) {
 
         $photo_gallery = PhotoGallery::findOrFail($id);
-        return View::make('backend.photo_gallery.show', compact('photo_gallery'))->with('active', 'photo_gallery');
+        return View::make('backend.photo_gallery.show', compact('photo_gallery'));
     }
 
     /**
@@ -150,7 +155,7 @@ class PhotoGalleryController extends BaseController {
     public function confirmDestroy($id) {
 
         $photo_gallery = PhotoGallery::findOrFail($id);
-        return View::make('backend.photo_gallery.confirm-destroy', compact('photo_gallery'))->with('active', 'photo_gallery');
+        return View::make('backend.photo_gallery.confirm-destroy', compact('photo_gallery'));
     }
 
     public function togglePublish($id) {

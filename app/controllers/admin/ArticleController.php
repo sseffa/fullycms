@@ -6,17 +6,9 @@ use BaseController, Redirect, View, Input, Validator, Article, Category, Respons
 
 class ArticleController extends BaseController {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index() {
+    public function __construct() {
 
-        $articles = Article::orderBy('created_at', 'DESC')
-            ->paginate(10);
-
-        return View::make('backend.article.index', compact('articles'))->with('active', 'article');
+        View::share('active', 'blog');
     }
 
     /**
@@ -27,7 +19,7 @@ class ArticleController extends BaseController {
     public function create() {
 
         $categories = Category::lists('title', 'id');
-        return View::make('backend.article.create', compact('categories'))->with('active', 'article');
+        return View::make('backend.article.create', compact('categories'));
     }
 
     /**
@@ -100,7 +92,7 @@ class ArticleController extends BaseController {
     public function show($id) {
 
         $article = Article::findOrFail($id);
-        return View::make('backend.article.show', compact('article'))->with('active', 'article');
+        return View::make('backend.article.show', compact('article'));
     }
 
     /**
@@ -121,7 +113,7 @@ class ArticleController extends BaseController {
 
         $categories = Category::lists('title', 'id');
 
-        return View::make('backend.article.edit', compact('article', 'tags', 'categories'))->with('active', 'article');
+        return View::make('backend.article.edit', compact('article', 'tags', 'categories'));
     }
 
     /**
@@ -177,6 +169,19 @@ class ArticleController extends BaseController {
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index() {
+
+        $articles = Article::orderBy('created_at', 'DESC')
+            ->paginate(10);
+
+        return View::make('backend.article.index', compact('articles'));
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int $id
@@ -194,7 +199,7 @@ class ArticleController extends BaseController {
     public function confirmDestroy($id) {
 
         $article = Article::findOrFail($id);
-        return View::make('backend.article.confirm-destroy', compact('article'))->with('active', 'article');
+        return View::make('backend.article.confirm-destroy', compact('article'));
     }
 
     public function togglePublish($id) {

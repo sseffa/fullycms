@@ -6,6 +6,11 @@ use BaseController, Redirect, View, Input, Validator, Page, Response;
 
 class PageController extends BaseController {
 
+    public function __construct() {
+
+        View::share('active', 'modules');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,7 @@ class PageController extends BaseController {
         $pages = Page::orderBy('created_at', 'DESC')
             ->paginate(15);
 
-        return View::make('backend.page.index', compact('pages'))->with('active', 'page');
+        return View::make('backend.page.index', compact('pages'));
     }
 
     /**
@@ -26,7 +31,7 @@ class PageController extends BaseController {
      */
     public function create() {
 
-        return View::make('backend.page.create')->with('active', 'page');
+        return View::make('backend.page.create');
     }
 
     /**
@@ -73,7 +78,7 @@ class PageController extends BaseController {
     public function show($id) {
 
         $page = Page::findOrFail($id);
-        return View::make('backend.page.show', compact('page'))->with('active', 'page');
+        return View::make('backend.page.show', compact('page'));
     }
 
     /**
@@ -130,7 +135,7 @@ class PageController extends BaseController {
     public function confirmDestroy($id) {
 
         $page = Page::findOrFail($id);
-        return View::make('backend.page.confirm-destroy', compact('page'))->with('active', 'page');
+        return View::make('backend.page.confirm-destroy', compact('page'));
     }
 
     public function togglePublish($id) {
