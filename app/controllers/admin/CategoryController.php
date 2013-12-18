@@ -114,6 +114,7 @@ class CategoryController extends BaseController {
     public function destroy($id) {
 
         $category = Category::findOrFail($id);
+        $category->articles()->delete($id);
         $category->delete();
 
         return Redirect::route('admin.category.index')

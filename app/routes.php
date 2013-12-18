@@ -189,14 +189,12 @@ Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
 */
 
 // error
-/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
     $error = $exception->getMessage();
     return Response::view('errors.error', compact('error'));
 });
-*/
 
 // 404 page not found
 App::missing(function () {
