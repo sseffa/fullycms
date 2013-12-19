@@ -92,7 +92,7 @@ class ArticlesTagsTableSeeder extends Seeder {
             ),
             array(
                 'article_id' => 1,
-                'tag_id'     => 4,
+                'tag_id'     => 8,
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
             ),

@@ -17,7 +17,7 @@
     });
 </script>
 <div class="container">
-      <div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Blog</h1>
             @yield('partial/breadcrumbs', Breadcrumbs::render('blog', $articles))
@@ -44,7 +44,7 @@
                     @endforeach
                 </div>
                 <p>
-                      <a href="{{ URL::route('dashboard.article.show', array('id'=>$article->id, 'slug'=>$article->slug)) }}" class="btn btn-default">Read More</a>
+                      <a href="{{ URL::route('dashboard.article.show', array('id'=>$article->id, 'slug'=>$article->slug)) }}" class="btn btn-xs btn-primary">Read More</a>
                 </p>
             </div>
         </div>

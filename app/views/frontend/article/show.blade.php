@@ -16,11 +16,20 @@
 
     <div class="row">
         <div class="col-lg-8">
+             <div class="pull-left">
+                    @foreach($article->tags as $tag)
+                    <a href="{{ URL::route('dashboard.tag', array('tag'=>$tag->slug)) }}"><span class="label label-warning">{{ $tag->name }}</span></a>
+                    @endforeach
+                </div>
+            <br>
+            <br>
+            <br>
             <p><i class="icon-time"></i> Posted on {{ $article->created_at }} by <a href="www.sefakaragoz.com">Sefa</a>
+
             </p>
             {{ $article->content }}
-        </div>
 
+        </div>
         <div class="col-lg-4">
             <div class="row">
                 <h4>Categories</h4>
