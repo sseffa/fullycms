@@ -123,7 +123,9 @@ class NewsController extends BaseController {
         $news->is_published = ($formData['is_published']) ? true : false;
         $news->save();
 
-        return Redirect::action('App\Controllers\Admin\NewsController@index')->with('message', 'News was successfully updated');
+        Notification::success('News was successfully updated');
+
+        return Redirect::action('App\Controllers\Admin\NewsController@index');
     }
 
     /**
@@ -137,7 +139,9 @@ class NewsController extends BaseController {
         $news = News::findOrFail($id);
         $news->delete();
 
-        return Redirect::action('App\Controllers\Admin\NewsController@index')->with('message', 'News was successfully deleted');
+        Notification::success('News was successfully deleted');
+
+        return Redirect::action('App\Controllers\Admin\NewsController@index');
     }
 
     public function confirmDestroy($id) {

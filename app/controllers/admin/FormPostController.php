@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, FormPost, Response;
+use BaseController, Redirect, View, Input, Validator, FormPost, Response, Notification;
 
 class FormPostController extends BaseController {
 
@@ -42,7 +42,9 @@ class FormPostController extends BaseController {
         $formPost = FormPost::findOrFail($id);
         $formPost->delete();
 
-        return Redirect::action('App\Controllers\Admin\FormPostController@index')->with('message', 'Post was successfully deleted');
+        Notification::success('Post was successfully deleted');
+
+        return Redirect::action('App\Controllers\Admin\FormPostController@index');
     }
 
     public function confirmDestroy($id) {

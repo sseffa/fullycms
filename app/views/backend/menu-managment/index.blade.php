@@ -3,7 +3,7 @@
 {{ HTML::style('assets/css/menu-managment.css') }}
 {{ HTML::script('assets/js/jquery.nestable.js') }}
 <div class="container">
-    <h2>Menu Managment</h2>
+    <h2>Menu Managment (TO DO!)</h2>
     <div class="cf nestable-lists">
     <div class="dd" id="nestable">
         <ol class="dd-list">

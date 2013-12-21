@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo;
+use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo, Notification;
 
 class PhotoGalleryController extends BaseController {
 
@@ -39,7 +39,9 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->save();
         $id = $photo_gallery->id;
 
-        return Redirect::to("/admin/photo_gallery/" . $id . "/edit")->with('message', 'Photo gallery was successfully added');
+        Notification::success('Photo gallery was successfully added');
+
+        return Redirect::to("/admin/photo_gallery/" . $id . "/edit");
     }
 
     /**
@@ -123,7 +125,9 @@ class PhotoGalleryController extends BaseController {
         $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
 
         $photo_gallery->save();
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo gallery was successfully updated');
+
+        Notification::success('Photo gallery was successfully updated');
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
     }
 
     /**
@@ -134,22 +138,20 @@ class PhotoGalleryController extends BaseController {
      */
     public function destroy($id) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
-        $photo_gallery->delete();
+        $photo_gallery = PhotoGallery::with('photos')->findOrFail($id);
 
-        // delete images
-        $photos = Photo::where('photo_gallery_id', '=', $id)->get();
+        foreach ($photo_gallery->photos as $photo) {
 
-        foreach ($photos as $photo) {
-
-            Photo::where('file_name', '=', $photo->file_name)->delete();
-            $destinationPath = public_path() . "/uploads/";
-
+            $destinationPath = public_path() . "/uploads/dropzone/";
             File::delete($destinationPath . $photo->file_name);
             File::delete($destinationPath . "150x150_" . $photo->file_name);
+            $photo->delete();
         }
 
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index')->with('message', 'Photo gallery was successfully deleted');
+        $photo_gallery->delete();
+        Notification::success('Photo gallery was successfully deleted');
+
+        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
     }
 
     public function confirmDestroy($id) {

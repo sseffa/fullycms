@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Category, Response;
+use BaseController, Redirect, View, Input, Category, Response, Notification;
 
 class CategoryController extends BaseController {
 
@@ -53,8 +53,9 @@ class CategoryController extends BaseController {
 
         $this->category->save();
 
-        return Redirect::route('admin.category.index')
-            ->with('message', 'Category was successfully added');
+        Notification::success('Category was successfully added');
+
+        return Redirect::route('admin.category.index');
     }
 
     /**
@@ -101,8 +102,9 @@ class CategoryController extends BaseController {
 
         $this->category->save();
 
-        return Redirect::route('admin.category.index')
-            ->with('message', 'Category was successfully updated');
+        Notification::success('Category was successfully updated');
+
+        return Redirect::route('admin.category.index');
     }
 
     /**
@@ -117,8 +119,9 @@ class CategoryController extends BaseController {
         $category->articles()->delete($id);
         $category->delete();
 
-        return Redirect::route('admin.category.index')
-            ->with('message', 'Category was successfully deleted');
+        Notification::success('Category was successfully deleted');
+
+        return Redirect::route('admin.category.index');
     }
 
     public function confirmDestroy($id) {

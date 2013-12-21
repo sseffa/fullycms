@@ -30,6 +30,7 @@
         </h3>
     </div>
     {{ Form::open( array( 'action' => array( 'App\Controllers\Admin\NewsController@update', $news->id), 'method' => 'PATCH')) }}
+
     <!-- Title -->
     <div class="control-group {{ $errors->has('title') ? 'has-error' : '' }}">
         <label class="control-label" for="title">Title</label>
@@ -48,7 +49,10 @@
         <label class="control-label" for="title">Slug</label>
 
         <div class="controls">
-            {{ Form::text('slug', $news->slug, array('class'=>'form-control', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+            <div class="input-group">
+                <span class="input-group-addon">www.sefakaragoz.com/</span>
+                {{ Form::text('slug', $news->slug, array('class'=>'form-control slug', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+            </div>
             @if ($errors->first('slug'))
             <span class="help-block">{{ $errors->first('slug') }}</span>
             @endif

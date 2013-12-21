@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Page, Response;
+use BaseController, Redirect, View, Input, Validator, Page, Response, Notification;
 
 class PageController extends BaseController {
 
@@ -66,7 +66,9 @@ class PageController extends BaseController {
         $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
         $page->save();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully added');
+        Notification::success('Page was successfully added');
+
+        return Redirect::action('App\Controllers\Admin\PageController@index');
     }
 
     /**
@@ -115,7 +117,10 @@ class PageController extends BaseController {
         $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
 
         $page->save();
-        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully updated');
+
+        Notification::success('Page was successfully updated');
+
+        return Redirect::action('App\Controllers\Admin\PageController@index');
     }
 
     /**
@@ -129,7 +134,9 @@ class PageController extends BaseController {
         $page = Page::findOrFail($id);
         $page->delete();
 
-        return Redirect::action('App\Controllers\Admin\PageController@index')->with('message', 'Page was successfully deleted');
+        Notification::success('Page was successfully deleted');
+
+        return Redirect::action('App\Controllers\Admin\PageController@index');
     }
 
     public function confirmDestroy($id) {

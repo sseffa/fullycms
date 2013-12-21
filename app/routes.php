@@ -155,7 +155,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
 });
 
 // filemanager
-Route::get('filemanager/show/{x?}', function () {
+Route::get('filemanager/show', function () {
 
     return View::make('backend/plugins/filemanager');
 })->before('auth.admin');

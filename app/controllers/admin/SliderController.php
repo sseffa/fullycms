@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Image, Photo;
+use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Image, Photo, Notification;
 
 class SliderController extends BaseController {
 
@@ -30,15 +30,19 @@ class SliderController extends BaseController {
      */
     public function create() {
 
-        if (Slider::get()->count() >= 1)
-            return Redirect::to("/admin/slider/")->with('message', 'Only one home slider can be added');
+        if (Slider::get()->count() >= 1) {
+
+            Notification::error('Only one home slider can be added');
+            return Redirect::to("/admin/slider/");
+        }
 
         $slider = new Slider();
         $slider->title = "Slider";
         $slider->save();
         $id = $slider->id;
 
-        return Redirect::to("/admin/slider/" . $id . "/edit")->with('message', 'Slider was successfully added');
+        Notification::success('Slider was successfully added');
+        return Redirect::to("/admin/slider/" . $id . "/edit");
     }
 
     /**
@@ -85,7 +89,8 @@ class SliderController extends BaseController {
         $slider->type = Input::get('type');
 
         $slider->save();
-        return Redirect::route('admin.slider.index')->with('message', 'Slider was successfully updated');
+        Notification::success('Slider was successfully updated');
+        return Redirect::route('admin.slider.index');
     }
 
     /**
@@ -96,13 +101,10 @@ class SliderController extends BaseController {
      */
     public function destroy($id) {
 
-        $slider = Slider::findOrFail($id);
+        $slider = Slider::with('images')->findOrFail($id);
         $slider->delete();
 
-        // delete images
-        $photos = Photo::where('relationship_id', '=', $id)->get();
-
-        foreach ($photos as $photo) {
+        foreach ($slider->images as $photo) {
 
             Photo::where('file_name', '=', $photo->file_name)->delete();
             $destinationPath = public_path() . "/uploads/dropzone/";
@@ -110,7 +112,8 @@ class SliderController extends BaseController {
             File::delete($destinationPath . $photo->file_name);
         }
 
-        return Redirect::route('admin.slider.index')->with('message', 'Slider was successfully deleted');
+        Notification::success('Slider was successfully deleted');
+        return Redirect::route('admin.slider.index');
     }
 
     public function confirmDestroy($id) {

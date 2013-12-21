@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Article, Category, Response, Tag, Str;
+use BaseController, Redirect, View, Input, Validator, Article, Category, Response, Tag, Str, Notification;
 
 class ArticleController extends BaseController {
 
@@ -80,7 +80,9 @@ class ArticleController extends BaseController {
             $article->tags()->save($tag);
         }
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully added');
+        Notification::success('Article was successfully added');
+
+        return Redirect::action('App\Controllers\Admin\ArticleController@index');
     }
 
     /**
@@ -165,7 +167,9 @@ class ArticleController extends BaseController {
             $article->tags()->save($tag);
         }
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully updated');
+        Notification::success('Article was successfully updated');
+
+        return Redirect::action('App\Controllers\Admin\ArticleController@index');
     }
 
     /**
@@ -193,7 +197,9 @@ class ArticleController extends BaseController {
         $article->tags()->detach();
         $article->delete();
 
-        return Redirect::action('App\Controllers\Admin\ArticleController@index')->with('message', 'Article was successfully deleted');
+        Notification::success('Article was successfully deleted');
+
+        return Redirect::action('App\Controllers\Admin\ArticleController@index');
     }
 
     public function confirmDestroy($id) {

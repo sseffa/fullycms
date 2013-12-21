@@ -18,6 +18,11 @@
             todayBtn: "linked",
             orientation: "top auto"
         });
+
+        if ($('#tag').length != 0) {
+            var elt = $('#tag');
+            elt.tagsinput();
+        }
     });
 </script>
 <div class="container">
@@ -105,14 +110,6 @@
                 "filebrowserBrowseUrl": "{{ url('filemanager/show') }}"
             });
         };
-
-        $(document).ready(function () {
-
-            if ($('#tag').length != 0) {
-                var elt = $('#tag');
-                elt.tagsinput();
-            }
-        });
     </script>
 </div>
 @stop

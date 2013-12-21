@@ -2,15 +2,11 @@
 @section('content')
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#message').show().delay(4000).fadeOut(700);
+        $('#notification').show().delay(4000).fadeOut(700);
     });
 </script>
 <div class="container">
-    @if(Session::has('message'))
-    <div class="alert alert-success" id="message">
-        {{ Session::get('message') }}
-    </div>
-    @endif
+    {{ Notification::showAll() }}
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Sliders</h3>

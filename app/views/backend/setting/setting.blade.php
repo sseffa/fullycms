@@ -2,15 +2,11 @@
 @section('content')
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#message').show().delay(4000).fadeOut(700);
+        $('#notification').show().delay(4000).fadeOut(700);
     });
 </script>
 <div class="container">
-    @if(Session::has('message'))
-    <div class="alert alert-success" id="message">
-        {{ Session::get('message') }}
-    </div>
-    @endif
+    {{ Notification::showAll() }}
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
         <li><a href="#info" data-toggle="tab">Info</a></li>

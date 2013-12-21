@@ -8,6 +8,11 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#title").slug();
+
+        if ($('#tag').length != 0) {
+            var elt = $('#tag');
+            elt.tagsinput();
+        }
     });
 </script>
 <div class="container">
@@ -38,7 +43,10 @@
         <label class="control-label" for="title">Slug</label>
 
         <div class="controls">
-            {{ Form::text('slug', $article->slug, array('class'=>'form-control', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+            <div class="input-group">
+                <span class="input-group-addon">www.sefakaragoz.com/</span>
+                {{ Form::text('slug', $article->slug, array('class'=>'form-control slug', 'id' => 'slug', 'placeholder'=>'Slug', 'value'=>Input::old('slug'))) }}
+            </div>
             @if ($errors->first('slug'))
             <span class="help-block">{{ $errors->first('slug') }}</span>
             @endif
@@ -145,14 +153,6 @@
                 "filebrowserBrowseUrl": "{{ url('filemanager/show') }}"
             });
         };
-
-        $(document).ready(function () {
-
-            if ($('#tag').length != 0) {
-                var elt = $('#tag');
-                elt.tagsinput();
-            }
-        });
     </script>
 </div>
 @stop

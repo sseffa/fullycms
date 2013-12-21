@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, User;
+use BaseController, Redirect, Sentry, View, DB, Input, Validator, User, Notification;
 
 class UserController extends BaseController {
 
@@ -70,7 +70,9 @@ class UserController extends BaseController {
         $adminGroup = Sentry::findGroupById(1);
         $user->addGroup($adminGroup);
 
-        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully added');
+        Notification::success('User was successfully added');
+
+        return Redirect::action('App\Controllers\Admin\UserController@index');
     }
 
     /**
@@ -117,7 +119,9 @@ class UserController extends BaseController {
         $user->last_name = $formData['last-name'];
         $user->save();
 
-        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully updated');
+        Notification::success('User was successfully updated');
+
+        return Redirect::action('App\Controllers\Admin\UserController@index');
     }
 
     /**
@@ -131,7 +135,8 @@ class UserController extends BaseController {
         $user = Sentry::findUserById($id);
         $user->delete();
 
-        return Redirect::action('App\Controllers\Admin\UserController@index')->with('message', 'User was successfully deleted');
+        Notification::success('User was successfully deleted');
+        return Redirect::action('App\Controllers\Admin\UserController@index');
     }
 
     public function confirmDestroy($id) {
