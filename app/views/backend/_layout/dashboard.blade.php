@@ -32,7 +32,7 @@
             </div>
          <br>
          <br>
-            <a href="{{ route('dashboard') }}" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
+            <a target="_blank" href="{{ route('dashboard') }}" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
     </div>
 </div>
 <br>

@@ -2,13 +2,22 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo, Notification;
+use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo, Notification, Config;
 
 class PhotoGalleryController extends BaseController {
+
+    protected $width;
+    protected $height;
+    protected $imgDir;
 
     public function __construct() {
 
         View::share('active', 'modules');
+
+        $config = Config::get('sfcms');
+        $this->width=$config['modules']['photo_gallery']['thumb_size']['width'];
+        $this->height=$config['modules']['photo_gallery']['thumb_size']['height'];
+        $this->imgDir=$config['modules']['photo_gallery']['image_dir'];
     }
 
     /**
@@ -142,9 +151,9 @@ class PhotoGalleryController extends BaseController {
 
         foreach ($photo_gallery->photos as $photo) {
 
-            $destinationPath = public_path() . "/uploads/dropzone/";
+            $destinationPath = public_path() .$this->imgDir;
             File::delete($destinationPath . $photo->file_name);
-            File::delete($destinationPath . "150x150_" . $photo->file_name);
+            File::delete($destinationPath . "thumb_" . $photo->file_name);
             $photo->delete();
         }
 
@@ -184,7 +193,7 @@ class PhotoGalleryController extends BaseController {
 
         $file = Input::file('file');
 
-        $rules = array('file' => 'mimes:jpg,jpeg,bmp,png|max:10000');
+        $rules = array('file' => 'mimes:jpg,jpeg,png|max:10000');
         $data = array('file' => Input::file('file'));
 
         $validation = Validator::make($data, $rules);
@@ -193,7 +202,7 @@ class PhotoGalleryController extends BaseController {
             return Response::json($validation->errors()->first(), 400);
         }
 
-        $destinationPath = public_path() . '/uploads/dropzone/';
+        $destinationPath = public_path() . $this->imgDir;
         $fileName = $file->getClientOriginalName();
         $fileSize = $file->getClientSize();
 
@@ -202,14 +211,14 @@ class PhotoGalleryController extends BaseController {
         if ($upload_success) {
 
             // resizing an uploaded file
-            Image::make($destinationPath . $fileName)->resize(150, 150)->save($destinationPath . "150x150_" . $fileName);
+            Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . "thumb_" . $fileName);
 
             $photo_gallery = PhotoGallery::findOrFail($id);
             $image = new Photo;
             $image->file_name = $fileName;
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
-            $image->path = '/uploads/dropzone/' . $fileName;
+            $image->path = $this->imgDir . $fileName;
             $image->type = "gallery";
             $photo_gallery->photos()->save($image);
 
@@ -225,9 +234,9 @@ class PhotoGalleryController extends BaseController {
 
         Photo::where('file_name', '=', $fileName)->delete();
 
-        $destinationPath = public_path() . "/uploads/dropzone/";
+        $destinationPath = public_path() . $this->imgDir;
         File::delete($destinationPath . $fileName);
-        File::delete($destinationPath . "150x150_" . $fileName);
+        File::delete($destinationPath . "thumb_" . $fileName);
         return Response::json('success', 200);
     }
 }

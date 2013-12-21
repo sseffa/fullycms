@@ -2,13 +2,22 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Image, Photo, Notification;
+use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Image, Photo, Notification, Config;
 
 class SliderController extends BaseController {
+
+    protected $width;
+    protected $height;
+    protected $imgDir;
 
     public function __construct() {
 
         View::share('active', 'plugins');
+
+        $config = Config::get('sfcms');
+        $this->width=$config['modules']['slider']['image_size']['width'];
+        $this->height=$config['modules']['slider']['image_size']['height'];
+        $this->imgDir=$config['modules']['slider']['image_dir'];
     }
 
     /**
@@ -107,7 +116,7 @@ class SliderController extends BaseController {
         foreach ($slider->images as $photo) {
 
             Photo::where('file_name', '=', $photo->file_name)->delete();
-            $destinationPath = public_path() . "/uploads/dropzone/";
+            $destinationPath = public_path() . $this->imgDir;
 
             File::delete($destinationPath . $photo->file_name);
         }
@@ -126,7 +135,7 @@ class SliderController extends BaseController {
 
         $file = Input::file('file');
 
-        $rules = array('file' => 'mimes:jpg,jpeg,bmp,png|max:10000');
+        $rules = array('file' => 'mimes:jpg,jpeg,png|max:10000');
         $data = array('file' => Input::file('file'));
 
         $validation = Validator::make($data, $rules);
@@ -135,7 +144,7 @@ class SliderController extends BaseController {
             return Response::json($validation->errors()->first(), 400);
         }
 
-        $destinationPath = public_path() . '/uploads/dropzone/';
+        $destinationPath = public_path() . $this->imgDir;
         $fileName = $file->getClientOriginalName();
         $fileSize = $file->getClientSize();
 
@@ -144,7 +153,7 @@ class SliderController extends BaseController {
         if ($upload_success) {
 
             // resizing an uploaded file
-            Image::make($destinationPath . $fileName)->resize(null, 430)->save($destinationPath . "slider_" . $fileName);
+            Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . "slider_" . $fileName);
             File::delete($destinationPath . $fileName);
 
             $slider = Slider::findOrFail($id);
@@ -152,7 +161,7 @@ class SliderController extends BaseController {
             $image->file_name = "slider_" . $fileName;
             $image->file_size = $fileSize;
             $image->title = explode(".", $fileName)[0];
-            $image->path = '/uploads/dropzone/' . 'slider_' . $fileName;
+            $image->path = $this->imgDir . 'slider_' . $fileName;
             $slider->images()->save($image);
 
             return Response::json('success', 200);
@@ -165,7 +174,7 @@ class SliderController extends BaseController {
 
         $fileName = Input::get('file');
         Photo::where('file_name', '=', $fileName)->delete();
-        $destinationPath = public_path() . "/uploads/dropzone/";
+        $destinationPath = public_path() . $this->imgDir;
         File::delete($destinationPath . $fileName);
         return Response::json('success', 200);
     }
