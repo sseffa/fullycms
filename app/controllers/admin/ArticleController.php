@@ -2,7 +2,15 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Article, Category, Response, Tag, Str, Notification;
+use BaseController;
+use Redirect; View; 
+use Input; 
+use Validator; 
+use Article; 
+use Category; 
+use Response; 
+use Tag; Str; 
+use Notification;
 
 class ArticleController extends BaseController {
 
