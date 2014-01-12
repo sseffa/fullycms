@@ -10,7 +10,7 @@ use Validator;
 use Response;
 use Str;
 use Notification;
-use Sefa\Repository\News\NewsRepository as News;
+use Sefa\Repositories\News\NewsRepository as News;
 use Sefa\Exceptions\Validation\ValidationException;
 
 class NewsController extends BaseController {

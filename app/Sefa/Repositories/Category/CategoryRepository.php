@@ -1,10 +1,10 @@
-<?php namespace Sefa\Repository\Category;
+<?php namespace Sefa\Repositories\Category;
 
 use Config;
 use Category;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
-use Sefa\Repository\AbstractValidator as Validator;
+use Sefa\Repositories\AbstractValidator as Validator;
 
 class CategoryRepository extends Validator implements BaseRepositoryInterface {
 

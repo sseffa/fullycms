@@ -8,8 +8,8 @@ use Response;
 use Tag;
 use Str;
 use Notification;
-use Sefa\Repository\Article\ArticleRepository as Article;
-use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Repositories\Article\ArticleRepository as Article;
+use Sefa\Repositories\Category\CategoryRepository as Category;
 use Sefa\Exceptions\Validation\ValidationException;
 
 class ArticleController extends BaseController {

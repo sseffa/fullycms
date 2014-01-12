@@ -1,11 +1,11 @@
-<?php namespace Sefa\Repository\Page;
+<?php namespace Sefa\Repositories\Page;
 
 use Page;
 use Config;
 use Response;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
-use Sefa\Repository\AbstractValidator as Validator;
+use Sefa\Repositories\AbstractValidator as Validator;
 
 class PageRepository extends Validator implements BaseRepositoryInterface {
 

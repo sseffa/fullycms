@@ -1,11 +1,11 @@
-<?php namespace Sefa\Repository\News;
+<?php namespace Sefa\Repositories\News;
 
 use Config;
 use News;
 use Response;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
-use Sefa\Repository\AbstractValidator as Validator;
+use Sefa\Repositories\AbstractValidator as Validator;
 
 class NewsRepository extends Validator implements BaseRepositoryInterface {
 

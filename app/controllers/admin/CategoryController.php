@@ -5,7 +5,7 @@ use Redirect;
 use View;
 use Input;
 use Notification;
-use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Repositories\Category\CategoryRepository as Category;
 use Sefa\Exceptions\Validation\ValidationException;
 
 class CategoryController extends BaseController {

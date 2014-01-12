@@ -1,8 +1,8 @@
-<?php namespace Sefa\Repository\Tag;
+<?php namespace Sefa\Repositories\Tag;
 
 use Config;
 use Tag;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 
 class TagRepository {
 

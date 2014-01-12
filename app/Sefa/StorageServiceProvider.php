@@ -7,13 +7,13 @@ class StorageServiceProvider extends ServiceProvider {
     public function register() {
 
         $this->app->bind(
-            'Sefa\Repository\BaseRepositoryInterface',
-            'Sefa\Repository\Article\ArticleRepository',
-            'Sefa\Repository\Category\CategoryRepository',
-            'Sefa\Repository\News\NewsRepository',
-            'Sefa\Repository\Page\PageRepository',
-            'Sefa\Repository\PhotoGallery\PhotoGalleryRepository',
-            'Sefa\Repository\Tag\TagRepository'
+            'Sefa\Repositories\BaseRepositoryInterface',
+            'Sefa\Repositories\Article\ArticleRepository',
+            'Sefa\Repositories\Category\CategoryRepository',
+            'Sefa\Repositories\News\NewsRepository',
+            'Sefa\Repositories\Page\PageRepository',
+            'Sefa\Repositories\PhotoGallery\PhotoGalleryRepository',
+            'Sefa\Repositories\Tag\TagRepository'
         );
     }
 }

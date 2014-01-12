@@ -1,4 +1,4 @@
-<?php namespace Sefa\Repository\Article;
+<?php namespace Sefa\Repositories\Article;
 
 use Article;
 use Config;
@@ -6,9 +6,9 @@ use Response;
 use Tag;
 use Category;
 use Str;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
-use Sefa\Repository\AbstractValidator as Validator;
+use Sefa\Repositories\AbstractValidator as Validator;
 
 class ArticleRepository extends Validator implements BaseRepositoryInterface {
 

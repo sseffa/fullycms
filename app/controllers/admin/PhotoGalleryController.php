@@ -10,7 +10,7 @@ use File;
 use Image;
 use Notification;
 use Config;
-use Sefa\Repository\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
+use Sefa\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
 use Sefa\Exceptions\Validation\ValidationException;
 
 class PhotoGalleryController extends BaseController {

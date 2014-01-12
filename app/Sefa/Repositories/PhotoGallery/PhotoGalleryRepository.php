@@ -1,4 +1,4 @@
-<?php namespace Sefa\Repository\PhotoGallery;
+<?php namespace Sefa\Repositories\PhotoGallery;
 
 use PhotoGallery;
 use File;
@@ -6,9 +6,9 @@ use Config;
 use Photo;
 use Image;
 use Response;
-use Sefa\Repository\BaseRepositoryInterface as BaseRepositoryInterface;
+use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
-use Sefa\Repository\AbstractValidator as Validator;
+use Sefa\Repositories\AbstractValidator as Validator;
 
 class PhotoGalleryRepository extends Validator implements BaseRepositoryInterface {
 

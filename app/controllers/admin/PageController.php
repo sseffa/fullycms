@@ -9,7 +9,7 @@ use Input;
 use Validator;
 use Response;
 use Notification;
-use Sefa\Repository\Page\PageRepository as Page;
+use Sefa\Repositories\Page\PageRepository as Page;
 use Sefa\Exceptions\Validation\ValidationException;
 
 class PageController extends BaseController {

@@ -111,7 +111,6 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         'Krucas\Notification\NotificationServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
         'Sefa\StorageServiceProvider',
 
     ),

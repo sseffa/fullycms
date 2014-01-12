@@ -1,4 +1,4 @@
-<?php namespace Sefa\Repository;
+<?php namespace Sefa\Repositories;
 
 interface BaseRepositoryInterface {
 
