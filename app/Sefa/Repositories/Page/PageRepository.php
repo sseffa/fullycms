@@ -31,7 +31,7 @@ class PageRepository extends Validator implements BaseRepositoryInterface {
 
     public function all() {
 
-        return $this->pageget();
+        return $this->page->get();
     }
 
     public function paginate($perPage = null) {

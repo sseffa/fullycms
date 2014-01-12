@@ -34,21 +34,21 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
 
     public function all() {
 
-        return Article::with('tags')->orderBy('created_at', 'DESC')
+        return $this->article->with('tags')->orderBy('created_at', 'DESC')
             ->where('is_published', 1)
             ->get();
     }
 
     public function paginate($perPage = null) {
 
-        return Article::with('tags')->orderBy('created_at', 'DESC')
+        return $this->article->with('tags')->orderBy('created_at', 'DESC')
             ->where('is_published', 1)
             ->paginate(($perPage) ? $perPage : $this->perPage);
     }
 
     public function find($id) {
 
-        return Article::with(['tags', 'category'])->findOrFail($id);
+        return $this->article->with(['tags', 'category'])->findOrFail($id);
     }
 
     public function create($attributes) {
@@ -133,5 +133,11 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
         $page->save();
 
         return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
+    }
+
+    function getUrl($id) {
+
+        $article = $this->article->findOrFail($id);
+        return url('article/' . $id . '/' . $article->slug, $parameters = array(), $secure = null);
     }
 }
