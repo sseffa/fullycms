@@ -1,8 +1,12 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, View, Input, Category, Response, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Notification;
+use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Exceptions\Validation\ValidationException;
 
 class CategoryController extends BaseController {
 
@@ -21,8 +25,7 @@ class CategoryController extends BaseController {
      */
     public function index() {
 
-        $categories = $this->category->paginate(15);
-
+        $categories = $this->category->paginate();
         return View::make('backend.category.index', compact('categories'));
     }
 
@@ -43,90 +46,78 @@ class CategoryController extends BaseController {
      */
     public function store() {
 
-        $input = Input::all();
+        try {
+            $this->category->create(Input::all());
+            Notification::success('Category was successfully added');
+            return Redirect::route('admin.category.index');
+        } catch (ValidationException $e) {
 
-        if (!$this->category->fill($input)->isValid()) {
-            return Redirect::back()
-                ->withInput()
-                ->withErrors($this->category->errors);
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $this->category->save();
-
-        Notification::success('Category was successfully added');
-
-        return Redirect::route('admin.category.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return Response
      */
     public function show($id) {
 
-        $category = $this->category->findOrFail($id);
+        $category = $this->category->find($id);
         return View::make('backend.category.show', compact('category'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return Response
      */
     public function edit($id) {
 
-        $category = Category::findOrFail($id);
+        $category = $this->category->find($id);
         return View::make('backend.category.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return Response
      */
     public function update($id) {
 
-        $this->category = Category::find($id);
+        try {
+            $this->category->update($id, Input::all());
+            Notification::success('Category was successfully updated');
+            return Redirect::route('admin.category.index');
+        } catch (ValidationException $e) {
 
-        $input = Input::all();
-
-        if (!$this->category->fill($input)->isValid()) {
-            return Redirect::back()
-                ->withInput()
-                ->withErrors($this->category->errors);
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $this->category->save();
-
-        Notification::success('Category was successfully updated');
-
-        return Redirect::route('admin.category.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id) {
 
-        $category = Category::findOrFail($id);
-        $category->articles()->delete($id);
-        $category->delete();
-
+        $this->category->destroy($id);
         Notification::success('Category was successfully deleted');
-
         return Redirect::route('admin.category.index');
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function confirmDestroy($id) {
 
-        $category = Category::findOrFail($id);
+        $category = $this->category->find($id);
         return View::make('backend.category.confirm-destroy', compact('category'));
     }
 }

@@ -1,13 +1,18 @@
 <?php
 
+use Sefa\Repository\Article\ArticleRepository as Article;
+use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Repository\Tag\TagRepository as Tag;
+
 class ArticleController extends BaseController {
 
-    protected $perPage;
+    protected $article;
 
-    public function __construct(){
+    public function __construct(Article $article, Tag $tag, Category $category) {
 
-        $config = Config::get('sfcms');
-        $this->perPage=$config['modules']['per_page'];
+        $this->article = $article;
+        $this->tag = $tag;
+        $this->category = $category;
     }
 
     /**
@@ -17,10 +22,7 @@ class ArticleController extends BaseController {
      */
     public function index() {
 
-        $articles = Article::with('tags')->orderBy('created_at', 'DESC')
-            ->where('is_published', 1)
-            ->paginate($this->perPage);
-
+        $articles = $this->article->paginate();
         return View::make('frontend.article.index', compact('articles'));
     }
 
@@ -30,10 +32,9 @@ class ArticleController extends BaseController {
      */
     public function show($id, $slug = null) {
 
-        $article = Article::findOrFail($id);
-        $tags = Tag::with('articles')->get();
-        $categories = Category::with('articles')->get();
-
-        return View::make('frontend.article.show', compact('article', 'tags', 'categories'));
+        $article = $this->article->find($id);     
+        $categories=$this->category->all();
+        $tags=$this->tag->all();
+        return View::make('frontend.article.show', compact('article', 'categories', 'tags'));
     }
 }

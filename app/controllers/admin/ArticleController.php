@@ -1,14 +1,38 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, View, Input, Validator, Article, Category, Response, Tag, Str, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Response;
+use Tag;
+use Str;
+use Notification;
+use Sefa\Repository\Article\ArticleRepository as Article;
+use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Exceptions\Validation\ValidationException;
 
 class ArticleController extends BaseController {
 
-    public function __construct() {
+    protected $article;
+    protected $category;
+
+    public function __construct(Article $article, Category $category) {
 
         View::share('active', 'blog');
+        $this->article = $article;
+        $this->category = $category;
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index() {
+
+        $articles = $this->article->paginate();
+        return View::make('backend.article.index', compact('articles'));
     }
 
     /**
@@ -18,7 +42,7 @@ class ArticleController extends BaseController {
      */
     public function create() {
 
-        $categories = Category::lists('title', 'id');
+        $categories = $this->category->lists();
         return View::make('backend.article.create', compact('categories'));
     }
 
@@ -29,60 +53,14 @@ class ArticleController extends BaseController {
      */
     public function store() {
 
-        $formData = array(
-            'title'            => Input::get('title'),
-            'slug'             => Input::get('slug'),
-            'tag'              => Input::get('tag'),
-            'content'          => Input::get('content'),
-            'category'         => Input::get('category'),
-            'meta_keywords'    => Input::get('meta_keywords'),
-            'meta_description' => Input::get('meta_description'),
-            'is_published'     => Input::get('is_published')
-        );
+        try {
+            $this->article->create(Input::all());
+            Notification::success('Article was successfully added');
+            return Redirect::route('admin.article.index');
+        } catch (ValidationException $e) {
 
-        $rules = array(
-            'title'   => 'required',
-            'content' => 'required'
-        );
-
-        $validation = Validator::make($formData, $rules);
-
-        if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\ArticleController@create')->withErrors($validation)->withInput();
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $article = new Article();
-        $article->title = $formData['title'];
-        $article->slug = $formData['slug'];
-        $article->content = $formData['content'];
-        $article->meta_keywords = $formData['meta_keywords'];
-        $article->meta_description = $formData['meta_description'];
-        $article->is_published = ($formData['is_published']) ? true : false;
-
-        if ($article->save()) {
-
-            $category = Category::find($formData['category']);
-            $category->articles()->save($article);
-        }
-
-        $articleTags = explode(',', $formData['tag']);
-
-        foreach ($articleTags as $articleTag) {
-
-            if (!$articleTag) continue;
-
-            $tag = Tag::where('name', '=', $articleTag)->first();
-
-            if (!$tag) $tag = new Tag;
-
-            $tag->name = $articleTag;
-            $tag->slug = Str::slug($articleTag);
-            $article->tags()->save($tag);
-        }
-
-        Notification::success('Article was successfully added');
-
-        return Redirect::action('App\Controllers\Admin\ArticleController@index');
     }
 
     /**
@@ -93,7 +71,7 @@ class ArticleController extends BaseController {
      */
     public function show($id) {
 
-        $article = Article::findOrFail($id);
+        $article = $this->article->find($id);
         return View::make('backend.article.show', compact('article'));
     }
 
@@ -105,7 +83,7 @@ class ArticleController extends BaseController {
      */
     public function edit($id) {
 
-        $article = Article::findOrFail($id);
+        $article = $this->article->find($id);
 
         $tags = null;
         foreach ($article->tags as $tag) {
@@ -113,7 +91,7 @@ class ArticleController extends BaseController {
         }
         $tags = substr($tags, 1);
 
-        $categories = Category::lists('title', 'id');
+        $categories = $this->category->lists();
 
         return View::make('backend.article.edit', compact('article', 'tags', 'categories'));
     }
@@ -126,63 +104,14 @@ class ArticleController extends BaseController {
      */
     public function update($id) {
 
-        $formData = array(
-            'title'            => Input::get('title'),
-            'slug'             => Input::get('slug'),
-            'tag'              => Input::get('tag'),
-            'content'          => Input::get('content'),
-            'category'         => Input::get('category'),
-            'meta_keywords'    => Input::get('meta_keywords'),
-            'meta_description' => Input::get('meta_description'),
-            'is_published'     => Input::get('is_published')
-        );
+        try {
+            $this->article->update($id, Input::all());
+            Notification::success('Article was successfully updated');
+            return Redirect::route('admin.article.index');
+        } catch (ValidationException $e) {
 
-        $article = Article::findOrFail($id);
-        $article->title = $formData['title'];
-        $article->slug = $formData['slug'];
-        $article->content = $formData['content'];
-        $article->meta_keywords = $formData['meta_keywords'];
-        $article->meta_description = $formData['meta_description'];
-        $article->is_published = ($formData['is_published']) ? true : false;
-
-        if ($article->save()) {
-
-            $category = Category::find($formData['category']);
-            $category->articles()->save($article);
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $articleTags = explode(',', $formData['tag']);
-
-        $article->tags()->detach();
-        foreach ($articleTags as $articleTag) {
-
-            if (!$articleTag) continue;
-
-            $tag = Tag::where('name', '=', $articleTag)->first();
-
-            if (!$tag) $tag = new Tag;
-
-            $tag->name = $articleTag;
-            $tag->slug = Str::slug($articleTag);
-            $article->tags()->save($tag);
-        }
-
-        Notification::success('Article was successfully updated');
-
-        return Redirect::action('App\Controllers\Admin\ArticleController@index');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index() {
-
-        $articles = Article::orderBy('created_at', 'DESC')
-            ->paginate(10);
-
-        return View::make('backend.article.index', compact('articles'));
     }
 
     /**
@@ -193,28 +122,19 @@ class ArticleController extends BaseController {
      */
     public function destroy($id) {
 
-        $article = Article::findOrFail($id);
-        $article->tags()->detach();
-        $article->delete();
-
+        $this->article->destroy($id);
         Notification::success('Article was successfully deleted');
-
         return Redirect::action('App\Controllers\Admin\ArticleController@index');
     }
 
     public function confirmDestroy($id) {
 
-        $article = Article::findOrFail($id);
+        $article = $this->article->find($id);
         return View::make('backend.article.confirm-destroy', compact('article'));
     }
 
     public function togglePublish($id) {
 
-        $page = Article::findOrFail($id);
-
-        $page->is_published = ($page->is_published) ? false : true;
-        $page->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
+        return $this->article->togglePublish($id);
     }
 }

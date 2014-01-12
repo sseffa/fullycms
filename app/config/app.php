@@ -65,7 +65,7 @@ return array(
     |
     */
 
-    'key'       => 'iD9wuskGj2m60fLm28JZIvBbGDpdW3OC',
+    'key'       => 'TVPd8QHvTUliLAdIo3KQ8UkQdo5pnjwM',
 
     /*
     |--------------------------------------------------------------------------
@@ -112,6 +112,7 @@ return array(
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         'Krucas\Notification\NotificationServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Sefa\StorageServiceProvider',
 
     ),
 

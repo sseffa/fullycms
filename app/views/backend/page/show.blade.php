@@ -25,6 +25,14 @@
                     <td>{{ $page->title }}</td>
                 </tr>
                 <tr>
+                    <td><strong>Published</strong></td>
+                    <td>{{ $page->is_published }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Show on the menu</strong></td>
+                    <td>{{ $page->is_in_menu }}</td>
+                </tr>
+                <tr>
                     <td><strong>Content</strong></td>
                     <td>{{ $page->content }}</td>
                 </tr>

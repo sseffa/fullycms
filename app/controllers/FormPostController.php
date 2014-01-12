@@ -2,6 +2,13 @@
 
 class FormPostController extends BaseController {
 
+    protected $formPost;
+
+    public function __construct(FormPost $formPost) {
+
+        $this->formPost = $formPost;
+    }
+
     public function getContact() {
 
         return View::make('frontend.contact.form');
@@ -14,7 +21,7 @@ class FormPostController extends BaseController {
             'sender_email'        => 'required|email',
             'sender_phone_number' => 'required',
             'subject'             => 'required',
-            'message'                => 'required'
+            'message'             => 'required'
         );
 
         $validation = Validator::make(Input::all(), $rules);
@@ -31,11 +38,9 @@ class FormPostController extends BaseController {
         });
         */
 
-        $formPost = new FormPost();
-        $formPost->fill(Input::all());
-        $formPost->created_ip = Request::getClientIp();
-
-        $formPost->save();
+        $this->formPost->fill(Input::all());
+        $this->formPost->created_ip = Request::getClientIp();
+        $this->formPost->save();
 
         return Redirect::action('FormPostController@getContact')->with('notification', 'Success');
     }

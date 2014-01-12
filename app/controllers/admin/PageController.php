@@ -2,12 +2,23 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Page, Response, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Validator;
+use Response;
+use Notification;
+use Sefa\Repository\Page\PageRepository as Page;
+use Sefa\Exceptions\Validation\ValidationException;
 
 class PageController extends BaseController {
 
-    public function __construct() {
+    protected $page;
 
+    public function __construct(Page $page) {
+
+        $this->page = $page;
         View::share('active', 'modules');
     }
 
@@ -18,9 +29,7 @@ class PageController extends BaseController {
      */
     public function index() {
 
-        $pages = Page::orderBy('created_at', 'DESC')
-            ->paginate(15);
-
+        $pages = $this->page->paginate();
         return View::make('backend.page.index', compact('pages'));
     }
 
@@ -41,34 +50,14 @@ class PageController extends BaseController {
      */
     public function store() {
 
-        $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published'),
-            'is_in_menu'   => Input::get('is_in_menu')
-        );
+        try {
+            $this->page->create(Input::all());
+            Notification::success('Page was successfully added');
+            return Redirect::route('admin.page.index');
+        } catch (ValidationException $e) {
 
-        $rules = array(
-            'title'   => 'required',
-            'content' => 'required'
-        );
-
-        $validation = Validator::make($formData, $rules);
-
-        if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\PageController@create')->withErrors($validation)->withInput();
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $page = new Page();
-        $page->title = $formData['title'];
-        $page->content = $formData['content'];
-        $page->is_published = ($formData['is_published']) ? true : false;
-        $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
-        $page->save();
-
-        Notification::success('Page was successfully added');
-
-        return Redirect::action('App\Controllers\Admin\PageController@index');
     }
 
     /**
@@ -79,7 +68,7 @@ class PageController extends BaseController {
      */
     public function show($id) {
 
-        $page = Page::findOrFail($id);
+        $page = $this->page->find($id);
         return View::make('backend.page.show', compact('page'));
     }
 
@@ -91,7 +80,7 @@ class PageController extends BaseController {
      */
     public function edit($id) {
 
-        $page = Page::findOrFail($id);
+        $page = $this->page->find($id);
         return View::make('backend.page.edit', compact('page'));
     }
 
@@ -103,24 +92,14 @@ class PageController extends BaseController {
      */
     public function update($id) {
 
-        $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published'),
-            'is_in_menu'   => Input::get('is_in_menu')
-        );
+        try {
+            $this->page->update($id, Input::all());
+            Notification::success('Page was successfully updated');
+            return Redirect::route('admin.page.index');
+        } catch (ValidationException $e) {
 
-        $page = Page::findOrFail($id);
-        $page->title = $formData['title'];
-        $page->content = $formData['content'];
-        $page->is_published = ($formData['is_published']) ? true : false;
-        $page->is_in_menu = ($formData['is_in_menu']) ? true : false;
-
-        $page->save();
-
-        Notification::success('Page was successfully updated');
-
-        return Redirect::action('App\Controllers\Admin\PageController@index');
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
+        }
     }
 
     /**
@@ -131,37 +110,24 @@ class PageController extends BaseController {
      */
     public function destroy($id) {
 
-        $page = Page::findOrFail($id);
-        $page->delete();
-
+        $this->page->destroy($id);
         Notification::success('Page was successfully deleted');
-
         return Redirect::action('App\Controllers\Admin\PageController@index');
     }
 
     public function confirmDestroy($id) {
 
-        $page = Page::findOrFail($id);
+        $page = $this->page->find($id);
         return View::make('backend.page.confirm-destroy', compact('page'));
     }
 
     public function togglePublish($id) {
 
-        $page = Page::find($id);
-
-        $page->is_published = ($page->is_published) ? false : true;
-        $page->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
+        return $this->page->togglePublish($id);
     }
 
     public function toggleMenu($id) {
 
-        $page = Page::findOrFail($id);
-
-        $page->is_in_menu = ($page->is_in_menu) ? false : true;
-        $page->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($page->is_in_menu) ? 1 : 0));
+        return $this->page->toggleMenu($id);
     }
 }

@@ -2,13 +2,25 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, News, Response, Str, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Validator;
+use Response;
+use Str;
+use Notification;
+use Sefa\Repository\News\NewsRepository as News;
+use Sefa\Exceptions\Validation\ValidationException;
 
 class NewsController extends BaseController {
 
-    public function __construct() {
+    protected $news;
+
+    public function __construct(News $news) {
 
         View::share('active', 'modules');
+        $this->news = $news;
     }
 
     /**
@@ -18,9 +30,7 @@ class NewsController extends BaseController {
      */
     public function index() {
 
-        $news = News::orderBy('created_at', 'DESC')
-            ->paginate(10);
-
+        $news = $this->news->paginate();
         return View::make('backend.news.index', compact('news'));
     }
 
@@ -41,38 +51,14 @@ class NewsController extends BaseController {
      */
     public function store() {
 
-        $formData = array(
-            'title'        => Input::get('title'),
-            'slug'         => Input::get('slug'),
-            'content'      => Input::get('content'),
-            'datetime'     => Input::get('datetime'),
-            'is_published' => Input::get('is_published')
-        );
+        try {
+            $this->news->create(Input::all());
+            Notification::success('News was successfully added');
+            return Redirect::route('admin.news.index');
+        } catch (ValidationException $e) {
 
-        $rules = array(
-            'title'    => 'required',
-            'content'  => 'required',
-            'slug'     => 'required',
-            'datetime' => 'required|date',
-        );
-
-        $validation = Validator::make($formData, $rules);
-
-        if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\NewsController@create')->withErrors($validation)->withInput();
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
-
-        $news = new News();
-        $news->title = $formData['title'];
-        $news->slug = $formData['slug'];
-        $news->content = $formData['content'];
-        $news->datetime = $formData['datetime'];
-        $news->is_published = ($formData['is_published']) ? true : false;
-        $news->save();
-
-        Notification::success('News was successfully added');
-
-        return Redirect::action('App\Controllers\Admin\NewsController@index');
     }
 
     /**
@@ -83,7 +69,7 @@ class NewsController extends BaseController {
      */
     public function show($id) {
 
-        $news = News::findOrFail($id);
+        $news = $this->news->find($id);
         return View::make('backend.news.show', compact('news'));
     }
 
@@ -95,7 +81,7 @@ class NewsController extends BaseController {
      */
     public function edit($id) {
 
-        $news = News::findOrFail($id);
+        $news = $this->news->find($id);
         return View::make('backend.news.edit', compact('news'));
     }
 
@@ -107,25 +93,14 @@ class NewsController extends BaseController {
      */
     public function update($id) {
 
-        $formData = array(
-            'title'        => Input::get('title'),
-            'slug'         => Input::get('slug'),
-            'content'      => Input::get('content'),
-            'datetime'     => Input::get('datetime'),
-            'is_published' => Input::get('is_published')
-        );
+        try {
+            $this->news->update($id, Input::all());
+            Notification::success('News was successfully updated');
+            return Redirect::route('admin.news.index');
+        } catch (ValidationException $e) {
 
-        $news = News::findOrFail($id);
-        $news->title = $formData['title'];
-        $news->slug = $formData['slug'];
-        $news->content = $formData['content'];
-        $news->datetime = $formData['datetime'];
-        $news->is_published = ($formData['is_published']) ? true : false;
-        $news->save();
-
-        Notification::success('News was successfully updated');
-
-        return Redirect::action('App\Controllers\Admin\NewsController@index');
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
+        }
     }
 
     /**
@@ -136,26 +111,19 @@ class NewsController extends BaseController {
      */
     public function destroy($id) {
 
-        $news = News::findOrFail($id);
-        $news->delete();
-
+        $this->news->destroy($id);
         Notification::success('News was successfully deleted');
-
         return Redirect::action('App\Controllers\Admin\NewsController@index');
     }
 
     public function confirmDestroy($id) {
 
-        $news = News::findOrFail($id);
+        $news = $this->news->find($id);
         return View::make('backend.news.confirm-destroy', compact('news'));
     }
 
     public function togglePublish($id) {
 
-        $news = News::findOrFail($id);
-        $news->is_published = ($news->is_published) ? false : true;
-        $news->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($news->is_published) ? 1 : 0));
+        return $this->news->togglePublish($id);
     }
 }

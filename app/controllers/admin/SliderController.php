@@ -2,7 +2,18 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, Slider, Response, File, Image, Photo, Notification, Config;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Validator;
+use Slider;
+use Response;
+use File;
+use Image;
+use Photo;
+use Notification;
+use Config;
 
 class SliderController extends BaseController {
 
@@ -15,9 +26,9 @@ class SliderController extends BaseController {
         View::share('active', 'plugins');
 
         $config = Config::get('sfcms');
-        $this->width=$config['modules']['slider']['image_size']['width'];
-        $this->height=$config['modules']['slider']['image_size']['height'];
-        $this->imgDir=$config['modules']['slider']['image_dir'];
+        $this->width = $config['modules']['slider']['image_size']['width'];
+        $this->height = $config['modules']['slider']['image_size']['height'];
+        $this->imgDir = $config['modules']['slider']['image_dir'];
     }
 
     /**
@@ -52,23 +63,6 @@ class SliderController extends BaseController {
 
         Notification::success('Slider was successfully added');
         return Redirect::to("/admin/slider/" . $id . "/edit");
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store() {
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function show($id) {
     }
 
     /**

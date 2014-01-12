@@ -2,7 +2,12 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Setting, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Setting;
+use Notification;
 
 class SettingController extends BaseController {
 

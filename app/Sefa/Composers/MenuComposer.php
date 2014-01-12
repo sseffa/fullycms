@@ -1,6 +1,8 @@
 <?php namespace Sefa\Composers;
 
-use Page, PhotoGallery, FormPost;
+use Page;
+use PhotoGallery;
+use FormPost;
 
 class MenuComposer {
 

@@ -1,19 +1,24 @@
 <?php
 
+use Sefa\Repository\Category\CategoryRepository as Category;
+
 class CategoryController extends BaseController {
+
+    protected $category;
+
+    public function __construct(Category $category) {
+
+        $this->category = $category;
+    }
 
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index($category) {
+    public function index($title) {
 
-        $category = Category::where('title', '=', $category)->first();
-        $articles = $category->articles()->paginate(10);
-        $tags = Tag::with('articles')->get();
-        $categories = Category::with('articles')->get();
-
-        return View::make('frontend.category.index', compact('articles', 'tags', 'categories'));
+        $articles = $this->category->getArticlesByTitle($title);
+        return View::make('frontend.category.index', compact('articles'));
     }
 }

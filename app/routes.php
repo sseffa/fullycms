@@ -138,7 +138,7 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     }));
 
     // slider
-    Route::resource('slider', 'SliderController');
+    Route::resource('slider', 'SliderController', array('only' => array('index', 'create', 'edit', 'update', 'destroy')));
     Route::get('slider/{id}/delete', array('as' => 'admin.slider.delete', 'uses' => 'SliderController@confirmDestroy'))
         ->where('id', '[0-9]+');
 
@@ -189,12 +189,14 @@ Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
 */
 
 // error
+/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
     $error = $exception->getMessage();
     return Response::view('errors.error', compact('error'));
 });
+*/
 
 // 404 page not found
 App::missing(function () {

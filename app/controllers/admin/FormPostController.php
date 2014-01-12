@@ -2,7 +2,14 @@
 
 namespace App\Controllers\Admin;
 
-use BaseController, Redirect, View, Input, Validator, FormPost, Response, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Validator;
+use FormPost;
+use Response;
+use Notification;
 
 class FormPostController extends BaseController {
 
