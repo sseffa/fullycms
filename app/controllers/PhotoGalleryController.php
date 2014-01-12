@@ -1,6 +1,6 @@
 <?php
 
-use Sefa\Repository\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
+use Sefa\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
 
 class PhotoGalleryController extends BaseController {
 

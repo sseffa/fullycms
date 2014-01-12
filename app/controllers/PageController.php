@@ -1,6 +1,6 @@
 <?php
 
-use Sefa\Repository\Page\PageRepository as Page;
+use Sefa\Repositories\Page\PageRepository as Page;
 
 class PageController extends BaseController {
 

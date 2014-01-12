@@ -1,6 +1,6 @@
 <?php
 
-use Sefa\Repository\Category\CategoryRepository as Category;
+use Sefa\Repositories\Category\CategoryRepository as Category;
 
 class CategoryController extends BaseController {
 

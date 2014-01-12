@@ -1,6 +1,6 @@
 <?php
 
-use Sefa\Repository\Tag\TagRepository as Tag;
+use Sefa\Repositories\Tag\TagRepository as Tag;
 
 class TagController extends BaseController {
 

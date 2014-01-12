@@ -1,8 +1,8 @@
 <?php
 
-use Sefa\Repository\Article\ArticleRepository as Article;
-use Sefa\Repository\Category\CategoryRepository as Category;
-use Sefa\Repository\Tag\TagRepository as Tag;
+use Sefa\Repositories\Article\ArticleRepository as Article;
+use Sefa\Repositories\Category\CategoryRepository as Category;
+use Sefa\Repositories\Tag\TagRepository as Tag;
 
 class ArticleController extends BaseController {
 

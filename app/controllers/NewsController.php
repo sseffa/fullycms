@@ -1,6 +1,6 @@
 <?php
 
-use Sefa\Repository\News\NewsRepository as News;
+use Sefa\Repositories\News\NewsRepository as News;
 
 class NewsController extends BaseController {
 
