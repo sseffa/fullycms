@@ -52,22 +52,22 @@ Please check the system requirements before installing sf CMS.
 
 ## Credits
 
-<http://www.dropzonejs.com/>
-<http://ckeditor.com/>
-<http://www.eyecon.ro/bootstrap-datepicker/>
-<http://fancyapps.com/fancybox/>
-<https://github.com/simogeo/Filemanager>
-<https://github.com/dbushell/Nestable>
-<http://momentjs.com/>
-<https://github.com/tuupola/jquery_lazyload>
-<https://github.com/mikemand/logviewer/>
+ * <http://www.dropzonejs.com/>
+ * <http://ckeditor.com/>
+ * <http://www.eyecon.ro/bootstrap-datepicker/>
+ * <http://fancyapps.com/fancybox/>
+ * <https://github.com/simogeo/Filemanager>
+ * <https://github.com/dbushell/Nestable>
+ * <http://momentjs.com/>
+ * <https://github.com/tuupola/jquery_lazyload>
+ * <https://github.com/mikemand/logviewer/>
 ...
 
 ## Screenshots
 
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/1.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/2.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/3.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/4.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/5.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshots/8.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/1.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/2.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/3.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/4.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/5.png" width="900" />
+<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/8.png" width="900" />
