@@ -5,7 +5,7 @@ Event::listen('user.logout', "Sefa\\Handlers\\AuthEventHandler@logout");
 
 Event::listen('eloquent.created: *', function ($model) {
 
-    //Cache::flush();
+    Cache::flush();
     $className = get_class($model);
     Log::info("{$className} created. ID: " . $model->id);
 });
@@ -18,14 +18,14 @@ Event::listen('eloquent.saved: *', function( $model ) {
 */
 Event::listen('eloquent.updated: *', function ($model) {
 
-    //Cache::flush();
+    Cache::flush();
     $className = get_class($model);
     Log::info("{$className} updated. ID: " . $model->id);
 });
 
 Event::listen('eloquent.deleted: *', function ($model) {
 
-    //Cache::flush();
+    Cache::flush();
     $className = get_class($model);
     Log::info("{$className} deleted. ID: " . $model->id);
 });

@@ -1,6 +1,8 @@
 sf CMS
 =============
 
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
+
 ## Features
 
 * Laravel 4.1
@@ -32,6 +34,18 @@ sf CMS
   * Contact Form
   * Breadcrumbs
   * Route cache
+
+## Todo
+
+* Multi language
+* User (Cartalyst Sentry)
+  * Groups,
+  * Group Permissions,
+  * User Permissions,
+  * Login Throttling
+  * User Suspension
+  * User Banning
+* ...
 
 ## Installation
 
@@ -65,9 +79,8 @@ Please check the system requirements before installing sf CMS.
 
 ## Screenshots
 
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/1.png" width="900" />
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/2.png" width="900" />
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/3.png" width="900" />
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/4.png" width="900" />
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/5.png" width="900" />
-<img src="https://github.com/sseffa/sf_cms/blob/master/screenshoots/8.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/2.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/3.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/4.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/5.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/8.png" width="900" />
