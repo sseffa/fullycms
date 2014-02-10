@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Controllers\Admin;
+<?php namespace App\Controllers\Admin;
 
 use BaseController;
 use Redirect;
@@ -21,8 +19,7 @@ class FormPostController extends BaseController {
     public function index() {
 
         $formPosts = FormPost::orderBy('created_at', 'DESC')
-            ->paginate(15);
-
+                            ->paginate(15);
         return View::make('backend.form_post.index', compact('formPosts'))->with('active', 'form-post');
     }
 
@@ -48,9 +45,7 @@ class FormPostController extends BaseController {
 
         $formPost = FormPost::findOrFail($id);
         $formPost->delete();
-
         Notification::success('Post was successfully deleted');
-
         return Redirect::action('App\Controllers\Admin\FormPostController@index');
     }
 
@@ -63,10 +58,8 @@ class FormPostController extends BaseController {
     public function toggleAnswer($id) {
 
         $formPost = FormPost::findOrFail($id);
-
         $formPost->is_answered = ($formPost->is_answered) ? false : true;
         $formPost->save();
-
         return Response::json(array('result' => 'success', 'changed' => ($formPost->is_answered) ? 1 : 0));
     }
 }

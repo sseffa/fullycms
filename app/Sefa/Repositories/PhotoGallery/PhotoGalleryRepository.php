@@ -50,6 +50,11 @@ class PhotoGalleryRepository extends Validator implements BaseRepositoryInterfac
         return $this->photoGallery->get();
     }
 
+    public function lists() {
+
+        return $this->photoGallery->get()->lists('title', 'id');
+    }
+
     public function paginate($perPage = null) {
 
         return $this->photoGallery->paginate(($perPage) ? $perPage : $this->perPage);
@@ -74,7 +79,6 @@ class PhotoGalleryRepository extends Validator implements BaseRepositoryInterfac
     public function update($id, $attributes) {
 
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
-        $attributes['is_in_menu'] = isset($attributes['is_in_menu']) ? true : false;
 
         $this->photoGallery = $this->find($id);
 
@@ -110,16 +114,6 @@ class PhotoGalleryRepository extends Validator implements BaseRepositoryInterfac
         $photo_gallery->save();
 
         return Response::json(array('result' => 'success', 'changed' => ($photo_gallery->is_published) ? 1 : 0));
-    }
-
-    public function toggleMenu($id) {
-
-        $photo_gallery = $this->photoGallery->find($id);
-
-        $photo_gallery->is_in_menu = ($photo_gallery->is_in_menu) ? false : true;
-        $photo_gallery->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($photo_gallery->is_in_menu) ? 1 : 0));
     }
 
     public function upload($id, $attributes) {

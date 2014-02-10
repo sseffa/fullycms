@@ -58,7 +58,6 @@ class ArticleController extends BaseController {
             Notification::success('Article was successfully added');
             return Redirect::route('admin.article.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }
@@ -84,15 +83,14 @@ class ArticleController extends BaseController {
     public function edit($id) {
 
         $article = $this->article->find($id);
-
         $tags = null;
+
         foreach ($article->tags as $tag) {
             $tags .= ',' . $tag->name;
         }
+
         $tags = substr($tags, 1);
-
         $categories = $this->category->lists();
-
         return View::make('backend.article.edit', compact('article', 'tags', 'categories'));
     }
 

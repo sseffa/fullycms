@@ -17,7 +17,6 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
-
 ));
 
 /*
@@ -52,6 +51,8 @@ App::error(function(Exception $exception, $code)
 });
 
 App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception){
+
+    Log::error($exception);
 
     if (Request::is('admin/*'))
         return Redirect::route('admin.dashboard');
@@ -96,3 +97,12 @@ require app_path().'/filters.php';
 */
 
 require app_path().'/composers.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| Require The Observers File
+|--------------------------------------------------------------------------
+*/
+
+require app_path().'/listeners.php';

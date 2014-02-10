@@ -46,17 +46,6 @@
         </div>
     </div>
     <br>
-    <!-- Menu -->
-    <div class="control-group {{ $errors->has('is_in_menu') ? 'has-error' : '' }}">
-
-        <div class="controls">
-            <label class="checkbox">{{ Form::checkbox('is_in_menu', 'is_in_menu', $page->is_in_menu) }} Show on the menu ?</label>
-            @if ($errors->first('is_in_menu'))
-            <span class="help-block">{{ $errors->first('is_in_menu') }}</span>
-            @endif
-        </div>
-    </div>
-    <br>
     <!-- Form actions -->
     {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
     {{ Form::close() }}

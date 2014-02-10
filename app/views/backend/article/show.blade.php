@@ -54,10 +54,10 @@
                 </tr>
                 <tr>
                     <td><strong>Tag</strong></td>
-                    <td>
+                    <td>                        
                         @foreach($article->tags as $tag)
                         {{ $tag->name }},
-                        @endforeach
+                        @endforeach                      
                     </td>
                 </tr>
                 <tr>

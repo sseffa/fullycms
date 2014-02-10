@@ -37,6 +37,11 @@ class NewsRepository extends Validator implements BaseRepositoryInterface {
             ->get();
     }
 
+    public function lists() {
+
+        return $this->news->get()->lists('title', 'id');
+    }
+
     public function paginate($perPage = null) {
 
         return $this->news->orderBy('created_at', 'DESC')

@@ -34,6 +34,11 @@ class PageRepository extends Validator implements BaseRepositoryInterface {
         return $this->page->get();
     }
 
+    public function lists() {
+
+        return $this->page->get()->lists('title', 'id');
+    }
+
     public function paginate($perPage = null) {
 
         return $this->page->paginate(($perPage) ? $perPage : $this->perPage);
@@ -47,7 +52,6 @@ class PageRepository extends Validator implements BaseRepositoryInterface {
     public function create($attributes) {
 
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
-        $attributes['is_in_menu'] = isset($attributes['is_in_menu']) ? true : false;
 
         if ($this->isValid($attributes)) {
 
@@ -61,7 +65,6 @@ class PageRepository extends Validator implements BaseRepositoryInterface {
     public function update($id, $attributes) {
 
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
-        $attributes['is_in_menu'] = isset($attributes['is_in_menu']) ? true : false;
 
         $this->page = $this->find($id);
 
@@ -85,13 +88,5 @@ class PageRepository extends Validator implements BaseRepositoryInterface {
         $page->is_published = ($page->is_published) ? false : true;
         $page->save();
         return Response::json(array('result' => 'success', 'changed' => ($page->is_published) ? 1 : 0));
-    }
-
-    public function toggleMenu($id) {
-
-        $page = $this->page->find($id);
-        $page->is_in_menu = ($page->is_in_menu) ? false : true;
-        $page->save();
-        return Response::json(array('result' => 'success', 'changed' => ($page->is_in_menu) ? 1 : 0));
     }
 }

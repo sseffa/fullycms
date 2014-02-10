@@ -2,51 +2,46 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
-Event::listen('illuminate.query', function ($query) {
-    //echo $query;
-});
-
-/*
-|--------------------------------------------------------------------------
 | Frontend Routes
 |--------------------------------------------------------------------------
 */
 
-// frontend dashboard
-Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
+Route::group((Config::get('sfcms')['cache']) ? array('before' => 'cache.fetch', 'after' => 'cache.put') : array(), function () {
 
-// article
-Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
-Route::get('/article/{id}/{slug?}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
+    // frontend dashboard
+    Route::get('/', ['as' => 'dashboard', 'uses' => 'HomeController@index']);
 
-// news
-Route::get('/news', array('as' => 'dashboard.news', 'uses' => 'NewsController@index'));
-Route::get('/news/{id}/{slug?}', array('as' => 'dashboard.news.show', 'uses' => 'NewsController@show'));
+    // article
+    Route::get('/article', array('as' => 'dashboard.article', 'uses' => 'ArticleController@index'));
+    Route::get('/article/{id}/{slug?}', array('as' => 'dashboard.article.show', 'uses' => 'ArticleController@show'));
 
-// tags
-Route::get('/tag/{tag}', array('as' => 'dashboard.tag', 'uses' => 'TagController@index'));
+    // news
+    Route::get('/news', array('as' => 'dashboard.news', 'uses' => 'NewsController@index'));
+    Route::get('/news/{id}/{slug?}', array('as' => 'dashboard.news.show', 'uses' => 'NewsController@show'));
 
-// categories
-Route::get('/category/{category}', array('as' => 'dashboard.category', 'uses' => 'CategoryController@index'));
+    // tags
+    Route::get('/tag/{tag}', array('as' => 'dashboard.tag', 'uses' => 'TagController@index'));
 
-// page
-Route::get('/page', array('as' => 'dashboard.page', 'uses' => 'PageController@index'));
-Route::get('/page/{id}', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
+    // categories
+    Route::get('/category/{category}', array('as' => 'dashboard.category', 'uses' => 'CategoryController@index'));
 
-// photo gallery
-Route::get('/photo_gallery/{id}', array('as' => 'dashboard.photo_gallery.show', 'uses' => 'PhotoGalleryController@show'));
+    // page
+    Route::get('/page', array('as' => 'dashboard.page', 'uses' => 'PageController@index'));
+    Route::get('/page/{id}', array('as' => 'dashboard.page.show', 'uses' => 'PageController@show'));
 
-// contact
-Route::get('/contact', array('as' => 'dashboard.contact', 'uses' => 'FormPostController@getContact'));
+    // photo gallery
+    Route::get('/photo_gallery/{id}', array('as' => 'dashboard.photo_gallery.show', 'uses' => 'PhotoGalleryController@show'));
+
+    // contact
+    Route::get('/contact', array('as' => 'dashboard.contact', 'uses' => 'FormPostController@getContact'));
+
+    // rss
+    Route::get('/rss', array('as' => 'rss', 'uses' => 'RssController@index'));
+
+    // search
+    Route::get('/search', ['as'=>'admin.search', 'uses'=>'SearchController@index']);
+});
+
 Route::post('/contact', array('as' => 'dashboard.contact.post', 'uses' => 'FormPostController@postContact'), array('before' => 'csrf'));
 
 /*
@@ -148,10 +143,15 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 
     Route::post('/slider-delete-image', array('as' => 'admin.slider.delete.image', 'uses' => 'SliderController@deleteImage'));
 
     // menu-managment
-    Route::get('/menu-managment', array('as' => 'admin.menu.managment', function () {
+    Route::resource('menu', 'MenuController');
+    Route::post('menu/save', array('as' => 'admin.menu.save', 'uses' => 'MenuController@save'));
+    Route::get('menu/{id}/delete', array('as' => 'admin.menu.delete', 'uses' => 'MenuController@confirmDestroy'))
+        ->where('id', '[0-9]+');
+    Route::post('menu/{id}/toggle-publish', array('as' => 'admin.menu.toggle-publish', 'uses' => 'MenuController@togglePublish'))
+        ->where('id', '[0-9]+');
 
-        return View::make('backend/menu-managment/index');
-    }));
+    // log
+    Route::any('log', ['as'=>'admin.log', 'uses'=>'LogController@index']);
 });
 
 // filemanager
@@ -189,18 +189,15 @@ Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
 */
 
 // error
-/*
 App::error(function (Exception $exception) {
 
     Log::error($exception);
     $error = $exception->getMessage();
     return Response::view('errors.error', compact('error'));
 });
-*/
 
 // 404 page not found
 App::missing(function () {
 
     return Response::view('errors.missing', array(), 404);
 });
-

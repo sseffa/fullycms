@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Controllers\Admin;
+<?php namespace App\Controllers\Admin;
 
 use BaseController;
 use Redirect;
@@ -55,7 +53,6 @@ class PageController extends BaseController {
             Notification::success('Page was successfully added');
             return Redirect::route('admin.page.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }
@@ -97,7 +94,6 @@ class PageController extends BaseController {
             Notification::success('Page was successfully updated');
             return Redirect::route('admin.page.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }
@@ -124,10 +120,5 @@ class PageController extends BaseController {
     public function togglePublish($id) {
 
         return $this->page->togglePublish($id);
-    }
-
-    public function toggleMenu($id) {
-
-        return $this->page->toggleMenu($id);
     }
 }

@@ -5,25 +5,6 @@
 
         $('#notification').show().delay(4000).fadeOut(700);
 
-        // menu settings
-        $(".in-menu").bind("click", function (e) {
-            var id = $(this).attr('id');
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "{{ url('/admin/page/" + id + "/toggle-menu/') }}",
-                success: function (response) {
-                    if (response['result'] == 'success') {
-                        var imagePath = (response['changed'] == 1) ? "{{url('/')}}/assets/images/menu.png" : "{{url('/')}}/assets/images/not_menu.png";
-                        $("#menu-image-" + id).attr('src', imagePath);
-                    }
-                },
-                error: function () {
-                    alert("error");
-                }
-            })
-        });
-
         // publish settings
         $(".publish").bind("click", function (e) {
             var id = $(this).attr('id');
@@ -102,12 +83,17 @@
                                             <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Page
                                         </a>
                                     </li>
+                                     <li class="divider"></li>
+                                    <li>
+                                        <a target="_blank" href="{{ $page->url }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View On Site
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </td>
                         <td>
-                        <a href="#" id="{{ $page->id }}" class="publish"><img id="publish-image-{{ $page->id }}" src="{{url('/')}}/assets/images/{{ ($page->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
-                        <a href="#" id="{{ $page->id }}" class="in-menu"><img id="menu-image-{{ $page->id }}" src="{{url('/')}}/assets/images/{{ ($page->is_in_menu) ? 'menu.png' : 'not_menu.png'  }}"/></a>
+                            <a href="#" id="{{ $page->id }}" class="publish"><img id="publish-image-{{ $page->id }}" src="{{url('/')}}/assets/images/{{ ($page->is_published) ? 'publish.png' : 'not_publish.png'  }}"/></a>
                         </td>
                     </tr>
                     @endforeach

@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Controllers\Admin;
+<?php namespace App\Controllers\Admin;
 
 use BaseController;
 use Redirect;
@@ -56,7 +54,6 @@ class NewsController extends BaseController {
             Notification::success('News was successfully added');
             return Redirect::route('admin.news.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }
@@ -98,7 +95,6 @@ class NewsController extends BaseController {
             Notification::success('News was successfully updated');
             return Redirect::route('admin.news.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }

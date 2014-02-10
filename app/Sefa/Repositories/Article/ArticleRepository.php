@@ -6,6 +6,7 @@ use Response;
 use Tag;
 use Category;
 use Str;
+use Event;
 use Sefa\Repositories\BaseRepositoryInterface as BaseRepositoryInterface;
 use Sefa\Exceptions\Validation\ValidationException;
 use Sefa\Repositories\AbstractValidator as Validator;
@@ -37,6 +38,11 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
         return $this->article->with('tags')->orderBy('created_at', 'DESC')
             ->where('is_published', 1)
             ->get();
+    }
+
+    public function lists() {
+
+        return $this->article->get()->lists('title', 'id');
     }
 
     public function paginate($perPage = null) {
@@ -78,6 +84,8 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
                 $this->article->tags()->save($tag);
             }
 
+            //Event::fire('article.created', $this->article);
+            Event::fire('article.creating', $this->article);
             return true;
         }
 

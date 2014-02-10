@@ -32,9 +32,16 @@ class ArticleController extends BaseController {
      */
     public function show($id, $slug = null) {
 
-        $article = $this->article->find($id);     
-        $categories=$this->category->all();
-        $tags=$this->tag->all();
+        $article = $this->article->find($id);
+
+        View::composer('frontend/_layout/layout', function ($view) use ($article) {
+
+            $view->with('meta_keywords', $article->meta_keywords);
+            $view->with('meta_description', $article->meta_description);
+        });
+
+        $categories = $this->category->all();
+        $tags = $this->tag->all();
         return View::make('frontend.article.show', compact('article', 'categories', 'tags'));
     }
 }

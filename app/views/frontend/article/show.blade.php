@@ -4,8 +4,6 @@
 {{ HTML::style('assets/css/style.css') }}
 {{ HTML::style('code_prettify/css/prettify.css') }}
 {{ HTML::script('code_prettify/js/prettify.js') }}
-<meta name="description" content="{{ $article->meta_description }}">
-<meta name="keywords" content="{{ $article->meta_keywords }}">
 <div class="container">
     <div class="row">
         <div class="col-lg12">
@@ -26,9 +24,7 @@
             <br>
             <br>
             <br>
-
-            <p><i class="icon-time"></i> Posted on {{ $article->created_at }} by <a href="www.sefakaragoz.com">Sefa</a>
-
+            <p><i class="icon-time"></i> Posted on {{ $article->created_at }} by <a href="#">Sefa</a>
             </p>
             {{ $article->content }}
 

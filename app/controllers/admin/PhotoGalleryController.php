@@ -44,14 +44,14 @@ class PhotoGalleryController extends BaseController {
         $attributes = [
             'title'        => 'Photo Gallery Title',
             'content'      => 'Photo Gallery Content',
-            'is_published' => false,
-            'is_in_menu'   => false
+            'is_published' => false
         ];
 
         try {
             $id = $this->photoGallery->create($attributes);
             return Redirect::to("/admin/photo_gallery/" . $id . "/edit");
-        } catch (ValidationException $e) {}
+        } catch (ValidationException $e) {
+        }
     }
 
     /**
@@ -118,11 +118,6 @@ class PhotoGalleryController extends BaseController {
     public function togglePublish($id) {
 
         return $this->photoGallery->togglePublish($id);
-    }
-
-    public function toggleMenu($id) {
-
-        return $this->photoGallery->toggleMenu($id);
     }
 
     public function upload($id) {

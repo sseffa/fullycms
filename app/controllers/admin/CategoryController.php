@@ -51,7 +51,6 @@ class CategoryController extends BaseController {
             Notification::success('Category was successfully added');
             return Redirect::route('admin.category.index');
         } catch (ValidationException $e) {
-
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
     }

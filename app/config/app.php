@@ -65,7 +65,7 @@ return array(
     |
     */
 
-    'key'       => 'TVPd8QHvTUliLAdIo3KQ8UkQdo5pnjwM',
+    'key'       => 'UPfUcs5yTmrYkTjGXTTTkIPB6rdPHwve',
 
     /*
     |--------------------------------------------------------------------------
@@ -111,8 +111,10 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
         'Krucas\Notification\NotificationServiceProvider',
-        'Sefa\StorageServiceProvider',
-
+        'Sefa\Providers\StorageServiceProvider',
+        'Sefa\Providers\SearchServiceProvider',
+        'Sefa\Providers\FeederServiceProvider',
+        'Sefa\Providers\LogViewerServiceProvider',
     ),
 
     /*
@@ -182,7 +184,9 @@ return array(
         'Image'        => 'Intervention\Image\Facades\Image',
         'Breadcrumbs'  => 'DaveJamesMiller\Breadcrumbs\Facade',
         'Notification' => 'Krucas\Notification\Facades\Notification',
-        'Debugbar'     => 'Barryvdh\Debugbar\Facade',
+        'Search'       => 'Sefa\Facades\Search',
+        'Feeder'       => 'Sefa\Facades\Feeder',
+        'LogViewer'    => 'Sefa\Facades\LogViewer',
 
     ),
 

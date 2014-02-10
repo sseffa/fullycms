@@ -11,10 +11,12 @@
 {{ HTML::script('fancybox/js/jquery.fancybox-thumbs.js') }}
 {{ HTML::script('assets/js/jquery.lazyload.min.js') }}
 <script type="text/javascript">
+    // fancybox
     $(document).ready(function () {
         $(".fancybox").fancybox();
     });
 
+    // image lazy load
     $(function () {
         $("img.lazy").lazyload({
             effect: "fadeIn"

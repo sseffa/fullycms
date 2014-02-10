@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Controllers\Admin;
+<?php namespace App\Controllers\Admin;
 
 use BaseController;
 use Redirect;
@@ -21,7 +19,6 @@ class SettingController extends BaseController {
 
         $setting = Setting::findOrFail(1);
         $setting->fill(Input::all())->save();
-
         Notification::success('Settings was successfully updated');
         return Redirect::route('admin.settings');
     }

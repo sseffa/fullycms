@@ -86,6 +86,12 @@
                                             <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Delete Article
                                         </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a target="_blank" href="{{ $article->url }}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View On Site
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </td>

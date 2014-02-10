@@ -84,3 +84,11 @@ Route::filter('csrf', function () {
         throw new Illuminate\Session\TokenMismatchException;
     }
 });
+
+/*
+|--------------------------------------------------------------------------
+| Route Cache Filter
+|--------------------------------------------------------------------------
+*/
+Route::filter('cache.fetch', 'Sefa\Filters\CacheFilter@fetch');
+Route::filter('cache.put', 'Sefa\Filters\CacheFilter@put');

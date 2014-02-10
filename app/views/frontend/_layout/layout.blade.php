@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>{{ $settings['site_title'] or "title" }}</title>
-	<meta name="description" content="{{ $settings['meta_description'] or 'meta_description' }}">
-	<meta name="keywords" content="{{ $settings['meta_keywords']  or 'meta_keywords' }}">
+	<meta name="description" content="{{ isset($meta_description) ? $meta_description : ($settings['meta_description']) }}">
+	<meta name="keywords" content="{{ isset($meta_keywords) ? $meta_keywords : ($settings['meta_keywords']) }}">
 	<meta name="author" content="Sefa Karagöz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ HTML::style('assets/bootstrap/css/bootstrap.css') }}
