@@ -81,7 +81,7 @@ class MenuController extends BaseController {
         if (isset($urlInfo['host']))
             $url = ($host == $urlInfo['host']) ? $urlInfo['path'] : $formData['url'];
         else
-            $url = "http://" . $formData['url'];
+            $url = ($formData['type'] == 'module') ? $formData['url'] : "http://" . $formData['url'];
 
         $this->menu->url = $url;
         $this->menu->save();
@@ -151,7 +151,7 @@ class MenuController extends BaseController {
         if (isset($urlInfo['host']))
             $url = ($host == $urlInfo['host']) ? $urlInfo['path'] : $formData['url'];
         else
-            $url = "http://" . $formData['url'];
+            $url = ($formData['type'] == 'module') ? $formData['url'] : "http://" . $formData['url'];
 
         $this->menu->url = $url;
         $this->menu->save();
