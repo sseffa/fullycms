@@ -1,11 +1,19 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, Sentry, View, Input, Mail, Validator;
-use Illuminate\Support\Facades\Cache;
+use BaseController;
+use Redirect;
+use Sentry;
+use View;
+use Input;
+use Mail;
+use Validator;
+use Cache;
+use Event;
+use Sefa\Services\Mailer;
 
 class AuthController extends BaseController {
+
+    protected $user;
 
     /**
      * Display the login page
@@ -33,15 +41,14 @@ class AuthController extends BaseController {
         try {
 
             if (!empty($rememberMe)) {
-                $user = Sentry::authenticate($credentials, true);
+                $this->user = Sentry::authenticate($credentials, true);
             } else {
-                $user = Sentry::authenticate($credentials, false);
+                $this->user = Sentry::authenticate($credentials, false);
             }
 
-            if ($user) {
+            if ($this->user) {
 
-                Cache::flush();
-
+                Event::fire('user.login', $this->user);
                 return Redirect::route('admin.dashboard');
             }
         } catch (\Exception $e) {
@@ -55,8 +62,9 @@ class AuthController extends BaseController {
      */
     public function getLogout() {
 
+        $this->user = Sentry::getUser();
+        Event::fire('user.logout', $this->user);
         Sentry::logout();
-
         return Redirect::route('admin.login');
     }
 
@@ -86,18 +94,26 @@ class AuthController extends BaseController {
         try {
 
             // Find the user using the user email address
-            $user = Sentry::findUserByLogin($credentials['email']);
+            $this->user = Sentry::findUserByLogin($credentials['email']);
 
             // Get the password reset code
-            $resetCode = $user->getResetPasswordCode();
+            $resetCode = $this->user->getResetPasswordCode();
 
-            $formData = array('userId' => $user->id, 'resetCode' => $resetCode);
+            $formData = array('userId' => $this->user->id, 'resetCode' => $resetCode);
 
+            /*
             Mail::send('emails.auth.reset-password', $formData, function ($message) {
 
                 $message->from('noreply@sfcms.com', 'sf CMS Team');
-                $message->to('karagozsefa@gmail.com', 'Sefa Karagöz')->subject('Reset Password');
+                $message->to('user@sfcms.com', 'Lorem Lipsum')->subject('Reset Password');
             });
+            */
+
+            /*
+            $mailer = new Mailer;
+            $mailer->send('emails.auth.reset-password', 'user@sfcms.com', 'Reset Password', $formData);
+            */
+
         } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
             return Redirect::route('admin.forgot.password')->withErrors(array('forgot-password' => $e->getMessage()));
         }
@@ -109,10 +125,10 @@ class AuthController extends BaseController {
     public function getResetPassword($id, $code) {
 
         // Find the user using the user id
-        $user = Sentry::findUserById($id);
+        $this->user = Sentry::findUserById($id);
 
         // Check if the reset password code is valid
-        if (!$user->checkResetPasswordCode($code)) {
+        if (!$this->user->checkResetPasswordCode($code)) {
             return Redirect::route('admin.login');
         }
 
@@ -144,12 +160,12 @@ class AuthController extends BaseController {
 
         try {
             // Find the user using the user id
-            $user = Sentry::findUserById($formData['id']);
+            $this->user = Sentry::findUserById($formData['id']);
 
             // Check if the reset password code is valid
-            if ($user->checkResetPasswordCode($formData['code'])) {
+            if ($this->user->checkResetPasswordCode($formData['code'])) {
                 // Attempt to reset the user password
-                if ($user->attemptResetPassword($formData['code'], $formData['password'])) {
+                if ($this->user->attemptResetPassword($formData['code'], $formData['password'])) {
                     // Password reset passed
                     return Redirect::route('admin.login');
                 } else {

@@ -1,13 +1,14 @@
 <?php
 
+use Sefa\Repositories\News\NewsRepository as News;
+
 class NewsController extends BaseController {
 
-    protected $perPage;
+    protected $news;
 
-    public function __construct(){
+    public function __construct(News $news) {
 
-        $config = Config::get('sfcms');
-        $this->perPage=$config['modules']['per_page'];
+        $this->news = $news;
     }
 
     /**
@@ -17,10 +18,7 @@ class NewsController extends BaseController {
      */
     public function index() {
 
-        $news = News::orderBy('created_at', 'DESC')
-            ->where('is_published', 1)
-            ->paginate($this->perPage);
-
+        $news = $this->news->paginate();
         return View::make('frontend.news.index', compact('news'));
     }
 
@@ -30,7 +28,7 @@ class NewsController extends BaseController {
      */
     public function show($id, $slug = null) {
 
-        $news = News::findOrFail($id);
+        $news = $this->news->find($id);
         return View::make('frontend.news.show', compact('news'));
     }
 }

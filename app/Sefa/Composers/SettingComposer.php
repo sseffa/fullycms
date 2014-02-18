@@ -6,7 +6,7 @@ class SettingComposer {
 
     public function compose($view) {
 
-        $view->with('settings', Setting::get()->first()->toArray());
+        $settings = (Setting::get()->first()) ? Setting::get()->first()->toArray() : array();
+        $view->with('settings', $settings);
     }
 }
-

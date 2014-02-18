@@ -1,26 +1,26 @@
 <?php
 
-class Category extends Eloquent {
+use Sefa\Interfaces\BaseModelInterface as BaseModelInterface;
+
+class Category extends Eloquent implements BaseModelInterface {
 
     public $table = 'categories';
     public $timestamps = false;
     protected $fillable = ['title'];
-    public static $rules = ['title' => 'required|min:3|unique:categories'];
-    public $errors;
+    protected $appends = ['url'];
 
     public function articles() {
 
         return $this->hasMany('Article');
     }
 
-    public function isValid() {
+    public function setUrlAttribute($value) {
 
-        $validation = Validator::make($this->attributes, static::$rules);
+        $this->attributes['url'] = $value;
+    }
 
-        if ($validation->passes()) return true;
+    public function getUrlAttribute() {
 
-        $this->errors = $validation->messages();
-
-        return false;
+        return "/category/" . $this->attributes['title'];
     }
 }

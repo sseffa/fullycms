@@ -18,7 +18,6 @@ class CreatePhotoGalleriesTable extends Migration {
             $table->text('content');
             $table->timestamps();
             $table->boolean('is_published')->default(true);
-            $table->boolean('is_in_menu')->default(true);
         });
     }
 
@@ -28,7 +27,7 @@ class CreatePhotoGalleriesTable extends Migration {
      * @return void
      */
     public function down() {
-        
+
          Schema::drop('photo_galleries');
     }
 }

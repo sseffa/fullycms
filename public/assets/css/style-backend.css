@@ -1,0 +1,21 @@
+/*log*/
+.alert{padding-right:14px;margin-bottom:0}
+.alert + .alert{margin-top:20px}
+.alert .close{top:0;right:0}
+.alert-emergency{background-color:#dca7a7;color:#833332;border-color:#d89ca6}
+.alert-emergency h4{color:#833332}
+.alert-alert{background-color:#e4b9b9;color:#953b39;border-color:#dfaeb7}
+.alert-alert h4{color:#953b39}
+.alert-critical{background-color:#ebcccc;color:#a74240;border-color:#e6c1c7}
+.alert-critical h4{color:#a74240}
+.alert-error{background-color:#f2dede;color:#b94a48;border-color:#eed3d7}
+.alert-error h4{color:#b94a48}
+.alert-warning{background-color:#faf2cc;color:#b78c43;border-color:#f8e5be}
+.alert-warning h4{color:#b78c43}
+.alert-notice{background-color:#fcf8e3;color:#c09853;border-color:#fbeed5}
+.alert-notice h4{color:#c09853}
+.alert-info{background-color:#d9edf7;color:#3a87ad;border-color:#bce8f1}
+.alert-info h4{color:#3a87ad}
+.alert-debug{background-color:#eef7fb;color:#4196bf;border-color:#d1eff5}
+.alert-debug h4{color:#4196bf}
+/*log end*/

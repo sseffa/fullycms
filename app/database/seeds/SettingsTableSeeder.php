@@ -16,7 +16,6 @@ class SettingsTableSeeder extends Seeder {
             'ga_code'          => 'ga_code',
             'meta_keywords'    => 'meta_keywords',
             'meta_description' => 'meta_description',
-
         );
 
         DB::table('settings')->insert($article);

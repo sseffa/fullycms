@@ -1,18 +1,24 @@
 <?php
 
+use Sefa\Repositories\Tag\TagRepository as Tag;
+
 class TagController extends BaseController {
+
+    protected $tag;
+
+    public function __construct(Tag $tag) {
+
+        $this->tag = $tag;
+    }
 
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index($tag) {
+    public function index($slug) {
 
-        $tag = Tag::where('slug', '=', $tag)->first();
-        $articles = $tag->articles()->paginate(10);
-        $tags = Tag::with('articles')->get();
-
-        return View::make('frontend.tag.index', compact('articles', 'tags'));
+        $articles = $this->tag->bySlug($slug);
+        return View::make('frontend.tag.index', compact('articles'));
     }
 }

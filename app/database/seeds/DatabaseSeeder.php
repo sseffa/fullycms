@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder {
         $this->call('PagesTableSeeder');
         $this->call('PhotoGalleriesTableSeeder');
         $this->call('SettingsTableSeeder');
-    }
+    	$this->call('MenusTableSeeder');
+	}
 }

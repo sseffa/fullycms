@@ -25,6 +25,14 @@
                     <td>{{ $news->title }}</td>
                 </tr>
                 <tr>
+                    <td><strong>Slug</strong></td>
+                    <td>{{ $news->slug }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Published</strong></td>
+                    <td>{{ $news->is_published }}</td>
+                </tr>
+                <tr>
                     <td><strong>Content</strong></td>
                     <td>{{ $news->content }}</td>
                 </tr>

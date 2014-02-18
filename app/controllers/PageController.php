@@ -1,6 +1,15 @@
 <?php
 
+use Sefa\Repositories\Page\PageRepository as Page;
+
 class PageController extends BaseController {
+
+    protected $page;
+
+    public function __construct(Page $page) {
+
+        $this->page = $page;
+    }
 
     /**
      * Display page
@@ -9,7 +18,7 @@ class PageController extends BaseController {
      */
     public function show($id) {
 
-        $page = Page::findOrFail($id);
+        $page = $this->page->find($id);
         return View::make('frontend.page.show', compact('page'));
     }
 }

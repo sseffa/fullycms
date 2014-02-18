@@ -1,8 +1,11 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, View, Input, Setting, Notification;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Setting;
+use Notification;
 
 class SettingController extends BaseController {
 
@@ -16,7 +19,6 @@ class SettingController extends BaseController {
 
         $setting = Setting::findOrFail(1);
         $setting->fill(Input::all())->save();
-
         Notification::success('Settings was successfully updated');
         return Redirect::route('admin.settings');
     }

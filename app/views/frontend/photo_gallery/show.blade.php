@@ -11,10 +11,12 @@
 {{ HTML::script('fancybox/js/jquery.fancybox-thumbs.js') }}
 {{ HTML::script('assets/js/jquery.lazyload.min.js') }}
 <script type="text/javascript">
+    // fancybox
     $(document).ready(function () {
         $(".fancybox").fancybox();
     });
 
+    // image lazy load
     $(function () {
         $("img.lazy").lazyload({
             effect: "fadeIn"
@@ -43,7 +45,7 @@
         <div class="col-lg-12">
             @foreach($photo_gallery->photos as $photo)
             <a rel="group" class="fancybox" href="{{ url($photo->path) }}" title="{{ $photo->title }}">
-                <img style="border-radius: 20px;" class="lazy left" data-original="{{ url('uploads/dropzone//thumb_' . $photo->file_name) }}"/>
+                <img style="border-radius: 20px;" class="lazy left" data-original="{{ url('uploads/dropzone/thumb_' . $photo->file_name) }}"/>
             </a>
             @endforeach
         </div>

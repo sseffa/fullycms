@@ -17,7 +17,6 @@ class PhotoGalleriesTableSeeder extends Seeder {
             'created_at'   => new DateTime,
             'updated_at'   => new DateTime,
             'is_published' => true,
-            'is_in_menu'   => true,
         );
 
         DB::table('photo_galleries')->insert($article);

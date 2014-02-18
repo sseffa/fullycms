@@ -1,23 +1,26 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, View, Input, Validator, PhotoGallery, Response, File, Image, Photo, Notification, Config;
+use BaseController;
+use Redirect;
+use View;
+use Input;
+use Validator;
+use Response;
+use File;
+use Image;
+use Notification;
+use Config;
+use Sefa\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
+use Sefa\Exceptions\Validation\ValidationException;
 
 class PhotoGalleryController extends BaseController {
 
-    protected $width;
-    protected $height;
-    protected $imgDir;
+    protected $photoGallery;
 
-    public function __construct() {
+    public function __construct(PhotoGallery $photoGallery) {
 
         View::share('active', 'modules');
-
-        $config = Config::get('sfcms');
-        $this->width=$config['modules']['photo_gallery']['thumb_size']['width'];
-        $this->height=$config['modules']['photo_gallery']['thumb_size']['height'];
-        $this->imgDir=$config['modules']['photo_gallery']['image_dir'];
+        $this->photoGallery = $photoGallery;
     }
 
     /**
@@ -27,9 +30,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function index() {
 
-        $photo_galleries = PhotoGallery::orderBy('created_at', 'DESC')
-            ->paginate(15);
-
+        $photo_galleries = $this->photoGallery->paginate();
         return View::make('backend.photo_gallery.index', compact('photo_galleries'));
     }
 
@@ -40,52 +41,17 @@ class PhotoGalleryController extends BaseController {
      */
     public function create() {
 
-        $photo_gallery = new PhotoGallery();
-        $photo_gallery->title = "Photo Gallery Title";
-        $photo_gallery->content = "Photo Gallery Content";
-        $photo_gallery->is_published = false;
-        $photo_gallery->is_in_menu = false;
-        $photo_gallery->save();
-        $id = $photo_gallery->id;
+        $attributes = [
+            'title'        => 'Photo Gallery Title',
+            'content'      => 'Photo Gallery Content',
+            'is_published' => false
+        ];
 
-        Notification::success('Photo gallery was successfully added');
-
-        return Redirect::to("/admin/photo_gallery/" . $id . "/edit");
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store() {
-
-        $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published'),
-            'is_in_menu'   => Input::get('is_in_menu')
-        );
-
-        $rules = array(
-            'title'   => 'required',
-            'content' => 'required'
-        );
-
-        $validation = Validator::make($formData, $rules);
-
-        if ($validation->fails()) {
-            return Redirect::action('App\Controllers\Admin\PhotoGalleryController@create')->withErrors($validation)->withInput();
+        try {
+            $id = $this->photoGallery->create($attributes);
+            return Redirect::to("/admin/photo_gallery/" . $id . "/edit");
+        } catch (ValidationException $e) {
         }
-
-        $photo_gallery = new PhotoGallery();
-        $photo_gallery->title = $formData['title'];
-        $photo_gallery->content = $formData['content'];
-        $photo_gallery->is_published = ($formData['is_published']) ? true : false;
-        $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
-        $photo_gallery->save();
-
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
     }
 
     /**
@@ -96,7 +62,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function show($id) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
+        $photo_gallery = $this->photoGallery->find($id);
         return View::make('backend.photo_gallery.show', compact('photo_gallery'));
     }
 
@@ -108,7 +74,7 @@ class PhotoGalleryController extends BaseController {
      */
     public function edit($id) {
 
-        $photo_gallery = PhotoGallery::with('photos')->findOrFail($id);
+        $photo_gallery = $this->photoGallery->find($id);
         return View::make('backend.photo_gallery.edit', compact('photo_gallery'));
     }
 
@@ -120,23 +86,14 @@ class PhotoGalleryController extends BaseController {
      */
     public function update($id) {
 
-        $formData = array(
-            'title'        => Input::get('title'),
-            'content'      => Input::get('content'),
-            'is_published' => Input::get('is_published'),
-            'is_in_menu'   => Input::get('is_in_menu')
-        );
+        try {
+            $this->photoGallery->update($id, Input::all());
+            Notification::success('Photo gallery was successfully updated');
+            return Redirect::route('admin.photo_gallery.index');
+        } catch (ValidationException $e) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
-        $photo_gallery->title = $formData['title'];
-        $photo_gallery->content = $formData['content'];
-        $photo_gallery->is_published = ($formData['is_published']) ? true : false;
-        $photo_gallery->is_in_menu = ($formData['is_in_menu']) ? true : false;
-
-        $photo_gallery->save();
-
-        Notification::success('Photo gallery was successfully updated');
-        return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
+            return Redirect::back()->withInput()->withErrors($e->getErrors());
+        }
     }
 
     /**
@@ -147,96 +104,34 @@ class PhotoGalleryController extends BaseController {
      */
     public function destroy($id) {
 
-        $photo_gallery = PhotoGallery::with('photos')->findOrFail($id);
-
-        foreach ($photo_gallery->photos as $photo) {
-
-            $destinationPath = public_path() .$this->imgDir;
-            File::delete($destinationPath . $photo->file_name);
-            File::delete($destinationPath . "thumb_" . $photo->file_name);
-            $photo->delete();
-        }
-
-        $photo_gallery->delete();
+        $this->photoGallery->destroy($id);
         Notification::success('Photo gallery was successfully deleted');
-
         return Redirect::action('App\Controllers\Admin\PhotoGalleryController@index');
     }
 
     public function confirmDestroy($id) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
+        $photo_gallery = $this->photoGallery->find($id);
         return View::make('backend.photo_gallery.confirm-destroy', compact('photo_gallery'));
     }
 
     public function togglePublish($id) {
 
-        $photo_gallery = PhotoGallery::findOrFail($id);
-
-        $photo_gallery->is_published = ($photo_gallery->is_published) ? false : true;
-        $photo_gallery->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($photo_gallery->is_published) ? 1 : 0));
-    }
-
-    public function toggleMenu($id) {
-
-        $photo_gallery = PhotoGallery::find($id);
-
-        $photo_gallery->is_in_menu = ($photo_gallery->is_in_menu) ? false : true;
-        $photo_gallery->save();
-
-        return Response::json(array('result' => 'success', 'changed' => ($photo_gallery->is_in_menu) ? 1 : 0));
+        return $this->photoGallery->togglePublish($id);
     }
 
     public function upload($id) {
 
-        $file = Input::file('file');
-
-        $rules = array('file' => 'mimes:jpg,jpeg,png|max:10000');
-        $data = array('file' => Input::file('file'));
-
-        $validation = Validator::make($data, $rules);
-
-        if ($validation->fails()) {
-            return Response::json($validation->errors()->first(), 400);
-        }
-
-        $destinationPath = public_path() . $this->imgDir;
-        $fileName = $file->getClientOriginalName();
-        $fileSize = $file->getClientSize();
-
-        $upload_success = Input::file('file')->move($destinationPath, $fileName);
-
-        if ($upload_success) {
-
-            // resizing an uploaded file
-            Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . "thumb_" . $fileName);
-
-            $photo_gallery = PhotoGallery::findOrFail($id);
-            $image = new Photo;
-            $image->file_name = $fileName;
-            $image->file_size = $fileSize;
-            $image->title = explode(".", $fileName)[0];
-            $image->path = $this->imgDir . $fileName;
-            $image->type = "gallery";
-            $photo_gallery->photos()->save($image);
-
+        try {
+            $this->photoGallery->upload($id, Input::file());
             return Response::json('success', 200);
+        } catch (ValidationException $e) {
+            return Response::json('error: ' . $e->getErrors(), 400);
         }
-
-        return Response::json('error', 400);
     }
 
     public function deleteImage() {
 
-        $fileName = Input::get('file');
-
-        Photo::where('file_name', '=', $fileName)->delete();
-
-        $destinationPath = public_path() . $this->imgDir;
-        File::delete($destinationPath . $fileName);
-        File::delete($destinationPath . "thumb_" . $fileName);
-        return Response::json('success', 200);
+        return $this->photoGallery->deletePhoto(Input::get('file'));
     }
 }

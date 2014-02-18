@@ -1,8 +1,13 @@
-<?php
+<?php namespace App\Controllers\Admin;
 
-namespace App\Controllers\Admin;
-
-use BaseController, Redirect, Sentry, View, DB, Input, Validator, User, Notification;
+use BaseController;
+use Redirect;
+use Sentry;
+use View;
+use Input;
+use Validator;
+use User;
+use Notification;
 
 class UserController extends BaseController {
 
