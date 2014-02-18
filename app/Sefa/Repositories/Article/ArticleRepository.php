@@ -45,7 +45,11 @@ class ArticleRepository extends Validator implements BaseRepositoryInterface {
         return $this->article->get()->lists('title', 'id');
     }
 
-    public function paginate($perPage = null) {
+    public function paginate($perPage = null, $all=false) {
+
+        if($all)
+             return $this->article->with('tags')->orderBy('created_at', 'DESC')
+            ->paginate(($perPage) ? $perPage : $this->perPage);
 
         return $this->article->with('tags')->orderBy('created_at', 'DESC')
             ->where('is_published', 1)

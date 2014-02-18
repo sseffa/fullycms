@@ -28,7 +28,7 @@ class NewsController extends BaseController {
      */
     public function index() {
 
-        $news = $this->news->paginate();
+        $news = $this->news->paginate(null, true);
         return View::make('backend.news.index', compact('news'));
     }
 
