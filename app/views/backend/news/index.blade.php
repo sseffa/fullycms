@@ -85,7 +85,7 @@
                                     </li>
                                      <li class="divider"></li>
                                     <li>
-                                        <a target="_blank" href="{{ $v->url }}">
+                                        <a target="_blank" href="{{ URL::route('dashboard.news.show', ['id' => $v->id, 'slug' => $v->slug]) }}">
                                             <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View On Site
                                         </a>
                                     </li>
