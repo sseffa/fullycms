@@ -1,7 +1,7 @@
 sf CMS
 =============
 
-just an example, needs further development!
+### just an example, needs further development!
 
 <img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
 
