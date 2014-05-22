@@ -47,7 +47,9 @@ sf CMS
   * Login Throttling
   * User Suspension
   * User Banning
-* ...
+* Multi theme
+* Modular Structure
+* Plugin Manager
 
 ## Installation
 
