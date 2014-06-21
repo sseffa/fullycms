@@ -7,7 +7,7 @@ sf CMS
 
 ## Features
 
-* Laravel 4.1
+* Laravel 4.2
 * Bootstrap 3
 * Authentication Sentry 2.1
 * Ckeditor

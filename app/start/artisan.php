@@ -12,4 +12,3 @@
 */
 
 Artisan::add(new AppCommand);
-

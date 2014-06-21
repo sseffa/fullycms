@@ -17,6 +17,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
+
 ));
 
 /*
@@ -48,16 +49,6 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
-});
-
-App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception){
-
-    Log::error($exception);
-
-    if (Request::is('admin/*'))
-        return Redirect::route('admin.dashboard');
-    else
-        return Redirect::route('dashboard');
 });
 
 /*
