@@ -94,3 +94,7 @@ Please check the system requirements before installing sf CMS.
 <img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/4.png" width="900" />
 <img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/5.png" width="900" />
 <img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/8.png" width="900" />
+
+### Licence
+
+[MIT license](http://opensource.org/licenses/MIT).
