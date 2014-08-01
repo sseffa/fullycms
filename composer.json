@@ -9,7 +9,7 @@
         "way/generators": "dev-master",
         "intervention/image": "2.*",
         "davejamesmiller/laravel-breadcrumbs": "dev-master",
-        "edvinaskrucas/notification": "1.*"
+        "edvinaskrucas/notification": "3.*"
 	},
     "autoload": {
         "classmap": [
