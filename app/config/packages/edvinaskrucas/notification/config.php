@@ -1,6 +1,5 @@
 <?php
 
-
 return array(
 
     /*
@@ -11,7 +10,7 @@ return array(
     | This will be used to prefix flash messages.
     |
     */
-    'session_prefix'    => 'notifications_',
+    'session_prefix'                        => 'notifications_',
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +20,7 @@ return array(
     | This name will be used to name default container (when calling it with null value).
     |
     */
-    'default_container' => 'default',
+    'default_container'                     => 'default',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,13 +28,18 @@ return array(
     |--------------------------------------------------------------------------
     |
     | This format will be used when no format is specified.
+    | Specify default format for each container.
     | Available place holders:
     |
     | :type - type of message (error, warning, info, success).
     | :message - message text.
     |
     */
-    'default_format'    => '<div class="alert alert-:type" id="notification">:message</div>',
+    'default_format'                        => array(
+
+        'default'               => '<div class="alert alert-:type" id="notification">:message</div>',
+
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,23 +55,32 @@ return array(
     |       )
     |   )
     |
-    | If you want to set global formats for each type of message use same syntax just place them in array named '__'.
-    |
     | Available place holders:
     |
     | :type - type of message (error, warning, info, success).
     | :message - message text.
     |
     */
-    'default_formats'   => array(
+    'default_formats'                       => array(
 
-        /**
-         * Default individual messages for all containers.
-         */
-        '__' => array(
-            'error' => '<div class="alert alert-danger id="notification">:message</div>',
+        'default'               => array(
+                'error' => '<div class="alert alert-danger" id="notification">:message</div>',
         ),
 
-    )
+    ),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default message types available in containers
+    |--------------------------------------------------------------------------
+    |
+    | Specify available types for each container.
+    |
+    */
+    'default_types'                         => array(
+
+        'default'               => array('info', 'success', 'warning', 'error'),
+
+    ),
 
 );
