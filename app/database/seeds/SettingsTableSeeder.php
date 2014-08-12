@@ -11,13 +11,13 @@ class SettingsTableSeeder extends Seeder {
 
         DB::table('settings')->truncate();
 
-        $article = array(
+        $setting = array(
             'site_title'       => 'sf',
             'ga_code'          => 'ga_code',
             'meta_keywords'    => 'meta_keywords',
             'meta_description' => 'meta_description',
         );
 
-        DB::table('settings')->insert($article);
+        DB::table('settings')->insert($setting);
     }
 }
