@@ -4,10 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-	"laravel/framework": "4.2.*",
-	"cartalyst/sentry": "2.1.*",
+		"laravel/framework": "4.2.*",
+		"cartalyst/sentry": "2.1.*",
         "intervention/image": "2.*",
-        "davejamesmiller/laravel-breadcrumbs": "dev-master",
+        "davejamesmiller/laravel-breadcrumbs": "2.*",
         "edvinaskrucas/notification": "3.*"
 	},
     "autoload": {
