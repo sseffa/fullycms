@@ -1,6 +1,13 @@
 sf CMS
 =============
 
+## sf CMS Ver. 2.0.0
+##### Change log:
+* The title has been changed to "Fully CMS"
+* More functions
+* Better optimization
+* Laravel 5
+
 ### just an example, needs further development!
 
 <img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
