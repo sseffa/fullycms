@@ -12,7 +12,7 @@ Fully CMS
 * Better optimization
 * Laravel 5
 
-<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/1.png" width="900" />
+<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
 
 ## Features
 
