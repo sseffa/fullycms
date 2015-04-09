@@ -1,0 +1,57 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"laravel/framework": "5.0.*",
+        "illuminate/html": "~5.0",
+        "cartalyst/sentry": "dev-feature/laravel-5",
+        "intervention/image": "dev-master",
+        "mcamara/laravel-localization": "1.0.*",
+        "barryvdh/laravel-debugbar": "2.0.*@dev",
+        "cviebrock/eloquent-sluggable": "dev-master",
+        "davejamesmiller/laravel-breadcrumbs": "dev-master",
+        "laracasts/flash": "~1.3",
+        "edvinaskrucas/notification": "5.*",
+        "sseffa/video-api": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1"
+	},
+	"autoload": {
+		"classmap": [
+			"database"
+		],
+		"psr-4": {
+			"Fully\\": "app/"
+		},
+        "files": [
+          "app/Helper/helpers.php"
+        ]
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	}
+}

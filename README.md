@@ -1,22 +1,24 @@
-sf CMS
+Fully CMS
 =============
 
-## sf CMS Ver. 2.0.0
+### Laravel 5 Content Managment System
+
+### just an example, needs further development!
+
+## Fully CMS Ver. 2.0.0
 ##### Change log:
 * The title has been changed to "Fully CMS"
 * More functions
 * Better optimization
 * Laravel 5
 
-### just an example, needs further development!
-
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
+<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/1.png" width="900" />
 
 ## Features
 
-* Laravel 4.2
-* Bootstrap 3
-* Authentication Sentry 2.1
+* Laravel 5
+* Bootstrap
+* Authentication Sentry
 * Ckeditor
 * Bootstrap Code Prettify
 * File Manager
@@ -46,7 +48,6 @@ sf CMS
 
 ## Todo
 
-* Multi language
 * User (Cartalyst Sentry)
   * Groups,
   * Group Permissions,
@@ -54,29 +55,26 @@ sf CMS
   * Login Throttling
   * User Suspension
   * User Banning
-* Multi theme
-* Modular Structure
-* Plugin Manager
 
 ## Installation
 
 Please check the system requirements before installing sf CMS.
 
 1. You may install by cloning from github, or via composer.
-  * Github: `git clone git@github.com:sseffa/sf_cms.git`
-  * Composer: `composer create-project sseffa/sf_cms --prefer-dist`
+  * Github: `git clone git@github.com:sseffa/fullycms.git`
+  * Composer: `composer create-project sseffa/fullycms --prefer-dist`
 2. From a command line open in the folder, run `composer install`.
 3. Enter your database details into `app/config/database.php`.
 4. Run `php artisan app:install` to setup and seed your database.
 5. Default admin, email: admin@admin.com, password: admin
-6. Settings `app/config/sfcms.php`. (optional)
+6. Settings `app/config/fully.php`. (optional)
   * Cache enable / disable
   * image folder
   * post per page
   * ...
 
 ## Credits
-
+ * <http://almsaeedstudio.com/preview/>
  * <http://www.dropzonejs.com/>
  * <http://ckeditor.com/>
  * <http://www.eyecon.ro/bootstrap-datepicker/>
@@ -90,11 +88,9 @@ Please check the system requirements before installing sf CMS.
 
 ## Screenshots
 
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/2.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/3.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/4.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/5.png" width="900" />
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/8.png" width="900" />
+<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/2.png" width="900" />
+<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/3.png" width="900" />
+<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/4.png" width="900" />
 
 ### Licence
 
