@@ -5,6 +5,8 @@ Fully CMS
 
 ### just an example, needs further development!
 
+## not stable!
+
 ## Fully CMS Ver. 2.0.0
 ##### Change log:
 * The title has been changed to "Fully CMS"
