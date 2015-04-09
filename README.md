@@ -12,7 +12,7 @@ Fully CMS
 * Better optimization
 * Laravel 5
 
-<img src="https://raw.github.com/sseffa/sf_cms/master/screenshoots/1.png" width="900" />
+<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/1.png" width="900" />
 
 ## Features
 
@@ -88,9 +88,9 @@ Please check the system requirements before installing sf CMS.
 
 ## Screenshots
 
-<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/2.png" width="900" />
-<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/3.png" width="900" />
-<img src="https://raw.github.com/sseffa/fullycms/master/screenshoots/4.png" width="900" />
+<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/2.png" width="900" />
+<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/3.png" width="900" />
+<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/4.png" width="900" />
 
 ### Licence
 
