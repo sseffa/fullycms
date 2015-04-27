@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{!! $settings['site_title'] or "title" !!}</title>
+    <title>{!! $settings['site_title'] or "Fully CMS - Laravel 5 Multi Language Content Managment System" !!}</title>
     <meta name="description" content="{!! isset($meta_description) ? $meta_description : ($settings['meta_description']) !!}">
     <meta name="keywords" content="{!! isset($meta_keywords) ? $meta_keywords : ($settings['meta_keywords']) !!}">
     <meta name="author" content="Sefa Karagöz">
