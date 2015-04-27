@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="{!! url('favicon.ico') !!}">
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', "{!! $settings['ga_code']  or 'ga_code' !!}"]);
+        _gaq.push(['_setAccount', "{!! $settings['ga_code']  or 'UA-61740707-1' !!}"]);
         _gaq.push(['_trackPageview']);
         (function () {
             var ga = document.createElement('script');
