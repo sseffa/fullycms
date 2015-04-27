@@ -28,7 +28,11 @@
 
     {!! $photo_gallery->content !!}
 
-    @if(isset($photo_gallery->photos) && $photo_gallery->photos->count())
+    <br>
+    <br>
+    <br>
+
+    @if($photo_gallery->photos->count())
 
 
     @foreach($photo_gallery->photos as $photo)

@@ -14,7 +14,7 @@ class SettingsTableSeeder extends Seeder {
         DB::table('settings')->truncate();
 
         $settings = array(
-            'settings'   => '{"site_title":"Fully CMS","ga_code":"Google Analytics Code","meta_keywords":"Google Analytics Code","meta_description":"Meta Description"}',
+            'settings'   => '{"site_title":"Fully CMS - Laravel 5 Multi Language Content Managment System","ga_code":"UA-61740707-1","meta_keywords":"Laravel 5 Multi Language Content Managment System","meta_description":"Laravel 5 Multi Language Content Managment System"}',
             'created_at' => new DateTime,
             'updated_at' => new DateTime,
             'lang'       => 'tr');

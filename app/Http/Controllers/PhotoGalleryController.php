@@ -2,6 +2,7 @@
 
 use Fully\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
 use Fully\Repositories\PhotoGallery\PhotoGalleryInterface;
+use Response;
 
 /**
  * Class PhotoGalleryController

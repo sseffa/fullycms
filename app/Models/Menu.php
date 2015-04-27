@@ -108,14 +108,14 @@ class Menu extends Model {
         $pageOpts = $page->lists();
 
         foreach($pageOpts as $k => $v) {
-            $opts['Page']['page-' . $k] = $v;
+            $opts['Page']['Fully\Models\Page-' . $k] = $v;
         }
 
         $photoGallery = new PhotoGalleryRepository(new PhotoGallery);
         $photoGalleryOpts = $photoGallery->lists();
 
         foreach($photoGalleryOpts as $k => $v) {
-            $opts['PhotoGallery']['photoGallery-' . $k] = $v;
+            $opts['PhotoGallery']['Fully\Models\PhotoGallery-' . $k] = $v;
         }
 
         $menuOptions = array(
@@ -169,7 +169,8 @@ class Menu extends Model {
     public function getModuleUrl($option) {
 
         $pieces = explode('-', $option);
-        $reflection = new ReflectionClass(ucfirst($pieces[0]));
+        $reflection = new \ReflectionClass(ucfirst($pieces[0]));
+
         $module = $reflection->newInstance();
         $module = $module::find($pieces[1]);
 

@@ -21,9 +21,9 @@ class CreateArticlesTable extends Migration {
             $table->string('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
             $table->boolean('is_published')->default(true);
-            $table->string('path', 255);
-            $table->string('file_name', 255);
-            $table->integer('file_size');
+            $table->string('path', 255)->nullable();
+            $table->string('file_name', 255)->nullable();
+            $table->integer('file_size')->nullable();
             $table->string('lang', 20);
             $table->timestamps();
         });

@@ -76,9 +76,21 @@ class MenusTableSeeder extends Seeder {
                 'updated_at'   => new Datetime
             ),
             array(
+                'title'        => 'Galeri',
+                'url'          => '/tr/photo-gallery/'. Str::slug('Fotoğraf Galerisi'),
+                'order'        => 6,
+                'parent_id'    => 0,
+                'type'         => 'module',
+                'option'       => 'photo_gallery',
+                'is_published' => true,
+                'lang'         => 'tr',
+                'created_at'   => new Datetime,
+                'updated_at'   => new Datetime
+            ),
+            array(
                 'title'        => 'Hakkımızda',
                 'url'          => '/tr/page/' . Str::slug('Hakkımızda'),
-                'order'        => 6,
+                'order'        => 7,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'page',
@@ -90,7 +102,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'SSS',
                 'url'          => '/tr/faq',
-                'order'        => 7,
+                'order'        => 8,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'faq',
@@ -102,7 +114,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'İletişim',
                 'url'          => '/tr/contact',
-                'order'        => 8,
+                'order'        => 9,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'contact',
@@ -114,7 +126,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Home',
                 'url'          => '/',
-                'order'        => 9,
+                'order'        => 10,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'home',
@@ -126,7 +138,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'News',
                 'url'          => '/en/news',
-                'order'        => 10,
+                'order'        => 11,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'news',
@@ -138,7 +150,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Blog',
                 'url'          => '/en/article',
-                'order'        => 11,
+                'order'        => 12,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'blog',
@@ -150,7 +162,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Projects',
                 'url'          => '/en/project',
-                'order'        => 12,
+                'order'        => 13,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'project',
@@ -162,7 +174,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Videos',
                 'url'          => '/en/video',
-                'order'        => 13,
+                'order'        => 14,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'video',
@@ -174,7 +186,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Faq',
                 'url'          => '/en/faq',
-                'order'        => 14,
+                'order'        => 15,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'faq',
@@ -186,7 +198,7 @@ class MenusTableSeeder extends Seeder {
             array(
                 'title'        => 'Contact Us',
                 'url'          => '/en/contact',
-                'order'        => 15,
+                'order'        => 16,
                 'parent_id'    => 0,
                 'type'         => 'module',
                 'option'       => 'contact',
