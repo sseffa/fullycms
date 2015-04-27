@@ -12,7 +12,7 @@
     <link href="{!! url('backend/css/AdminLTE.min.css') !!}" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="{!! url('backend/plugins/iCheck/square/blue.css') !!}" rel="stylesheet" type="text/css" />
-
+    {!! HTML::style("assets/css/github.css") !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,6 +21,7 @@
     <![endif]-->
 </head>
 <body class="login-page">
+<span id="forkongithub"><a target="_blank" href="https://github.com/sseffa/fullycms">Fork me on GitHub</a></span>
 <div class="login-box">
     <div class="login-logo">
         <a href="../../index2.html"><b>fully</b>cms</a>

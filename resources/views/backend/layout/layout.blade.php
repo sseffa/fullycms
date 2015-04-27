@@ -21,7 +21,7 @@
     <link href="{!! url('backend/css/AdminLTE.min.css') !!}" rel="stylesheet" type="text/css"/>
 
     <link href="{!! url('backend/css/style.css') !!}" rel="stylesheet" type="text/css"/>
-
+    {!! HTML::style("assets/css/github-left.css") !!}
     <!-- jQuery 2.1.3 -->
     <script src="{!! url('backend/plugins/jQuery/jQuery-2.1.3.min.js') !!}"></script>
     <!-- Bootstrap 3.3.2 JS -->
@@ -58,6 +58,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
 </head>
 <body class="skin-blue">
+<span id="forkongithub"><a target="_blank" href="https://github.com/sseffa/fullycms">Fork me on GitHub</a></span>
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->

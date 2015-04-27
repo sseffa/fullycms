@@ -13,11 +13,12 @@
     {!! HTML::style("frontend/css/prettyPhoto.css") !!}
     {!! HTML::style("frontend/css/animate.css") !!}
     {!! HTML::style("frontend/css/main.css") !!}
+    {!! HTML::style("assets/css/github-right.css") !!}
     <!--[if lt IE 9]>
     {!! HTML::script("frontend/js/html5shiv.js") !!}
     {!! HTML::script("frontend/js/respond.min.js") !!}
     <![endif]-->
-    <link rel="shortcut icon" href="{!! url("favicon.ico") !!}">
+    <link rel="shortcut icon" href="{!! url('favicon.ico') !!}">
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', "{!! $settings['ga_code']  or 'ga_code' !!}"]);
@@ -35,6 +36,7 @@
 </head><!--/head-->
 <body>
 @include('frontend/layout/menu')
+<span id="forkongithub"><a target="_blank" href="https://github.com/sseffa/fullycms">Fork me on GitHub</a></span>
 @yield('content')
 @include('frontend/layout/footer')
 {!! HTML::script("frontend/js/bootstrap.min.js") !!}
