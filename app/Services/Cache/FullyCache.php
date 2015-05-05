@@ -42,7 +42,7 @@ class FullyCache implements CacheInterface {
         $this->tag = $tag;
         $this->minutes = $minutes;
 
-        $this->cacheDriver = Config::get('cache.driver');
+        $this->cacheDriver = Config::get('cache.default');
     }
 
     /**
