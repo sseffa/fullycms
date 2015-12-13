@@ -25,7 +25,7 @@ class LogViewer {
 
     public function __construct() {
 
-        $this->path = storage_path() . "/logs/laravel-2015-03-10.log";
+        $this->path = storage_path() . "/logs/laravel.log";
     }
 
     public function getLogs($level = 'all') {
@@ -46,10 +46,16 @@ class LogViewer {
         $logData=array_reverse($matches[0]);
         $stack = array_reverse($stack);
 
+        $type = "error";
         foreach ($logData as $k => $v) {
 
-            preg_match('@production.(.*):@Ui', $v, $m);
-            $type = $m[1];
+            preg_match('@production|local.(.*):@Ui', $v, $m);
+
+            if(isset($m[1]))
+            {
+                $type = $m[1];
+            }
+
 
             if($level == "all") {
 
