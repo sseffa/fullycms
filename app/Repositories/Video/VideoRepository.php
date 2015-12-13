@@ -175,7 +175,11 @@ class VideoRepository extends RepositoryAbstract implements VideoInterface, Crud
 
     public function getDetails($type, $id) {
 
-        $details = VideoApi::setType($type)->getVideoDetail($id);
+        if($type == 'youtube')
+            $details = VideoApi::setType($type)->setKey(Config::get('fully.youtube_api_key'))->getVideoDetail($id);
+        else
+            $details = VideoApi::setType($type)->getVideoDetail($id);
+
         return $details;
     }
 }

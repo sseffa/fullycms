@@ -4,6 +4,7 @@ use Fully\Http\Controllers\Controller;
 use Fully\Repositories\Video\VideoInterface;
 use Redirect;
 use VideoApi;
+use Config;
 use View;
 use Input;
 use Response;
@@ -144,7 +145,11 @@ class VideoController extends Controller {
         $videoId = Input::get("video_id");
         $type = Input::get("type");
 
-        $response = VideoApi::setType($type)->getVideoDetail($videoId);
+        if($type == 'youtube')
+            $response = VideoApi::setType($type)->setKey(Config::get('fully.youtube_api_key'))->getVideoDetail($videoId);
+        else
+            $response = VideoApi::setType($type)->getVideoDetail($videoId);
+
         return Response::json($response);
     }
 }

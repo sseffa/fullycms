@@ -153,6 +153,7 @@ return [
         Fully\Providers\SearchServiceProvider::class,
         Fully\Providers\LogViewerServiceProvider::class,
         Sseffa\VideoApi\VideoApiServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class
 
     ],
     /*
@@ -212,7 +213,8 @@ return [
         'VideoApi'            => Sseffa\VideoApi\Facades\VideoApi::class,
         'Feeder'              => Fully\Feeder\Facade\Feeder::class,
         'Search'              => Fully\Search\Facade\Search::class,
-        'LogViewer'           => Fully\LogViewer\Facade\LogViewer::class
+        'LogViewer'           => Fully\LogViewer\Facade\LogViewer::class,
+        'Flash'               => Laracasts\Flash\Flash::class
 
     ],
 
