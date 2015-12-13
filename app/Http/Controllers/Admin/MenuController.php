@@ -12,7 +12,6 @@ use Route;
 use Request;
 use Exception;
 use Response;
-use Notification;
 
 /**
  * Class MenuController
@@ -93,7 +92,7 @@ class MenuController extends Controller {
         $this->menu->url = $url;
         $this->menu->save();
 
-        Notification::success('Menu was successfully added');
+        //Notification::success('Menu was successfully added');
         return langRedirectRoute('admin.menu.index');
     }
 
@@ -163,7 +162,7 @@ class MenuController extends Controller {
         $this->menu->url = $url;
         $this->menu->save();
 
-        Notification::success('Menu was successfully updated');
+        //Notification::success('Menu was successfully updated');
         return langRedirectRoute('admin.menu.index');
     }
 
@@ -178,13 +177,13 @@ class MenuController extends Controller {
         if ($this->menu->hasChildItems($id)) {
 
             //throw new Exception("This menu has sub-menus. Can't delete!");
-            Notification::info("There are sub menus of this menu. Can't be deleted!");
+            //Notification::info("There are sub menus of this menu. Can't be deleted!");
             return Redirect::action('App\Controllers\Admin\MenuController@index');
         }
 
         $this->menu = $this->menu->find($id);
         $this->menu->delete();
-        Notification::success('Menu was successfully deleted');
+        //Notification::success('Menu was successfully deleted');
         return langRedirectRoute('admin.menu.index');
     }
 

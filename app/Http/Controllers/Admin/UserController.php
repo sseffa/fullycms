@@ -8,7 +8,6 @@ use Input;
 use Validator;
 use Fully\Models\User;
 use Fully\Models\Group;
-use Notification;
 
 /**
  * Class UserController
@@ -91,7 +90,7 @@ class UserController extends Controller {
                 $user->addGroup($adminGroup);
             }
         }
-        Notification::success('User was successfully added');
+        //Notification::success('User was successfully added');
 
         return Redirect::action('App\Controllers\Admin\UserController@index');
     }
@@ -169,7 +168,7 @@ class UserController extends Controller {
             echo 'Group was not found.';
         }
 
-        Notification::success('User was successfully updated');
+        //Notification::success('User was successfully updated');
 
         return langRedirectRoute('admin.user.index');
     }
@@ -185,7 +184,7 @@ class UserController extends Controller {
         $user = Sentry::findUserById($id);
         $user->delete();
 
-        Notification::success('User was successfully deleted');
+        //Notification::success('User was successfully deleted');
         return langRedirectRoute('admin.user.index');
     }
 

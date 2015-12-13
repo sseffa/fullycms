@@ -2,7 +2,7 @@
 
 return array(
 
-    'cache'    => true,
+    'cache'    => false,
 
     'per_page' => 10,
 

@@ -7,7 +7,6 @@ use View;
 use Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-use Notification;
 use Fully\Repositories\Faq\FaqRepository as Faq;
 use Fully\Exceptions\Validation\ValidationException;
 
@@ -65,7 +64,7 @@ class FaqController extends Controller {
 
         try {
             $this->faq->create(Input::all());
-            Notification::success('Faq was successfully added');
+            //Notification::success('Faq was successfully added');
             return langRedirectRoute('admin.faq.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.faq.create')->withInput()->withErrors($e->getErrors());
@@ -106,7 +105,7 @@ class FaqController extends Controller {
 
         try {
             $this->faq->update($id, Input::all());
-            Notification::success('Faq was successfully updated');
+            //Notification::success('Faq was successfully updated');
             return langRedirectRoute('admin.faq.index');
         } catch (ValidationException $e) {
 
@@ -123,7 +122,7 @@ class FaqController extends Controller {
     public function destroy($id) {
 
         $this->faq->delete($id);
-        Notification::success('Faq was successfully deleted');
+        //Notification::success('Faq was successfully deleted');
         return langRedirectRoute('admin.faq.index');
     }
 

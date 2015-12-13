@@ -7,6 +7,7 @@
     <!-- CSS are placed here -->
     {!! HTML::style('assets/bootstrap/css/backend_bootstrap.css') !!}
     {!! HTML::style('assets/bootstrap/css/signin.css') !!}
+    {!! HTML::style("assets/css/github-right.css") !!}
     <style>
         body {
             background-color: #1b1b1b;

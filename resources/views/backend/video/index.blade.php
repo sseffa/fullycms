@@ -16,7 +16,7 @@
     </section>
     <br>
     <div class="container">
-        <div class="row"> {{ Notification::showAll() }}
+        <div class="row"> {{-- {{ Notification::showAll() }}--}}
             <br>
 
             <div class="pull-left">

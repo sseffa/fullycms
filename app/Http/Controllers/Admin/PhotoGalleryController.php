@@ -9,7 +9,6 @@ use Validator;
 use Response;
 use File;
 use Image;
-use Notification;
 use Config;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -105,7 +104,7 @@ class PhotoGalleryController extends Controller {
 
         try {
             $this->photoGallery->update($id, Input::all());
-            Notification::success('Photo gallery was successfully updated');
+            //Notification::success('Photo gallery was successfully updated');
             return langRedirectRoute('admin.photo-gallery.index');
         } catch (ValidationException $e) {
 
@@ -122,7 +121,7 @@ class PhotoGalleryController extends Controller {
     public function destroy($id) {
 
         $this->photoGallery->delete($id);
-        Notification::success('Photo gallery was successfully deleted');
+        //Notification::success('Photo gallery was successfully deleted');
         return langRedirectRoute('admin.photo-gallery.index');
     }
 

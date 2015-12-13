@@ -1,99 +1,27 @@
-Fully CMS
-=============
+## Laravel PHP Framework
 
-### Laravel 5 Content Managment System
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
+[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
+[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-### just an example, needs further development!
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-## not stable!
+Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Fully CMS Ver. 2.0.0
-##### Change log:
-* The title has been changed to "Fully CMS"
-* More functions
-* Better optimization
-* Laravel 5
+## Official Documentation
 
-<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/1.png" width="900" />
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Features
+## Contributing
 
-* Laravel 5
-* Bootstrap
-* Authentication Sentry
-* Ckeditor
-* Bootstrap Code Prettify
-* File Manager
-* Dropzone.js
-* 404 for not found pages
-* Custom Error Pages
-* Backend
-  * Manage menu (nested)
-  * Manage article (category, tag)
-  * Manage tag
-  * Manage article category
-  * Manage page
-  * Manage news
-  * Manage photo gallery
-  * Ckeditor for post creation and editing (filemanager)
-  * Form post manage
-  * Site settings
-  * Log view page
-* Frontend
-  * Article (momentjs)
-  * Page
-  * News
-  * Photo Gallery (Lazy load image, responsive fancybox)
-  * Contact Form
-  * Breadcrumbs
-  * Route cache
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Todo
+## Security Vulnerabilities
 
-* User (Cartalyst Sentry)
-  * Groups,
-  * Group Permissions,
-  * User Permissions,
-  * Login Throttling
-  * User Suspension
-  * User Banning
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## Installation
+### License
 
-Please check the system requirements before installing sf CMS.
-
-1. You may install by cloning from github, or via composer.
-  * Github: `git clone git@github.com:sseffa/fullycms.git`
-  * Composer: `composer create-project sseffa/fullycms --prefer-dist`
-2. From a command line open in the folder, run `composer install`.
-3. Enter your database details into `app/config/database.php`.
-4. Run `php artisan app:install` to setup and seed your database.
-5. Default admin, email: admin@admin.com, password: admin
-6. Settings `app/config/fully.php`. (optional)
-  * Cache enable / disable
-  * image folder
-  * post per page
-  * ...
-
-## Credits
- * <http://almsaeedstudio.com/preview/>
- * <http://www.dropzonejs.com/>
- * <http://ckeditor.com/>
- * <http://www.eyecon.ro/bootstrap-datepicker/>
- * <http://fancyapps.com/fancybox/>
- * <https://github.com/simogeo/Filemanager>
- * <https://github.com/dbushell/Nestable>
- * <http://momentjs.com/>
- * <https://github.com/tuupola/jquery_lazyload>
- * <https://github.com/mikemand/logviewer/>
-...
-
-## Screenshots
-
-<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/2.png" width="900" />
-<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/3.png" width="900" />
-<img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/4.png" width="900" />
-
-### Licence
-
-[MIT license](http://opensource.org/licenses/MIT)
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

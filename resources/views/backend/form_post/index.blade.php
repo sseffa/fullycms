@@ -39,7 +39,7 @@
 <br>
 <br>
 <div class="container">
-    {{ Notification::showAll() }}
+    {{-- {{ Notification::showAll() }}--}}
 
     <div class="table-responsive">
         @if($formPosts->count())

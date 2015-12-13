@@ -7,7 +7,6 @@ use Input;
 use Validator;
 use Fully\Models\FormPost;
 use Response;
-use Notification;
 
 /**
  * Class FormPostController
@@ -51,7 +50,7 @@ class FormPostController extends Controller {
 
         $formPost = FormPost::findOrFail($id);
         $formPost->delete();
-        Notification::success('Post was successfully deleted');
+        //Notification::success('Post was successfully deleted');
         return langRedirectRoute('admin.form-post.index');
     }
 

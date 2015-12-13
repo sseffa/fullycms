@@ -3,7 +3,7 @@
 use Closure, Config;
 use Illuminate\Contracts\Routing\Middleware;
 
-class BeforeMiddleware implements Middleware {
+class BeforeMiddleware {
 
     /**
      * Handle an incoming request.

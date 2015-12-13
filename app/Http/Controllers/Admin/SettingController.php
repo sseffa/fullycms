@@ -5,7 +5,6 @@ use Redirect;
 use View;
 use Input;
 use Fully\Models\Setting;
-use Notification;
 
 /**
  * Class SettingController
@@ -42,7 +41,7 @@ class SettingController extends Controller {
         $json = json_encode($formData);
         $setting->fill(array('settings' => $json, 'lang' => getLang()))->save();
 
-        Notification::success('Settings was successfully updated');
+        //Notification::success('Settings was successfully updated');
 
         return Redirect::route('admin.settings');
     }

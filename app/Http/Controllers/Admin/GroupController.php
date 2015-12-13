@@ -71,7 +71,7 @@ class GroupController extends Controller {
             echo 'Group already exists';
         }
 
-        Notification::success('Group was successfully added');
+        //Notification::success('Group was successfully added');
 
         return Redirect::action('App\Controllers\Admin\GroupController@index');
     }
@@ -135,7 +135,7 @@ class GroupController extends Controller {
             echo 'Group was not found.';
         }
 
-        Notification::success('Group was successfully updated');
+        //Notification::success('Group was successfully updated');
 
         return Redirect::action('App\Controllers\Admin\GroupController@index');
     }
@@ -151,7 +151,7 @@ class GroupController extends Controller {
         $group = Sentry::findGroupById($id);
         $group->delete();
 
-        Notification::success('Group was successfully deleted');
+        //Notification::success('Group was successfully deleted');
         return Redirect::action('App\Controllers\Admin\GroupController@index');
     }
 

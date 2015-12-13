@@ -15,8 +15,7 @@ class Kernel extends HttpKernel {
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
-        'Fully\Http\Middleware\VerifyCsrfToken',
-        'Krucas\Notification\Middleware\NotificationMiddleware'
+        'Fully\Http\Middleware\VerifyCsrfToken'
     ];
     /**
      * The application's route middleware.
@@ -30,6 +29,5 @@ class Kernel extends HttpKernel {
         'guest'                => 'Fully\Http\Middleware\RedirectIfAuthenticated',
         'localize'             => 'Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes',
         'localizationRedirect' => 'Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter',
-        'Krucas\Notification\Middleware\NotificationMiddleware'
     ];
 }

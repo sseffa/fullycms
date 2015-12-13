@@ -41,7 +41,7 @@
 
     <div class="container">
         <div class="row">
-            {{ Notification::showAll() }}
+            {{-- {{ Notification::showAll() }}--}}
             <br>
 
             <div class="pull-left">

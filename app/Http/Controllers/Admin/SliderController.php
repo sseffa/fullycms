@@ -9,7 +9,6 @@ use Fully\Models\Slider;
 use Response;
 use File;
 use Image;
-use Notification;
 use Config;
 
 /**
@@ -89,7 +88,7 @@ class SliderController extends Controller {
 
         $slider->save();
 
-        Notification::success('Slider was successfully added');
+        //Notification::success('Slider was successfully added');
         return langRedirectRoute('admin.slider.index');
     }
 
@@ -144,7 +143,7 @@ class SliderController extends Controller {
         $slider->description = $formData['description'];
         $slider->save();
 
-        Notification::success('Slider was successfully updated');
+        //Notification::success('Slider was successfully updated');
         return langRedirectRoute('admin.slider.index');
     }
 
@@ -162,7 +161,7 @@ class SliderController extends Controller {
         File::delete($destinationPath . $slider->file_name);
         $slider->delete();
 
-        Notification::success('Slider was successfully deleted');
+        //Notification::success('Slider was successfully deleted');
         return langRedirectRoute('admin.slider.index');
     }
 

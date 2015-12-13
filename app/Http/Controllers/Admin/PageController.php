@@ -7,7 +7,6 @@ use View;
 use Input;
 use Validator;
 use Response;
-use Notification;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Fully\Repositories\Page\PageRepository as Page;
@@ -66,7 +65,7 @@ class PageController extends Controller {
 
         try {
             $this->page->create(Input::all());
-            Notification::success('Page was successfully added');
+            //Notification::success('Page was successfully added');
             return langRedirectRoute('admin.page.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.page.create')->withInput()->withErrors($e->getErrors());
@@ -107,7 +106,7 @@ class PageController extends Controller {
 
         try {
             $this->page->update($id, Input::all());
-            Notification::success('Page was successfully updated');
+            //Notification::success('Page was successfully updated');
             return langRedirectRoute('admin.page.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.page.edit')->withInput()->withErrors($e->getErrors());
@@ -123,7 +122,7 @@ class PageController extends Controller {
     public function destroy($id) {
 
         $this->page->delete($id);
-        Notification::success('Page was successfully deleted');
+        //Notification::success('Page was successfully deleted');
         return langRedirectRoute('admin.page.index');
     }
 

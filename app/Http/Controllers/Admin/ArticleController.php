@@ -8,7 +8,6 @@ use Input;
 use Response;
 use Tag;
 use Str;
-use Notification;
 use Fully\Repositories\Article\ArticleRepository as Article;
 use Fully\Repositories\Category\CategoryRepository as Category;
 use Fully\Exceptions\Validation\ValidationException;
@@ -75,7 +74,7 @@ class ArticleController extends Controller {
 
         try {
             $this->article->create(Input::all());
-            Notification::success('Article was successfully added');
+            //Notification::success('Article was successfully added');
             return langRedirectRoute('admin.article.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.article.create')->withInput()->withErrors($e->getErrors());
@@ -124,7 +123,7 @@ class ArticleController extends Controller {
 
         try {
             $this->article->update($id, Input::all());
-            Notification::success('Article was successfully updated');
+            //Notification::success('Article was successfully updated');
             return langRedirectRoute('admin.article.index');
         } catch (ValidationException $e) {
 
@@ -141,7 +140,7 @@ class ArticleController extends Controller {
     public function destroy($id) {
 
         $this->article->delete($id);
-        Notification::success('Article was successfully deleted');
+        //Notification::success('Article was successfully deleted');
         return langRedirectRoute('admin.article.index');
     }
 

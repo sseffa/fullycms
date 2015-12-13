@@ -7,7 +7,6 @@ use View;
 use Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-use Notification;
 use Fully\Repositories\Project\ProjectRepository as Project;
 use Fully\Exceptions\Validation\ValidationException;
 
@@ -63,7 +62,7 @@ class ProjectController extends Controller {
 
         try {
             $this->project->create(Input::all());
-            Notification::success('Project was successfully added');
+            //Notification::success('Project was successfully added');
             return langRedirectRoute('admin.project.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.project.create')->withInput()->withErrors($e->getErrors());
@@ -104,7 +103,7 @@ class ProjectController extends Controller {
 
         try {
             $this->project->update($id, Input::all());
-            Notification::success('Project was successfully updated');
+            //Notification::success('Project was successfully updated');
             return langRedirectRoute('admin.project.index');
         } catch (ValidationException $e) {
 
@@ -121,7 +120,7 @@ class ProjectController extends Controller {
     public function destroy($id) {
 
         $this->project->delete($id);
-        Notification::success('Project was successfully deleted');
+        //Notification::success('Project was successfully deleted');
         return langRedirectRoute('admin.project.index');
     }
 
