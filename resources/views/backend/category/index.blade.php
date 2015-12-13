@@ -16,7 +16,9 @@
     </section>
     <br>
     <div class="container">
-        <div class="row"> {!! Notification::showAll() !!} <br>
+        <div class="row">
+            @include('flash::message')
+            <br>
 
             <div class="pull-left">
                 <div class="btn-toolbar"><a href="{!! langRoute('admin.category.create') !!}" class="btn btn-primary">

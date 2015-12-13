@@ -41,7 +41,7 @@
 
     <div class="container">
         <div class="col-lg-10">
-            {{-- {{ Notification::showAll() }}--}}
+            @include('flash::message')
             <br>
 
             <div class="pull-left">

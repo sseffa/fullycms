@@ -8,6 +8,7 @@ use Input;
 use Response;
 use Tag;
 use Str;
+use Flash;
 use Fully\Repositories\Article\ArticleRepository as Article;
 use Fully\Repositories\Category\CategoryRepository as Category;
 use Fully\Exceptions\Validation\ValidationException;
@@ -20,12 +21,13 @@ use Illuminate\Pagination\Paginator;
  * @package App\Controllers\Admin
  * @author Sefa Karagöz
  */
-class ArticleController extends Controller {
-
+class ArticleController extends Controller
+{
     protected $article;
     protected $category;
 
-    public function __construct(ArticleInterface $article, CategoryInterface $category) {
+    public function __construct(ArticleInterface $article, CategoryInterface $category)
+    {
 
         View::share('active', 'blog');
         $this->article = $article;
@@ -37,7 +39,8 @@ class ArticleController extends Controller {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
         //$articles = $this->article->paginate(null, true);
 
@@ -59,7 +62,8 @@ class ArticleController extends Controller {
      *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
 
         $categories = $this->category->lists();
         return view('backend.article.create', compact('categories'));
@@ -70,13 +74,16 @@ class ArticleController extends Controller {
      *
      * @return Response
      */
-    public function store() {
+    public function store()
+    {
 
-        try {
+        try
+        {
             $this->article->create(Input::all());
-            //Notification::success('Article was successfully added');
+            Flash::message('Article was successfully added');
             return langRedirectRoute('admin.article.index');
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
             return langRedirectRoute('admin.article.create')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -87,7 +94,8 @@ class ArticleController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         $article = $this->article->find($id);
         return view('backend.article.show', compact('article'));
@@ -99,12 +107,14 @@ class ArticleController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $article = $this->article->find($id);
         $tags = null;
 
-        foreach ($article->tags as $tag) {
+        foreach($article->tags as $tag)
+        {
             $tags .= ',' . $tag->name;
         }
 
@@ -119,13 +129,16 @@ class ArticleController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
 
-        try {
+        try
+        {
             $this->article->update($id, Input::all());
-            //Notification::success('Article was successfully updated');
+            Flash::message('Article was successfully updated');
             return langRedirectRoute('admin.article.index');
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
 
             return langRedirectRoute('admin.article.edit')->withInput()->withErrors($e->getErrors());
         }
@@ -137,21 +150,22 @@ class ArticleController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $this->article->delete($id);
-        //Notification::success('Article was successfully deleted');
+        Flash::message('Article was successfully deleted');
         return langRedirectRoute('admin.article.index');
     }
 
-    public function confirmDestroy($id) {
-
+    public function confirmDestroy($id)
+    {
         $article = $this->article->find($id);
         return view('backend.article.confirm-destroy', compact('article'));
     }
 
-    public function togglePublish($id) {
-
+    public function togglePublish($id)
+    {
         return $this->article->togglePublish($id);
     }
 }

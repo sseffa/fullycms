@@ -10,6 +10,7 @@ use Response;
 use File;
 use Image;
 use Config;
+use Flash;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Fully\Repositories\PhotoGallery\PhotoGalleryRepository as PhotoGallery;
@@ -20,11 +21,12 @@ use Fully\Exceptions\Validation\ValidationException;
  * @package App\Controllers\Admin
  * @author Sefa Karagöz
  */
-class PhotoGalleryController extends Controller {
-
+class PhotoGalleryController extends Controller
+{
     protected $photoGallery;
 
-    public function __construct(PhotoGalleryInterface $photoGallery) {
+    public function __construct(PhotoGalleryInterface $photoGallery)
+    {
 
         View::share('active', 'modules');
         $this->photoGallery = $photoGallery;
@@ -35,7 +37,8 @@ class PhotoGalleryController extends Controller {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
         $page = Input::get('page', 1);
         $perPage = 10;
@@ -55,7 +58,8 @@ class PhotoGalleryController extends Controller {
      *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
 
         $attributes = [
             'title'        => 'Photo Gallery Title',
@@ -63,10 +67,13 @@ class PhotoGalleryController extends Controller {
             'is_published' => false
         ];
 
-        try {
+        try
+        {
             $id = $this->photoGallery->create($attributes);
-            return Redirect::to("/".getLang()."/admin/photo-gallery/" . $id . "/edit");
-        } catch (ValidationException $e) {}
+            return Redirect::to("/" . getLang() . "/admin/photo-gallery/" . $id . "/edit");
+        } catch(ValidationException $e)
+        {
+        }
     }
 
     /**
@@ -75,7 +82,8 @@ class PhotoGalleryController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         $photo_gallery = $this->photoGallery->find($id);
         return view('backend.photo_gallery.show', compact('photo_gallery'));
@@ -87,7 +95,8 @@ class PhotoGalleryController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $photo_gallery = $this->photoGallery->find($id);
 
@@ -100,13 +109,16 @@ class PhotoGalleryController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
 
-        try {
+        try
+        {
             $this->photoGallery->update($id, Input::all());
-            //Notification::success('Photo gallery was successfully updated');
+            Flash::message('Photo gallery was successfully updated');
             return langRedirectRoute('admin.photo-gallery.index');
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
 
             return langRedirectRoute('admin.photo_gallery.edit')->withInput()->withErrors($e->getErrors());
         }
@@ -118,35 +130,42 @@ class PhotoGalleryController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $this->photoGallery->delete($id);
-        //Notification::success('Photo gallery was successfully deleted');
+        Flash::message('Photo gallery was successfully deleted');
         return langRedirectRoute('admin.photo-gallery.index');
     }
 
-    public function confirmDestroy($id) {
+    public function confirmDestroy($id)
+    {
 
         $photo_gallery = $this->photoGallery->find($id);
         return view('backend.photo_gallery.confirm-destroy', compact('photo_gallery'));
     }
 
-    public function togglePublish($id) {
+    public function togglePublish($id)
+    {
 
         return $this->photoGallery->togglePublish($id);
     }
 
-    public function upload($id) {
+    public function upload($id)
+    {
 
-        try {
+        try
+        {
             $this->photoGallery->upload($id, Input::file());
             return Response::json('success', 200);
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
             return Response::json('error: ' . $e->getErrors(), 400);
         }
     }
 
-    public function deleteImage() {
+    public function deleteImage()
+    {
 
         return $this->photoGallery->deletePhoto(Input::get('file'));
     }

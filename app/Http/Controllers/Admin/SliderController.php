@@ -10,19 +10,21 @@ use Response;
 use File;
 use Image;
 use Config;
+use Flash;
 
 /**
  * Class SliderController
  * @package App\Controllers\Admin
  * @author Sefa Karagöz
  */
-class SliderController extends Controller {
-
+class SliderController extends Controller
+{
     protected $width;
     protected $height;
     protected $imgDir;
 
-    public function __construct() {
+    public function __construct()
+    {
 
         View::share('active', 'plugins');
 
@@ -37,7 +39,8 @@ class SliderController extends Controller {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
         $sliders = Slider::orderBy('created_at', 'DESC')->paginate(15);
         return view('backend.slider.index', compact('sliders'));
@@ -48,7 +51,8 @@ class SliderController extends Controller {
      *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
 
         return view("backend.slider.create");
     }
@@ -58,14 +62,16 @@ class SliderController extends Controller {
      *
      * @return Response
      */
-    public function store() {
+    public function store()
+    {
 
         $formData = Input::all();
         $slider = new Slider;
 
         $upload_success = null;
 
-        if(isset($formData['image'])) {
+        if(isset($formData['image']))
+        {
             $file = $formData['image'];
 
             $destinationPath = public_path() . $this->imgDir;
@@ -88,7 +94,7 @@ class SliderController extends Controller {
 
         $slider->save();
 
-        //Notification::success('Slider was successfully added');
+        Flash::message('Slider was successfully added');
         return langRedirectRoute('admin.slider.index');
     }
 
@@ -98,7 +104,8 @@ class SliderController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $slider = Slider::findOrFail($id);
         return view('backend.slider.edit', compact('slider'));
@@ -110,13 +117,16 @@ class SliderController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
 
         $formData = Input::all();
         $slider = Slider::findOrFail($id);
 
-        if(isset($formData['image'])) {
-            if($file = $formData['image']) {
+        if(isset($formData['image']))
+        {
+            if($file = $formData['image'])
+            {
 
                 // delete old image
                 $destinationPath = public_path() . $this->imgDir;
@@ -128,7 +138,8 @@ class SliderController extends Controller {
 
                 $upload_success = $file->move($destinationPath, $fileName);
 
-                if($upload_success) {
+                if($upload_success)
+                {
 
                     // resizing an uploaded file
                     Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . $fileName);
@@ -143,7 +154,7 @@ class SliderController extends Controller {
         $slider->description = $formData['description'];
         $slider->save();
 
-        //Notification::success('Slider was successfully updated');
+        Flash::message('Slider was successfully updated');
         return langRedirectRoute('admin.slider.index');
     }
 
@@ -153,7 +164,8 @@ class SliderController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $slider = Slider::with('images')->findOrFail($id);
         $destinationPath = public_path() . $this->imgDir;
@@ -161,11 +173,12 @@ class SliderController extends Controller {
         File::delete($destinationPath . $slider->file_name);
         $slider->delete();
 
-        //Notification::success('Slider was successfully deleted');
+        Flash::message('Slider was successfully deleted');
         return langRedirectRoute('admin.slider.index');
     }
 
-    public function confirmDestroy($id) {
+    public function confirmDestroy($id)
+    {
 
         $slider = Slider::findOrFail($id);
         return view('backend.slider.confirm-destroy', compact('slider'));

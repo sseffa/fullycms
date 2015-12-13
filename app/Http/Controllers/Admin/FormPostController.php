@@ -50,7 +50,7 @@ class FormPostController extends Controller {
 
         $formPost = FormPost::findOrFail($id);
         $formPost->delete();
-        //Notification::success('Post was successfully deleted');
+        Flash::message('Post was successfully deleted');
         return langRedirectRoute('admin.form-post.index');
     }
 

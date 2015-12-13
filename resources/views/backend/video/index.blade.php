@@ -16,7 +16,8 @@
     </section>
     <br>
     <div class="container">
-        <div class="col-lg-10"> {{-- {{ Notification::showAll() }}--}}
+        <div class="col-lg-10">
+            @include('flash::message')
             <br>
 
             <div class="pull-left">

@@ -7,6 +7,7 @@ use View;
 use Input;
 use Validator;
 use Response;
+use Flash;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Fully\Repositories\Page\PageRepository as Page;
@@ -17,11 +18,12 @@ use Fully\Exceptions\Validation\ValidationException;
  * @package App\Controllers\Admin
  * @author Sefa Karagöz
  */
-class PageController extends Controller {
-
+class PageController extends Controller
+{
     protected $page;
 
-    public function __construct(PageInterface $page) {
+    public function __construct(PageInterface $page)
+    {
 
         $this->page = $page;
         View::share('active', 'modules');
@@ -32,7 +34,8 @@ class PageController extends Controller {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
         $page = Input::get('page', 1);
         $perPage = 10;
@@ -51,7 +54,8 @@ class PageController extends Controller {
      *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
 
         return view('backend.page.create');
     }
@@ -61,13 +65,16 @@ class PageController extends Controller {
      *
      * @return Response
      */
-    public function store() {
+    public function store()
+    {
 
-        try {
+        try
+        {
             $this->page->create(Input::all());
-            //Notification::success('Page was successfully added');
+            Flash::message('Page was successfully added');
             return langRedirectRoute('admin.page.index');
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
             return langRedirectRoute('admin.page.create')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -78,7 +85,8 @@ class PageController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         $page = $this->page->find($id);
         return view('backend.page.show', compact('page'));
@@ -90,7 +98,8 @@ class PageController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $page = $this->page->find($id);
         return view('backend.page.edit', compact('page'));
@@ -102,13 +111,16 @@ class PageController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
 
-        try {
+        try
+        {
             $this->page->update($id, Input::all());
-            //Notification::success('Page was successfully updated');
+            Flash::message('Page was successfully updated');
             return langRedirectRoute('admin.page.index');
-        } catch (ValidationException $e) {
+        } catch(ValidationException $e)
+        {
             return langRedirectRoute('admin.page.edit')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -119,20 +131,23 @@ class PageController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $this->page->delete($id);
-        //Notification::success('Page was successfully deleted');
+        Flash::message('Page was successfully deleted');
         return langRedirectRoute('admin.page.index');
     }
 
-    public function confirmDestroy($id) {
+    public function confirmDestroy($id)
+    {
 
         $page = $this->page->find($id);
         return view('backend.page.confirm-destroy', compact('page'));
     }
 
-    public function togglePublish($id) {
+    public function togglePublish($id)
+    {
 
         return $this->page->togglePublish($id);
     }

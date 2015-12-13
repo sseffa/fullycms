@@ -8,6 +8,7 @@ use Config;
 use View;
 use Input;
 use Response;
+use Flash;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Fully\Repositories\Video\VideoRepository as Video;
@@ -68,7 +69,7 @@ class VideoController extends Controller {
 
         try {
             $this->video->create(Input::all());
-            //Notification::success('Video was successfully added');
+            Flash::message('Video was successfully added');
             return langRedirectRoute('admin.video.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.video.create')->withInput()->withErrors($e->getErrors());
@@ -109,7 +110,7 @@ class VideoController extends Controller {
 
         try {
             $this->video->update($id, Input::all());
-            //Notification::success('Video was successfully updated');
+            Flash::message('Video was successfully updated');
             return langRedirectRoute('admin.video.index');
         } catch (ValidationException $e) {
 
@@ -126,7 +127,7 @@ class VideoController extends Controller {
     public function destroy($id) {
 
         $this->video->delete($id);
-        //Notification::success('Video was successfully deleted');
+        Flash::message('Video was successfully deleted');
         return langRedirectRoute('admin.video.index');
     }
 

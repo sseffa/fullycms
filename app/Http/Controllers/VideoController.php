@@ -10,8 +10,8 @@ use Illuminate\Pagination\Paginator;
  * Class VideoController
  * @author Sefa Karagöz
  */
-class VideoController extends Controller {
-
+class VideoController extends Controller
+{
     /**
      * @var
      */
@@ -20,7 +20,8 @@ class VideoController extends Controller {
     /**
      * @param VideoInterface $video
      */
-    public function __construct(VideoInterface $video) {
+    public function __construct(VideoInterface $video)
+    {
 
         $this->video = $video;
     }
@@ -30,7 +31,8 @@ class VideoController extends Controller {
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function index() {
+    public function index()
+    {
 
         //$videos = $this->video->paginate();
 
@@ -51,9 +53,10 @@ class VideoController extends Controller {
      * @param $slug
      * @return mixed
      */
-    public function show($slug) {
+    public function show($slug)
+    {
 
-        $video=$this->video->getBySlug($slug);
+        $video = $this->video->getBySlug($slug);
 
         if($video === null)
             return Response::view('errors.missing', array(), 404);

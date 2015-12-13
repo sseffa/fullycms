@@ -1,5 +1,6 @@
 <?php namespace Fully\Http\Controllers;
 
+use Flash;
 use Input;
 use Validator;
 use Redirect;
@@ -41,7 +42,7 @@ class MaillistController extends Controller {
         $maillist->email = $formData['email'];
         $maillist->save();
 
-        //Notification::success('success');
+        Flash::info('success');
 
         return Redirect::action('HomeController@index');
     }

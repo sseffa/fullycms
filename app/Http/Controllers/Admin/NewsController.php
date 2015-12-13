@@ -8,6 +8,7 @@ use Input;
 use Validator;
 use Response;
 use Str;
+use Flash;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Fully\Repositories\News\NewsRepository as News;
@@ -67,7 +68,7 @@ class NewsController extends Controller {
 
         try {
             $this->news->create(Input::all());
-            //Notification::success('News was successfully added');
+            Flash::message('News was successfully added');
             return langRedirectRoute('admin.news.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.news.create')->withInput()->withErrors($e->getErrors());
@@ -108,7 +109,7 @@ class NewsController extends Controller {
 
         try {
             $this->news->update($id, Input::all());
-            //Notification::success('News was successfully updated');
+            Flash::message('News was successfully updated');
             return langRedirectRoute('admin.news.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.news.edit')->withInput()->withErrors($e->getErrors());
@@ -124,7 +125,7 @@ class NewsController extends Controller {
     public function destroy($id) {
 
         $this->news->delete($id);
-        //Notification::success('News was successfully deleted');
+        Flash::message('News was successfully deleted');
         return langRedirectRoute('admin.news.index');
     }
 

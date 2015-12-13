@@ -18,7 +18,7 @@
 <br>
 <div class="container">
 
-    {{--{!! Notification::showAll() !!}--}}
+    @include('flash::message')
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
         <li><a href="#info" data-toggle="tab">Info</a></li>

@@ -5,6 +5,7 @@ use Redirect;
 use Sentry;
 use View;
 use Input;
+use Flash;
 use Validator;
 use Fully\Models\User;
 use Fully\Models\Group;
@@ -14,17 +15,17 @@ use Fully\Models\Group;
  * @package App\Controllers\Admin
  * @author Sefa Karagöz
  */
-class UserController extends Controller {
-
+class UserController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
-        $users = User::orderBy('created_at', 'DESC')
-            ->paginate(10);
+        $users = User::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('backend.user.index', compact('users'))->with('active', 'user');
     }
@@ -34,7 +35,8 @@ class UserController extends Controller {
      *
      * @return Response
      */
-    public function create() {
+    public function create()
+    {
 
         $groups = Group::lists('name', 'id');
 
@@ -46,7 +48,8 @@ class UserController extends Controller {
      *
      * @return Response
      */
-    public function store() {
+    public function store()
+    {
 
         $formData = array(
             'first-name'       => Input::get('first_name'),
@@ -67,7 +70,8 @@ class UserController extends Controller {
 
         $validation = Validator::make($formData, $rules);
 
-        if ($validation->fails()) {
+        if($validation->fails())
+        {
 
             return Redirect::action('\Fully\Http\Controllers\Admin\UserController@create')->withErrors($validation)->withInput();
         }
@@ -80,9 +84,11 @@ class UserController extends Controller {
             'activated'  => 1,
         ));
 
-        if(isset($formData['groups'] )) {
+        if(isset($formData['groups']))
+        {
 
-            foreach($formData['groups'] as $group => $id) {
+            foreach($formData['groups'] as $group => $id)
+            {
 
                 // Find the group using the group id
                 $adminGroup = Sentry::findGroupById($id);
@@ -90,7 +96,7 @@ class UserController extends Controller {
                 $user->addGroup($adminGroup);
             }
         }
-        //Notification::success('User was successfully added');
+        Flash::message('User was successfully added');
 
         return Redirect::action('App\Controllers\Admin\UserController@index');
     }
@@ -101,7 +107,8 @@ class UserController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         $user = Sentry::findUserById($id);
         return view('backend.user.show', compact('user'))->with('active', 'user');
@@ -113,7 +120,8 @@ class UserController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $user = Sentry::findUserById($id);
 
@@ -129,7 +137,8 @@ class UserController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id) {
+    public function update($id)
+    {
 
         $formData = array(
             'first-name' => Input::get('first_name'),
@@ -138,37 +147,43 @@ class UserController extends Controller {
             'groups'     => Input::get('groups')
         );
 
-        try {
+        try
+        {
             $user = Sentry::findUserById($id);
             $user->email = $formData['email'];
             $user->first_name = $formData['first-name'];
             $user->last_name = $formData['last-name'];
             $user->save();
 
-            if(!isset($formData['groups'])){
-
-
+            if(!isset($formData['groups']))
+            {
             }
 
-            foreach ((object)$formData['groups'] as $group => $id) {
+            foreach((object)$formData['groups'] as $group => $id)
+            {
 
                 // Find the group using the group id
                 $adminGroup = Sentry::findGroupById($id);
 
                 // Assign the group to the user
-                if ($user->addGroup($adminGroup)) {
+                if($user->addGroup($adminGroup))
+                {
                     // Group assigned successfully
-                } else {
+                }
+                else
+                {
                     // Group was not assigned
                 }
             }
-        } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
+        } catch(Cartalyst\Sentry\Users\UserNotFoundException $e)
+        {
             echo 'User was not found.';
-        } catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e) {
+        } catch(Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+        {
             echo 'Group was not found.';
         }
 
-        //Notification::success('User was successfully updated');
+        Flash::message('User was successfully updated');
 
         return langRedirectRoute('admin.user.index');
     }
@@ -179,16 +194,18 @@ class UserController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $user = Sentry::findUserById($id);
         $user->delete();
 
-        //Notification::success('User was successfully deleted');
+        Flash::message('User was successfully deleted');
         return langRedirectRoute('admin.user.index');
     }
 
-    public function confirmDestroy($id) {
+    public function confirmDestroy($id)
+    {
 
         $user = User::find($id);
         return view('backend.user.confirm-destroy', compact('user'))->with('active', 'user');

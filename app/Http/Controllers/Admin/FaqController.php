@@ -64,7 +64,7 @@ class FaqController extends Controller {
 
         try {
             $this->faq->create(Input::all());
-            //Notification::success('Faq was successfully added');
+            Flash::message('Faq was successfully added');
             return langRedirectRoute('admin.faq.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.faq.create')->withInput()->withErrors($e->getErrors());
@@ -105,7 +105,7 @@ class FaqController extends Controller {
 
         try {
             $this->faq->update($id, Input::all());
-            //Notification::success('Faq was successfully updated');
+            Flash::message('Faq was successfully updated');
             return langRedirectRoute('admin.faq.index');
         } catch (ValidationException $e) {
 
@@ -122,7 +122,7 @@ class FaqController extends Controller {
     public function destroy($id) {
 
         $this->faq->delete($id);
-        //Notification::success('Faq was successfully deleted');
+        Flash::message('Faq was successfully deleted');
         return langRedirectRoute('admin.faq.index');
     }
 

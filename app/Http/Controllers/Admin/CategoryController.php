@@ -67,7 +67,7 @@ class CategoryController extends Controller {
         try {
 
             $this->category->create(Input::all());
-            //Notification::success('Category was successfully added');
+            Flash::message('Category was successfully added');
             return langRedirectRoute('admin.category.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.category.create')->withInput()->withErrors($e->getErrors());
@@ -108,7 +108,7 @@ class CategoryController extends Controller {
 
         try {
             $this->category->update($id, Input::all());
-            //Notification::success('Category was successfully updated');
+            Flash::message('Category was successfully updated');
             return langRedirectRoute('admin.category.index');
         } catch (ValidationException $e) {
 
@@ -125,7 +125,7 @@ class CategoryController extends Controller {
     public function destroy($id) {
 
         $this->category->delete($id);
-        //Notification::success('Category was successfully deleted');
+        Flash::message('Category was successfully deleted');
         return langRedirectRoute('admin.category.index');
     }
 

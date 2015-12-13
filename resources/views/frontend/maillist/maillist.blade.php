@@ -23,7 +23,7 @@
 </section><!--/#title-->
 
 <section class="container">
-  {!! Notification::showAll() !!}
+    @include('flash::message')
     <div class="row">
         <div class="col-xs-6 col-md-4">
             {!! Form::open(array('route' => 'frontend.maillist')) !!}
