@@ -40,7 +40,7 @@
     <br>
 
     <div class="container">
-        <div class="row">
+        <div class="col-lg-10">
             {{-- {{ Notification::showAll() }}--}}
             <br>
 
@@ -54,7 +54,7 @@
             </div>
             <br> <br> <br>
             @if($articles->count())
-                <div class="table-responsive">
+                <div class="">
                     <table class="table table-striped">
                         <thead>
                         <tr>

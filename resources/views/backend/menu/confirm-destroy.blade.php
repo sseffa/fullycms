@@ -1,19 +1,16 @@
 @extends('backend/layout/layout')
 @section('content')
-<div class="pageheader">
-  <h2><i class="fa fa-bars"></i> Menu </h2>
-  <div class="breadcrumb-wrapper">
-    <span class="label"></span>
+
+<section class="content-header">
+    <h1> Menu <small> | Delete Menu</small> </h1>
     <ol class="breadcrumb">
-      <li><a href="{!! langRoute('admin.menu.index') !!}">Menu</a></li>
-      <li class="active">Delete Menu Item</li>
+        <li><a href="{!! url(getLang(). '/admin/menu') !!}">Menu</a></li>
+        <li class="active">Add Menu Item</li>
     </ol>
-  </div>
-</div>
+</section>
 <br>
 <br>
-<br>
-<div class="container">
+<div class="col-lg-10">
     {!! Form::open( array( 'route' => array( getLang() . '.admin.menu.destroy', $menu->id ) ) ) !!}
     {!! Form::hidden( '_method', 'DELETE' ) !!}
     <div class="alert alert-warning">

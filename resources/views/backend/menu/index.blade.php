@@ -45,7 +45,7 @@
     </section>
 
     <br>
-    <div class="container">
+    <div class="col-lg-10">
         {{-- {{ Notification::showAll() }}--}}
         <div class="pull-right">
             <div id="msg"></div>

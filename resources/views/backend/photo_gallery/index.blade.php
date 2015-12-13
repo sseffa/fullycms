@@ -37,9 +37,9 @@
         <li class="active">Photo Gallery</li>
     </ol>
 </section>
-<br>
+<br><br>
 <div class="container">
-    <div class="row"> {{-- {{ Notification::showAll() }}--}}
+    <div class="col-lg-10"> {{-- {{ Notification::showAll() }}--}}
         <br>
 
         <div class="pull-left">
@@ -50,7 +50,7 @@
         <br>
         <br>
         @if($photo_galleries->count())
-        <div class="table-responsive">
+        <div class="">
             <table class="table table-striped">
                 <thead>
                 <tr>

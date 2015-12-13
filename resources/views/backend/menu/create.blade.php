@@ -20,19 +20,15 @@
     });
 </script>
 <!-- Content Header (Page header) -->
-<div class="pageheader">
-  <h2><i class="fa fa-bars"></i> Menu </h2>
-  <div class="breadcrumb-wrapper">
-    <span class="label"></span>
+<section class="content-header">
+    <h1> Menu <small> | Add Menu</small> </h1>
     <ol class="breadcrumb">
-      <li><a href="{!! url(getLang(). '/admin/menu') !!}">Menu</a></li>
-      <li class="active">Add Menu Item</li>
+        <li><a href="{!! url(getLang(). '/admin/menu') !!}">Menu</a></li>
+        <li class="active">Add Menu Item</li>
     </ol>
-  </div>
-</div>
+</section>
 <br>
 <br>
-
 <div class="container">
 
     {!! Form::open(array('action' => '\Fully\Http\Controllers\Admin\MenuController@store')) !!}

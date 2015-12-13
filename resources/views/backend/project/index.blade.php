@@ -17,7 +17,7 @@
     </section>
     <br>
     <div class="container">
-        <div class="row"> {{-- {{ Notification::showAll() }}--}}
+        <div class="col-lg-10"> {{-- {{ Notification::showAll() }}--}}
             <br>
 
             <div class="pull-left">
@@ -26,7 +26,7 @@
             </div>
             <br> <br> <br>
             @if($projects->count())
-                <div class="table-responsive">
+                <div class="">
                     <table class="table table-striped">
                         <thead>
                         <tr>

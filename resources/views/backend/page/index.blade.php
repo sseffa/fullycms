@@ -29,7 +29,7 @@
         });
     </script>
     <section class="content-header">
-        <h1> News
+        <h1> Page
             <small> | Control Panel</small>
         </h1>
         <ol class="breadcrumb">
@@ -38,8 +38,9 @@
         </ol>
     </section>
     <br>
+    <br>
     <div class="container">
-        <div class="row"> {{-- {{ Notification::showAll() }}--}}
+        <div class="col-lg-10"> {{-- {{ Notification::showAll() }}--}}
             <br>
 
             <div class="pull-left">
@@ -48,7 +49,7 @@
             </div>
             <br> <br> <br>
             @if($pages->count())
-                <div class="table-responsive">
+                <div class="">
                     <table class="table table-striped">
                         <thead>
                         <tr>

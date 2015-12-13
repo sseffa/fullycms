@@ -12,7 +12,7 @@
 <br>
 <br>
 <br>
-<div class="container">
+<div class="col-lg-10">
     {!! Form::open( array(  'route' => array(getLang(). '.admin.article.destroy', $article->id ) ) ) !!}
     {!! Form::hidden( '_method', 'DELETE' ) !!}
     <div class="alert alert-warning">

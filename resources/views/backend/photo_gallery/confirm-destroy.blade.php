@@ -12,7 +12,7 @@
 <br>
 <br>
 <br>
-<div class="container">
+<div class="col-lg-10">
     {!! Form::open( array(  'route' => array(getLang(). '.admin.photo-gallery.destroy', $photo_gallery->id ) ) ) !!}
     {!! Form::hidden('_method', 'DELETE') !!}
     <div class="alert alert-warning">
