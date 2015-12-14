@@ -1,85 +1,99 @@
-<?php namespace Fully\Http\Controllers\Admin;
+<?php
 
-use Fully\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Sentry;
-use View;
-use Input;
+namespace Fully\Http\Controllers\Admin;
+
+use Log;
+use Mail;
+use Sentinel;
+use Reminder;
 use Redirect;
+use Validator;
+use Fully\User;
+use Fully\Services\Mailer;
+use Illuminate\Http\Request;
+use Fully\Http\Controllers\Controller;
 
-class AuthController extends Controller {
-
-	public function __construct()
-	{
-		$this->middleware('guest', ['except' => 'getLogout']);
-	}
+/**
+ * Class AuthController
+ * @package Fully\Http\Controllers\Admin
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
+ */
+class AuthController extends Controller
+{
+    /**
+     * Create a new authentication controller instance.
+     */
+    public function __construct() {}
 
     /**
      * Display the login page
      * @return View
      */
-    public function getLogin() {
+    public function getLogin()
+    {
+        if(!Sentinel::check())
+            return view('backend/auth/login');
 
-        if (!Sentry::check()) return view('backend/auth/login');
-        else return Redirect::route('admin.dashboard');
+        return Redirect::route('admin.dashboard');
     }
 
     /**
      * Login action
-     * @return Redirect
+     * @param Request $request
+     * @return mixed
      */
-    public function postLogin() {
-
+    public function postLogin(Request $request)
+    {
         $credentials = array(
-            'email'    => Input::get('email'),
-            'password' => Input::get('password')
+            'email'    => $request->get('email'),
+            'password' => $request->get('password')
         );
 
-        $rememberMe = Input::get('rememberMe');
+        $rememberMe = $request->get('rememberMe');
 
-        try {
+        try
+        {
+            if(!empty($rememberMe))
+                $result = Sentinel::authenticateAndRemember($credentials);
+            else
+                $result = Sentinel::authenticate($credentials);
 
-            if (!empty($rememberMe)) {
-                $this->user = Sentry::authenticate($credentials, true);
-            } else {
-                $this->user = Sentry::authenticate($credentials, false);
-            }
+            Log::info("Kullanýcý (".$request->get('email').") sisteme giriþ yaptý");
 
-            if ($this->user) {
-
-                $this->events->fire('user.login', $this->user);
+            if($result)
                 return Redirect::route('admin.dashboard');
-            }
-        } catch (\Exception $e) {
-            return Redirect::route('admin.login')->withErrors(array('login' => $e->getMessage()));
+        } catch(\Cartalyst\Sentinel\Checkpoints\NotActivatedException $e)
+        {
+            return Redirect::back()->withErrors($e->getMessage());
         }
+
+        flash()->error('Invalid login or password!');
+        return Redirect::back()->withInput();
     }
 
     /**
      * Logout action
      * @return Redirect
      */
-    public function getLogout() {
-
-        $this->user = Sentry::getUser();
-
-        //$this->events->fire('user.logout', $this->user);
-
-        Sentry::logout();
-        return Redirect::route('admin.login');
+    public function getLogout()
+    {
+        Sentinel::logout(Sentinel::getUser());
+        return Redirect::route('backend.login');
     }
 
-    public function getForgotPassword() {
+    public function getForgotPassword()
+    {
+        if(!Sentinel::check())
+            return view('backend/auth/forgot-password');
 
-        if (!Sentry::check()) return view('backend/auth/forgot-password');
-        else return Redirect::route('admin.dashboard');
+        return Redirect::route('admin.dashboard');
     }
 
-    public function postForgotPassword() {
+    public function postForgotPassword(Request $request)
+    {
 
         $credentials = array(
-            'email' => Input::get('email')
+            'email' => $request->get('email')
         );
 
         $rules = array(
@@ -88,59 +102,70 @@ class AuthController extends Controller {
 
         $validation = Validator::make($credentials, $rules);
 
-        if ($validation->fails()) {
-
+        if($validation->fails())
+        {
             return Redirect::back()->withErrors($validation)->withInput();
         }
 
-        try {
+        // Find the user using the user email address
+        $this->user = Sentinel::findByCredentials($credentials);
 
-            // Find the user using the user email address
-            $this->user = Sentry::findUserByLogin($credentials['email']);
+        if(!$this->user)
+        {
 
-            // Get the password reset code
-            $resetCode = $this->user->getResetPasswordCode();
+            flash()->error('E-mail address you entered is not found!');
+            return Redirect::route('backend.forgot.password');
+        }
 
-            $formData = array('userId' => $this->user->id, 'resetCode' => $resetCode);
+        $reminderData = Reminder::create($this->user);
 
-            /*
-            Mail::send('emails.auth.reset-password', $formData, function ($message) {
+        // Get the password reset code
+        $resetCode = $reminderData->code;
 
-                $message->from('noreply@fullycms.com', 'Fully CMS Team');
-                $message->to('user@fullycms.com', 'Lorem Lipsum')->subject('Reset Password');
+        $formData = array('userId' => $this->user->id, 'resetCode' => $resetCode);
+
+        try
+        {
+            Mail::send('emails.auth.reset-password', $formData, function ($message)
+            {
+                $message->from('noreply@fully.com', 'Fully');
+                $message->to($request->get('email'), 'Lorem Lipsum')->subject('Reset Password');
             });
-            */
-            /*
-            $mailer = new Mailer;
-            $mailer->send('emails.auth.reset-password', 'user@fullycms.com', 'Reset Password', $formData);
-            */
-        } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
-            return Redirect::route('admin.forgot.password')->withErrors(array('forgot-password' => $e->getMessage()));
-        } catch (\Exception $e) {
-            return Redirect::route('admin.forgot.password')->withErrors(array('forgot-password' => $e->getMessage()));
+
+            return Redirect::route('backend.login');
+        } catch(Exception $ex)
+        {
+            return Redirect::route('backend.forgot.password')->withErrors(array('forgot-password' => 'Password reset failed'));
         }
+        /*$mailer = new Mailer;
+        $mailer->send('emails.auth.reset-password', 'user@fully.com', 'Reset Password', $formData);*/
     }
 
-    public function getResetPassword($id, $code) {
-
+    public function getResetPassword($id, $code)
+    {
         // Find the user using the user id
-        $this->user = Sentry::findUserById($id);
+        $this->user = Sentinel::findById($id);
 
-        // Check if the reset password code is valid
-        if (!$this->user->checkResetPasswordCode($code)) {
-            return Redirect::route('admin.login');
+        if($reminder = Reminder::exists($this->user, $code))
+        {
+            flash()->success('Please enter your new password!');
+
+            return view('backend/auth/reset-password', compact('id', 'code'));
         }
-
-        return view('backend/auth/reset-password', compact('id', 'code'));
+        else
+        {
+            return Redirect::route('backend.login');
+        }
     }
 
-    public function postResetPassword() {
+    public function postResetPassword(Request $request)
+    {
 
         $formData = array(
-            'id'               => Input::get('id'),
-            'code'             => Input::get('code'),
-            'password'         => Input::get('password'),
-            'confirm-password' => Input::get('confirm_password')
+            'id'               => $request->get('id'),
+            'code'             => $request->get('code'),
+            'password'         => $request->get('password'),
+            'confirm-password' => $request->get('confirm_password')
         );
 
         $rules = array(
@@ -152,32 +177,23 @@ class AuthController extends Controller {
 
         $validation = Validator::make($formData, $rules);
 
-        if ($validation->fails()) {
-
+        if($validation->fails())
+        {
             return Redirect::back()->withErrors($validation)->withInput();
         }
 
-        try {
-            // Find the user using the user id
-            $this->user = Sentry::findUserById($formData['id']);
+        // Find the user using the user id
+        $this->user = Sentinel::findById($formData['id']);
 
-            // Check if the reset password code is valid
-            if ($this->user->checkResetPasswordCode($formData['code'])) {
-                // Attempt to reset the user password
-                if ($this->user->attemptResetPassword($formData['code'], $formData['password'])) {
-                    // Password reset passed
-                    return Redirect::route('admin.login');
-                } else {
-                    // Password reset failed
-                    return Redirect::action('Fully\Controllers\Admin\AuthController@getResetPassword')->withErrors(array('forgot-password' => 'Password reset failed'));
-                }
-            } else {
-                // The provided password reset code is Invalid
-                return Redirect::action('Fully\Controllers\Admin\AuthController@getResetPassword')->withErrors(array('forgot-password' => 'The provided password reset code is Invalid'));
-            }
-        } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
-
-            return Redirect::route('admin.forgot.password')->withErrors(array('forgot-password' => $e->getMessage()));
+        if($reminder = Reminder::complete($this->user, $formData['code'], $formData['password']))
+        {
+            // Password reset passed
+            return Redirect::route('admin.login');
+        }
+        else
+        {
+            // Password reset failed
+            return Redirect::route('admin.reset.password')->withErrors(array('forgot-password' => 'Password reset failed'));
         }
     }
 }

@@ -6,7 +6,7 @@ return array(
 
     'per_page' => 10,
 
-    'youtube_api_key' => 'AIzaSyBOhcjnAA8kBta59C1hv3Z-XQhZQTBFkgE',
+    'youtube_api_key' => 'AIzaSyDAVKCgnt1-HxSJS-KTRVYlrnA5J3PU3bc',
 
     /*
     |--------------------------------------------------------------------------

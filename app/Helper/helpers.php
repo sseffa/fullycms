@@ -11,7 +11,7 @@ if (!function_exists('gratavarUrl')) {
      *
      * @return string
      */
-    function gratavarUrl($email, $size = 60, $default = 'mm', $rating = 'g') {
+    function gravatarUrl($email, $size = 60, $default = 'mm', $rating = 'g') {
 
         return 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($email))) . "?s={$size}&d={$default}&r={$rating}";
     }

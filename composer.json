@@ -8,7 +8,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "illuminate/html": "~5.0",
-        "cartalyst/sentry": "dev-feature/laravel-5",
+        "cartalyst/sentinel": "2.0.*",
         "intervention/image": "dev-master",
         "mcamara/laravel-localization": "1.0.*",
         "barryvdh/laravel-debugbar": "2.0.*@dev",

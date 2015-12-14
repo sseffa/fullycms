@@ -52,13 +52,13 @@
     </div>
     <br>
 
-    <!-- Group -->
+    <!-- Role -->
     <div class="control-group {!! $errors->has('is_published') ? 'has-error' : '' !!}">
-        <label class="control-label" for="groups">Groups</label>
+        <label class="control-label" for="groups">Roles</label>
         <div class="controls">
 
-            @foreach($groups as $id=>$group)
-            <label class="checkbox"><input {!! ((in_array($group, $userGroups)) ? 'checked' : '') !!} type="checkbox" value="{!! $id !!}" name="groups[{!! $group !!}]">  {!! $group !!}</label>
+            @foreach($roles as $id=>$role)
+            <label><input {!! ((in_array($role, $userRoles)) ? 'checked' : '') !!} type="checkbox" value="{!! $id !!}" name="groups[{!! $role !!}]">  {!! $role !!}</label>
             @endforeach
 
         </div>

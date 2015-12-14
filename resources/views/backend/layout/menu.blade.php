@@ -5,11 +5,11 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{!! gratavarUrl(Sentry::getUser()->email) !!}" class="img-circle" alt="User Image" />
+                <img src="{!! gravatarUrl(Sentinel::getUser()->email) !!}" class="img-circle" alt="User Image" />
 
             </div>
             <div class="pull-left info">
-                <p>{{ Sentry::getUser()->first_name . ' ' . Sentry::getUser()->last_name }}</p>
+                <p>{{ Sentinel::getUser()->first_name . ' ' . Sentinel::getUser()->last_name }}</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -101,7 +101,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url(getLang() . '/admin/user') }}"><i class="fa fa-user"></i> All Users</a>
                     </li>
-                    <li><a href="{{ url(getLang() . '/admin/group') }}"><i class="fa fa-group"></i> Add Group</a>
+                    <li><a href="{{ url(getLang() . '/admin/role') }}"><i class="fa fa-group"></i> Add Role</a>
                     </li>
                 </ul>
             </li>

@@ -140,7 +140,7 @@ return [
         /*
          * Fully
          */
-        Cartalyst\Sentry\SentryServiceProvider::class,
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -204,7 +204,9 @@ return [
         'View'                => Illuminate\Support\Facades\View::class,
         'Form'                => Illuminate\Html\FormFacade::class,
         'HTML'                => Illuminate\Html\HtmlFacade::class,
-        'Sentry'              => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
+        'Activation'          => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
+        'Reminder'            => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
+        'Sentinel'            => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Image'               => Intervention\Image\Facades\Image::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Debugbar'            => Barryvdh\Debugbar\Facade::class,

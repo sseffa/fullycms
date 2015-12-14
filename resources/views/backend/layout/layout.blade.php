@@ -113,15 +113,15 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ gratavarUrl(Sentry::getUser()->email) }}" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs">{{ Sentry::getUser()->first_name . ' ' . Sentry::getUser()->last_name }}</span> </a>
+                            <img src="{{ gravatarUrl(Sentinel::getUser()->email) }}" class="user-image" alt="User Image"/>
+                            <span class="hidden-xs">{{ Sentinel::getUser()->first_name . ' ' . Sentinel::getUser()->last_name }}</span> </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="{{ gratavarUrl(Sentry::getUser()->email) }}" class="img-circle" alt="User Image"/>
+                                <img src="{{ gravatarUrl(Sentinel::getUser()->email) }}" class="img-circle" alt="User Image"/>
 
                                 <p>
-                                <p> {{ Sentry::getUser()->first_name . ' ' . Sentry::getUser()->last_name }} - Web Developer
+                                <p> {{ Sentinel::getUser()->first_name . ' ' . Sentinel::getUser()->last_name }} - Web Developer
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -140,7 +140,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{ url(getLang() . '/admin/user/' . Sentry::getUser()->id) }}" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="{{ url(getLang() . '/admin/user/' . Sentinel::getUser()->id) }}" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="{{ url('/admin/logout') }}" class="btn btn-default btn-flat">Sign out</a></div>

@@ -2,14 +2,14 @@
 
 namespace Fully\Models;
 
-use Cartalyst\Sentinel\Users\EloquentUser;
+use Cartalyst\Sentinel\Roles\EloquentRole;
 
 /**
- * Class User
+ * Class Role
  * @package Fully\Models
  * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class User extends EloquentUser
+class Role extends EloquentRole
 {
 
 }

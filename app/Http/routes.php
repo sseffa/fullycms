@@ -89,7 +89,7 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
 
     Route::group(array('prefix'    => '/admin',
                        'namespace' => 'Admin',
-                       'middleware'    => array('sentry.auth', 'before')), function () {
+                       'middleware' => ['sentinel.auth', 'sentinel.permission']), function () {
 
         // admin dashboard
         Route::get('/', array('as' => 'admin.dashboard', 'uses' => 'DashboardController@index'));
@@ -99,10 +99,10 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
         Route::get('user/{id}/delete', array('as'   => 'admin.user.delete',
                                              'uses' => 'UserController@confirmDestroy'))->where('id', '[0-9]+');
 
-        // group
-        Route::resource('group', 'GroupController');
-        Route::get('group/{id}/delete', array('as'   => 'admin.group.delete',
-                                              'uses' => 'GroupController@confirmDestroy'))->where('id', '[0-9]+');
+        // role
+        Route::resource('role', 'RoleController');
+        Route::get('role/{id}/delete', array('as'   => 'admin.role.delete',
+                                              'uses' => 'RoleController@confirmDestroy'))->where('id', '[0-9]+');
 
         // blog
         Route::resource('article', 'ArticleController', array('before' => 'hasAccess:article'));
@@ -229,7 +229,7 @@ Route::post('/contact', array('as'   => 'dashboard.contact.post',
 Route::get('filemanager/show', function () {
 
     return View::make('backend/plugins/filemanager');
-})->before('sentry.auth');
+})->before('sentinel.auth');
 
 // login
 Route::get('/admin/login', array(

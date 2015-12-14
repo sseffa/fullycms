@@ -3,25 +3,25 @@
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
-    <h1> Group
-        <small> | Add Group</small>
+    <h1> Role
+        <small> | Add Role</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="{!! url(getLang(). '/admin/group') !!}"><i class="fa fa-user"></i> Group</a></li>
+        <li><a href="{!! url(getLang(). '/admin/role') !!}"><i class="fa fa-user"></i> Role</a></li>
         <li class="active">Add User</li>
     </ol>
 </section>
 <br>
 <br>
 <div class="container">
-    {!! Form::open(array('action' => '\Fully\Http\Controllers\Admin\GroupController@store')) !!}
+    {!! Form::open(array('action' => '\Fully\Http\Controllers\Admin\RoleController@store')) !!}
 
-    <!-- Group Name -->
+    <!-- Role Name -->
     <div class="control-group {!! $errors->has('name') ? 'has-error' : '' !!}">
         <label class="control-label" for="name">Name</label>
 
         <div class="controls">
-            {!! Form::text('name', null, array('class'=>'form-control', 'id' => 'name', 'placeholder'=>'Group Name', 'value'=>Input::old('name'))) !!}
+            {!! Form::text('name', null, array('class'=>'form-control', 'id' => 'name', 'placeholder'=>'Role Name', 'value'=>Input::old('name'))) !!}
             @if ($errors->first('name'))
             <span class="help-block">{!! $errors->first('name') !!}</span>
             @endif
@@ -100,7 +100,7 @@
     </div>
     <!-- Form actions -->
     {!! Form::submit('Save Changes', array('class' => 'btn btn-success')) !!}
-    <a href="{!! langUrl('admin/group') !!}"
+    <a href="{!! langUrl('/admin/role') !!}"
        class="btn btn-default">
         &nbsp;Cancel
     </a>

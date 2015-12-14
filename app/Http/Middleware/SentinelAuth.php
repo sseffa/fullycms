@@ -1,21 +1,29 @@
-<?php namespace Fully\Http\Middleware;
+<?php
 
-use Closure, Sentry;
-use Illuminate\Contracts\Routing\Middleware;
+namespace Fully\Http\Middleware;
 
-class SentryAuth {
+use Closure, Sentinel;
+
+/**
+ * Class SentinelAuth
+ * @package Fully\Http\Middleware
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
+ */
+class SentinelAuth
+{
+
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if ( ! Sentry::check())
+        if(!Sentinel::check())
         {
-            if ($request->ajax())
+            if($request->ajax())
             {
                 return response('Unauthorized.', 401);
             }
@@ -24,6 +32,7 @@ class SentryAuth {
                 return redirect()->guest(route('admin.login'));
             }
         }
+
         return $next($request);
     }
 }

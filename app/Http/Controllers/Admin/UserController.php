@@ -2,13 +2,15 @@
 
 use Fully\Http\Controllers\Controller;
 use Redirect;
-use Sentry;
+use Sentinel;
+use Fully\Models\Role;
 use View;
 use Input;
 use Flash;
 use Validator;
 use Fully\Models\User;
-use Fully\Models\Group;
+use Illuminate\Http\Request;
+use Fully\Http\Requests;
 
 /**
  * Class UserController
@@ -38,9 +40,9 @@ class UserController extends Controller
     public function create()
     {
 
-        $groups = Group::lists('name', 'id');
+        $roles = Role::lists('name', 'id');
 
-        return view('backend.user.create', compact('groups'));
+        return view('backend.user.create', compact('roles'));
     }
 
     /**
@@ -48,16 +50,15 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-
         $formData = array(
-            'first-name'       => Input::get('first_name'),
-            'last-name'        => Input::get('last_name'),
-            'email'            => Input::get('email'),
-            'password'         => Input::get('password'),
-            'confirm-password' => Input::get('confirm_password'),
-            'groups'           => Input::get('groups')
+            'first-name'       => $request->get('first_name'),
+            'last-name'        => $request->get('last_name'),
+            'email'            => $request->get('email'),
+            'password'         => $request->get('password'),
+            'confirm-password' => $request->get('confirm_password'),
+            'roles'            => $request->get('roles')
         );
 
         $rules = array(
@@ -72,11 +73,10 @@ class UserController extends Controller
 
         if($validation->fails())
         {
-
-            return Redirect::action('\Fully\Http\Controllers\Admin\UserController@create')->withErrors($validation)->withInput();
+            return Redirect::action('Admin\UserController@create')->withErrors($validation)->withInput();
         }
 
-        $user = Sentry::createUser(array(
+        $user = Sentinel::registerAndActivate(array(
             'email'      => $formData['email'],
             'password'   => $formData['password'],
             'first_name' => $formData['first-name'],
@@ -84,21 +84,16 @@ class UserController extends Controller
             'activated'  => 1,
         ));
 
-        if(isset($formData['groups']))
+        if(isset($formData['roles']))
         {
-
-            foreach($formData['groups'] as $group => $id)
+            foreach($formData['roles'] as $role => $id)
             {
-
-                // Find the group using the group id
-                $adminGroup = Sentry::findGroupById($id);
-
-                $user->addGroup($adminGroup);
+                $role = Sentinel::findRoleByName($role);
+                $role->users()->attach($user);
             }
         }
-        Flash::message('User was successfully added');
 
-        return Redirect::action('App\Controllers\Admin\UserController@index');
+        return Redirect::action('Admin\UserController@index');
     }
 
     /**
@@ -109,8 +104,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-
-        $user = Sentry::findUserById($id);
+        $user = Sentinel::findUserById($id);
         return view('backend.user.show', compact('user'))->with('active', 'user');
     }
 
@@ -123,12 +117,12 @@ class UserController extends Controller
     public function edit($id)
     {
 
-        $user = Sentry::findUserById($id);
+        $user = Sentinel::findUserById($id);
 
-        $userGroups = $user->getGroups()->lists('name', 'id');
+        $userRoles = $user->getRoles()->lists('name', 'id')->toArray();
+        $roles = Role::lists('name', 'id');
 
-        $groups = Group::lists('name', 'id');
-        return view('backend.user.edit', compact('user', 'groups', 'userGroups'))->with('active', 'user');
+        return view('backend.user.edit', compact('user', 'roles', 'userRoles'))->with('active', 'user');
     }
 
     /**
@@ -137,55 +131,64 @@ class UserController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update($id)
-    {
+    public function update(Request $request, $id)
+    { $formData = array(
+        'first-name'       => $request->get('first_name'),
+        'last-name'        => $request->get('last_name'),
+        'email'            => $request->get('email'),
+        'password'         => ($request->get('password')) ?: null,
+        'confirm-password' => ($request->get('confirm_password')) ?: null,
+        'roles'            => $request->get('roles')
+    );
 
-        $formData = array(
-            'first-name' => Input::get('first_name'),
-            'last-name'  => Input::get('last_name'),
-            'email'      => Input::get('email'),
-            'groups'     => Input::get('groups')
-        );
-
-        try
+        if(!$formData['password'] || !$formData['confirm-password'])
         {
-            $user = Sentry::findUserById($id);
-            $user->email = $formData['email'];
-            $user->first_name = $formData['first-name'];
-            $user->last_name = $formData['last-name'];
-            $user->save();
 
-            if(!isset($formData['groups']))
-            {
-            }
-
-            foreach((object)$formData['groups'] as $group => $id)
-            {
-
-                // Find the group using the group id
-                $adminGroup = Sentry::findGroupById($id);
-
-                // Assign the group to the user
-                if($user->addGroup($adminGroup))
-                {
-                    // Group assigned successfully
-                }
-                else
-                {
-                    // Group was not assigned
-                }
-            }
-        } catch(Cartalyst\Sentry\Users\UserNotFoundException $e)
-        {
-            echo 'User was not found.';
-        } catch(Cartalyst\Sentry\Groups\GroupNotFoundException $e)
-        {
-            echo 'Group was not found.';
+            unset($formData['password']);
+            unset($formData['confirm_password']);
         }
 
-        Flash::message('User was successfully updated');
+        $rules = array(
+            'first-name'       => 'required|min:3',
+            'last-name'        => 'required|min:3',
+            'email'            => 'required',
+            'password'         => 'min:6',
+            'confirm-password' => 'same:password'
+        );
 
-        return langRedirectRoute('admin.user.index');
+        $validation = Validator::make($formData, $rules);
+
+        if($validation->fails())
+        {
+
+            return Redirect::back()->withErrors($validation);
+        }
+
+        $user = Sentinel::findById($id);
+        $user->email = $formData['email'];
+        $user->first_name = $formData['first-name'];
+        $user->last_name = $formData['last-name'];
+
+        Sentinel::update($user, $formData);
+
+        $oldRoles = $user->getRoles()->lists('name', 'id')->toArray();
+
+        foreach($oldRoles as $id => $role)
+        {
+            $roleModel = Sentinel::findRoleByName($role);
+            $roleModel->users()->detach($user);
+        }
+
+        if(isset($formData['roles']))
+        {
+            foreach($formData['roles'] as $role => $id)
+            {
+                $role = Sentinel::findRoleByName($role);
+                $role->users()->attach($user);
+            }
+        }
+
+        return Redirect::route('admin.users.index');
     }
 
     /**
@@ -197,7 +200,7 @@ class UserController extends Controller
     public function destroy($id)
     {
 
-        $user = Sentry::findUserById($id);
+        $user = Sentinel::findById($id);
         $user->delete();
 
         Flash::message('User was successfully deleted');
@@ -206,7 +209,6 @@ class UserController extends Controller
 
     public function confirmDestroy($id)
     {
-
         $user = User::find($id);
         return view('backend.user.confirm-destroy', compact('user'))->with('active', 'user');
     }
