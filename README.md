@@ -13,6 +13,7 @@ Fully CMS
 * More functions
 * Better optimization
 * Laravel 5
+* Sentinel Package - User/Role Managment
 
 <img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/1.png" width="900" />
 
@@ -35,7 +36,7 @@ Fully CMS
   * Manage page
   * Manage news
   * Manage photo gallery
-  * Ckeditor for post creation and editing (filemanager)
+  * CKEditor for post creation and editing (filemanager)
   * Form post manage
   * Site settings
   * Log view page
@@ -46,17 +47,6 @@ Fully CMS
   * Photo Gallery (Lazy load image, responsive fancybox)
   * Contact Form
   * Breadcrumbs
-  * Route cache
-
-## Todo
-
-* User (Cartalyst Sentry)
-  * Groups,
-  * Group Permissions,
-  * User Permissions,
-  * Login Throttling
-  * User Suspension
-  * User Banning
 
 ## Installation
 
