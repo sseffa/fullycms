@@ -56,10 +56,9 @@ Please check the system requirements before installing sf CMS.
   * Github: `git clone git@github.com:sseffa/fullycms.git`
   * Composer: `composer create-project sseffa/fullycms --prefer-dist`
 2. From a command line open in the folder, run `composer install`.
-3. Enter your database details into `app/config/database.php`.
-4. Run `php artisan app:install` to setup and seed your database.
-5. Default admin, email: admin@admin.com, password: admin
-6. Settings `app/config/fully.php`. (optional)
+3. Enter your database details into `config/database.php`.
+4. Run `php artisan app:install` to setup and seed your database and admin information
+5. Settings `config/fully.php`. (optional)
   * Cache enable / disable
   * image folder
   * post per page
