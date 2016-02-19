@@ -5,7 +5,7 @@ use Illuminate\Cache\CacheManager;
 
 /**
  * Class FullyCache
- * @package Impl\Services
+ * @package Fully\Services
  * @author Sefa Karagöz
  */
 class FullyCache implements CacheInterface {

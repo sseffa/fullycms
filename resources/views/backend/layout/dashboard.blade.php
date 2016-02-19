@@ -17,4 +17,5 @@
 <section class="content">
     @include('flash::message')
 </section>
+
 @stop

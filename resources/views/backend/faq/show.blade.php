@@ -1,6 +1,6 @@
 @extends('backend/layout/layout')
 @section('content')
-<!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1> Faq
         <small> | Show Faq</small>
@@ -13,29 +13,27 @@
 <br>
 <br>
 <div class="container">
-    <div class="pull-left">
-        <div class="btn-toolbar">
-            <a href="{!! langRoute('admin.faq.index') !!}"
-               class="btn btn-primary">
-                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
-            </a>
+    <div class="col-lg-10">
+        <div class="pull-left">
+            <div class="btn-toolbar">
+                <a href="{!! langRoute('admin.faq.index') !!}"
+                   class="btn btn-primary"> <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back </a>
+            </div>
         </div>
+        <br> <br> <br>
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <td><strong>Question</strong></td>
+                <td>{!! $faq->question !!}</td>
+            </tr>
+            <tr>
+                <td><strong>Answer</strong></td>
+                <td>{!! $faq->answer !!}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <br>
-    <br>
-    <br>
-    <table class="table table-striped">
-        <tbody>
-        <tr>
-            <td><strong>Question</strong></td>
-            <td>{!! $faq->question !!}</td>
-        </tr>
-        <tr>
-            <td><strong>Answer</strong></td>
-            <td>{!! $faq->answer !!}</td>
-        </tr>
-        </tbody>
-    </table>
 </div>
 </div>
 </div>

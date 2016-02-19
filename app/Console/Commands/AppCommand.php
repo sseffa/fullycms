@@ -124,7 +124,6 @@ class AppCommand extends Command {
      * Asks the user for the first name.
      *
      * @return void
-     * @todo   Use the Laravel Validator
      */
     protected function askUserFirstName() {
 
@@ -147,7 +146,6 @@ class AppCommand extends Command {
      * Asks the user for the last name.
      *
      * @return void
-     * @todo   Use the Laravel Validator
      */
     protected function askUserLastName() {
 
@@ -170,7 +168,6 @@ class AppCommand extends Command {
      * Asks the user for the user email address.
      *
      * @return void
-     * @todo   Use the Laravel Validator
      */
     protected function askUserEmail() {
 
@@ -193,7 +190,6 @@ class AppCommand extends Command {
      * Asks the user for the user password.
      *
      * @return void
-     * @todo   Use the Laravel Validator
      */
     protected function askUserPassword() {
 
