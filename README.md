@@ -1,33 +1,21 @@
 Fully CMS
 =============
 
-### Laravel 5 Content Managment System
-
-### just an example, needs further development!
+### Laravel 5.1 Content Managment System
 
 ## not stable!
-
-## Fully CMS Ver. 2.0.0
-##### Change log:
-* The title has been changed to "Fully CMS"
-* More functions
-* Better optimization
-* Laravel 5
-* Sentinel Package - User/Role Managment
 
 <img src="https://raw.githubusercontent.com/sseffa/fullycms/master/screenshots/1.png" width="900" />
 
 ## Features
 
-* Laravel 5
+* Laravel 5.1
 * Bootstrap
-* Authentication Sentry
+* Authentication Sentinel
 * Ckeditor
 * Bootstrap Code Prettify
 * File Manager
 * Dropzone.js
-* 404 for not found pages
-* Custom Error Pages
 * Backend
   * Manage menu (nested)
   * Manage article (category, tag)
