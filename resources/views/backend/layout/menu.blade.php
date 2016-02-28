@@ -118,7 +118,7 @@
                 <a href="{{ url(getLang() . '/admin/settings') }}"> <i class="fa fa-gear"></i> <span>Settings</span> </a>
             </li>
             <li class="{{ setActive('admin/logout*') }}">
-                <a href="{{ url(getLang() . '/admin/logout') }}"> <i class="fa fa-sign-out"></i> <span>Logout</span> </a>
+                <a href="{{ url('/admin/logout') }}"> <i class="fa fa-sign-out"></i> <span>Logout</span> </a>
             </li>
         </ul>
     </section>

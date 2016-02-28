@@ -16,7 +16,7 @@ use Fully\Http\Controllers\Controller;
 /**
  * Class AuthController
  * @package Fully\Http\Controllers\Admin
- * @author Sefa Karagöz <karagozsefa@gmail.com>
+ * @author Sefa KaragÃ¶z <karagozsefa@gmail.com>
  */
 class AuthController extends Controller
 {
@@ -58,7 +58,7 @@ class AuthController extends Controller
             else
                 $result = Sentinel::authenticate($credentials);
 
-            Log::info("Kullanýcý (".$request->get('email').") sisteme giriþ yaptý");
+            Log::info("Kullanï¿½cï¿½ (".$request->get('email').") sisteme giriï¿½ yaptï¿½");
 
             if($result)
                 return Redirect::route('admin.dashboard');
@@ -78,7 +78,7 @@ class AuthController extends Controller
     public function getLogout()
     {
         Sentinel::logout(Sentinel::getUser());
-        return Redirect::route('backend.login');
+        return Redirect::route('admin.login');
     }
 
     public function getForgotPassword()
@@ -114,7 +114,7 @@ class AuthController extends Controller
         {
 
             flash()->error('E-mail address you entered is not found!');
-            return Redirect::route('backend.forgot.password');
+            return Redirect::route('admin.forgot.password');
         }
 
         $reminderData = Reminder::create($this->user);
@@ -132,10 +132,10 @@ class AuthController extends Controller
                 $message->to($request->get('email'), 'Lorem Lipsum')->subject('Reset Password');
             });
 
-            return Redirect::route('backend.login');
+            return Redirect::route('admin.login');
         } catch(Exception $ex)
         {
-            return Redirect::route('backend.forgot.password')->withErrors(array('forgot-password' => 'Password reset failed'));
+            return Redirect::route('admin.forgot.password')->withErrors(array('forgot-password' => 'Password reset failed'));
         }
         /*$mailer = new Mailer;
         $mailer->send('emails.auth.reset-password', 'user@fully.com', 'Reset Password', $formData);*/
@@ -154,7 +154,7 @@ class AuthController extends Controller
         }
         else
         {
-            return Redirect::route('backend.login');
+            return Redirect::route('admin.login');
         }
     }
 
