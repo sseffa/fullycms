@@ -36,7 +36,7 @@ class FaqController extends Controller {
         $page = Input::get('page', 1);
         $perPage = 10;
         $pagiData = $this->faq->paginate($page, $perPage, true);
-        $faqs = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $faqs = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

@@ -40,7 +40,7 @@ class NewsController extends Controller {
         $perPage = 10;
         $pagiData = $this->news->paginate($page, $perPage, true);
 
-        $news = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $news = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

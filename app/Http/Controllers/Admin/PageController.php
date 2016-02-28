@@ -40,7 +40,7 @@ class PageController extends Controller
         $page = Input::get('page', 1);
         $perPage = 10;
         $pagiData = $this->page->paginate($page, $perPage, true);
-        $pages = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $pages = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(),[
             'path' => Paginator::resolveCurrentPath()
         ]);
 

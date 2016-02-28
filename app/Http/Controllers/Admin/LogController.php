@@ -32,7 +32,7 @@ class LogController extends Controller {
 
         $logs = LogViewer::getLogs($level);
 
-        $paginator = new LengthAwarePaginator($logs,count($logs), 25, [
+        $paginator = new LengthAwarePaginator($logs,count($logs), 25,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

@@ -39,7 +39,7 @@ class ArticleController extends Controller {
         $pagiData = $this->article->paginate($page, $perPage, false);
 
 
-        $articles = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $articles = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

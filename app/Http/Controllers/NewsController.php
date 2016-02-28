@@ -10,8 +10,8 @@ use Illuminate\Pagination\Paginator;
  * Class NewsController
  * @author Sefa Karagöz
  */
-class NewsController extends Controller {
-
+class NewsController extends Controller
+{
     /**
      * @var Fully\Repositories\News\NewsInterface
      */
@@ -20,7 +20,8 @@ class NewsController extends Controller {
     /**
      * @param NewsInterface $news
      */
-    public function __construct(NewsInterface $news) {
+    public function __construct(NewsInterface $news)
+    {
 
         $this->news = $news;
     }
@@ -30,7 +31,8 @@ class NewsController extends Controller {
      *
      * @return Response
      */
-    public function index() {
+    public function index()
+    {
 
         //$news = $this->news->paginate();
 
@@ -38,7 +40,7 @@ class NewsController extends Controller {
         $perPage = 5;
         $pagiData = $this->news->paginate($page, $perPage, false);
 
-        $news = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $news = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 
@@ -51,7 +53,8 @@ class NewsController extends Controller {
      * @param $id
      * @return \Illuminate\View\View
      */
-    public function show($slug) {
+    public function show($slug)
+    {
 
         $news = $this->news->getBySlug($slug);
 

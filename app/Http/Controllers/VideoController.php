@@ -40,7 +40,7 @@ class VideoController extends Controller
         $perPage = 12;
         $pagiData = $this->video->paginate($page, $perPage, false);
 
-        $videos = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $videos = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

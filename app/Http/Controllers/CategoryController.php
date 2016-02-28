@@ -42,7 +42,7 @@ class CategoryController extends Controller {
         $perPage = 10;
         $pagiData = $this->category->paginate($page, $perPage, false);
 
-        $categories = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $categories = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

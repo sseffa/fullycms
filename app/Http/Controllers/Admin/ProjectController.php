@@ -37,7 +37,7 @@ class ProjectController extends Controller
         $page = Input::get('page', 1);
         $perPage = 10;
         $pagiData = $this->project->paginate($page, $perPage, true);
-        $projects = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $projects = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

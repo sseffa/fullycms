@@ -26,7 +26,7 @@ class SearchController extends Controller
 
         $result = Search::search($q);
 
-        $paginator = new LengthAwarePaginator($result, count($result), 10, [
+        $paginator = new LengthAwarePaginator($result, count($result), 10, Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 

@@ -48,7 +48,7 @@ class ArticleController extends Controller
         $perPage = 10;
         $pagiData = $this->article->paginate($page, $perPage, true);
 
-        $articles = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $articles = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 
@@ -64,7 +64,6 @@ class ArticleController extends Controller
      */
     public function create()
     {
-
         $categories = $this->category->lists();
         return view('backend.article.create', compact('categories'));
     }

@@ -44,7 +44,7 @@ class PhotoGalleryController extends Controller
         $perPage = 10;
         $pagiData = $this->photoGallery->paginate($page, $perPage, true);
 
-        $photo_galleries = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, [
+        $photo_galleries = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
             'path' => Paginator::resolveCurrentPath()
         ]);
 
