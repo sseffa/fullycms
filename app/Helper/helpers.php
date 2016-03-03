@@ -59,6 +59,7 @@ function langURL($url = null) {
 
 /**
  * @param $route
+ * @param array $parameters
  * @return mixed
  */
 function langRoute($route, $parameters = array()) {
@@ -67,6 +68,7 @@ function langRoute($route, $parameters = array()) {
 }
 
 /**
+ *
  * @param $route
  * @return mixed
  */

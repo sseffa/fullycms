@@ -9,14 +9,14 @@
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
         "cartalyst/sentinel": "2.0.*",
-        "intervention/image": "dev-master",
         "mcamara/laravel-localization": "1.0.*",
-        "barryvdh/laravel-debugbar": "2.0.*@dev",
-        "cviebrock/eloquent-sluggable": "dev-master",
-        "davejamesmiller/laravel-breadcrumbs": "dev-master",
-        "laracasts/flash": "~1.3",
+        "barryvdh/laravel-debugbar": "2.2.*",
+        "davejamesmiller/laravel-breadcrumbs": "3.0.*",
         "sseffa/video-api": "dev-master",
-        "laracasts/flash": "~1.3"
+        "laracasts/flash": "^1.3",
+        "rap2hpoutre/laravel-log-viewer": "^0.5.3",
+        "cviebrock/eloquent-sluggable": "^3.1",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

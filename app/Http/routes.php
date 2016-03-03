@@ -214,7 +214,7 @@ Route::group(array('prefix' => LaravelLocalization::getCurrentLocale()), functio
                                                       'uses' => 'MenuController@togglePublish'))->where('id', '[0-9]+');
 
         // log
-        Route::any('log', ['as' => 'admin.log', 'uses' => 'LogController@index']);
+        Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
         // language
         Route::get('language/set-locale/{language}', array('as'   => 'admin.language.set',
