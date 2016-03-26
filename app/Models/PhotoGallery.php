@@ -1,15 +1,18 @@
-<?php namespace Fully\Models;
+<?php
 
-use Fully\Interfaces\ModelInterface as ModelInterface;
-use Cviebrock\EloquentSluggable\SluggableInterface;
+namespace Fully\Models;
+
 use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Fully\Interfaces\ModelInterface as ModelInterface;
 
 /**
- * Class PhotoGallery
- * @author Sefa Karagöz
+ * Class PhotoGallery.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class PhotoGallery extends BaseModel implements ModelInterface, SluggableInterface {
-
+class PhotoGallery extends BaseModel implements ModelInterface, SluggableInterface
+{
     use SluggableTrait;
 
     public $table = 'photo_galleries';
@@ -18,21 +21,21 @@ class PhotoGallery extends BaseModel implements ModelInterface, SluggableInterfa
 
     protected $sluggable = array(
         'build_from' => 'title',
-        'save_to'    => 'slug',
+        'save_to' => 'slug',
     );
 
-    public function photos() {
-
+    public function photos()
+    {
         return $this->morphMany('Fully\Models\Photo', 'relationship', 'type');
     }
 
-    public function setUrlAttribute($value) {
-
+    public function setUrlAttribute($value)
+    {
         $this->attributes['url'] = $value;
     }
 
-    public function getUrlAttribute() {
-
-        return "photo-gallery/" . $this->attributes['slug'];
+    public function getUrlAttribute()
+    {
+        return 'photo-gallery/'.$this->attributes['slug'];
     }
 }

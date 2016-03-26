@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Slider;
+<?php
 
-use Fully\Repositories\Slider\SliderInterface;
+namespace Fully\Repositories\Slider;
 
 /**
- * Class AbstractSliderDecorator
- * @package Fully\Repositories\Slider
- * @author Sefa Karagöz
+ * Class AbstractSliderDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractSliderDecorator implements SliderInterface {
-
+abstract class AbstractSliderDecorator implements SliderInterface
+{
     /**
      * @var SliderInterface
      */
@@ -17,16 +17,16 @@ abstract class AbstractSliderDecorator implements SliderInterface {
     /**
      * @param SliderInterface $slider
      */
-    public function __construct(SliderInterface $slider) {
-
+    public function __construct(SliderInterface $slider)
+    {
         $this->slider = $slider;
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->slider->all();
     }
 }

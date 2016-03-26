@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Setting;
+<?php
 
-use Fully\Repositories\Setting\SettingInterface;
+namespace Fully\Repositories\Setting;
 
 /**
- * Class AbstractSettingDecorator
- * @package Fully\Repositories\Setting
- * @author Sefa Karagöz
+ * Class AbstractSettingDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractSettingDecorator implements SettingInterface {
-
+abstract class AbstractSettingDecorator implements SettingInterface
+{
     /**
      * @var SettingInterface
      */
@@ -17,16 +17,16 @@ abstract class AbstractSettingDecorator implements SettingInterface {
     /**
      * @param SettingInterface $setting
      */
-    public function __construct(SettingInterface $setting) {
-
+    public function __construct(SettingInterface $setting)
+    {
         $this->setting = $setting;
     }
 
     /**
      * @return mixed
      */
-    public function getSettings() {
-
+    public function getSettings()
+    {
         return $this->setting->getSettings();
     }
 }

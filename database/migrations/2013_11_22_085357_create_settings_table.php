@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSettingsTable extends Migration {
-
+class CreateSettingsTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
+    public function up()
+    {
         Schema::create('settings', function ($table) {
 
             $table->increments('id');
@@ -20,14 +18,11 @@ class CreateSettingsTable extends Migration {
         });
     }
 
-
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
+    public function down()
+    {
         Schema::drop('settings');
     }
 }

@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Project;
+<?php
 
-use Fully\Repositories\Project\ProjectInterface;
+namespace Fully\Repositories\Project;
 
 /**
- * Class AbstractProjectDecorator
- * @package Fully\Repositories\Project
- * @author Sefa Karagöz
+ * Class AbstractProjectDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractProjectDecorator implements ProjectInterface {
-
+abstract class AbstractProjectDecorator implements ProjectInterface
+{
     /**
      * @var ProjectInterface
      */
@@ -17,45 +17,47 @@ abstract class AbstractProjectDecorator implements ProjectInterface {
     /**
      * @param ProjectInterface $project
      */
-    public function __construct(ProjectInterface $project) {
-
+    public function __construct(ProjectInterface $project)
+    {
         $this->project = $project;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->project->find($id);
     }
 
-
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug) {
-
+    public function getBySlug($slug)
+    {
         return $this->project->getBySlug($slug);
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->project->all();
     }
 
     /**
      * @param null $perPage
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         return $this->project->paginate($page, $limit, $all);
     }
 }

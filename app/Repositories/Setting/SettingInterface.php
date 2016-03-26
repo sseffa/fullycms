@@ -1,12 +1,14 @@
-<?php namespace Fully\Repositories\Setting;
+<?php
+
+namespace Fully\Repositories\Setting;
 
 /**
- * Interface SettingInterface
- * @package Fully\Repositories\Setting
- * @author Sefa Karagöz
+ * Interface SettingInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface SettingInterface {
-
+interface SettingInterface
+{
     /**
      * @return mixed
      */

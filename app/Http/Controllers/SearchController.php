@@ -1,34 +1,38 @@
-<?php namespace Fully\Http\Controllers;
+<?php
 
-use Flash;
-use Input;
+namespace Fully\Http\Controllers;
+
+use Illuminate\Http\Request;
+
 use View;
 use Search;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
+use Fully\Services\Pagination;
 
 /**
- * Class SearchController
- * @author Sefa Karagöz
+ * Class SearchController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class SearchController extends Controller
 {
-    public function index()
-    {
+    protected $perPage;
 
-        $q = Input::get('search');
+    public function __construct()
+    {
+        $this->perPage = config('fully.per_page');
+    }
+
+    public function index(Request $request)
+    {
+        $q = $request->get('search');
 
         View::composer('frontend/layout/menu', function ($view) use ($q)
         {
-
             $view->with('q', $q);
         });
 
         $result = Search::search($q);
-
-        $paginator = new LengthAwarePaginator($result, count($result), 10, Paginator::resolveCurrentPage(), [
-            'path' => Paginator::resolveCurrentPath()
-        ]);
+        $paginator = Pagination::makeLengthAware($result, count($result), $this->perPage);
 
         return view('frontend.search.index', compact('paginator', 'q'));
     }

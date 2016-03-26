@@ -1,14 +1,17 @@
-<?php namespace Fully\Interfaces;
+<?php
+
+namespace Fully\Interfaces;
 
 /**
- * Class ModelInterface
- * @package Fully\Interfaces
- * @author Sefa Karagöz
+ * Class ModelInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface ModelInterface {
-
+interface ModelInterface
+{
     /**
      * @param $value
+     *
      * @return mixed
      */
     public function setUrlAttribute($value);

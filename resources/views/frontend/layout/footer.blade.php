@@ -87,11 +87,11 @@
             <div class="col-md-3 col-sm-6">
                 <h4>Tags</h4>
             <div class="tagcloud">
-                <a href="">Features</a><a href="">Inspiration</a><a href="">Showcase</a>
-                <a href="">Graphic Design</a><a href="">Illustration</a><a href="">Design</a>
-                <a href="">Web Design</a><a href="">Video</a><a href="">ART</a><a href="">New Work</a>
-                <a href="">Animation</a><a href="">Photoshop</a><a href="">Digital Painting</a>
-                <a href="">CG</a><a href="">Howto</a>
+                @if(isset($tags))
+                    @foreach($tags as $tag)
+                        <a href="{!! URL::route('dashboard.tag', array('tag'=>$tag->slug)) !!}">{!! $tag->name !!}</a>
+                    @endforeach
+                @endif
             </div>
             </div>
 

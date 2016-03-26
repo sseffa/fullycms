@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration {
-
+class CreateArticlesTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
+    public function up()
+    {
         Schema::create('articles', function ($table) {
 
             $table->increments('id');
@@ -31,11 +29,9 @@ class CreateArticlesTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
+    public function down()
+    {
         Schema::drop('articles');
     }
 }

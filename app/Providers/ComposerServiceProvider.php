@@ -1,14 +1,14 @@
-<?php namespace Fully\Providers;
+<?php
+
+namespace Fully\Providers;
 
 use View;
 use Illuminate\Support\ServiceProvider;
 
-class ComposerServiceProvider extends ServiceProvider {
-
+class ComposerServiceProvider extends ServiceProvider
+{
     /**
      * Register bindings in the container.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -23,13 +23,9 @@ class ComposerServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register
-     *
-     * @return void
+     * Register.
      */
     public function register()
     {
-
     }
-
 }

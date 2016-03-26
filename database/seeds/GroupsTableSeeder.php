@@ -2,20 +2,18 @@
 
 use Illuminate\Database\Seeder;
 
-class GroupsTableSeeder extends Seeder {
-
+class GroupsTableSeeder extends Seeder
+{
     /**
      * Run the database seeding.
-     *
-     * @return void
      */
-    public function run() {
-
+    public function run()
+    {
         DB::table('groups')->truncate();
 
         DB::table('groups')->insert(array(
             array(
-                'name'        => 'Admin',
+                'name' => 'Admin',
                 'permissions' => '{
                           "admin": 1,
                           "admin.dashboard": 1,
@@ -100,9 +98,9 @@ class GroupsTableSeeder extends Seeder {
                           "admin.group.edit": 1,
                           "admin.group.destroy": 1
                         }',
-                'created_at'  => new DateTime,
-                'updated_at'  => new DateTime
-            )
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+            ),
         ));
     }
 }

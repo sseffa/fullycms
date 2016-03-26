@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqsTable extends Migration {
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+class CreateFaqsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
         Schema::create('faqs', function ($table) {
 
             $table->increments('id');
@@ -20,16 +18,13 @@ class CreateFaqsTable extends Migration {
             $table->string('lang', 20);
             $table->timestamps();
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
         Schema::drop('faqs');
-	}
-
+    }
 }

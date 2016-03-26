@@ -1,16 +1,17 @@
-<?php namespace Fully\Repositories\Slider;
+<?php
 
-use Fully\Repositories\RepositoryInterface;
+namespace Fully\Repositories\Slider;
 
 /**
- * Interface SliderInterface
- * @package Fully\Repositories\Slider
- * @author Sefa Karagöz
+ * Interface SliderInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface SliderInterface {
-
+interface SliderInterface
+{
     /**
-     * Get al data
+     * Get al data.
+     *
      * @return mixed
      */
     public function all();

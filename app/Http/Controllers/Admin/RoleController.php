@@ -1,8 +1,9 @@
-<?php namespace Fully\Http\Controllers\Admin;
+<?php
+
+namespace Fully\Http\Controllers\Admin;
 
 use Fully\Http\Controllers\Controller;
 use Redirect;
-use Sentinel;
 use View;
 use Illuminate\Support\Str;
 use Input;
@@ -11,9 +12,9 @@ use Validator;
 use Fully\Models\Role;
 
 /**
- * Class RoleController
- * @package App\Controllers\Admin
- * @author Sefa Karagöz
+ * Class RoleController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class RoleController extends Controller
 {
@@ -36,7 +37,6 @@ class RoleController extends Controller
      */
     public function create()
     {
-
         return view('backend.role.create');
     }
 
@@ -49,26 +49,23 @@ class RoleController extends Controller
     {
         $permissions = array();
 
-        foreach(Input::get('permissions') as $k => $v)
-        {
-            $permissions[$k] = ($v == "1") ? true : false;
+        foreach (Input::get('permissions') as $k => $v) {
+            $permissions[$k] = ($v == '1') ? true : false;
         }
 
         $formData = array(
-            'slug'        => Str::slug(Input::get('name')),
-            'name'        => Input::get('name'),
-            'permissions' => $permissions
+            'slug' => Str::slug(Input::get('name')),
+            'name' => Input::get('name'),
+            'permissions' => $permissions,
         );
 
         $rules = array(
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
         );
 
         $validation = Validator::make($formData, $rules);
 
-        if($validation->fails())
-        {
-
+        if ($validation->fails()) {
             return Redirect::action('Admin\RolesController@create')->withErrors($validation)->withInput();
         }
 
@@ -81,46 +78,50 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
     {
         $role = Role::find($id);
+
         return view('backend.role.show', compact('role'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
     {
         $role = Role::find($id);
+
         return view('backend.role.edit', compact('role'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function update($id)
     {
         $permissions = array();
 
-        foreach(Input::get('permissions') as $k => $v)
-        {
-            $permissions[$k] = ($v == "1") ? true : false;
+        foreach (Input::get('permissions') as $k => $v) {
+            $permissions[$k] = ($v == '1') ? true : false;
         }
 
         $formData = array(
-            'slug'        => Str::slug(Input::get('name')),
-            'name'        => Input::get('name'),
-            'permissions' => $permissions
+            'slug' => Str::slug(Input::get('name')),
+            'name' => Input::get('name'),
+            'permissions' => $permissions,
         );
 
         $role = Role::find($id);
@@ -138,7 +139,8 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
@@ -147,16 +149,19 @@ class RoleController extends Controller
         $role->delete();
 
         Flash::message('Role was successfully deleted');
+
         return Redirect::action('App\Controllers\Admin\RoleController@index');
     }
 
     /**
      * @param $id
+     *
      * @return View
      */
     public function confirmDestroy($id)
     {
         $role = Role::find($id);
+
         return view('backend.role.confirm-destroy', compact('role'));
     }
 }

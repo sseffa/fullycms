@@ -16,7 +16,7 @@
 </section>
 <br>
 <br>
-<div class="container">
+<div class="col-lg-10">
 
     @include('flash::message')
     <ul class="nav nav-tabs" id="myTab">

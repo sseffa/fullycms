@@ -1,16 +1,19 @@
-<?php namespace Fully\Repositories\Video;
+<?php
+
+namespace Fully\Repositories\Video;
 
 use Fully\Repositories\RepositoryInterface;
 
 /**
- * Interface VideoInterface
- * @package Fully\Repositories\Video
- * @author Sefa Karagöz
+ * Interface VideoInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface VideoInterface extends RepositoryInterface {
-
+interface VideoInterface extends RepositoryInterface
+{
     /**
      * @param $slug
+     *
      * @return mixed
      */
     public function getBySlug($slug);

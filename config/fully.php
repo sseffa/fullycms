@@ -1,88 +1,98 @@
 <?php
 
-return array(
+return [
 
-    'cache'    => false,
+    'cache' => true,
 
     'per_page' => 10,
 
-    'youtube_api_key' => 'AIzaSyDAVKCgnt1-HxSJS-KTRVYlrnA5J3PU3bc',
+    'youtube_api_key' => 'youtube api key',
 
     /*
     |--------------------------------------------------------------------------
     | Modules config
     |--------------------------------------------------------------------------
     */
-    'modules'  => array(
+    'modules'         => [
 
-        'photo_gallery' => array(
+        'photo_gallery' => [
 
-            'thumb_size' => array(
+            'thumb_size' => [
                 'width'  => 150,
                 'height' => 150
-            ),
+            ],
 
-            'image_dir'  => '/uploads/dropzone/',
-        ),
+            'image_dir' => '/uploads/dropzone/',
+            'per_page' => 10,
+        ],
 
-        'slider'        => array(
+        'slider' => [
 
-            'image_size' => array(
+            'image_size' => [
                 'width'  => null,
                 'height' => 600
-            ),
+            ],
 
-            'image_dir'  => '/uploads/slider/',
-        ),
+            'image_dir' => '/uploads/slider/',
+        ],
 
-        'article'       => array(
+        'article' => [
 
-            'image_size' => array(
+            'image_size' => [
                 'width'  => 730,
                 'height' => 290
-            ),
-            'thumb_size' => array(
+            ],
+            'thumb_size' => [
                 'width'  => 64,
                 'height' => 64
-            ),
+            ],
 
+            'image_dir' => '/uploads/article/',
 
-            'image_dir'  => '/uploads/article/',
-        ),
+            'per_page' => 10,
+        ],
 
-        'news'          => array(
+        'news' => [
 
-            'image_size' => array(
+            'image_size' => [
                 'width'  => 240,
                 'height' => 150
-            ),
+            ],
 
-            'image_dir'  => '/uploads/news/',
-        ),
+            'image_dir' => '/uploads/news/',
 
-        'project'       => array(
+            'per_page' => 10,
+        ],
 
-            'image_size' => array(
+        'project' => [
+
+            'image_size' => [
                 'width'  => 750,
                 'height' => 600
-            ),
-            'thumb_size' => array(
+            ],
+            'thumb_size' => [
                 'width'  => 370,
                 'height' => 250
-            ),
+            ],
 
-            'image_dir'  => '/uploads/project/',
+            'image_dir' => '/uploads/project/',
 
-            'category'   => array('Bootstrap', 'HTML', 'CSS'),
-        ),
+            'category' => ['Bootstrap', 'HTML', 'CSS'],
 
-        'category'      => array(),
-        'faq'           => array(),
-        'page'          => array(),
-        'video'         => array(),
-        'menu'          => array(),
-        'setting'       => array(),
-        'user'          => array(),
-        'group'         => array(),
-    ),
-);
+            'per_page' => 10,
+        ],
+
+        'category' => [
+            'per_page' => 10,
+        ],
+        'faq'      => [],
+        'page'     => [],
+        'video'    => [
+            'per_page' => 12,
+        ],
+        'menu'     => [],
+        'setting'  => [],
+        'user'     => [],
+        'group'    => [],
+    ]
+];

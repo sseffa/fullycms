@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Faq;
+<?php
 
-use Fully\Repositories\Faq\FaqInterface;
+namespace Fully\Repositories\Faq;
 
 /**
- * Class AbstractFaqDecorator
- * @package Fully\Repositories\Faq
- * @author Sefa Karagöz
+ * Class AbstractFaqDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractFaqDecorator implements FaqInterface {
-
+abstract class AbstractFaqDecorator implements FaqInterface
+{
     /**
      * @var FaqInterface
      */
@@ -17,35 +17,37 @@ abstract class AbstractFaqDecorator implements FaqInterface {
     /**
      * @param FaqInterface $faq
      */
-    public function __construct(FaqInterface $faq) {
-
+    public function __construct(FaqInterface $faq)
+    {
         $this->faq = $faq;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->faq->find($id);
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->faq->all();
     }
 
     /**
      * @param null $perPage
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         return $this->faq->paginate($page, $limit, $all);
     }
 }

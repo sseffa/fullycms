@@ -1,16 +1,19 @@
-<?php namespace Fully\Repositories\PhotoGallery;
+<?php
+
+namespace Fully\Repositories\PhotoGallery;
 
 use Fully\Repositories\RepositoryInterface;
 
 /**
- * Interface PhotoGalleryInterface
- * @package Fully\Repositories\PhotoGallery
- * @author Sefa Karagöz
+ * Interface PhotoGalleryInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface PhotoGalleryInterface extends RepositoryInterface {
-
+interface PhotoGalleryInterface extends RepositoryInterface
+{
     /**
      * @param $slug
+     *
      * @return mixed
      */
     public function getBySlug($slug);

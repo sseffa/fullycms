@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Video;
+<?php
 
-use Fully\Repositories\Video\VideoInterface;
+namespace Fully\Repositories\Video;
 
 /**
- * Class AbstractVideoDecorator
- * @package Fully\Repositories\Video
- * @author Sefa Karagöz
+ * Class AbstractVideoDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractVideoDecorator implements VideoInterface {
-
+abstract class AbstractVideoDecorator implements VideoInterface
+{
     /**
      * @var VideoInterface
      */
@@ -17,44 +17,48 @@ abstract class AbstractVideoDecorator implements VideoInterface {
     /**
      * @param VideoInterface $video
      */
-    public function __construct(VideoInterface $video) {
-
+    public function __construct(VideoInterface $video)
+    {
         $this->video = $video;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->video->find($id);
     }
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug) {
-
+    public function getBySlug($slug)
+    {
         return $this->video->getBySlug($slug);
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->video->all();
     }
 
     /**
-     * @param null $perPage
+     * Paginator
+     * @param int $page
+     * @param int $limit
      * @param bool $all
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         return $this->video->paginate($page, $limit, $all);
     }
 }

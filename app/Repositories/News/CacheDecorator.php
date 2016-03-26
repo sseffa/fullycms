@@ -1,43 +1,46 @@
-<?php namespace Fully\Repositories\News;
+<?php
+
+namespace Fully\Repositories\News;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\News\AbstractNewsDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\News
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractNewsDecorator {
-
+class CacheDecorator extends AbstractNewsDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "news";
+    protected $cacheKey = 'news';
 
     /**
-     * @param NewsInterface $news
+     * @param NewsInterface  $news
      * @param CacheInterface $cache
      */
-    public function __construct(NewsInterface $news, CacheInterface $cache) {
-
+    public function __construct(NewsInterface $news, CacheInterface $cache)
+    {
         parent::__construct($news);
         $this->cache = $cache;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
-        $key = md5(getLang() . $this->cacheKey . '.id.' . $id);
+    public function find($id)
+    {
+        $key = md5(getLang().$this->cacheKey.'.id.'.$id);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -52,11 +55,12 @@ class CacheDecorator extends AbstractNewsDecorator {
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug){
-
-        $key = md5(getLang() . $this->cacheKey . '.slug.' . $slug);
+    public function getBySlug($slug)
+    {
+        $key = md5(getLang().$this->cacheKey.'.slug.'.$slug);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -72,9 +76,9 @@ class CacheDecorator extends AbstractNewsDecorator {
     /**
      * @return mixed
      */
-    public function all() {
-
-        $key = md5(getLang() . $this->cacheKey . '.all.news');
+    public function all()
+    {
+        $key = md5(getLang().$this->cacheKey.'.all.news');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -90,12 +94,13 @@ class CacheDecorator extends AbstractNewsDecorator {
     /**
      * @param null $page
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         $allkey = ($all) ? '.all' : '';
-        $key = md5(getLang() . $this->cacheKey . 'page.' . $page . '.' . $limit . $allkey);
+        $key = md5(getLang().$this->cacheKey.'page.'.$page.'.'.$limit.$allkey);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -110,11 +115,12 @@ class CacheDecorator extends AbstractNewsDecorator {
 
     /**
      * @param $limit
+     *
      * @return mixed
      */
-    public function getLastNews($limit) {
-
-        $key = md5(getLang() . $limit . $this->cacheKey . '.last');
+    public function getLastNews($limit)
+    {
+        $key = md5(getLang().$limit.$this->cacheKey.'.last');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);

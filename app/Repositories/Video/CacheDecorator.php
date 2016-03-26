@@ -1,43 +1,46 @@
-<?php namespace Fully\Repositories\Video;
+<?php
+
+namespace Fully\Repositories\Video;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\Video\AbstractVideoDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\Video
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractVideoDecorator {
-
+class CacheDecorator extends AbstractVideoDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "video";
+    protected $cacheKey = 'video';
 
     /**
      * @param VideoInterface $video
      * @param CacheInterface $cache
      */
-    public function __construct(VideoInterface $video, CacheInterface $cache) {
-
+    public function __construct(VideoInterface $video, CacheInterface $cache)
+    {
         parent::__construct($video);
         $this->cache = $cache;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
-        $key = md5(getLang() . $this->cacheKey . '.id.' . $id);
+    public function find($id)
+    {
+        $key = md5(getLang().$this->cacheKey.'.id.'.$id);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -52,11 +55,12 @@ class CacheDecorator extends AbstractVideoDecorator {
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug){
-
-        $key = md5(getLang() . $this->cacheKey . '.slug.' . $slug);
+    public function getBySlug($slug)
+    {
+        $key = md5(getLang().$this->cacheKey.'.slug.'.$slug);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -72,9 +76,9 @@ class CacheDecorator extends AbstractVideoDecorator {
     /**
      * @return mixed
      */
-    public function all() {
-
-        $key = md5(getLang() . $this->cacheKey . '.all.videos');
+    public function all()
+    {
+        $key = md5(getLang().$this->cacheKey.'.all.videos');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -90,12 +94,13 @@ class CacheDecorator extends AbstractVideoDecorator {
     /**
      * @param null $page
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         $allkey = ($all) ? '.all' : '';
-        $key = md5(getLang() . $this->cacheKey . '.page.' . $page . '.' . $limit . $allkey);
+        $key = md5(getLang().$this->cacheKey.'.page.'.$page.'.'.$limit.$allkey);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -110,7 +115,10 @@ class CacheDecorator extends AbstractVideoDecorator {
 
     /**
      * @param $tag
+     *
      * @return mixed|void
      */
-    public function findByTag($tag) {}
+    public function findByTag($tag)
+    {
+    }
 }

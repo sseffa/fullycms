@@ -1,32 +1,34 @@
-<?php namespace Fully\Repositories\Slider;
+<?php
+
+namespace Fully\Repositories\Slider;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\Slider\AbstractSliderDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\Slider
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractSliderDecorator {
-
+class CacheDecorator extends AbstractSliderDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "slider";
+    protected $cacheKey = 'slider';
 
     /**
      * @param SliderInterface $slider
-     * @param CacheInterface $cache
+     * @param CacheInterface  $cache
      */
-    public function __construct(SliderInterface $slider, CacheInterface $cache) {
-
+    public function __construct(SliderInterface $slider, CacheInterface $cache)
+    {
         parent::__construct($slider);
         $this->cache = $cache;
     }
@@ -34,9 +36,9 @@ class CacheDecorator extends AbstractSliderDecorator {
     /**
      * @return mixed
      */
-    public function all() {
-
-        $key = md5(getLang() . $this->cacheKey . 'all.sliders');
+    public function all()
+    {
+        $key = md5(getLang().$this->cacheKey.'all.sliders');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);

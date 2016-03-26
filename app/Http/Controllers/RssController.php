@@ -1,20 +1,21 @@
-<?php namespace Fully\Http\Controllers;
+<?php
 
+namespace Fully\Http\Controllers;
+
+use Response;
 use Fully\Models\News;
 use Fully\Feeder\Facade\Feeder;
-use Response;
 
 /**
- * Class RssController
- * @author Sefa Karagöz
+ * Class RssController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class RssController extends Controller {
-
-    public function index() {
-
-        $items = News::orderBy('created_at', 'desc')
-            ->take(10)
-            ->get();
+class RssController extends Controller
+{
+    public function index()
+    {
+        $items = News::orderBy('created_at', 'desc')->take(10)->get();
 
         $data = array();
         foreach ($items as $k => $v) {

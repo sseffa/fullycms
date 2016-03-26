@@ -59,7 +59,6 @@ Breadcrumbs::register('video.show', function ($breadcrumbs, $video) {
     $breadcrumbs->push($video->title, route('dashboard.video.show', $video->id));
 });
 
-
 Breadcrumbs::register('project', function ($breadcrumbs) {
 
     $breadcrumbs->parent('home');

@@ -1,35 +1,36 @@
-<?php namespace Fully\Http\Controllers;
+<?php
+
+namespace Fully\Http\Controllers;
 
 use Fully\Repositories\Faq\FaqInterface;
 
 /**
- * Class FaqController
- * @author Sefa Karagöz
+ * Class FaqController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class FaqController extends Controller {
-
+class FaqController extends Controller
+{
     /**
-     * @var Fully\Repositories\Faq\FaqInterface
+     * @var FaqInterface
      */
     protected $faq;
 
     /**
      * @param FaqInterface $faq
      */
-    public function __construct(FaqInterface $faq) {
-
+    public function __construct(FaqInterface $faq)
+    {
         $this->faq = $faq;
     }
 
     /**
-     * Display page
-     * @param $id
-     * @return \Illuminate\View\View
+     * Display page.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show() {
-
+    public function show()
+    {
         $faqs = $this->faq->all();
-
         return view('frontend.faq.show', compact('faqs'));
     }
 }

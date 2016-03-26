@@ -1,43 +1,46 @@
-<?php namespace Fully\Repositories\Setting;
+<?php
+
+namespace Fully\Repositories\Setting;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\Setting\AbstractSettingDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\Setting
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractSettingDecorator {
-
+class CacheDecorator extends AbstractSettingDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "setting";
+    protected $cacheKey = 'setting';
 
     /**
      * @param SettingInterface $setting
-     * @param CacheInterface $cache
+     * @param CacheInterface   $cache
      */
-    public function __construct(SettingInterface $setting, CacheInterface $cache) {
-
+    public function __construct(SettingInterface $setting, CacheInterface $cache)
+    {
         parent::__construct($setting);
         $this->cache = $cache;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function getSettings() {
-
-        $key = md5(getLang() . $this->cacheKey . 'settings');
+    public function getSettings()
+    {
+        $key = md5(getLang().$this->cacheKey.'settings');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);

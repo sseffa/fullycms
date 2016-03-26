@@ -1,12 +1,14 @@
-<?php namespace Fully\Repositories\Tag;
+<?php
+
+namespace Fully\Repositories\Tag;
 
 use Fully\Repositories\RepositoryInterface;
 
 /**
- * Interface TagInterface
- * @package Fully\Repositories\Tag
- * @author Sefa Karagöz
+ * Interface TagInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface TagInterface extends RepositoryInterface {
-
+interface TagInterface extends RepositoryInterface
+{
 }

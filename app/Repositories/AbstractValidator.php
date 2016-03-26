@@ -1,32 +1,36 @@
-<?php namespace Fully\Repositories;
+<?php
+
+namespace Fully\Repositories;
 
 use Validator as V;
 
 /**
- * Class AbstractValidator
- * @package Fully\Repositories
- * @author Sefa Karagöz
+ * Class AbstractValidator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractValidator {
-
+abstract class AbstractValidator
+{
     /**
      * @var
      */
     protected $errors;
 
     /**
-     * Check valid attributes
+     * Check valid attributes.
+     *
      * @param array $attributes
      * @param array $rules
+     *
      * @return bool
      */
-    public function isValid(array $attributes, array $rules = null) {
-
+    public function isValid(array $attributes, array $rules = null)
+    {
         $v = V::make($attributes, ($rules) ? $rules : static::$rules);
 
         if ($v->fails()) {
-
             $this->setErrors($v->messages());
+
             return false;
         }
 
@@ -34,20 +38,22 @@ abstract class AbstractValidator {
     }
 
     /**
-     * Get validation error messages
+     * Get validation error messages.
+     *
      * @return mixed
      */
-    public function getErrors() {
-
+    public function getErrors()
+    {
         return $this->errors;
     }
 
     /**
-     * Set validation error messages
+     * Set validation error messages.
+     *
      * @param $error
      */
-    public function setErrors($error) {
-
+    public function setErrors($error)
+    {
         $this->errors = $error;
     }
 }

@@ -1,28 +1,30 @@
-<?php namespace Fully\Http\Controllers\Admin;
+<?php
 
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Category\CategoryInterface;
-use Redirect;
+namespace Fully\Http\Controllers\Admin;
+
 use View;
 use Input;
-use Fully\Repositories\Category\CategoryRepository as Category;
+use Fully\Services\Pagination;
+use Fully\Http\Controllers\Controller;
+use Fully\Repositories\Category\CategoryInterface;
 use Fully\Exceptions\Validation\ValidationException;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
+use Fully\Repositories\Category\CategoryRepository as Category;
 
 /**
- * Class CategoryController
- * @package App\Controllers\Admin
- * @author Sefa Karagöz
+ * Class CategoryController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CategoryController extends Controller {
-
+class CategoryController extends Controller
+{
     protected $category;
+    protected $perPage;
 
-    public function __construct(CategoryInterface $category) {
-
+    public function __construct(CategoryInterface $category)
+    {
         $this->category = $category;
         View::share('active', 'blog');
+        $this->perPage = config('fully.modules.category.per_page');
     }
 
     /**
@@ -30,19 +32,10 @@ class CategoryController extends Controller {
      *
      * @return Response
      */
-    public function index() {
-
-        //$categories = $this->category->paginate();
-
-        $page = Input::get('page', 1);
-        $perPage = 10;
-        $pagiData = $this->category->paginate($page, $perPage, true);
-
-        $categories = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage,Paginator::resolveCurrentPage(), [
-            'path' => Paginator::resolveCurrentPath()
-        ]);
-
-        $categories->setPath("");
+    public function index()
+    {
+        $pagiData = $this->category->paginate(Input::get('page', 1), $this->perPage, true);
+        $categories = Pagination::makeLengthAware($pagiData->items, $pagiData->totalItems, $this->perPage);
 
         return view('backend.category.index', compact('categories'));
     }
@@ -52,8 +45,8 @@ class CategoryController extends Controller {
      *
      * @return Response
      */
-    public function create() {
-
+    public function create()
+    {
         return view('backend.category.create');
     }
 
@@ -62,12 +55,12 @@ class CategoryController extends Controller {
      *
      * @return Response
      */
-    public function store() {
-
+    public function store()
+    {
         try {
-
             $this->category->create(Input::all());
             Flash::message('Category was successfully added');
+
             return langRedirectRoute('admin.category.index');
         } catch (ValidationException $e) {
             return langRedirectRoute('admin.category.create')->withInput()->withErrors($e->getErrors());
@@ -78,11 +71,13 @@ class CategoryController extends Controller {
      * Display the specified resource.
      *
      * @param int $id
+     *
      * @return Response
      */
-    public function show($id) {
-
+    public function show($id)
+    {
         $category = $this->category->find($id);
+
         return view('backend.category.show', compact('category'));
     }
 
@@ -90,11 +85,13 @@ class CategoryController extends Controller {
      * Show the form for editing the specified resource.
      *
      * @param int $id
+     *
      * @return Response
      */
-    public function edit($id) {
-
+    public function edit($id)
+    {
         $category = $this->category->find($id);
+
         return view('backend.category.edit', compact('category'));
     }
 
@@ -102,16 +99,17 @@ class CategoryController extends Controller {
      * Update the specified resource in storage.
      *
      * @param int $id
+     *
      * @return Response
      */
-    public function update($id) {
-
+    public function update($id)
+    {
         try {
             $this->category->update($id, Input::all());
             Flash::message('Category was successfully updated');
+
             return langRedirectRoute('admin.category.index');
         } catch (ValidationException $e) {
-
             return langRedirectRoute('admin.category.edit')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -120,22 +118,26 @@ class CategoryController extends Controller {
      * Remove the specified resource from storage.
      *
      * @param int $id
+     *
      * @return Response
      */
-    public function destroy($id) {
-
+    public function destroy($id)
+    {
         $this->category->delete($id);
         Flash::message('Category was successfully deleted');
+
         return langRedirectRoute('admin.category.index');
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function confirmDestroy($id) {
-
+    public function confirmDestroy($id)
+    {
         $category = $this->category->find($id);
+
         return view('backend.category.confirm-destroy', compact('category'));
     }
 }

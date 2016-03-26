@@ -1,32 +1,33 @@
-<?php namespace Fully\Http\Controllers\Admin;
+<?php
 
-use Fully\Http\Controllers\Controller;
-use Fully\Repositories\Page\PageInterface;
-use Redirect;
+namespace Fully\Http\Controllers\Admin;
+
 use View;
 use Input;
-use Validator;
-use Response;
 use Flash;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
+use Response;
+use Fully\Services\Pagination;
+use Fully\Http\Controllers\Controller;
+use Fully\Repositories\Page\PageInterface;
 use Fully\Repositories\Page\PageRepository as Page;
 use Fully\Exceptions\Validation\ValidationException;
 
 /**
- * Class PageController
- * @package App\Controllers\Admin
- * @author Sefa Karagöz
+ * Class PageController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class PageController extends Controller
 {
     protected $page;
+    protected $perPage;
 
     public function __construct(PageInterface $page)
     {
+        View::share('active', 'modules');
 
         $this->page = $page;
-        View::share('active', 'modules');
+        $this->perPage = config('fully.per_page');
     }
 
     /**
@@ -36,15 +37,8 @@ class PageController extends Controller
      */
     public function index()
     {
-
-        $page = Input::get('page', 1);
-        $perPage = 10;
-        $pagiData = $this->page->paginate($page, $perPage, true);
-        $pages = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(),[
-            'path' => Paginator::resolveCurrentPath()
-        ]);
-
-        $pages->setPath("");
+        $pagiData = $this->page->paginate(Input::get('page', 1), $this->perPage, true);
+        $pages = Pagination::makeLengthAware($pagiData->items, $pagiData->totalItems, $this->perPage);
 
         return view('backend.page.index', compact('pages'));
     }
@@ -56,7 +50,6 @@ class PageController extends Controller
      */
     public function create()
     {
-
         return view('backend.page.create');
     }
 
@@ -67,14 +60,12 @@ class PageController extends Controller
      */
     public function store()
     {
-
-        try
-        {
+        try {
             $this->page->create(Input::all());
             Flash::message('Page was successfully added');
+
             return langRedirectRoute('admin.page.index');
-        } catch(ValidationException $e)
-        {
+        } catch (ValidationException $e) {
             return langRedirectRoute('admin.page.create')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -82,45 +73,46 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
     {
-
         $page = $this->page->find($id);
+
         return view('backend.page.show', compact('page'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
     {
-
         $page = $this->page->find($id);
+
         return view('backend.page.edit', compact('page'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function update($id)
     {
-
-        try
-        {
+        try {
             $this->page->update($id, Input::all());
             Flash::message('Page was successfully updated');
+
             return langRedirectRoute('admin.page.index');
-        } catch(ValidationException $e)
-        {
+        } catch (ValidationException $e) {
             return langRedirectRoute('admin.page.edit')->withInput()->withErrors($e->getErrors());
         }
     }
@@ -128,27 +120,27 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
     {
-
         $this->page->delete($id);
         Flash::message('Page was successfully deleted');
+
         return langRedirectRoute('admin.page.index');
     }
 
     public function confirmDestroy($id)
     {
-
         $page = $this->page->find($id);
+
         return view('backend.page.confirm-destroy', compact('page'));
     }
 
     public function togglePublish($id)
     {
-
         return $this->page->togglePublish($id);
     }
 }

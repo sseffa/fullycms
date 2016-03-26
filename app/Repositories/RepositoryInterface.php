@@ -1,29 +1,35 @@
-<?php namespace Fully\Repositories;
+<?php
+
+namespace Fully\Repositories;
 
 /**
- * Class RepositoryInterface
- * @package Fully\Repositories
- * @author Sefa Karagöz
+ * Class RepositoryInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface RepositoryInterface {
-
+interface RepositoryInterface
+{
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function find($id);
 
     /**
-     * Get al data
+     * Get al data.
+     *
      * @return mixed
      */
     public function all();
 
     /**
-     * Get data with paginate
-     * @param int $page
-     * @param int $limit
+     * Get data with paginate.
+     *
+     * @param int  $page
+     * @param int  $limit
      * @param bool $all
+     *
      * @return mixed
      */
     public function paginate($page = 1, $limit = 10, $all = false);

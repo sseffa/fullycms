@@ -2,17 +2,14 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLogsTable extends Migration {
-
+class CreateLogsTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
-        Schema::create('logs', function($table)
-        {
+    public function up()
+    {
+        Schema::create('logs', function ($table) {
             $table->increments('id');
             $table->string('php_sapi_name');
             $table->string('level');
@@ -24,11 +21,9 @@ class CreateLogsTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
+    public function down()
+    {
         Schema::drop('logs');
     }
 }

@@ -1,65 +1,67 @@
-<?php namespace Fully\Http\Controllers;
+<?php
 
-use Fully\Repositories\Video\VideoRepository as Video;
+namespace Fully\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Fully\Services\Pagination;
 use Fully\Repositories\Video\VideoInterface;
-use Input;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
+use Fully\Repositories\Video\VideoRepository as Video;
 
 /**
- * Class VideoController
- * @author Sefa Karagöz
+ * Class VideoController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class VideoController extends Controller
 {
     /**
+     * video repository
      * @var
      */
     protected $video;
 
     /**
+     * per page
+     * @var
+     */
+    protected $perPage;
+
+    /**
+     * VideoController constructor.
      * @param VideoInterface $video
      */
     public function __construct(VideoInterface $video)
     {
-
         $this->video = $video;
+        $this->perPage = config('fully.modules.video.per_page');
     }
 
     /**
-     * Display videos page
-     * @param $id
-     * @return \Illuminate\View\View
+     * Display a listing of the resource
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        //$videos = $this->video->paginate();
-
-        $page = Input::get('page', 1);
-        $perPage = 12;
-        $pagiData = $this->video->paginate($page, $perPage, false);
-
-        $videos = new LengthAwarePaginator($pagiData->items, $pagiData->totalItems, $perPage, Paginator::resolveCurrentPage(), [
-            'path' => Paginator::resolveCurrentPath()
-        ]);
-
-        $videos->setPath("");
+        $pagiData = $this->video->paginate($request->get('page', 1), $this->perPage, false);
+        $videos = Pagination::makeLengthAware($pagiData->items, $pagiData->totalItems, $this->perPage);
 
         return view('frontend.video.index', compact('videos'));
     }
 
     /**
+     * Display a resource by slug
+     *
      * @param $slug
-     * @return mixed
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($slug)
     {
-
         $video = $this->video->getBySlug($slug);
 
-        if($video === null)
-            return Response::view('errors.missing', array(), 404);
+        if($video == null)
+            return Response::view('errors.missing', [], 404);
 
         return view('frontend.video.show', compact('video'));
     }

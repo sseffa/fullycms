@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Article;
+<?php
 
-use Fully\Repositories\Article\ArticleInterface;
+namespace Fully\Repositories\Article;
 
 /**
- * Class AbstractArticleDecorator
- * @package Fully\Repositories\Article
- * @author Sefa Karagöz
+ * Class AbstractArticleDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractArticleDecorator implements ArticleInterface {
-
+abstract class AbstractArticleDecorator implements ArticleInterface
+{
     /**
      * @var ArticleInterface
      */
@@ -17,44 +17,47 @@ abstract class AbstractArticleDecorator implements ArticleInterface {
     /**
      * @param ArticleInterface $article
      */
-    public function __construct(ArticleInterface $article) {
-
+    public function __construct(ArticleInterface $article)
+    {
         $this->article = $article;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->article->find($id);
     }
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug) {
-
+    public function getBySlug($slug)
+    {
         return $this->article->getBySlug($slug);
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->article->all();
     }
 
     /**
      * @param null $perPage
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         return $this->article->paginate($page, $limit, $all);
     }
 }

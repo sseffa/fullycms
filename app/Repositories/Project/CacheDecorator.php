@@ -1,43 +1,46 @@
-<?php namespace Fully\Repositories\Project;
+<?php
+
+namespace Fully\Repositories\Project;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\Project\AbstractProjectDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\Project
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractProjectDecorator {
-
+class CacheDecorator extends AbstractProjectDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "project";
+    protected $cacheKey = 'project';
 
     /**
      * @param ProjectInterface $project
-     * @param CacheInterface $cache
+     * @param CacheInterface   $cache
      */
-    public function __construct(ProjectInterface $project, CacheInterface $cache) {
-
+    public function __construct(ProjectInterface $project, CacheInterface $cache)
+    {
         parent::__construct($project);
         $this->cache = $cache;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
-        $key = md5(getLang() . $this->cacheKey . '.id.' . $id);
+    public function find($id)
+    {
+        $key = md5(getLang().$this->cacheKey.'.id.'.$id);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -52,11 +55,12 @@ class CacheDecorator extends AbstractProjectDecorator {
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug){
-
-        $key = md5(getLang() . $this->cacheKey . '.slug.' . $slug);
+    public function getBySlug($slug)
+    {
+        $key = md5(getLang().$this->cacheKey.'.slug.'.$slug);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -72,9 +76,9 @@ class CacheDecorator extends AbstractProjectDecorator {
     /**
      * @return mixed
      */
-    public function all() {
-
-        $key = md5(getLang() . $this->cacheKey . 'all.projects');
+    public function all()
+    {
+        $key = md5(getLang().$this->cacheKey.'all.projects');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -90,12 +94,13 @@ class CacheDecorator extends AbstractProjectDecorator {
     /**
      * @param null $page
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         $allkey = ($all) ? '.all' : '';
-        $key = md5(getLang() . $this->cacheKey . '.page.' . $page . '.' . $limit . $allkey);
+        $key = md5(getLang().$this->cacheKey.'.page.'.$page.'.'.$limit.$allkey);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -110,7 +115,10 @@ class CacheDecorator extends AbstractProjectDecorator {
 
     /**
      * @param $tag
+     *
      * @return mixed|void
      */
-    public function findByTag($tag) {}
+    public function findByTag($tag)
+    {
+    }
 }

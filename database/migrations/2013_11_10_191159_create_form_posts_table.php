@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormPostsTable extends Migration {
-
+class CreateFormPostsTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
+    public function up()
+    {
         Schema::create('form_posts', function ($table) {
 
             $table->increments('id');
@@ -28,11 +26,9 @@ class CreateFormPostsTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
+    public function down()
+    {
         Schema::drop('form_posts');
     }
 }

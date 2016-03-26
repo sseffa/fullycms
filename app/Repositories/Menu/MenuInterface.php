@@ -1,16 +1,17 @@
-<?php namespace Fully\Repositories\Menu;
+<?php
 
-use Fully\Repositories\RepositoryInterface;
+namespace Fully\Repositories\Menu;
 
 /**
- * Interface MenuInterface
- * @package Fully\Repositories\Menu
- * @author Sefa Karagöz
+ * Interface MenuInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface MenuInterface {
-
+interface MenuInterface
+{
     /**
-     * Get al data
+     * Get al data.
+     *
      * @return mixed
      */
     public function all();

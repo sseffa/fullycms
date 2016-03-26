@@ -1,4 +1,6 @@
-<?php namespace Fully\Repositories\PhotoGallery;
+<?php
+
+namespace Fully\Repositories\PhotoGallery;
 
 use Fully\Models\PhotoGallery;
 use File;
@@ -8,17 +10,15 @@ use Image;
 use Response;
 use Fully\Repositories\RepositoryAbstract;
 use Fully\Repositories\CrudableInterface;
-use Fully\Repositories\RepositoryInterface as RepositoryInterface;
 use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\AbstractValidator as Validator;
 
 /**
- * Class PhotoGalleryRepository
- * @package Fully\Repositories\PhotoGallery
- * @author Sefa Karagöz
+ * Class PhotoGalleryRepository.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryInterface, CrudableInterface {
-
+class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryInterface, CrudableInterface
+{
     /**
      * @var
      */
@@ -45,24 +45,25 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
     protected $photoGallery;
 
     /**
-     * Rules
+     * Rules.
      *
      * @var array
      */
     protected static $rules = [
-        'title' => 'required|min:3|unique:categories'
+        'title' => 'required|min:3|unique:categories',
     ];
 
     /**
-     * Image rules
+     * Image rules.
+     *
      * @var array
      */
     protected static $photoRules = [
-        'file' => 'mimes:jpg,jpeg,png|max:10000'
+        'file' => 'mimes:jpg,jpeg,png|max:10000',
     ];
 
-    public function __construct(PhotoGallery $photoGallery) {
-
+    public function __construct(PhotoGallery $photoGallery)
+    {
         $config = Config::get('fully');
         $this->perPage = $config['per_page'];
         $this->width = $config['modules']['photo_gallery']['thumb_size']['width'];
@@ -74,39 +75,41 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->photoGallery->where('lang', $this->getLang())->get();
     }
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug){
-
+    public function getBySlug($slug)
+    {
         return $this->photoGallery->where('slug', $slug)->first();
     }
 
     /**
      * @return mixed
      */
-    public function lists() {
-
+    public function lists()
+    {
         return $this->photoGallery->where('lang', $this->getLang())->lists('title', 'id');
     }
 
     /**
-     * Get paginated photo galleries
+     * Get paginated photo galleries.
      *
-     * @param int $page Number of photo galleries per page
-     * @param int $limit Results per page
-     * @param boolean $all Show published or all
+     * @param int  $page  Number of photo galleries per page
+     * @param int  $limit Results per page
+     * @param bool $all   Show published or all
+     *
      * @return StdClass Object with $items and $totalItems for pagination
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
-        $result = new \StdClass;
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
+        $result = new \StdClass();
         $result->page = $page;
         $result->limit = $limit;
         $result->totalItems = 0;
@@ -130,24 +133,27 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->photoGallery->with('photos')->findOrFail($id);
     }
 
     /**
      * @param $attributes
+     *
      * @return mixed
+     *
      * @throws \Fully\Exceptions\Validation\ValidationException
      */
-    public function create($attributes) {
-
+    public function create($attributes)
+    {
         if ($this->isValid($attributes)) {
-
-            $this->photoGallery->lang=$this->getLang();
+            $this->photoGallery->lang = $this->getLang();
             $this->photoGallery->fill($attributes)->save();
+
             return $this->photoGallery->id;
         }
 
@@ -157,17 +163,18 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
     /**
      * @param $id
      * @param $attributes
+     *
      * @return bool|mixed
+     *
      * @throws \Fully\Exceptions\Validation\ValidationException
      */
-    public function update($id, $attributes) {
-
+    public function update($id, $attributes)
+    {
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
 
         $this->photoGallery = $this->find($id);
 
         if ($this->isValid($attributes)) {
-
             $this->photoGallery->resluggify();
             $this->photoGallery->fill($attributes)->save();
 
@@ -179,17 +186,17 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
 
     /**
      * @param $id
+     *
      * @return mixed|void
      */
-    public function delete($id) {
-
+    public function delete($id)
+    {
         $photo_gallery = $this->photoGallery->find($id);
 
         foreach ($photo_gallery->photos as $photo) {
-
-            $destinationPath = public_path() . $this->imgDir;
-            File::delete($destinationPath . $photo->file_name);
-            File::delete($destinationPath . "thumb_" . $photo->file_name);
+            $destinationPath = public_path().$this->imgDir;
+            File::delete($destinationPath.$photo->file_name);
+            File::delete($destinationPath.'thumb_'.$photo->file_name);
             $photo->delete();
         }
 
@@ -198,10 +205,11 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function togglePublish($id) {
-
+    public function togglePublish($id)
+    {
         $photo_gallery = $this->photoGallery->findOrFail($id);
 
         $photo_gallery->is_published = ($photo_gallery->is_published) ? false : true;
@@ -213,16 +221,17 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
     /**
      * @param $id
      * @param $attributes
+     *
      * @return bool
+     *
      * @throws \Fully\Exceptions\Validation\ValidationException
      */
-    public function upload($id, $attributes) {
-
+    public function upload($id, $attributes)
+    {
         if ($this->isValid($attributes, self::$photoRules)) {
-
             $file = $attributes['file'];
 
-            $destinationPath = public_path() . $this->imgDir;
+            $destinationPath = public_path().$this->imgDir;
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
 
@@ -231,18 +240,19 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
             if ($upload_success) {
 
                 // resizing an uploaded file
-                Image::make($destinationPath . $fileName)
+                Image::make($destinationPath.$fileName)
                     ->resize($this->width, $this->height)
-                    ->save($destinationPath . "thumb_" . $fileName);
+                    ->save($destinationPath.'thumb_'.$fileName);
 
                 $photo_gallery = $this->photoGallery->find($id);
-                $image = new Photo;
+                $image = new Photo();
                 $image->file_name = $fileName;
                 $image->file_size = $fileSize;
-                $image->title = explode(".", $fileName)[0];
-                $image->path = $this->imgDir . $fileName;
-                $image->type = "gallery";
+                $image->title = explode('.', $fileName)[0];
+                $image->path = $this->imgDir.$fileName;
+                $image->type = 'gallery';
                 $photo_gallery->photos()->save($image);
+
                 return true;
             }
         }
@@ -251,24 +261,28 @@ class PhotoGalleryRepository extends RepositoryAbstract implements PhotoGalleryI
 
     /**
      * @param $fileName
+     *
      * @return mixed
      */
-    public function deletePhoto($fileName) {
-
+    public function deletePhoto($fileName)
+    {
         Photo::where('file_name', '=', $fileName)->delete();
-        $destinationPath = public_path() . $this->imgDir;
-        File::delete($destinationPath . $fileName);
-        File::delete($destinationPath . "thumb_" . $fileName);
+        $destinationPath = public_path().$this->imgDir;
+        File::delete($destinationPath.$fileName);
+        File::delete($destinationPath.'thumb_'.$fileName);
+
         return Response::json('success', 200);
     }
 
     /**
-     * Get total photo galleries count
+     * Get total photo galleries count.
+     *
      * @param bool $all
+     *
      * @return mixed
      */
-    protected function totalPhotoGalleries($all = false) {
-
+    protected function totalPhotoGalleries($all = false)
+    {
         if (!$all) {
             return $this->photoGallery->where('is_published', 1)->where('lang', $this->getLang())->count();
         }

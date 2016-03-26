@@ -1,12 +1,14 @@
-<?php namespace Fully\Repositories\Category;
+<?php
+
+namespace Fully\Repositories\Category;
 
 use Fully\Repositories\RepositoryInterface;
 
 /**
- * Interface CategoryInterface
- * @package Fully\Repositories\Category
- * @author Sefa Karagöz
+ * Interface CategoryInterface.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-interface CategoryInterface extends RepositoryInterface{
-
+interface CategoryInterface extends RepositoryInterface
+{
 }

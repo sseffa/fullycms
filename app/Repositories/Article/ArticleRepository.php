@@ -1,4 +1,6 @@
-<?php namespace Fully\Repositories\Article;
+<?php
+
+namespace Fully\Repositories\Article;
 
 use Fully\Models\Article;
 use Config;
@@ -11,17 +13,15 @@ use Image;
 use File;
 use Fully\Repositories\RepositoryAbstract;
 use Fully\Repositories\CrudableInterface as CrudableInterface;
-use Fully\Repositories\RepositoryInterface as RepositoryInterface;
 use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\AbstractValidator as Validator;
 
 /**
- * Class ArticleRepository
- * @package Fully\Repositories\Article
- * @author Sefa Karagöz
+ * Class ArticleRepository.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class ArticleRepository extends RepositoryAbstract implements ArticleInterface, CrudableInterface {
-
+class ArticleRepository extends RepositoryAbstract implements ArticleInterface, CrudableInterface
+{
     protected $width;
     protected $height;
     protected $thumbWidth;
@@ -30,20 +30,20 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
     protected $perPage;
     protected $article;
     /**
-     * Rules
+     * Rules.
      *
      * @var array
      */
     protected static $rules = [
-        'title'   => 'required',
-        'content' => 'required'
+        'title' => 'required',
+        'content' => 'required',
     ];
 
     /**
      * @param Article $article
      */
-    public function __construct(Article $article) {
-
+    public function __construct(Article $article)
+    {
         $config = Config::get('fully');
         $this->perPage = $config['per_page'];
         $this->width = $config['modules']['article']['image_size']['width'];
@@ -57,25 +57,26 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->article->with('tags')->orderBy('created_at', 'DESC')->where('is_published', 1)->where('lang', $this->getLang())->get();
     }
 
     /**
      * @param $limit
+     *
      * @return mixed
      */
-    public function getLastArticle($limit) {
-
+    public function getLastArticle($limit)
+    {
         return $this->article->orderBy('created_at', 'desc')->where('lang', $this->getLang())->take($limit)->offset(0)->get();
     }
 
     /**
      * @return mixed
      */
-    public function lists() {
-
+    public function lists()
+    {
         return $this->article->get()->where('lang', $this->getLang())->lists('title', 'id');
     }
 
@@ -93,16 +94,17 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
     */
 
     /**
-     * Get paginated articles
+     * Get paginated articles.
      *
-     * @param int $page Number of articles per page
-     * @param int $limit Results per page
-     * @param boolean $all Show published or all
+     * @param int  $page  Number of articles per page
+     * @param int  $limit Results per page
+     * @param bool $all   Show published or all
+     *
      * @return StdClass Object with $items and $totalItems for pagination
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
-        $result = new \StdClass;
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
+        $result = new \StdClass();
         $result->page = $page;
         $result->limit = $limit;
         $result->totalItems = 0;
@@ -110,7 +112,7 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
         $query = $this->article->with('tags')->orderBy('created_at', 'DESC')->where('lang', $this->getLang());
 
-        if(!$all) {
+        if (!$all) {
             $query->where('is_published', 1);
         }
 
@@ -124,53 +126,59 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->article->with(['tags', 'category'])->findOrFail($id);
     }
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug) {
-
+    public function getBySlug($slug)
+    {
         return $this->article->with(['tags', 'category'])->where('slug', $slug)->first();
     }
 
     /**
      * @param $attributes
+     *
      * @return bool|mixed
+     *
      * @throws \Fully\Exceptions\Validation\ValidationException
      */
-    public function create($attributes) {
-
+    public function create($attributes)
+    {
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
 
-        if($this->isValid($attributes)) {
+        if ($this->isValid($attributes)) {
 
             //--------------------------------------------------------
 
             $file = null;
 
-            if(isset($attributes['image'])) $file = $attributes['image'];
+            if (isset($attributes['image'])) {
+                $file = $attributes['image'];
+            }
 
-            if($file) {
-                $destinationPath = public_path() . $this->imgDir;
+            if ($file) {
+                $destinationPath = public_path().$this->imgDir;
                 $fileName = $file->getClientOriginalName();
                 $fileSize = $file->getClientSize();
 
                 $upload_success = $file->move($destinationPath, $fileName);
 
-                if($upload_success) {
+                if ($upload_success) {
 
                     // resizing an uploaded file
-                    Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . $fileName);
+                    Image::make($destinationPath.$fileName)->resize($this->width, $this->height)->save($destinationPath.$fileName);
 
                     // thumb
-                    Image::make($destinationPath . $fileName)->resize($this->thumbWidth, $this->thumbHeight)->save($destinationPath . "thumb_" . $fileName);
+                    Image::make($destinationPath.$fileName)->resize($this->thumbWidth, $this->thumbHeight)->save($destinationPath.'thumb_'.$fileName);
 
                     $this->article->lang = $this->getLang();
                     $this->article->file_name = $fileName;
@@ -182,21 +190,23 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
             //--------------------------------------------------------
 
             $this->article->lang = $this->getLang();
-            if($this->article->fill($attributes)->save()) {
-
+            if ($this->article->fill($attributes)->save()) {
                 $category = Category::find($attributes['category']);
                 $category->articles()->save($this->article);
             }
 
             $articleTags = explode(',', $attributes['tag']);
 
-            foreach($articleTags as $articleTag) {
-
-                if(!$articleTag) continue;
+            foreach ($articleTags as $articleTag) {
+                if (!$articleTag) {
+                    continue;
+                }
 
                 $tag = Tag::where('name', '=', $articleTag)->first();
 
-                if(!$tag) $tag = new Tag;
+                if (!$tag) {
+                    $tag = new Tag();
+                }
 
                 $tag->lang = $this->getLang();
                 $tag->name = $articleTag;
@@ -207,6 +217,7 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
             //Event::fire('article.created', $this->article);
             Event::fire('article.creating', $this->article);
+
             return true;
         }
 
@@ -216,39 +227,40 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
     /**
      * @param $id
      * @param $attributes
+     *
      * @return bool|mixed
+     *
      * @throws \Fully\Exceptions\Validation\ValidationException
      */
-    public function update($id, $attributes) {
-
+    public function update($id, $attributes)
+    {
         $this->article = $this->find($id);
         $attributes['is_published'] = isset($attributes['is_published']) ? true : false;
 
-        if($this->isValid($attributes)) {
+        if ($this->isValid($attributes)) {
 
             //-------------------------------------------------------
-            if(isset($attributes['image'])) {
-
+            if (isset($attributes['image'])) {
                 $file = $attributes['image'];
 
                 // delete old image
-                $destinationPath = public_path() . $this->imgDir;
-                File::delete($destinationPath . $this->article->file_name);
-                File::delete($destinationPath . "thumb_" . $this->article->file_name);
+                $destinationPath = public_path().$this->imgDir;
+                File::delete($destinationPath.$this->article->file_name);
+                File::delete($destinationPath.'thumb_'.$this->article->file_name);
 
-                $destinationPath = public_path() . $this->imgDir;
+                $destinationPath = public_path().$this->imgDir;
                 $fileName = $file->getClientOriginalName();
                 $fileSize = $file->getClientSize();
 
                 $upload_success = $file->move($destinationPath, $fileName);
 
-                if($upload_success) {
+                if ($upload_success) {
 
                     // resizing an uploaded file
-                    Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . $fileName);
+                    Image::make($destinationPath.$fileName)->resize($this->width, $this->height)->save($destinationPath.$fileName);
 
                     // thumb
-                    Image::make($destinationPath . $fileName)->resize($this->thumbWidth, $this->thumbHeight)->save($destinationPath . "thumb_" . $fileName);
+                    Image::make($destinationPath.$fileName)->resize($this->thumbWidth, $this->thumbHeight)->save($destinationPath.'thumb_'.$fileName);
 
                     $this->article->file_name = $fileName;
                     $this->article->file_size = $fileSize;
@@ -257,8 +269,7 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
             }
             //-------------------------------------------------------
 
-            if($this->article->fill($attributes)->save()) {
-
+            if ($this->article->fill($attributes)->save()) {
                 $this->article->resluggify();
                 $category = Category::find($attributes['category']);
                 $category->articles()->save($this->article);
@@ -266,13 +277,16 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
             $articleTags = explode(',', $attributes['tag']);
 
-            foreach($articleTags as $articleTag) {
-
-                if(!$articleTag) continue;
+            foreach ($articleTags as $articleTag) {
+                if (!$articleTag) {
+                    continue;
+                }
 
                 $tag = Tag::where('name', '=', $articleTag)->first();
 
-                if(!$tag) $tag = new Tag;
+                if (!$tag) {
+                    $tag = new Tag();
+                }
 
                 $tag->lang = $this->getLang();
                 $tag->name = $articleTag;
@@ -288,10 +302,11 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
     /**
      * @param $id
+     *
      * @return mixed|void
      */
-    public function delete($id) {
-
+    public function delete($id)
+    {
         $article = $this->article->findOrFail($id);
         $article->tags()->detach();
         $article->delete();
@@ -299,10 +314,11 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function togglePublish($id) {
-
+    public function togglePublish($id)
+    {
         $article = $this->article->find($id);
 
         $article->is_published = ($article->is_published) ? false : true;
@@ -313,22 +329,26 @@ class ArticleRepository extends RepositoryAbstract implements ArticleInterface, 
 
     /**
      * @param $id
+     *
      * @return string
      */
-    function getUrl($id) {
-
+    public function getUrl($id)
+    {
         $article = $this->article->findOrFail($id);
-        return url('article/' . $id . '/' . $article->slug, $parameters = array(), $secure = null);
+
+        return url('article/'.$id.'/'.$article->slug, $parameters = array(), $secure = null);
     }
 
     /**
-     * Get total article count
+     * Get total article count.
+     *
      * @param bool $all
+     *
      * @return mixed
      */
-    protected function totalArticles($all = false) {
-
-        if(!$all) {
+    protected function totalArticles($all = false)
+    {
+        if (!$all) {
             return $this->article->where('is_published', 1)->where('lang', $this->getLang())->count();
         }
 

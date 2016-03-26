@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug'           => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', true),
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'url'             => 'http://localhost',
+    'url' => 'http://localhost',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'timezone'        => 'UTC',
+    'timezone' => 'UTC',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'locale'          => 'en',
+    'locale' => 'en',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -73,8 +73,8 @@ return [
     |
     */
 
-    'key'             => env('APP_KEY', 'SomeRandomString'),
-    'cipher'          => 'AES-256-CBC',
+    'key'    => env('APP_KEY', 'SomeRandomString'),
+    'cipher' => 'AES-256-CBC',
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -88,7 +88,7 @@ return [
     |
     */
 
-    'log'             => 'single',
+    'log' => 'daily',
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -100,7 +100,7 @@ return [
     |
     */
 
-    'providers'       => [
+    'providers' => [
 
         /*
          * Laravel Framework Service Providers...
@@ -140,6 +140,13 @@ return [
         /*
          * Fully
          */
+        Fully\Providers\RepositoryServiceProvider::class,
+        Fully\Providers\ComposerServiceProvider::class,
+        Fully\Providers\FeederServiceProvider::class,
+        Fully\Providers\SearchServiceProvider::class,
+        /*
+         * 3rd
+         */
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
@@ -147,13 +154,8 @@ return [
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Fully\Providers\RepositoryServiceProvider::class,
-        Fully\Providers\ComposerServiceProvider::class,
-        Fully\Providers\FeederServiceProvider::class,
-        Fully\Providers\SearchServiceProvider::class,
-        Sseffa\VideoApi\VideoApiServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Sseffa\VideoApi\VideoApiServiceProvider::class,
 
     ],
     /*
@@ -167,7 +169,7 @@ return [
     |
     */
 
-    'aliases'         => [
+    'aliases' => [
 
         'App'                 => Illuminate\Support\Facades\App::class,
         'Artisan'             => Illuminate\Support\Facades\Artisan::class,

@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidersTable extends Migration {
-
+class CreateSlidersTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
+    public function up()
+    {
         Schema::create('sliders', function ($table) {
 
             $table->increments('id');
@@ -27,11 +25,9 @@ class CreateSlidersTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
+    public function down()
+    {
         Schema::drop('sliders');
     }
 }

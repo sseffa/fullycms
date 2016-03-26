@@ -1,40 +1,46 @@
-<?php namespace Fully\Http\Controllers;
+<?php
+
+namespace Fully\Http\Controllers;
+
+use Illuminate\Http\Request;
 
 use Flash;
-use Input;
 use Validator;
 use Redirect;
 
 /**
- * Class MaillistController
- * @author Sefa Karagöz
+ * Class MaillistController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class MaillistController extends Controller {
-
+class MaillistController extends Controller
+{
     /**
      * @return mixed
      */
-    public function getMaillist() {
-
+    public function getMaillist()
+    {
         return view('frontend.maillist.maillist');
     }
 
     /**
+     * @param Request $request
      * @return mixed
      */
-    public function postMaillist() {
+    public function postMaillist(Request $request)
+    {
+        $formData = [
+            'email' => $request->get('email'),
+        ];
 
-        $formData = array(
-            'email' => Input::get('email'),
-        );
-
-        $rules = array(
+        $rules = [
             'email' => 'required|email|unique:maillist,email',
-        );
+        ];
 
         $validation = Validator::make($formData, $rules);
 
-        if ($validation->fails()) {
+        if($validation->fails())
+        {
             return Redirect::action('MaillistController@getMaillist')->withErrors($validation)->withInput();
         }
 
@@ -47,13 +53,10 @@ class MaillistController extends Controller {
         return Redirect::action('HomeController@index');
     }
 
-    /**
-     *
-     */
-    public function sendMail() {
-
-        $formData=array();
-        $mailer = new Mailer;
+    public function sendMail()
+    {
+        $formData = [];
+        $mailer = new Mailer();
         $mailer->send('emails.newsletter', 'noreply@fullycms.com', 'Title', $formData);
     }
 }

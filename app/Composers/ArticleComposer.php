@@ -1,15 +1,17 @@
-<?php namespace Fully\Composers;
+<?php
+
+namespace Fully\Composers;
 
 use Article;
 use Fully\Repositories\Article\ArticleInterface;
 
 /**
- * Class ArticleComposer
- * @package Fully\Composers
- * @author Sefa Karagöz
+ * Class ArticleComposer.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class ArticleComposer {
-
+class ArticleComposer
+{
     /**
      * @var \Fully\Repositories\Article\ArticleInterface
      */
@@ -18,18 +20,17 @@ class ArticleComposer {
     /**
      * @param ArticleInterface $article
      */
-    public function __construct(ArticleInterface $article) {
-
+    public function __construct(ArticleInterface $article)
+    {
         $this->article = $article;
     }
 
     /**
      * @param $view
      */
-    public function compose($view) {
-
+    public function compose($view)
+    {
         $articles = $this->article->getLastArticle(3);
         $view->with('articles', $articles);
     }
 }
-

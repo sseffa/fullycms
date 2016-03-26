@@ -1,12 +1,15 @@
-<?php namespace Fully\Models;
+<?php
+
+namespace Fully\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Maillist
- * @author Sefa Karagöz
+ * Class Maillist.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class Maillist extends Model {
-
+class Maillist extends Model
+{
     public $table = 'maillist';
 }

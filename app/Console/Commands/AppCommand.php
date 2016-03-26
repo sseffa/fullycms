@@ -1,18 +1,18 @@
-<?php namespace Fully\Console\Commands;
+<?php
+
+namespace Fully\Console\Commands;
 
 use Schema;
 use Sentinel;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Contracts\Bus\SelfHandling;
 
 /**
- * Class AppCommand
- * @author Sefa Karagöz
+ * Class AppCommand.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class AppCommand extends Command {
-
+class AppCommand extends Command
+{
     /**
      * The console command name.
      *
@@ -34,17 +34,16 @@ class AppCommand extends Command {
      */
     protected $userData = array(
         'first_name' => null,
-        'last_name'  => null,
-        'email'      => null,
-        'password'   => null
+        'last_name' => null,
+        'email' => null,
+        'password' => null,
     );
 
     /**
      * Execute the console command.
-     *
-     * @return void
      */
-    public function handle() {
+    public function handle()
+    {
 
         // drop tables
         Schema::dropIfExists('articles');
@@ -85,13 +84,11 @@ class AppCommand extends Command {
         $this->comment('-------------------------------------');
         $this->comment('');
 
-
         // Let's ask the user some questions, shall we?
         $this->askUserFirstName();
         $this->askUserLastName();
         $this->askUserEmail();
         $this->askUserPassword();
-
 
         $this->comment('');
         $this->comment('');
@@ -122,11 +119,9 @@ class AppCommand extends Command {
 
     /**
      * Asks the user for the first name.
-     *
-     * @return void
      */
-    protected function askUserFirstName() {
-
+    protected function askUserFirstName()
+    {
         do {
             // Ask the user to input the first name
             $first_name = $this->ask('Please enter your first name: ');
@@ -144,11 +139,9 @@ class AppCommand extends Command {
 
     /**
      * Asks the user for the last name.
-     *
-     * @return void
      */
-    protected function askUserLastName() {
-
+    protected function askUserLastName()
+    {
         do {
             // Ask the user to input the last name
             $last_name = $this->ask('Please enter your last name: ');
@@ -166,11 +159,9 @@ class AppCommand extends Command {
 
     /**
      * Asks the user for the user email address.
-     *
-     * @return void
      */
-    protected function askUserEmail() {
-
+    protected function askUserEmail()
+    {
         do {
             // Ask the user to input the email address
             $email = $this->ask('Please enter your user email: ');
@@ -188,11 +179,9 @@ class AppCommand extends Command {
 
     /**
      * Asks the user for the user password.
-     *
-     * @return void
      */
-    protected function askUserPassword() {
-
+    protected function askUserPassword()
+    {
         do {
             // Ask the user to input the user password
             $password = $this->ask('Please enter your user password: ');
@@ -210,8 +199,6 @@ class AppCommand extends Command {
 
     /**
      * Runs all the necessary Sentry commands.
-     *
-     * @return void
      */
     protected function sentinelRunner()
     {
@@ -227,8 +214,6 @@ class AppCommand extends Command {
 
     /**
      * Creates the default groups.
-     *
-     * @return void
      */
     protected function sentinelCreateDefaultGroups()
     {
@@ -245,14 +230,12 @@ class AppCommand extends Command {
 
     /**
      * Create the user and associates the admin group to that user.
-     *
-     * @return void
      */
     protected function sentinelCreateUser()
     {
         // Prepare the user data array.
         $data = array_merge($this->userData, array(
-            'activated' => 1
+            'activated' => 1,
         ));
 
         $user = Sentinel::registerAndActivate($data);
@@ -266,17 +249,15 @@ class AppCommand extends Command {
 
     /**
      * Create a dummy user.
-     *
-     * @return void
      */
     protected function sentinelCreateDummyUser()
     {
         $user = Sentinel::registerAndActivate(array(
             'first_name' => 'Super',
-            'last_name'  => 'Admin',
-            'email'      => 'admin@admin.com',
-            'password'   => 'admin',
-            'activated'  => 1
+            'last_name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => 'admin',
+            'activated' => 1,
         ));
 
         $this->role->users()->attach($user);

@@ -38,7 +38,7 @@
 </section>
 <br>
 <br>
-<div class="container">
+<div class="col-lg-10">
     @include('flash::message')
 
     <div class="table-responsive">

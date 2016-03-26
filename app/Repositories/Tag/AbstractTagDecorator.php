@@ -1,14 +1,14 @@
-<?php namespace Fully\Repositories\Tag;
+<?php
 
-use Fully\Repositories\Tag\TagInterface;
+namespace Fully\Repositories\Tag;
 
 /**
- * Class AbstractTagDecorator
- * @package Fully\Repositories\Tag
- * @author Sefa Karagöz
+ * Class AbstractTagDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-abstract class AbstractTagDecorator implements TagInterface {
-
+abstract class AbstractTagDecorator implements TagInterface
+{
     /**
      * @var TagInterface
      */
@@ -17,44 +17,47 @@ abstract class AbstractTagDecorator implements TagInterface {
     /**
      * @param TagInterface $tag
      */
-    public function __construct(TagInterface $tag) {
-
+    public function __construct(TagInterface $tag)
+    {
         $this->tag = $tag;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
+    public function find($id)
+    {
         return $this->tag->find($id);
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->tag->all();
     }
 
     /**
      * @param null $perPage
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         return $this->tag->paginate($page, $limit, $all);
     }
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getArticlesBySlug($slug) {
-
+    public function getArticlesBySlug($slug)
+    {
         return $this->tag->getArticlesBySlug($slug);
     }
 }

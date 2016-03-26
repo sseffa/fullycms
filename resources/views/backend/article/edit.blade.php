@@ -140,7 +140,7 @@
     <div class="control-group {!! $errors->has('is_published') ? 'has-error' : '' !!}">
 
         <div class="controls">
-            <label class="checkbox">{!! Form::checkbox('is_published', 'is_published',$article->is_published) !!} Publish ?</label>
+            <label class="">{!! Form::checkbox('is_published', 'is_published',$article->is_published) !!} Publish ?</label>
             @if ($errors->first('is_published'))
             <span class="help-block">{!! $errors->first('is_published') !!}</span>
             @endif

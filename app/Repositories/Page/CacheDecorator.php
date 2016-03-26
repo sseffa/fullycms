@@ -1,43 +1,46 @@
-<?php namespace Fully\Repositories\Page;
+<?php
+
+namespace Fully\Repositories\Page;
 
 use Fully\Services\Cache\CacheInterface;
-use Fully\Repositories\Page\AbstractPageDecorator;
 
 /**
- * Class CacheDecorator
- * @package Fully\Repositories\Page
- * @author Sefa Karagöz
+ * Class CacheDecorator.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class CacheDecorator extends AbstractPageDecorator {
-
+class CacheDecorator extends AbstractPageDecorator
+{
     /**
      * @var \Fully\Services\Cache\CacheInterface
      */
     protected $cache;
 
     /**
-     * Cache key
+     * Cache key.
+     *
      * @var string
      */
-    protected $cacheKey = "page";
+    protected $cacheKey = 'page';
 
     /**
-     * @param PageInterface $category
+     * @param PageInterface  $category
      * @param CacheInterface $cache
      */
-    public function __construct(PageInterface $page, CacheInterface $cache) {
-
+    public function __construct(PageInterface $page, CacheInterface $cache)
+    {
         parent::__construct($page);
         $this->cache = $cache;
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
-    public function find($id) {
-
-        $key = md5(getLang() . $this->cacheKey . '.id.' . $id);
+    public function find($id)
+    {
+        $key = md5(getLang().$this->cacheKey.'.id.'.$id);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -52,14 +55,16 @@ class CacheDecorator extends AbstractPageDecorator {
 
     /**
      * @param $slug
+     *
      * @return mixed
      */
-    public function getBySlug($slug, $isPublished = false){
+    public function getBySlug($slug, $isPublished = false)
+    {
+        $key = md5(getLang().$this->cacheKey.'.slug.'.$slug);
 
-        $key = md5(getLang() . $this->cacheKey . '.slug.' . $slug);
-
-        if($isPublished === true)
-            $key = md5(getLang() . $this->cacheKey . '.slug.' . $slug . ".published");
+        if ($isPublished === true) {
+            $key = md5(getLang().$this->cacheKey.'.slug.'.$slug.'.published');
+        }
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -75,9 +80,9 @@ class CacheDecorator extends AbstractPageDecorator {
     /**
      * @return mixed
      */
-    public function all() {
-
-        $key = md5(getLang() . $this->cacheKey . '.all.pages');
+    public function all()
+    {
+        $key = md5(getLang().$this->cacheKey.'.all.pages');
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
@@ -91,15 +96,16 @@ class CacheDecorator extends AbstractPageDecorator {
     }
 
     /**
-     * @param int $page
-     * @param int $limit
+     * @param int  $page
+     * @param int  $limit
      * @param bool $all
+     *
      * @return mixed
      */
-    public function paginate($page = 1, $limit = 10, $all = false) {
-
+    public function paginate($page = 1, $limit = 10, $all = false)
+    {
         $allkey = ($all) ? '.all' : '';
-        $key = md5(getLang() . $this->cacheKey . '.page.' . $page . '.' . $limit . $allkey);
+        $key = md5(getLang().$this->cacheKey.'.page.'.$page.'.'.$limit.$allkey);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);

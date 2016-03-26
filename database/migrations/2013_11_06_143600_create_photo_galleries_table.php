@@ -2,15 +2,13 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotoGalleriesTable extends Migration {
-
+class CreatePhotoGalleriesTable extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up() {
-
+    public function up()
+    {
         Schema::create('photo_galleries', function ($table) {
 
             $table->increments('id');
@@ -25,11 +23,9 @@ class CreatePhotoGalleriesTable extends Migration {
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down() {
-
-         Schema::drop('photo_galleries');
+    public function down()
+    {
+        Schema::drop('photo_galleries');
     }
 }

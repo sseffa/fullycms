@@ -1,20 +1,22 @@
-<?php namespace Fully\Providers;
+<?php
+
+namespace Fully\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Fully\Feeder\Feeder;
 
 /**
- * Class FeederServiceProvider
- * @package Fully\Providers
- * @author Sefa Karagöz
+ * Class FeederServiceProvider.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class FeederServiceProvider extends ServiceProvider {
-
+class FeederServiceProvider extends ServiceProvider
+{
     /**
-     * Register
+     * Register.
      */
-    public function register() {
-
+    public function register()
+    {
         $this->app->bind('feeder', 'Fully\Feeder\Feeder');
     }
 }

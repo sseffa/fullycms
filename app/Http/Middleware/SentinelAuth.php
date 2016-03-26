@@ -2,33 +2,30 @@
 
 namespace Fully\Http\Middleware;
 
-use Closure, Sentinel;
+use Closure;
+use Sentinel;
 
 /**
- * Class SentinelAuth
- * @package Fully\Http\Middleware
+ * Class SentinelAuth.
+ *
  * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class SentinelAuth
 {
-
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if(!Sentinel::check())
-        {
-            if($request->ajax())
-            {
+        if (!Sentinel::check()) {
+            if ($request->ajax()) {
                 return response('Unauthorized.', 401);
-            }
-            else
-            {
+            } else {
                 return redirect()->guest(route('admin.login'));
             }
         }

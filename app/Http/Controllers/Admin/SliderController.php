@@ -1,10 +1,10 @@
-<?php namespace Fully\Http\Controllers\Admin;
+<?php
+
+namespace Fully\Http\Controllers\Admin;
 
 use Fully\Http\Controllers\Controller;
-use Redirect;
 use View;
 use Input;
-use Validator;
 use Fully\Models\Slider;
 use Response;
 use File;
@@ -13,9 +13,9 @@ use Config;
 use Flash;
 
 /**
- * Class SliderController
- * @package App\Controllers\Admin
- * @author Sefa Karagöz
+ * Class SliderController.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
 class SliderController extends Controller
 {
@@ -25,7 +25,6 @@ class SliderController extends Controller
 
     public function __construct()
     {
-
         View::share('active', 'plugins');
 
         $config = Config::get('fully');
@@ -41,8 +40,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-
         $sliders = Slider::orderBy('created_at', 'DESC')->paginate(15);
+
         return view('backend.slider.index', compact('sliders'));
     }
 
@@ -53,8 +52,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-
-        return view("backend.slider.create");
+        return view('backend.slider.create');
     }
 
     /**
@@ -64,29 +62,27 @@ class SliderController extends Controller
      */
     public function store()
     {
-
         $formData = Input::all();
-        $slider = new Slider;
+        $slider = new Slider();
 
         $upload_success = null;
 
-        if(isset($formData['image']))
-        {
+        if (isset($formData['image'])) {
             $file = $formData['image'];
 
-            $destinationPath = public_path() . $this->imgDir;
+            $destinationPath = public_path().$this->imgDir;
             $fileName = $file->getClientOriginalName();
             $fileSize = $file->getClientSize();
 
             $upload_success = $file->move($destinationPath, $fileName);
 
             // resizing an uploaded file
-            Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . $fileName);
+            Image::make($destinationPath.$fileName)->resize($this->width, $this->height)->save($destinationPath.$fileName);
 
             $slider->file_name = $fileName;
             $slider->file_size = $fileSize;
 
-            $slider->path = $this->imgDir . $fileName;
+            $slider->path = $this->imgDir.$fileName;
         }
 
         $slider->title = $formData['title'];
@@ -95,58 +91,57 @@ class SliderController extends Controller
         $slider->save();
 
         Flash::message('Slider was successfully added');
+
         return langRedirectRoute('admin.slider.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
     {
-
         $slider = Slider::findOrFail($id);
+
         return view('backend.slider.edit', compact('slider'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function update($id)
     {
-
         $formData = Input::all();
         $slider = Slider::findOrFail($id);
 
-        if(isset($formData['image']))
-        {
-            if($file = $formData['image'])
-            {
+        if (isset($formData['image'])) {
+            if ($file = $formData['image']) {
 
                 // delete old image
-                $destinationPath = public_path() . $this->imgDir;
-                File::delete($destinationPath . $slider->file_name);
+                $destinationPath = public_path().$this->imgDir;
+                File::delete($destinationPath.$slider->file_name);
 
-                $destinationPath = public_path() . $this->imgDir;
+                $destinationPath = public_path().$this->imgDir;
                 $fileName = $file->getClientOriginalName();
                 $fileSize = $file->getClientSize();
 
                 $upload_success = $file->move($destinationPath, $fileName);
 
-                if($upload_success)
-                {
+                if ($upload_success) {
 
                     // resizing an uploaded file
-                    Image::make($destinationPath . $fileName)->resize($this->width, $this->height)->save($destinationPath . $fileName);
+                    Image::make($destinationPath.$fileName)->resize($this->width, $this->height)->save($destinationPath.$fileName);
 
                     $slider->file_name = $fileName;
                     $slider->file_size = $fileSize;
-                    $slider->path = $this->imgDir . $fileName;
+                    $slider->path = $this->imgDir.$fileName;
                 }
             }
         }
@@ -155,32 +150,34 @@ class SliderController extends Controller
         $slider->save();
 
         Flash::message('Slider was successfully updated');
+
         return langRedirectRoute('admin.slider.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
     {
-
         $slider = Slider::with('images')->findOrFail($id);
-        $destinationPath = public_path() . $this->imgDir;
+        $destinationPath = public_path().$this->imgDir;
 
-        File::delete($destinationPath . $slider->file_name);
+        File::delete($destinationPath.$slider->file_name);
         $slider->delete();
 
         Flash::message('Slider was successfully deleted');
+
         return langRedirectRoute('admin.slider.index');
     }
 
     public function confirmDestroy($id)
     {
-
         $slider = Slider::findOrFail($id);
+
         return view('backend.slider.confirm-destroy', compact('slider'));
     }
 }

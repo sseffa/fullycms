@@ -1,19 +1,21 @@
-<?php namespace Fully\Feeder\Facade;
+<?php
+
+namespace Fully\Feeder\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class Feeder
- * @package Fully\Facades
- * @author Sefa Karagöz
+ * Class Feeder.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class Feeder extends Facade {
-
+class Feeder extends Facade
+{
     /**
      * @return string
      */
-    protected static function getFacadeAccessor() {
-
+    protected static function getFacadeAccessor()
+    {
         return 'feeder';
     }
 }

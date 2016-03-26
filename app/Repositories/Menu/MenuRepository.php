@@ -1,27 +1,17 @@
-<?php namespace Fully\Repositories\Menu;
+<?php
+
+namespace Fully\Repositories\Menu;
 
 use Fully\Models\Menu;
-use Config;
-use Response;
-use Fully\Models\Tag;
-use Fully\Models\Category;
-use Str;
-use Event;
-use Image;
-use File;
 use Fully\Repositories\RepositoryAbstract;
-use Fully\Repositories\CrudableInterface as CrudableInterface;
-use Fully\Repositories\RepositoryInterface as RepositoryInterface;
-use Fully\Exceptions\Validation\ValidationException;
-use Fully\Repositories\AbstractValidator as Validator;
 
 /**
- * Class MenuRepository
- * @package Fully\Repositories\Menu
- * @author Sefa Karagöz
+ * Class MenuRepository.
+ *
+ * @author Sefa Karagöz <karagozsefa@gmail.com>
  */
-class MenuRepository extends RepositoryAbstract implements MenuInterface {
-
+class MenuRepository extends RepositoryAbstract implements MenuInterface
+{
     /**
      * @var \Menu
      */
@@ -30,61 +20,65 @@ class MenuRepository extends RepositoryAbstract implements MenuInterface {
     /**
      * @param Menu $menu
      */
-    public function __construct(Menu $menu) {
-
+    public function __construct(Menu $menu)
+    {
         $this->menu = $menu;
     }
 
     /**
      * @return mixed
      */
-    public function all() {
-
+    public function all()
+    {
         return $this->menu->where('is_published', 1)->where('lang', $this->getLang())->orderBy('order', 'asc')->get();
     }
 
     /**
      * @param $menu
-     * @param int $parentId
+     * @param int  $parentId
      * @param bool $starter
+     *
      * @return null|string
      */
-    public function generateFrontMenu($menu, $parentId = 0, $starter = false) {
-
+    public function generateFrontMenu($menu, $parentId = 0, $starter = false)
+    {
         $result = null;
 
         foreach ($menu as $item) {
-
             if ($item->parent_id == $parentId) {
-
                 $childItem = $this->hasChildItems($item->id);
 
-                $result .= "<li class='menu-item " . (($childItem) ? 'dropdown' : null) . (($childItem && $item->parent_id != 0) ? ' dropdown-submenu' : null) . "'>
-                                <a href='" . url($item->url) . "' " . (($childItem) ? 'class="dropdown-toggle" data-toggle="dropdown"' : null) . ">{$item->title}" . (($childItem && $item->parent_id == 0) ? '<b class="caret"></b>' : null) . "</a>" . $this->generateFrontMenu($menu, $item->id) . "
-                            </li>";
+                $result .= "<li class='menu-item ".(($childItem) ? 'dropdown' : null).(($childItem && $item->parent_id != 0) ? ' dropdown-submenu' : null)."'>
+                                <a href='".url($item->url)."' ".(($childItem) ? 'class="dropdown-toggle" data-toggle="dropdown"' : null).">{$item->title}".(($childItem && $item->parent_id == 0) ? '<b class="caret"></b>' : null).'</a>'.$this->generateFrontMenu($menu, $item->id).'
+                            </li>';
             }
         }
 
-        return $result ? "\n<ul class='" . (($starter) ? ' nav navbar-nav navbar-right ' : null) . ((!$starter) ? ' dropdown-menu ' : null) . "'>\n$result</ul>\n" : null;
+        return $result ? "\n<ul class='".(($starter) ? ' nav navbar-nav navbar-right ' : null).((!$starter) ? ' dropdown-menu ' : null)."'>\n$result</ul>\n" : null;
     }
 
     /**
      * @param $items
+     *
      * @return null|string
      */
-    public function getFrontMenuHTML($items) {
-
+    public function getFrontMenuHTML($items)
+    {
         return $this->generateFrontMenu($items, 0, true);
     }
 
     /**
      * @param $id
+     *
      * @return bool
      */
-    public function hasChildItems($id) {
-
+    public function hasChildItems($id)
+    {
         $count = $this->menu->where('parent_id', $id)->where('is_published', 1)->where('lang', $this->getLang())->get()->count();
-        if ($count === 0) return false;
+        if ($count === 0) {
+            return false;
+        }
+
         return true;
     }
 }
