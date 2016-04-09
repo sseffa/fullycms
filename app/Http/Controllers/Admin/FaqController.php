@@ -4,6 +4,7 @@ namespace Fully\Http\Controllers\Admin;
 
 use View;
 use Input;
+use Flash;
 use Fully\Services\Pagination;
 use Fully\Http\Controllers\Controller;
 use Fully\Repositories\Faq\FaqInterface;
