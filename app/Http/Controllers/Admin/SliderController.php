@@ -87,7 +87,7 @@ class SliderController extends Controller
 
         $slider->title = $formData['title'];
         $slider->description = $formData['description'];
-
+        $slider->lang = getLang();
         $slider->save();
 
         Flash::message('Slider was successfully added');
