@@ -88,12 +88,8 @@ class Menu extends Model
 
     public function hasChildItems($id)
     {
-        $count = $this->where('parent_id', $id)->where('lang', getLang())->where('is_published', 1)->get()->count();
-        if ($count === 0) {
-            return false;
-        }
-
-        return true;
+        $count = $this->where('parent_id', $id)->where('lang', getLang())->where('is_published', 1)->count();
+	return $count === 0 ? false : true;
     }
 
     public function getMenuOptions()
